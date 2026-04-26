@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>URBANISM — Thoughts on Urban Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --saffron:#E8621A;
+  --turmeric:#D4920A;
+  --terracotta:#B5451B;
+  --indigo:#2C3E7A;
+  --deep-indigo:#1A2550;
+  --copper:#C47A2B;
+  --cream:#F5ECD7;
+  --warm-white:#FAF4E8;
+  --parchment:#EDE0C4;
+  --mud:#8B5E3C;
+  --dark-mud:#4A2F1A;
+  --leaf:#4A6741;
+  --pale-gold:#F0D080;
+  --text:#2A1A0E;
+  --muted:#7A5C3C;
+  --rule:#C8A87A;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--warm-white);color:var(--text);font-family:'Crimson Pro',serif;font-size:17px;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(180,90,30,0.06) 1px,transparent 0);background-size:28px 28px;pointer-events:none;z-index:0;}
+
+/* PAGE SYSTEM */
+.page{display:none;min-height:100vh;position:relative;z-index:1;}
+.page.active{display:block;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(–dark-mud);border-bottom:3px solid var(–saffron);display:flex;align-items:stretch;justify-content:space-between;padding:0 2rem;}
+.nav-brand{font-family:‘Playfair Display’,serif;font-size:1.5rem;font-weight:900;color:var(–pale-gold);text-decoration:none;padding:0.9rem 0;display:flex;align-items:center;gap:0.6rem;letter-spacing:0.06em;cursor:pointer;}
+.nav-brand .bindi{width:10px;height:10px;background:var(–saffron);border-radius:50%;box-shadow:0 0 8px var(–saffron);}
+.nav-links{display:flex;align-items:center;gap:0;}
+.nav-links a{text-decoration:none;font-family:‘Crimson Pro’,serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,236,215,0.7);padding:0.9rem 1.1rem;border-left:1px solid rgba(200,168,122,0.2);transition:all 0.2s;cursor:pointer;}
+.nav-links a:hover,.nav-links a.active{color:var(–pale-gold);background:rgba(232,98,26,0.15);}
+
+/* KATHIAWADI BORDER */
+.kathi-border{height:12px;background:repeating-linear-gradient(90deg,var(–saffron) 0,var(–saffron) 8px,var(–turmeric) 8px,var(–turmeric) 16px,var(–terracotta) 16px,var(–terracotta) 24px,var(–indigo) 24px,var(–indigo) 32px,var(–copper) 32px,var(–copper) 40px);}
+.kathi-border.thin{height:5px;}
+
+.eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(–saffron);display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;}
+.eyebrow::before{content:‘◆’;font-size:7px;}
+
+/* ══ HOME ══ */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;border-bottom:2px solid var(–rule);}
+.hero-left{background:var(–dark-mud);padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.hero-left::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0,transparent 18px,rgba(232,98,26,0.04) 18px,rgba(232,98,26,0.04) 19px);}
+.hero-vol{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,208,128,0.55);}
+.hero-title{font-family:‘Playfair Display’,serif;font-size:clamp(4rem,7vw,8.5rem);font-weight:900;line-height:0.88;color:var(–pale-gold);position:relative;z-index:1;animation:slideUp 0.9s cubic-bezier(0.16,1,0.3,1) both;}
+.hero-title em{font-style:italic;color:var(–saffron);display:block;}
+.hero-tagline{font-family:‘Crimson Pro’,serif;font-style:italic;font-size:1.2rem;color:rgba(245,236,215,0.65);max-width:340px;line-height:1.55;position:relative;z-index:1;}
+.hero-right{background:var(–parchment);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem;}
+.hero-city{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.hero-feat{position:relative;z-index:2;background:rgba(42,26,14,0.85);backdrop-filter:blur(2px);padding:1.4rem 1.8rem;border-left:4px solid var(–saffron);}
+.hero-feat .tag{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(–saffron);display:block;margin-bottom:0.4rem;}
+.hero-feat h2{font-family:‘Playfair Display’,serif;font-size:1.45rem;line-height:1.2;color:var(–pale-gold);}
+
+.ticker-wrap{background:var(–saffron);overflow:hidden;padding:0.55rem 0;border-bottom:2px solid var(–terracotta);}
+.ticker{display:inline-block;animation:ticker 32s linear infinite;white-space:nowrap;}
+.ticker span{font-family:‘Playfair Display’,serif;font-size:1rem;letter-spacing:0.06em;color:var(–dark-mud);margin:0 1.5rem;}
+.ticker span::before{content:‘❖’;margin-right:1.5rem;opacity:0.5;}
+
+.topics-band{padding:1.2rem 2rem;display:flex;flex-wrap:wrap;align-items:center;gap:0.7rem;border-bottom:1px solid var(–rule);background:var(–cream);}
+.lbl{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(–muted);}
+.pill{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;padding:0.3rem 0.85rem;border:1.5px solid var(–mud);background:transparent;color:var(–mud);cursor:pointer;transition:all 0.15s;font-family:‘Crimson Pro’,serif;}
+.pill:hover,.pill.active{background:var(–saffron);border-color:var(–saffron);color:var(–warm-white);}
+
+.section-bar{padding:1.2rem 2rem;border-bottom:1px solid var(–rule);display:flex;align-items:baseline;gap:1rem;}
+.section-bar h3{font-family:‘Playfair Display’,serif;font-size:1.3rem;font-weight:700;}
+.section-bar span{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(–muted);}
+
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+.card{border-right:1px solid var(–rule);border-bottom:1px solid var(–rule);padding:2rem 1.8rem;transition:background 0.2s;cursor:pointer;display:flex;flex-direction:column;animation:fadeIn 0.5s ease both;}
+.card:nth-child(3n){border-right:none;}
+.card:hover{background:rgba(232,98,26,0.05);}
+.card.wide{grid-column:span 2;display:grid;grid-template-columns:auto 1fr;gap:2rem;border-right:1px solid var(–rule);}
+.pnum{font-family:‘Playfair Display’,serif;font-size:4rem;line-height:1;color:var(–parchment);font-weight:900;}
+.pcat{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(–indigo);font-weight:700;margin-bottom:0.6rem;}
+.ptitle{font-family:‘Playfair Display’,serif;font-size:1.2rem;line-height:1.25;margin-bottom:0.7rem;}
+.card.wide .ptitle{font-size:1.7rem;}
+.pex{font-size:14px;color:var(–muted);line-height:1.7;margin-bottom:1rem;flex:1;}
+.pfoot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(–rule);padding-top:0.8rem;margin-top:auto;}
+.pdate{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(–muted);}
+.plink{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(–saffron);text-decoration:none;}
+.plink::after{content:’ →’;}
+
+.newslet{background:var(–dark-mud);color:var(–cream);padding:5rem 2rem;text-align:center;position:relative;overflow:hidden;border-top:3px solid var(–saffron);}
+.newslet::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0,transparent 20px,rgba(232,98,26,0.03) 20px,rgba(232,98,26,0.03) 21px);}
+.newslet h2{font-family:‘Playfair Display’,serif;font-size:2.8rem;font-weight:900;margin-bottom:0.5rem;color:var(–pale-gold);position:relative;}
+.newslet p{color:rgba(245,236,215,0.55);font-style:italic;margin-bottom:2rem;position:relative;}
+.sform{display:flex;justify-content:center;gap:0;max-width:420px;margin:0 auto;position:relative;}
+.sform input{flex:1;padding:0.85rem 1.2rem;background:rgba(255,255,255,0.07);border:1.5px solid rgba(200,168,122,0.3);border-right:none;color:var(–cream);font-family:‘Crimson Pro’,serif;font-size:15px;outline:none;}
+.sform input::placeholder{color:rgba(245,236,215,0.35);}
+.sform button{padding:0.85rem 1.5rem;background:var(–saffron);color:var(–dark-mud);border:none;font-family:‘Playfair Display’,serif;font-size:1rem;font-weight:700;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s;}
+.sform button:hover{background:var(–turmeric);}
+
+footer{border-top:2px solid var(–dark-mud);background:var(–dark-mud);padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;}
+.fbrand{font-family:‘Playfair Display’,serif;font-size:1.3rem;color:var(–pale-gold);font-weight:900;}
+.fcopy{font-size:11px;letter-spacing:0.1em;color:rgba(245,236,215,0.4);text-transform:uppercase;}
+
+/* ══ BIO ══ */
+.bio-top{background:var(–dark-mud);padding:5rem 2rem 0;position:relative;overflow:hidden;}
+.bio-top::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0,transparent 24px,rgba(232,98,26,0.05) 24px,rgba(232,98,26,0.05) 25px);}
+.bio-top-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;gap:5rem;align-items:end;position:relative;z-index:1;}
+.bio-portrait{width:260px;height:330px;background:var(–parchment);border:3px solid var(–copper);position:relative;box-shadow:8px 8px 0 var(–saffron);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;}
+.bio-portrait-icon{font-size:5rem;opacity:0.25;color:var(–dark-mud);}
+.bio-portrait-hint{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(–mud);}
+.bio-name{font-family:‘Playfair Display’,serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:900;line-height:0.95;color:var(–pale-gold);margin-bottom:1rem;padding-bottom:4rem;}
+.bio-name em{color:var(–saffron);font-style:italic;}
+.bio-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.2rem;}
+.bio-tag{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;padding:0.25rem 0.75rem;border:1.5px solid rgba(200,168,122,0.4);color:rgba(245,236,215,0.7);}
+.bio-intro{font-size:1.15rem;font-style:italic;color:rgba(245,236,215,0.7);line-height:1.65;max-width:520px;}
+
+.bio-body{max-width:1100px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:2fr 1fr;gap:4rem;}
+.bio-body h3{font-family:‘Playfair Display’,serif;font-size:1.5rem;font-weight:700;color:var(–terracotta);margin:2.5rem 0 1rem;}
+.bio-body h3:first-child{margin-top:0;}
+.bio-body p{color:var(–text);font-size:1.05rem;margin-bottom:1.2rem;line-height:1.8;}
+.bio-body strong{color:var(–dark-mud);}
+.scard{background:var(–cream);border:1px solid var(–rule);padding:1.5rem;margin-bottom:1.5rem;position:relative;}
+.scard::before{content:’’;position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(–saffron),var(–turmeric),var(–copper));}
+.scard h4{font-family:‘Playfair Display’,serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(–dark-mud);margin-bottom:1rem;font-weight:700;}
+.srow{display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px dotted var(–rule);}
+.srow:last-child{border-bottom:none;}
+.srl{font-size:13px;color:var(–muted);}
+.srv{font-size:13px;font-weight:700;color:var(–dark-mud);}
+.sint{display:flex;align-items:flex-start;gap:0.8rem;padding:0.6rem 0;border-bottom:1px dotted var(–rule);}
+.sint:last-child{border-bottom:none;}
+.sint-ico{font-size:1.1rem;flex-shrink:0;}
+.sint-txt{font-size:13px;color:var(–muted);line-height:1.5;}
+
+/* ══ PHOTOGRAPHY ══ */
+.photo-hd{background:var(–dark-mud);padding:4rem 2rem 3rem;border-bottom:3px solid var(–saffron);position:relative;overflow:hidden;}
+.photo-hd::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent 40px,rgba(232,98,26,0.04) 40px,rgba(232,98,26,0.04) 41px);}
+.photo-hd-in{max-width:900px;margin:0 auto;position:relative;z-index:1;}
+.photo-hd h1{font-family:‘Playfair Display’,serif;font-size:clamp(3rem,6vw,6rem);font-weight:900;line-height:0.95;color:var(–pale-gold);margin-bottom:0.8rem;}
+.photo-hd h1 em{color:var(–saffron);font-style:italic;}
+.photo-hd p{font-style:italic;color:rgba(245,236,215,0.6);font-size:1.1rem;max-width:500px;}
+
+.photo-fbar{padding:1rem 2rem;background:var(–cream);display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;border-bottom:1px solid var(–rule);}
+
+.masonry{columns:3;column-gap:0;}
+.photo-item{break-inside:avoid;position:relative;overflow:hidden;cursor:pointer;border:3px solid var(–warm-white);}
+.photo-item:hover .photo-ov{opacity:1;}
+.ph{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;position:relative;}
+.ph.tall{height:380px;}
+.ph.med{height:260px;}
+.ph.short{height:200px;}
+.ph svg{position:absolute;inset:0;width:100%;height:100%;}
+.ph-lbl{position:relative;z-index:1;font-family:‘Playfair Display’,serif;font-size:1rem;font-weight:700;color:var(–mud);text-align:center;padding:0 1rem;}
+.ph-sub{position:relative;z-index:1;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(–muted);}
+.photo-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(42,26,14,0.92) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;}
+.ov-tag{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(–saffron);margin-bottom:0.3rem;}
+.ov-city{font-family:‘Playfair Display’,serif;font-size:1.1rem;font-weight:700;color:var(–pale-gold);}
+
+/* ══ TRAVEL ══ */
+.travel-hd{background:linear-gradient(135deg,var(–dark-mud) 0%,var(–deep-indigo) 100%);padding:4rem 2rem 3rem;border-bottom:3px solid var(–turmeric);position:relative;overflow:hidden;}
+.travel-hd-in{max-width:1000px;margin:0 auto;position:relative;z-index:1;}
+.travel-hd h1{font-family:‘Playfair Display’,serif;font-size:clamp(3rem,6vw,6.5rem);font-weight:900;line-height:0.92;color:var(–pale-gold);margin-bottom:0.8rem;}
+.travel-hd h1 span{color:var(–saffron);}
+.travel-hd p{font-style:italic;color:rgba(245,236,215,0.6);font-size:1.1rem;}
+
+.tstats{background:var(–dark-mud);border-bottom:2px solid rgba(200,168,122,0.2);display:grid;grid-template-columns:repeat(4,1fr);}
+.tstat{padding:2rem;border-right:1px solid rgba(200,168,122,0.2);text-align:center;}
+.tstat:last-child{border-right:none;}
+.tstat-n{font-family:‘Playfair Display’,serif;font-size:3rem;font-weight:900;color:var(–saffron);line-height:1;margin-bottom:0.3rem;}
+.tstat-l{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,236,215,0.5);}
+
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);border-bottom:1px solid var(–rule);}
+.tcard{border-right:1px solid var(–rule);border-bottom:1px solid var(–rule);overflow:hidden;cursor:pointer;transition:transform 0.2s;}
+.tcard:nth-child(2n){border-right:none;}
+.tcard:hover{transform:translateY(-2px);}
+.tcard-img{height:220px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.tcard-body{padding:1.5rem;}
+.tcard-ctry{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(–saffron);font-weight:700;margin-bottom:0.4rem;}
+.tcard-city{font-family:‘Playfair Display’,serif;font-size:1.5rem;font-weight:700;margin-bottom:0.6rem;}
+.tcard-desc{font-size:14px;color:var(–muted);line-height:1.65;margin-bottom:1rem;}
+.tcard-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.ttag{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.6rem;background:var(–parchment);color:var(–mud);border:1px solid var(–rule);}
+.tcard.feat{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;border-right:none;}
+.tcard.feat .tcard-img{height:100%;min-height:300px;}
+.tcard.feat .tcard-city{font-size:2rem;}
+
+/* ══ WORLD MAP ══ */
+.map-hd{background:var(–dark-mud);padding:3rem 2rem;border-bottom:3px solid var(–turmeric);}
+.map-hd-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;}
+.map-hd h1{font-family:‘Playfair Display’,serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:900;line-height:0.95;color:var(–pale-gold);}
+.map-hd h1 em{color:var(–saffron);font-style:italic;}
+.map-hd-sub{font-style:italic;color:rgba(245,236,215,0.5);font-size:1rem;max-width:300px;text-align:right;}
+
+.map-wrap{background:var(–deep-indigo);padding:2rem;position:relative;min-height:520px;overflow:hidden;}
+
+.map-legend{background:var(–dark-mud);border-top:1px solid rgba(200,168,122,0.2);padding:1.2rem 2rem;display:flex;gap:2rem;align-items:center;flex-wrap:wrap;}
+.leg-item{display:flex;align-items:center;gap:0.5rem;}
+.leg-dot{width:10px;height:10px;border-radius:50%;border:2px solid var(–pale-gold);}
+.leg-lbl{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,236,215,0.6);}
+
+.cities-data{max-width:1100px;margin:0 auto;padding:3rem 2rem;}
+.cities-data h2{font-family:‘Playfair Display’,serif;font-size:2rem;font-weight:700;color:var(–dark-mud);margin-bottom:2rem;}
+table{width:100%;border-collapse:collapse;}
+th{background:var(–dark-mud);color:var(–pale-gold);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;padding:0.9rem 1.2rem;text-align:left;font-family:‘Crimson Pro’,serif;font-weight:600;}
+td{padding:0.9rem 1.2rem;border-bottom:1px solid var(–rule);font-size:14px;vertical-align:middle;}
+tr:hover td{background:rgba(232,98,26,0.04);}
+.cf{font-size:1.3rem;margin-right:0.4rem;}
+.cn{font-family:‘Playfair Display’,serif;font-size:1rem;font-weight:700;}
+.fbar{height:6px;background:var(–parchment);border-radius:3px;overflow:hidden;width:120px;}
+.ffill{height:100%;background:linear-gradient(90deg,var(–saffron),var(–turmeric));border-radius:3px;}
+.rbadge{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.6rem;font-weight:700;}
+.ri{background:rgba(232,98,26,0.15);color:var(–saffron);}
+.re{background:rgba(196,122,43,0.15);color:var(–copper);}
+.rs{background:rgba(74,103,65,0.15);color:var(–leaf);}
+.rm{background:rgba(181,69,27,0.15);color:var(–terracotta);}
+
+/* ANIMATIONS */
+@keyframes slideUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes pulse{0%{r:6;}50%{r:14;opacity:0.1;}100%{r:6;opacity:0;}}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.hero{grid-template-columns:1fr;min-height:auto;}
+.hero-right{height:300px;}
+.posts-grid{grid-template-columns:1fr 1fr;}
+.card.wide{grid-column:span 2;grid-template-columns:1fr;}
+.bio-top-in{grid-template-columns:1fr;gap:2rem;}
+.bio-body{grid-template-columns:1fr;}
+.masonry{columns:2;}
+.tgrid{grid-template-columns:1fr;}
+.tcard.feat{grid-column:span 1;grid-template-columns:1fr;}
+.tcard.feat .tcard-img{height:220px;}
+.tstats{grid-template-columns:repeat(2,1fr);}
+.map-hd-in{flex-direction:column;gap:1rem;}
+.map-hd-sub{text-align:left;}
+}
+@media(max-width:600px){
+.posts-grid,.tgrid{grid-template-columns:1fr;}
+.card.wide,.tcard.feat{grid-column:span 1;}
+.masonry{columns:1;}
+.nav-links a{padding:0.9rem 0.6rem;font-size:11px;letter-spacing:0.08em;}
+.tstats{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand" onclick="showPage('home')"><span class="bindi"></span>URBANISM</div>
+  <div class="nav-links">
+    <a onclick="showPage('home')" class="active" id="nav-home">Essays</a>
+    <a onclick="showPage('bio')" id="nav-bio">About Me</a>
+    <a onclick="showPage('photography')" id="nav-photography">Photography</a>
+    <a onclick="showPage('travel')" id="nav-travel">Travel</a>
+    <a onclick="showPage('map')" id="nav-map">World Map</a>
+  </div>
+</nav>
+
+<!-- ═══════ HOME ═══════ -->
+
+<div class="page active" id="page-home">
+  <div class="kathi-border"></div>
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-vol">Vol. I · Est. 2025 · Kathiawad to the World</div>
+      <h1 class="hero-title">THE<br><em>CITY</em><br>SPEAKS</h1>
+      <p class="hero-tagline">Deep dives into the forces that shape our cities — architecture, policy, culture, and the invisible grids beneath our feet.</p>
+    </div>
+    <div class="hero-right">
+      <svg class="hero-city" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1A2550"/><stop offset="100%" stop-color="#2C3E7A"/></linearGradient>
+          <linearGradient id="og" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8621A" stop-opacity="0.5"/><stop offset="100%" stop-color="#E8621A" stop-opacity="0"/></linearGradient>
+        </defs>
+        <rect width="600" height="500" fill="url(#sg)"/>
+        <circle cx="50" cy="40" r="1" fill="#F0D080" opacity="0.8"/><circle cx="120" cy="25" r="1.2" fill="#F0D080" opacity="0.6"/><circle cx="200" cy="55" r="0.8" fill="#F0D080" opacity="0.9"/><circle cx="310" cy="30" r="1" fill="#F0D080" opacity="0.7"/><circle cx="420" cy="45" r="1.2" fill="#F0D080" opacity="0.5"/><circle cx="490" cy="20" r="0.9" fill="#F0D080" opacity="0.8"/><circle cx="555" cy="60" r="1" fill="#F0D080" opacity="0.6"/>
+        <circle cx="520" cy="60" r="18" fill="#F0D080" opacity="0.12"/><circle cx="527" cy="55" r="14" fill="#1A2550"/>
+        <rect x="0" y="280" width="55" height="120" fill="#2A1A0E" opacity="0.9"/><rect x="5" y="290" width="7" height="9" fill="#E8621A" opacity="0.7"/><rect x="5" y="304" width="7" height="9" fill="#D4920A" opacity="0.5"/><rect x="16" y="294" width="7" height="9" fill="#F0D080" opacity="0.4"/>
+        <rect x="60" y="220" width="65" height="180" fill="#3A2010"/><rect x="67" y="230" width="9" height="11" fill="#E8621A" opacity="0.8"/><rect x="81" y="230" width="9" height="11" fill="#F0D080" opacity="0.5"/><rect x="95" y="230" width="9" height="11" fill="#D4920A" opacity="0.9"/><rect x="67" y="246" width="9" height="11" fill="#F0D080" opacity="0.7"/><rect x="81" y="246" width="9" height="11" fill="#E8621A" opacity="0.4"/><rect x="95" y="246" width="9" height="11" fill="#F0D080" opacity="0.6"/><rect x="67" y="262" width="9" height="11" fill="#D4920A" opacity="0.8"/><rect x="81" y="262" width="9" height="11" fill="#F0D080" opacity="0.3"/><rect x="95" y="262" width="9" height="11" fill="#E8621A" opacity="0.7"/>
+        <rect x="83" y="195" width="5" height="26" fill="#3A2010"/><polygon points="85.5,185 79,200 92,200" fill="#C47A2B"/>
+        <rect x="140" y="250" width="75" height="150" fill="#2A1A0E"/><rect x="148" y="260" width="8" height="10" fill="#E8621A" opacity="0.9"/><rect x="161" y="260" width="8" height="10" fill="#F0D080" opacity="0.6"/><rect x="174" y="260" width="8" height="10" fill="#D4920A" opacity="0.7"/><rect x="148" y="276" width="8" height="10" fill="#F0D080" opacity="0.8"/><rect x="161" y="276" width="8" height="10" fill="#E8621A" opacity="0.5"/><rect x="174" y="276" width="8" height="10" fill="#F0D080" opacity="0.9"/>
+        <rect x="235" y="170" width="90" height="230" fill="#3A2010"/><rect x="245" y="182" width="10" height="12" fill="#D4920A" opacity="0.9"/><rect x="260" y="182" width="10" height="12" fill="#F0D080" opacity="0.7"/><rect x="275" y="182" width="10" height="12" fill="#E8621A" opacity="0.8"/><rect x="290" y="182" width="10" height="12" fill="#F0D080" opacity="0.5"/><rect x="245" y="200" width="10" height="12" fill="#F0D080" opacity="0.4"/><rect x="260" y="200" width="10" height="12" fill="#E8621A" opacity="0.9"/><rect x="275" y="200" width="10" height="12" fill="#D4920A" opacity="0.6"/><rect x="290" y="200" width="10" height="12" fill="#F0D080" opacity="0.8"/>
+        <ellipse cx="280" cy="160" rx="22" ry="12" fill="#C47A2B"/><rect x="278" y="140" width="4" height="22" fill="#3A2010"/><circle cx="280" cy="138" r="4" fill="#E8621A"/>
+        <rect x="345" y="230" width="60" height="170" fill="#2A1A0E"/><rect x="353" y="240" width="8" height="10" fill="#E8621A" opacity="0.8"/><rect x="366" y="240" width="8" height="10" fill="#F0D080" opacity="0.5"/><rect x="379" y="240" width="8" height="10" fill="#D4920A" opacity="0.9"/><rect x="353" y="256" width="8" height="10" fill="#F0D080" opacity="0.7"/><rect x="366" y="256" width="8" height="10" fill="#E8621A" opacity="0.4"/><rect x="379" y="256" width="8" height="10" fill="#F0D080" opacity="0.6"/>
+        <rect x="425" y="200" width="70" height="200" fill="#3A2010"/><rect x="433" y="212" width="9" height="11" fill="#E8621A" opacity="0.9"/><rect x="447" y="212" width="9" height="11" fill="#D4920A" opacity="0.6"/><rect x="461" y="212" width="9" height="11" fill="#F0D080" opacity="0.7"/><rect x="475" y="212" width="9" height="11" fill="#E8621A" opacity="0.4"/><rect x="433" y="228" width="9" height="11" fill="#F0D080" opacity="0.8"/><rect x="447" y="228" width="9" height="11" fill="#E8621A" opacity="0.5"/><rect x="461" y="228" width="9" height="11" fill="#D4920A" opacity="0.9"/><rect x="475" y="228" width="9" height="11" fill="#F0D080" opacity="0.3"/>
+        <rect x="510" y="260" width="50" height="140" fill="#2A1A0E"/><rect x="518" y="270" width="7" height="9" fill="#D4920A" opacity="0.8"/><rect x="529" y="270" width="7" height="9" fill="#F0D080" opacity="0.5"/><rect x="540" y="270" width="7" height="9" fill="#E8621A" opacity="0.7"/>
+        <rect x="0" y="396" width="600" height="104" fill="#0A0704"/>
+        <rect x="0" y="396" width="600" height="50" fill="url(#og)" opacity="0.6"/>
+        <rect x="80" y="414" width="35" height="2" fill="#E8621A" opacity="0.25" rx="1"/><rect x="180" y="414" width="35" height="2" fill="#E8621A" opacity="0.25" rx="1"/><rect x="280" y="414" width="35" height="2" fill="#E8621A" opacity="0.25" rx="1"/><rect x="380" y="414" width="35" height="2" fill="#E8621A" opacity="0.25" rx="1"/>
+      </svg>
+      <div class="hero-feat"><span class="tag">★ Featured Essay</span><h2>Why Every City Feels the Same Now</h2></div>
+    </div>
+  </section>
+
+  <div class="ticker-wrap"><div class="ticker"><span>Zoning Laws</span><span>Walkability</span><span>Gentrification</span><span>Transit Infrastructure</span><span>Public Space</span><span>Mixed-Use Urbanism</span><span>Housing Density</span><span>Street Design</span><span>Urban Heat Islands</span><span>The 15-Minute City</span><span>Heritage & Modernity</span><span>Pedestrian Networks</span><span>Zoning Laws</span><span>Walkability</span><span>Gentrification</span><span>Transit Infrastructure</span><span>Public Space</span><span>Mixed-Use Urbanism</span><span>Housing Density</span><span>Street Design</span><span>Urban Heat Islands</span><span>The 15-Minute City</span><span>Heritage & Modernity</span><span>Pedestrian Networks</span></div></div>
+
+  <div class="topics-band">
+    <span class="lbl">Topics ·</span>
+    <button class="pill active" onclick="filterPosts(this,'all')">All</button>
+    <button class="pill" onclick="filterPosts(this,'infrastructure')">Infrastructure</button>
+    <button class="pill" onclick="filterPosts(this,'housing')">Housing</button>
+    <button class="pill" onclick="filterPosts(this,'culture')">Culture</button>
+    <button class="pill" onclick="filterPosts(this,'policy')">Policy</button>
+    <button class="pill" onclick="filterPosts(this,'design')">Design</button>
+    <button class="pill" onclick="filterPosts(this,'ecology')">Ecology</button>
+  </div>
+  <div class="section-bar"><h3>Latest Essays</h3><span id="pcnt">6 articles</span></div>
+
+  <div class="posts-grid" id="posts">
+    <div class="card wide" data-cat="design infrastructure">
+      <div><div class="pnum">01</div></div>
+      <div style="display:flex;flex-direction:column;">
+        <div class="pcat">Design · Infrastructure</div>
+        <h2 class="ptitle">The Sidewalk as Social Contract: What Pedestrian Space Says About a City's Soul</h2>
+        <p class="pex">The width of a sidewalk is not a neutral measurement. It is a political statement. A city that narrows its footpaths to four feet is telling you exactly who the streets are for.</p>
+        <div class="pfoot"><span class="pdate">Apr 20, 2025</span><a href="#" class="plink">Read</a></div>
+      </div>
+    </div>
+    <div class="card" data-cat="housing">
+      <div class="pnum">02</div><div class="pcat">Housing</div>
+      <h2 class="ptitle">Missing Middle: The Housing Type That Could Fix Our Cities</h2>
+      <p class="pex">Duplexes, triplexes, courtyard apartments — the forgotten vocabulary of urban housing between the single-family home and the tower.</p>
+      <div class="pfoot"><span class="pdate">Apr 14, 2025</span><a href="#" class="plink">Read</a></div>
+    </div>
+    <div class="card" data-cat="infrastructure">
+      <div class="pnum">03</div><div class="pcat">Infrastructure</div>
+      <h2 class="ptitle">Highways Through Hearts: The Urban Renewal Disaster</h2>
+      <p class="pex">Cities across the world destroyed thriving neighbourhoods to build freeways. Some are only now reckoning with that legacy.</p>
+      <div class="pfoot"><span class="pdate">Apr 8, 2025</span><a href="#" class="plink">Read</a></div>
+    </div>
+    <div class="card" data-cat="ecology design">
+      <div class="pnum">04</div><div class="pcat">Ecology · Design</div>
+      <h2 class="ptitle">Trees Per Block: How Urban Canopy Became a Justice Issue</h2>
+      <p class="pex">Richer neighbourhoods have more trees, cooler summers, lower asthma rates. Urban greening is no longer just aesthetic — it's a public health mandate.</p>
+      <div class="pfoot"><span class="pdate">Apr 1, 2025</span><a href="#" class="plink">Read</a></div>
+    </div>
+    <div class="card" data-cat="policy">
+      <div class="pnum">05</div><div class="pcat">Policy</div>
+      <h2 class="ptitle">Parking Minimums: The Quiet Rule That Ate Our Cities</h2>
+      <p class="pex">Zoning codes demanded vast oceans of parking. The result: a built environment optimised for empty asphalt rather than human life.</p>
+      <div class="pfoot"><span class="pdate">Mar 24, 2025</span><a href="#" class="plink">Read</a></div>
+    </div>
+    <div class="card" data-cat="culture">
+      <div class="pnum">06</div><div class="pcat">Culture</div>
+      <h2 class="ptitle">Third Places and the Crisis of Belonging in the Modern City</h2>
+      <p class="pex">Not home, not work — the tea stall, the library, the park bench. As commercial pressure erodes these spaces, something essential disappears.</p>
+      <div class="pfoot"><span class="pdate">Mar 17, 2025</span><a href="#" class="plink">Read</a></div>
+    </div>
+  </div>
+
+  <div class="newslet"><h2>Join the Conversation</h2><p>Essays on cities, design, and everything in between. No spam. Ever.</p><div class="sform"><input type="email" placeholder="your@email.com"/><button>Subscribe</button></div></div>
+  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · All essays original · yourdomain.com</div></footer>
+</div>
+
+<!-- ═══════ BIO ═══════ -->
+
+<div class="page" id="page-bio">
+  <div class="kathi-border"></div>
+  <div class="bio-top">
+    <div class="bio-top-in">
+      <div>
+        <div class="bio-portrait">
+          <div class="bio-portrait-icon">🪬</div>
+          <div class="bio-portrait-hint">Your photo here</div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow" style="color:rgba(240,208,128,0.55);">The person behind the words</div>
+        <h1 class="bio-name">Your<br><em>Name Here</em></h1>
+        <div class="bio-tags">
+          <span class="bio-tag">Urban Design Thinker</span><span class="bio-tag">Writer</span>
+          <span class="bio-tag">Photographer</span><span class="bio-tag">Kathiawadi</span><span class="bio-tag">Traveller</span>
+        </div>
+        <p class="bio-intro">From the dusty polychrome streets of Kathiawad to the grid-planned boulevards of cities across three continents — this blog is how I make sense of the spaces humans build for themselves.</p>
+      </div>
+    </div>
+  </div>
+  <div class="kathi-border thin"></div>
+  <div class="bio-body">
+    <div>
+      <h3>Where I Come From</h3>
+      <p>I grew up in <strong>Kathiawad</strong> — the Saurashtra peninsula of Gujarat, a place of extraordinary built heritage. Kathiawadi towns have a distinct urban logic: the <em>chowk</em> at the centre, the <em>pol</em> neighbourhood system, the jharokhas that project from every facade. Long before I knew the word "urbanism," I was already living inside one of its most sophisticated experiments.</p>
+      <p>That upbringing gave me an intuition that cities are not neutral containers for people, but active participants in shaping behaviour, identity, and power. The placement of a well, the width of a lane, the temple at a crossroads: everything is a decision, and every decision is political.</p>
+      <h3>What I Write About</h3>
+      <p>This blog is about <strong>urban design</strong> in the broadest sense — the forces that determine why cities look and feel the way they do. Zoning law, yes, but also colonial street plans and their afterlives, the economics of gentrification, the psychology of public space, the politics of parking. I write from the perspective of someone who moves between cities rather than living exclusively in one.</p>
+      <p>I'm particularly interested in the tension between <strong>heritage and modernity</strong> in South Asian cities: how Ahmedabad, Jamnagar, and Rajkot are negotiating their architectural pasts in the face of rapid economic growth.</p>
+      <h3>Photography & Observation</h3>
+      <p>I photograph cities the way a naturalist photographs birds — patiently, at street level, looking for the moments when the built environment reveals its logic. A broken step worn smooth by a century of feet. A wall repainted twelve times, each colour bleeding through. These images are the raw material of the essays.</p>
+      <h3>A Note on Perspective</h3>
+      <p>I write with a <strong>situated point of view</strong> — from the Global South, from a small city rather than a megacity, from a pedestrian rather than a planner. So much urban writing assumes the vantage point of the wealthy, Western, automobile-owning professional. That is not me, and this blog reflects it.</p>
+    </div>
+    <div>
+      <div class="scard">
+        <h4>At a Glance</h4>
+        <div class="srow"><span class="srl">Origin</span><span class="srv">Kathiawad, Gujarat</span></div>
+        <div class="srow"><span class="srl">Based in</span><span class="srv">Update me</span></div>
+        <div class="srow"><span class="srl">Cities lived in</span><span class="srv">—</span></div>
+        <div class="srow"><span class="srl">Countries visited</span><span class="srv">—</span></div>
+        <div class="srow"><span class="srl">Essays published</span><span class="srv">6 so far</span></div>
+        <div class="srow"><span class="srl">Photos taken</span><span class="srv">∞</span></div>
+      </div>
+      <div class="scard">
+        <h4>Interests & Obsessions</h4>
+        <div class="sint"><span class="sint-ico">🏛️</span><span class="sint-txt">Heritage architecture and adaptive reuse</span></div>
+        <div class="sint"><span class="sint-ico">🚶</span><span class="sint-txt">Walkability and pedestrian infrastructure</span></div>
+        <div class="sint"><span class="sint-ico">🏘️</span><span class="sint-txt">Housing policy and affordable urbanism</span></div>
+        <div class="sint"><span class="sint-ico">🌿</span><span class="sint-txt">Urban ecology and the green city</span></div>
+        <div class="sint"><span class="sint-ico">📷</span><span class="sint-txt">Street photography as urban documentation</span></div>
+        <div class="sint"><span class="sint-ico">🎨</span><span class="sint-txt">Vernacular architecture of western India</span></div>
+        <div class="sint"><span class="sint-ico">🛤️</span><span class="sint-txt">Transit networks and mobility justice</span></div>
+      </div>
+      <div class="scard">
+        <h4>Get in Touch</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:0.8rem;">For collaborations, commissions, or to argue about roundabouts — write to me.</p>
+        <a href="mailto:you@yourdomain.com" style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--saffron);font-weight:700;text-decoration:none;">you@yourdomain.com →</a>
+      </div>
+    </div>
+  </div>
+  <div class="kathi-border thin"></div>
+  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · yourdomain.com</div></footer>
+</div>
+
+<!-- ═══════ PHOTOGRAPHY ═══════ -->
+
+<div class="page" id="page-photography">
+  <div class="kathi-border"></div>
+  <div class="photo-hd">
+    <div class="photo-hd-in">
+      <div class="eyebrow" style="color:rgba(240,208,128,0.5);">Seeing the city</div>
+      <h1>Urban<br><em>Frames</em></h1>
+      <p>Cities photographed at street level — the textures, shadows, and human details that reveal how a place really works.</p>
+    </div>
+  </div>
+  <div class="photo-fbar">
+    <span class="lbl" style="margin-right:0.5rem;">Filter ·</span>
+    <button class="pill active" onclick="filterPhotos(this,'all')">All</button>
+    <button class="pill" onclick="filterPhotos(this,'india')">India</button>
+    <button class="pill" onclick="filterPhotos(this,'europe')">Europe</button>
+    <button class="pill" onclick="filterPhotos(this,'asia')">Asia</button>
+    <button class="pill" onclick="filterPhotos(this,'street')">Street</button>
+    <button class="pill" onclick="filterPhotos(this,'architecture')">Architecture</button>
+    <button class="pill" onclick="filterPhotos(this,'pattern')">Pattern & Texture</button>
+  </div>
+  <div class="masonry" id="photo-grid">
+    <div class="photo-item" data-cat="india architecture"><div class="ph tall" style="background:#C4875A;">
+      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#C4875A"/><pattern id="p1" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="none" stroke="#8B5E3C" stroke-width="0.5"/><circle cx="20" cy="20" r="8" fill="none" stroke="#8B5E3C" stroke-width="1"/><circle cx="20" cy="20" r="3" fill="#B5451B" opacity="0.5"/><line x1="0" y1="20" x2="12" y2="20" stroke="#8B5E3C" stroke-width="0.5"/><line x1="28" y1="20" x2="40" y2="20" stroke="#8B5E3C" stroke-width="0.5"/><line x1="20" y1="0" x2="20" y2="12" stroke="#8B5E3C" stroke-width="0.5"/><line x1="20" y1="28" x2="20" y2="40" stroke="#8B5E3C" stroke-width="0.5"/></pattern><rect width="300" height="380" fill="url(#p1)" opacity="0.4"/></svg>
+      <div class="ph-lbl">Jamnagar Pol</div><div class="ph-sub">Gujarat · 2024</div></div>
+      <div class="photo-ov"><div class="ov-tag">India · Architecture</div><div class="ov-city">Jamnagar, Gujarat</div></div>
+    </div>
+    <div class="photo-item" data-cat="europe street"><div class="ph med" style="background:#4A6741;">
+      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#4A6741"/><pattern id="p2" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="none" stroke="#3A5231" stroke-width="0.5"/><polygon points="15,3 27,27 3,27" fill="none" stroke="#3A5231" stroke-width="0.8"/></pattern><rect width="300" height="260" fill="url(#p2)" opacity="0.3"/></svg>
+      <div class="ph-lbl">Bologna Arcades</div><div class="ph-sub">Italy · 2023</div></div>
+      <div class="photo-ov"><div class="ov-tag">Europe · Street</div><div class="ov-city">Bologna, Italy</div></div>
+    </div>
+    <div class="photo-item" data-cat="india pattern"><div class="ph short" style="background:#D4920A;">
+      <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#D4920A"/><pattern id="p3" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="none"/><rect x="4" y="4" width="16" height="16" fill="none" stroke="#B5451B" stroke-width="0.8"/><circle cx="12" cy="12" r="4" fill="#B5451B" opacity="0.4"/></pattern><rect width="300" height="200" fill="url(#p3)" opacity="0.5"/></svg>
+      <div class="ph-lbl">Rajkot Stepwell</div><div class="ph-sub">Gujarat · 2024</div></div>
+      <div class="photo-ov"><div class="ov-tag">India · Pattern</div><div class="ov-city">Rajkot, Gujarat</div></div>
+    </div>
+    <div class="photo-item" data-cat="asia street"><div class="ph med" style="background:#2C3E7A;">
+      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#2C3E7A"/><pattern id="p4" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="none" stroke="#1A2550" stroke-width="0.5"/><path d="M18 4 L32 32 L4 32 Z" fill="none" stroke="#C47A2B" stroke-width="0.6"/></pattern><rect width="300" height="260" fill="url(#p4)" opacity="0.3"/></svg>
+      <div class="ph-lbl">Hanoi Old Quarter</div><div class="ph-sub">Vietnam · 2023</div></div>
+      <div class="photo-ov"><div class="ov-tag">Asia · Street</div><div class="ov-city">Hanoi, Vietnam</div></div>
+    </div>
+    <div class="photo-item" data-cat="india architecture pattern"><div class="ph tall" style="background:#B5451B;">
+      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#B5451B"/><pattern id="p5" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse"><circle cx="24" cy="24" r="20" fill="none" stroke="#8B3010" stroke-width="1"/><circle cx="24" cy="24" r="10" fill="none" stroke="#8B3010" stroke-width="0.7"/><line x1="4" y1="24" x2="44" y2="24" stroke="#8B3010" stroke-width="0.5"/><line x1="24" y1="4" x2="24" y2="44" stroke="#8B3010" stroke-width="0.5"/><line x1="9" y1="9" x2="39" y2="39" stroke="#8B3010" stroke-width="0.3"/><line x1="39" y1="9" x2="9" y2="39" stroke="#8B3010" stroke-width="0.3"/></pattern><rect width="300" height="380" fill="url(#p5)" opacity="0.35"/></svg>
+      <div class="ph-lbl">Ahmedabad Heritage District</div><div class="ph-sub">Gujarat · 2024</div></div>
+      <div class="photo-ov"><div class="ov-tag">India · Architecture</div><div class="ov-city">Ahmedabad, Gujarat</div></div>
+    </div>
+    <div class="photo-item" data-cat="europe architecture"><div class="ph short" style="background:#8B5E3C;">
+      <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#8B5E3C"/><pattern id="p6" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="none" stroke="#6A4520" stroke-width="0.5"/><rect x="5" y="5" width="10" height="10" fill="#6A4520" opacity="0.2"/></pattern><rect width="300" height="200" fill="url(#p6)" opacity="0.4"/></svg>
+      <div class="ph-lbl">Porto Tilework</div><div class="ph-sub">Portugal · 2022</div></div>
+      <div class="photo-ov"><div class="ov-tag">Europe · Pattern</div><div class="ov-city">Porto, Portugal</div></div>
+    </div>
+    <div class="photo-item" data-cat="india street"><div class="ph med" style="background:#E8A048;">
+      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#E8A048"/><pattern id="p7" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M16 0 L32 16 L16 32 L0 16 Z" fill="none" stroke="#C47A2B" stroke-width="0.8"/><circle cx="16" cy="16" r="5" fill="#C47A2B" opacity="0.3"/></pattern><rect width="300" height="260" fill="url(#p7)" opacity="0.4"/></svg>
+      <div class="ph-lbl">Bhavnagar Old City</div><div class="ph-sub">Gujarat · 2024</div></div>
+      <div class="photo-ov"><div class="ov-tag">India · Street</div><div class="ov-city">Bhavnagar, Gujarat</div></div>
+    </div>
+    <div class="photo-item" data-cat="asia architecture"><div class="ph tall" style="background:#4A6741;">
+      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#4A6741"/><pattern id="p8" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="40" y2="40" stroke="#3A5231" stroke-width="0.5"/><line x1="40" y1="0" x2="0" y2="40" stroke="#3A5231" stroke-width="0.5"/><circle cx="20" cy="20" r="6" fill="none" stroke="#3A5231" stroke-width="0.7"/></pattern><rect width="300" height="380" fill="url(#p8)" opacity="0.35"/></svg>
+      <div class="ph-lbl">Kyoto Back Streets</div><div class="ph-sub">Japan · 2022</div></div>
+      <div class="photo-ov"><div class="ov-tag">Asia · Architecture</div><div class="ov-city">Kyoto, Japan</div></div>
+    </div>
+    <div class="photo-item" data-cat="europe street"><div class="ph med" style="background:#C47A2B;">
+      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#C47A2B"/><pattern id="p9" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse"><rect width="28" height="28" fill="none" stroke="#9A5A1A" stroke-width="0.5"/><path d="M0 14 Q7 7 14 14 Q21 21 28 14" fill="none" stroke="#9A5A1A" stroke-width="0.8"/></pattern><rect width="300" height="260" fill="url(#p9)" opacity="0.3"/></svg>
+      <div class="ph-lbl">Lisbon Miradouro</div><div class="ph-sub">Portugal · 2022</div></div>
+      <div class="photo-ov"><div class="ov-tag">Europe · Street</div><div class="ov-city">Lisbon, Portugal</div></div>
+    </div>
+  </div>
+  <div style="text-align:center;padding:2.5rem;border-top:1px solid var(--rule);background:var(--cream);">
+    <p style="font-style:italic;color:var(--muted);font-size:1rem;">Replace each coloured placeholder with your own photograph using an <code style="background:var(--parchment);padding:0.1rem 0.4rem;font-size:12px;">&lt;img&gt;</code> tag inside the <code style="background:var(--parchment);padding:0.1rem 0.4rem;font-size:12px;">.ph</code> div.</p>
+  </div>
+  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · yourdomain.com</div></footer>
+</div>
+
+<!-- ═══════ TRAVEL ═══════ -->
+
+<div class="page" id="page-travel">
+  <div class="kathi-border"></div>
+  <div class="travel-hd">
+    <div class="travel-hd-in">
+      <div class="eyebrow" style="color:rgba(240,208,128,0.5);">Cities as destinations</div>
+      <h1>Travels<br><span>&</span> Urban Notes</h1>
+      <p>Not a travel blog — a record of cities observed and dissected. Every trip is an opportunity to understand how different societies solve the same problem: how to live together.</p>
+    </div>
+  </div>
+  <div class="tstats">
+    <div class="tstat"><div class="tstat-n">12+</div><div class="tstat-l">Countries</div></div>
+    <div class="tstat"><div class="tstat-n">30+</div><div class="tstat-l">Cities</div></div>
+    <div class="tstat"><div class="tstat-n">4</div><div class="tstat-l">Continents</div></div>
+    <div class="tstat"><div class="tstat-n">∞</div><div class="tstat-l">Hours Walking</div></div>
+  </div>
+  <div class="kathi-border thin"></div>
+  <div class="tgrid">
+    <div class="tcard feat">
+      <div class="tcard-img" style="background:linear-gradient(135deg,var(--dark-mud),var(--deep-indigo));">
+        <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;opacity:0.5"><pattern id="fp" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="20" fill="none" stroke="#E8621A" stroke-width="0.5"/><path d="M5 25 L45 25 M25 5 L25 45" stroke="#C47A2B" stroke-width="0.3"/></pattern><rect width="500" height="320" fill="url(#fp)" opacity="0.4"/></svg>
+        <div style="position:relative;z-index:2;text-align:center;font-size:5rem;">🪬</div>
+      </div>
+      <div class="tcard-body">
+        <div class="tcard-ctry">India · Gujarat</div>
+        <h2 class="tcard-city">The Kathiawad Circuit</h2>
+        <p class="tcard-desc">A slow traverse through the Saurashtra peninsula — Rajkot, Jamnagar, Bhavnagar, Palitana — tracing how a distinct regional urbanism survived centuries of trade, colonial rule, and post-independence planning. The <em>pol</em> neighbourhoods, the <em>khancha</em> lanes, the stepwells: a complete urban vocabulary that modern planning has largely ignored.</p>
+        <div class="tcard-tags"><span class="ttag">Heritage</span><span class="ttag">Walking Tour</span><span class="ttag">Vernacular Architecture</span></div>
+      </div>
+    </div>
+    <div class="tcard"><div class="tcard-img" style="background:linear-gradient(135deg,#2C3E7A,#1A2550);"><svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:0.4"><pattern id="tp2" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="none" stroke="#C47A2B" stroke-width="0.4"/></pattern><rect width="300" height="220" fill="url(#tp2)"/></svg><div style="position:absolute;bottom:1rem;left:1rem;font-size:2.5rem;">🏛️</div></div><div class="tcard-body"><div class="tcard-ctry">Italy · Emilia-Romagna</div><h2 class="tcard-city">Bologna</h2><p class="tcard-desc">40km of covered walkways — the world's longest arcaded streetscape — as an urban design lesson in public-private space and climate adaptation predating the concept by 600 years.</p><div class="tcard-tags"><span class="ttag">Arcades</span><span class="ttag">Historic Centre</span><span class="ttag">Walkability</span></div></div></div>
+    <div class="tcard"><div class="tcard-img" style="background:linear-gradient(135deg,var(--terracotta),var(--mud));"><svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:0.4"><pattern id="tp3" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M12 0 L24 12 L12 24 L0 12 Z" fill="none" stroke="#F0D080" stroke-width="0.4"/></pattern><rect width="300" height="220" fill="url(#tp3)"/></svg><div style="position:absolute;bottom:1rem;left:1rem;font-size:2.5rem;">🌊</div></div><div class="tcard-body"><div class="tcard-ctry">Portugal · Atlantic Coast</div><h2 class="tcard-city">Lisbon & Porto</h2><p class="tcard-desc">Two cities navigating the same tension: spectacular heritage versus tourism pressure, gentrification, and housing unaffordability. The azulejo tiles are gorgeous; the displacement is real.</p><div class="tcard-tags"><span class="ttag">Heritage</span><span class="ttag">Gentrification</span><span class="ttag">Coastal City</span></div></div></div>
+    <div class="tcard"><div class="tcard-img" style="background:linear-gradient(135deg,var(--leaf),#2A4020);"><svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:0.4"><pattern id="tp4" x="0" y="0" width="20" height="34.6" patternUnits="userSpaceOnUse"><polygon points="10,0 20,17.3 10,34.6 0,17.3" fill="none" stroke="#F0D080" stroke-width="0.4"/></pattern><rect width="300" height="220" fill="url(#tp4)"/></svg><div style="position:absolute;bottom:1rem;left:1rem;font-size:2.5rem;">⛩️</div></div><div class="tcard-body"><div class="tcard-ctry">Japan · Kansai</div><h2 class="tcard-city">Kyoto & Osaka</h2><p class="tcard-desc">Japan's approach to urban heritage preservation — rigorous, obsessive — set against Osaka's gleeful maximalism. Two cities, 40 minutes apart, with almost nothing in common.</p><div class="tcard-tags"><span class="ttag">Heritage Policy</span><span class="ttag">Urban Contrast</span><span class="ttag">Transit</span></div></div></div>
+    <div class="tcard"><div class="tcard-img" style="background:linear-gradient(135deg,#5A3A6A,#2C3E7A);"><svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:0.4"><pattern id="tp5" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="16" cy="16" r="12" fill="none" stroke="#E8621A" stroke-width="0.4"/></pattern><rect width="300" height="220" fill="url(#tp5)"/></svg><div style="position:absolute;bottom:1rem;left:1rem;font-size:2.5rem;">🌙</div></div><div class="tcard-body"><div class="tcard-ctry">Morocco · Atlantic</div><h2 class="tcard-city">Marrakech & Fès</h2><p class="tcard-desc">The Arab-Berber medina as urban laboratory: a city designed entirely for pedestrians, organised by craft guild — a system modern planners still struggle to understand or replicate.</p><div class="tcard-tags"><span class="ttag">Medina</span><span class="ttag">Pedestrian City</span><span class="ttag">Islamic Urbanism</span></div></div></div>
+    <div class="tcard"><div class="tcard-img" style="background:linear-gradient(135deg,var(--copper),var(--terracotta));"><svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:0.4"><pattern id="tp6" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><rect x="5" y="5" width="30" height="30" fill="none" stroke="#2A1A0E" stroke-width="0.5"/></pattern><rect width="300" height="220" fill="url(#tp6)"/></svg><div style="position:absolute;bottom:1rem;left:1rem;font-size:2.5rem;">🏗️</div></div><div class="tcard-body"><div class="tcard-ctry">India · Maharashtra</div><h2 class="tcard-city">Mumbai</h2><p class="tcard-desc">The most extreme urban density outside Hong Kong. Dharavi as misunderstood city-within-a-city; the Gothic Revival station as monument to colonial ambition; the mill district transformation.</p><div class="tcard-tags"><span class="ttag">Density</span><span class="ttag">Informal Urbanism</span><span class="ttag">Colonial Heritage</span></div></div></div>
+  </div>
+  <div class="newslet" style="margin-top:0;"><h2>New destinations, regularly</h2><p>Each city I visit becomes an essay. Subscribe so you don't miss one.</p><div class="sform"><input type="email" placeholder="your@email.com"/><button>Subscribe</button></div></div>
+  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · yourdomain.com</div></footer>
+</div>
+
+<!-- ═══════ WORLD MAP ═══════ -->
+
+<div class="page" id="page-map">
+  <div class="kathi-border"></div>
+  <div class="map-hd">
+    <div class="map-hd-in">
+      <div><div class="eyebrow" style="color:rgba(240,208,128,0.5);">The grand itinerary</div><h1>Cities<br><em>Mapped</em></h1></div>
+      <p class="map-hd-sub">Every dot is a city walked, studied, photographed. Every city changed how I see every other city.</p>
+    </div>
+  </div>
+
+  <div class="map-wrap" id="map-wrap">
+    <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+      <defs><linearGradient id="oceanGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1A2550"/><stop offset="100%" stop-color="#0E1830"/></linearGradient></defs>
+      <rect width="1000" height="500" fill="url(#oceanGrad)"/>
+      <!-- Grid -->
+      <line x1="0" y1="250" x2="1000" y2="250" stroke="rgba(200,168,122,0.1)" stroke-width="0.5"/>
+      <line x1="500" y1="0" x2="500" y2="500" stroke="rgba(200,168,122,0.1)" stroke-width="0.5"/>
+      <line x1="0" y1="178" x2="1000" y2="178" stroke="rgba(200,168,122,0.08)" stroke-width="0.5" stroke-dasharray="5,5"/>
+      <line x1="0" y1="322" x2="1000" y2="322" stroke="rgba(200,168,122,0.08)" stroke-width="0.5" stroke-dasharray="5,5"/>
+      <text x="6" y="175" font-size="6" fill="rgba(200,168,122,0.3)" font-family="monospace">Tropic of Cancer</text>
+      <text x="6" y="319" font-size="6" fill="rgba(200,168,122,0.3)" font-family="monospace">Tropic of Capricorn</text>
+      <!-- North America -->
+      <path d="M80,60 L200,50 L230,80 L220,130 L200,180 L180,220 L160,230 L140,210 L120,190 L100,160 L85,120 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.8" opacity="0.9"/>
+      <path d="M160,230 L180,240 L175,260 L160,265 L150,255 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.6" opacity="0.85"/>
+      <!-- South America -->
+      <path d="M175,270 L210,260 L240,280 L255,320 L250,380 L220,420 L195,410 L180,370 L170,320 L165,290 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.8" opacity="0.9"/>
+      <!-- Europe -->
+      <path d="M440,60 L490,55 L510,70 L520,90 L510,110 L480,120 L460,115 L445,100 L438,80 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.8" opacity="0.9"/>
+      <path d="M455,40 L480,35 L490,55 L470,60 L455,55 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.6" opacity="0.85"/>
+      <path d="M428,66 L440,62 L444,76 L434,80 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.6" opacity="0.85"/>
+      <!-- Africa -->
+      <path d="M455,140 L500,130 L530,140 L545,175 L540,230 L520,280 L495,310 L475,305 L460,270 L450,220 L448,175 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.8" opacity="0.9"/>
+      <!-- Middle East -->
+      <path d="M530,110 L570,105 L590,120 L585,145 L555,150 L535,140 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.7" opacity="0.85"/>
+      <!-- Russia -->
+      <path d="M490,40 L650,30 L720,50 L700,80 L640,90 L580,85 L530,75 L505,65 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.7" opacity="0.85"/>
+      <!-- India (highlighted) -->
+      <path d="M590,130 L630,125 L650,140 L655,175 L645,205 L625,215 L610,200 L598,170 L592,148 Z" fill="#4A2A10" stroke="#E8621A" stroke-width="1.5" opacity="0.95"/>
+      <!-- SE Asia -->
+      <path d="M680,140 L720,135 L730,155 L720,175 L700,180 L685,165 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.7" opacity="0.85"/>
+      <!-- China -->
+      <path d="M660,80 L730,70 L760,85 L770,110 L755,135 L720,135 L690,120 L665,105 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.7" opacity="0.85"/>
+      <!-- Japan -->
+      <path d="M780,82 L796,78 L800,93 L790,103 L778,96 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.6" opacity="0.85"/>
+      <!-- Australia -->
+      <path d="M760,300 L830,285 L860,305 L855,355 L820,375 L780,365 L762,340 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.8" opacity="0.85"/>
+
+```
+  <!-- CITY MARKERS with pulse animations -->
+  <!-- Rajkot -->
+  <circle cx="601" cy="158" r="5.5" fill="#E8621A" stroke="#F0D080" stroke-width="2" opacity="0.95"/>
+  <circle cx="601" cy="158" r="5.5" fill="none" stroke="#E8621A" stroke-width="1" opacity="0.6"><animate attributeName="r" values="5.5;14;5.5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/></circle>
+  <text x="604" y="154" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.9">Rajkot</text>
+
+  <!-- Jamnagar -->
+  <circle cx="595" cy="163" r="5" fill="#E8621A" stroke="#F0D080" stroke-width="1.5" opacity="0.9"/>
+  <text x="598" y="174" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.85">Jamnagar</text>
+
+  <!-- Ahmedabad -->
+  <circle cx="614" cy="168" r="6" fill="#E8621A" stroke="#F0D080" stroke-width="2" opacity="0.95"/>
+  <circle cx="614" cy="168" r="6" fill="none" stroke="#E8621A" stroke-width="1.2" opacity="0.5"><animate attributeName="r" values="6;16;6" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite"/></circle>
+  <text x="620" y="166" font-size="7.5" fill="#F0D080" font-family="Georgia" font-weight="bold" opacity="0.95">Ahmedabad</text>
+
+  <!-- Mumbai -->
+  <circle cx="612" cy="188" r="6" fill="#E8621A" stroke="#F0D080" stroke-width="2" opacity="0.95"/>
+  <circle cx="612" cy="188" r="6" fill="none" stroke="#E8621A" stroke-width="1" opacity="0.5"><animate attributeName="r" values="6;15;6" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite"/></circle>
+  <text x="618" y="186" font-size="7.5" fill="#F0D080" font-family="Georgia" font-weight="bold" opacity="0.95">Mumbai</text>
+
+  <!-- Delhi -->
+  <circle cx="624" cy="150" r="5" fill="#E8621A" stroke="#F0D080" stroke-width="1.5" opacity="0.9"/>
+  <text x="628" y="148" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.85">Delhi</text>
+
+  <!-- Bologna -->
+  <circle cx="473" cy="93" r="5.5" fill="#C47A2B" stroke="#F0D080" stroke-width="1.5" opacity="0.95"/>
+  <circle cx="473" cy="93" r="5.5" fill="none" stroke="#C47A2B" stroke-width="1" opacity="0.5"><animate attributeName="r" values="5.5;13;5.5" dur="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.2s" repeatCount="indefinite"/></circle>
+  <text x="478" y="91" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.9">Bologna</text>
+
+  <!-- Lisbon -->
+  <circle cx="433" cy="100" r="5" fill="#C47A2B" stroke="#F0D080" stroke-width="1.5" opacity="0.9"/>
+  <text x="420" y="112" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.85">Lisbon</text>
+
+  <!-- Porto -->
+  <circle cx="431" cy="94" r="4.5" fill="#C47A2B" stroke="#F0D080" stroke-width="1.5" opacity="0.85"/>
+  <text x="418" y="92" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.8">Porto</text>
+
+  <!-- London -->
+  <circle cx="446" cy="74" r="5" fill="#C47A2B" stroke="#F0D080" stroke-width="1.5" opacity="0.9"/>
+  <text x="450" y="72" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.85">London</text>
+
+  <!-- Amsterdam -->
+  <circle cx="461" cy="70" r="4.5" fill="#C47A2B" stroke="#F0D080" stroke-width="1.5" opacity="0.85"/>
+  <text x="465" y="68" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.8">Amsterdam</text>
+
+  <!-- Kyoto -->
+  <circle cx="784" cy="115" r="5.5" fill="#4A6741" stroke="#F0D080" stroke-width="1.5" opacity="0.95"/>
+  <circle cx="784" cy="115" r="5.5" fill="none" stroke="#4A6741" stroke-width="1" opacity="0.5"><animate attributeName="r" values="5.5;13;5.5" dur="1.9s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="1.9s" repeatCount="indefinite"/></circle>
+  <text x="788" y="113" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.9">Kyoto</text>
+
+  <!-- Osaka -->
+  <circle cx="787" cy="120" r="4.5" fill="#4A6741" stroke="#F0D080" stroke-width="1.5" opacity="0.85"/>
+  <text x="790" y="130" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.8">Osaka</text>
+
+  <!-- Hanoi -->
+  <circle cx="711" cy="164" r="5" fill="#4A6741" stroke="#F0D080" stroke-width="1.5" opacity="0.9"/>
+  <text x="715" y="162" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.85">Hanoi</text>
+
+  <!-- Marrakech -->
+  <circle cx="447" cy="150" r="5.5" fill="#B5451B" stroke="#F0D080" stroke-width="1.5" opacity="0.95"/>
+  <circle cx="447" cy="150" r="5.5" fill="none" stroke="#B5451B" stroke-width="1" opacity="0.5"><animate attributeName="r" values="5.5;14;5.5" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite"/></circle>
+  <text x="452" y="148" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.9">Marrakech</text>
+
+  <!-- Fes -->
+  <circle cx="451" cy="144" r="4.5" fill="#B5451B" stroke="#F0D080" stroke-width="1.5" opacity="0.85"/>
+  <text x="455" y="142" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.8">Fès</text>
+</svg>
+
+<div id="mtt" style="position:absolute;display:none;background:var(--dark-mud);border:1.5px solid var(--saffron);padding:0.7rem 1rem;pointer-events:none;z-index:50;min-width:160px;">
+  <div id="mtt-city" style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--pale-gold);margin-bottom:0.3rem;"></div>
+  <div id="mtt-country" style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--saffron);margin-bottom:0.5rem;"></div>
+  <div style="height:4px;background:rgba(200,168,122,0.2);border-radius:2px;overflow:hidden;">
+    <div id="mtt-bar" style="height:100%;background:linear-gradient(90deg,var(--saffron),var(--turmeric));border-radius:2px;width:0%;transition:width 0.3s;"></div>
+  </div>
+  <div id="mtt-score" style="font-size:10px;color:var(--muted);margin-top:0.3rem;letter-spacing:0.1em;"></div>
+</div>
+```
+
+  </div>
+
+  <div class="map-legend">
+    <span style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,236,215,0.35);margin-right:0.5rem;">Legend ·</span>
+    <div class="leg-item"><div class="leg-dot" style="background:#E8621A;"></div><span class="leg-lbl">India</span></div>
+    <div class="leg-item"><div class="leg-dot" style="background:#C47A2B;"></div><span class="leg-lbl">Europe</span></div>
+    <div class="leg-item"><div class="leg-dot" style="background:#4A6741;"></div><span class="leg-lbl">East / SE Asia</span></div>
+    <div class="leg-item"><div class="leg-dot" style="background:#B5451B;"></div><span class="leg-lbl">Africa / Middle East</span></div>
+    <span style="font-size:10px;color:rgba(245,236,215,0.25);margin-left:auto;">Hover dots for details</span>
+  </div>
+
+  <div class="cities-data">
+    <h2>Cities — Urban Observations Index</h2>
+    <table>
+      <thead><tr><th>City</th><th>Country</th><th>Region</th><th>Urban Focus</th><th>Score</th><th>Key Insight</th></tr></thead>
+      <tbody>
+        <tr><td><span class="cf">🪬</span><span class="cn">Rajkot</span></td><td>India</td><td><span class="rbadge ri">India</span></td><td><div class="fbar"><div class="ffill" style="width:95%"></div></div></td><td style="font-weight:700;color:var(--saffron);">95%</td><td style="font-size:13px;color:var(--muted);">Home city — Kathiawadi urban grain</td></tr>
+        <tr><td><span class="cf">🏛️</span><span class="cn">Ahmedabad</span></td><td>India</td><td><span class="rbadge ri">India</span></td><td><div class="fbar"><div class="ffill" style="width:90%"></div></div></td><td style="font-weight:700;color:var(--saffron);">90%</td><td style="font-size:13px;color:var(--muted);">UNESCO Heritage, pol network, BRTS</td></tr>
+        <tr><td><span class="cf">🌊</span><span class="cn">Jamnagar</span></td><td>India</td><td><span class="rbadge ri">India</span></td><td><div class="fbar"><div class="ffill" style="width:88%"></div></div></td><td style="font-weight:700;color:var(--saffron);">88%</td><td style="font-size:13px;color:var(--muted);">Circular plan, Lakhota Lake integration</td></tr>
+        <tr><td><span class="cf">🏗️</span><span class="cn">Mumbai</span></td><td>India</td><td><span class="rbadge ri">India</span></td><td><div class="fbar"><div class="ffill" style="width:80%"></div></div></td><td style="font-weight:700;color:var(--saffron);">80%</td><td style="font-size:13px;color:var(--muted);">Dharavi, density, Victorian Gothic</td></tr>
+        <tr><td><span class="cf">🍕</span><span class="cn">Bologna</span></td><td>Italy</td><td><span class="rbadge re">Europe</span></td><td><div class="fbar"><div class="ffill" style="width:70%"></div></div></td><td style="font-weight:700;color:var(--copper);">70%</td><td style="font-size:13px;color:var(--muted);">40km portici, walkability benchmark</td></tr>
+        <tr><td><span class="cf">🌸</span><span class="cn">Kyoto</span></td><td>Japan</td><td><span class="rbadge rs">SE Asia</span></td><td><div class="fbar"><div class="ffill" style="width:70%"></div></div></td><td style="font-weight:700;color:var(--leaf);">70%</td><td style="font-size:13px;color:var(--muted);">Heritage preservation, machiya townhouses</td></tr>
+        <tr><td><span class="cf">🌉</span><span class="cn">Lisbon</span></td><td>Portugal</td><td><span class="rbadge re">Europe</span></td><td><div class="fbar"><div class="ffill" style="width:65%"></div></div></td><td style="font-weight:700;color:var(--copper);">65%</td><td style="font-size:13px;color:var(--muted);">Azulejo, hillside urbanism, gentrification</td></tr>
+        <tr><td><span class="cf">🌙</span><span class="cn">Marrakech</span></td><td>Morocco</td><td><span class="rbadge rm">Africa/ME</span></td><td><div class="fbar"><div class="ffill" style="width:65%"></div></div></td><td style="font-weight:700;color:var(--terracotta);">65%</td><td style="font-size:13px;color:var(--muted);">Medina logic, pedestrian city, waqf</td></tr>
+        <tr><td><span class="cf">🫖</span><span class="cn">London</span></td><td>UK</td><td><span class="rbadge re">Europe</span></td><td><div class="fbar"><div class="ffill" style="width:60%"></div></div></td><td style="font-weight:700;color:var(--copper);">60%</td><td style="font-size:13px;color:var(--muted);">Mixed housing, TOD, borough diversity</td></tr>
+        <tr><td><span class="cf">🛵</span><span class="cn">Hanoi</span></td><td>Vietnam</td><td><span class="rbadge rs">SE Asia</span></td><td><div class="fbar"><div class="ffill" style="width:55%"></div></div></td><td style="font-weight:700;color:var(--leaf);">55%</td><td style="font-size:13px;color:var(--muted);">36 Streets, colonial overlay, moped city</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · yourdomain.com</div></footer>
+</div>
+
+<script>
+// PAGE ROUTING
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  document.getElementById('nav-'+name).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// POST FILTER
+function filterPosts(btn,cat){
+  document.querySelectorAll('.topics-band .pill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  let n=0;
+  document.querySelectorAll('#posts .card').forEach(c=>{
+    const cc=c.dataset.cat||'';
+    if(cat==='all'||cc.includes(cat)){c.style.display='';n++;}
+    else c.style.display='none';
+  });
+  document.getElementById('pcnt').textContent=n+' article'+(n!==1?'s':'');
+}
+
+// PHOTO FILTER
+function filterPhotos(btn,cat){
+  document.querySelectorAll('.photo-fbar .pill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#photo-grid .photo-item').forEach(i=>{
+    const c=i.dataset.cat||'';
+    i.style.display=(cat==='all'||c.includes(cat))?'':'none';
+  });
+}
+
+// MAP TOOLTIP
+const cityData={
+  'Rajkot':{country:'India',score:95},
+  'Jamnagar':{country:'India',score:88},
+  'Ahmedabad':{country:'India',score:90},
+  'Mumbai':{country:'India',score:80},
+  'Delhi':{country:'India',score:72},
+  'Bologna':{country:'Italy',score:70},
+  'Lisbon':{country:'Portugal',score:65},
+  'Porto':{country:'Portugal',score:60},
+  'London':{country:'UK',score:60},
+  'Amsterdam':{country:'Netherlands',score:58},
+  'Kyoto':{country:'Japan',score:70},
+  'Osaka':{country:'Japan',score:65},
+  'Hanoi':{country:'Vietnam',score:55},
+  'Marrakech':{country:'Morocco',score:65},
+  'Fès':{country:'Morocco',score:60}
+};
+
+const wrap=document.getElementById('map-wrap');
+const tt=document.getElementById('mtt');
+
+// attach hover to SVG text labels and circles
+document.querySelectorAll('#map-wrap svg circle[fill]').forEach((c,i)=>{
+  // find nearest text
+});
+
+// Use text elements as triggers too
+document.querySelectorAll('#map-wrap svg text').forEach(t=>{
+  const city=t.textContent.trim();
+  if(!cityData[city]) return;
+  t.style.cursor='pointer';
+  t.addEventListener('mouseenter',e=>showTT(e,city));
+  t.addEventListener('mousemove',e=>moveTT(e));
+  t.addEventListener('mouseleave',()=>tt.style.display='none');
+});
+
+document.querySelectorAll('#map-wrap svg circle').forEach(c=>{
+  // Match by proximity to text
+  const cx=parseFloat(c.getAttribute('cx'));
+  const cy=parseFloat(c.getAttribute('cy'));
+  // find matching city by nearest text
+  let closest=null,minD=999;
+  document.querySelectorAll('#map-wrap svg text').forEach(t=>{
+    const tx=parseFloat(t.getAttribute('x'));
+    const ty=parseFloat(t.getAttribute('y'));
+    const d=Math.hypot(cx-tx,cy-ty);
+    if(d<minD&&cityData[t.textContent.trim()]){minD=d;closest=t.textContent.trim();}
+  });
+  if(closest&&minD<30){
+    c.style.cursor='pointer';
+    c.addEventListener('mouseenter',e=>showTT(e,closest));
+    c.addEventListener('mousemove',e=>moveTT(e));
+    c.addEventListener('mouseleave',()=>tt.style.display='none');
+  }
+});
+
+function showTT(e,city){
+  const d=cityData[city];
+  if(!d) return;
+  document.getElementById('mtt-city').textContent=city;
+  document.getElementById('mtt-country').textContent=d.country;
+  document.getElementById('mtt-bar').style.width=d.score+'%';
+  document.getElementById('mtt-score').textContent='Urban focus score: '+d.score+'%';
+  tt.style.display='block';
+  moveTT(e);
+}
+function moveTT(e){
+  const wr=wrap.getBoundingClientRect();
+  let x=e.clientX-wr.left+14,y=e.clientY-wr.top-14;
+  if(x+170>wr.width) x-=190;
+  tt.style.left=x+'px';
+  tt.style.top=y+'px';
+}
+</script>
+
+</body>
+</html>
