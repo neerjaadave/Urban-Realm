@@ -219,6 +219,44 @@ tr:hover td{background:rgba(232,98,26,0.04);}
 .rs{background:rgba(74,103,65,0.15);color:var(–leaf);}
 .rm{background:rgba(181,69,27,0.15);color:var(–terracotta);}
 
+/* ══ ARTICLE PAGE ══ */
+.article-hero{background:var(–dark-mud);padding:5rem 2rem 4rem;position:relative;overflow:hidden;border-bottom:3px solid var(–saffron);}
+.article-hero::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0,transparent 24px,rgba(232,98,26,0.04) 24px,rgba(232,98,26,0.04) 25px);}
+.article-hero-in{max-width:780px;margin:0 auto;position:relative;z-index:1;}
+.article-back{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,208,128,0.5);cursor:pointer;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:2rem;background:none;border:none;font-family:‘Crimson Pro’,serif;}
+.article-back:hover{color:var(–saffron);}
+.article-cat{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(–saffron);font-weight:700;margin-bottom:1rem;display:block;}
+.article-title{font-family:‘Playfair Display’,serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:0.95;color:var(–pale-gold);margin-bottom:1.5rem;}
+.article-title em{color:var(–saffron);font-style:italic;}
+.article-meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;border-top:1px solid rgba(200,168,122,0.2);padding-top:1.2rem;}
+.article-author{font-size:13px;color:rgba(245,236,215,0.7);letter-spacing:0.06em;}
+.article-author strong{color:var(–pale-gold);}
+.article-date{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,236,215,0.4);}
+.article-tag{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;padding:0.2rem 0.7rem;border:1px solid rgba(200,168,122,0.3);color:rgba(245,236,215,0.5);}
+
+.article-body{max-width:780px;margin:0 auto;padding:4rem 2rem;}
+.article-body p{font-size:1.1rem;line-height:1.9;color:var(–text);margin-bottom:1.6rem;}
+.article-body p:first-child::first-letter{font-family:‘Playfair Display’,serif;font-size:4rem;font-weight:900;color:var(–saffron);float:left;line-height:0.8;margin:0.1rem 0.15rem 0 0;padding:0.1rem;}
+.article-pullquote{border-left:4px solid var(–saffron);padding:1.2rem 2rem;margin:2.5rem 0;background:var(–cream);}
+.article-pullquote p{font-family:‘Playfair Display’,serif;font-style:italic;font-size:1.3rem;color:var(–dark-mud);margin:0;line-height:1.5;}
+.article-pullquote p::first-letter{font-size:1.3rem;float:none;}
+.article-img{margin:2.5rem -1rem;position:relative;}
+.article-img img{width:100%;height:auto;display:block;}
+.article-img-caption{font-size:12px;color:var(–muted);font-style:italic;padding:0.6rem 1rem;background:var(–cream);border-bottom:2px solid var(–rule);line-height:1.5;}
+.article-img-placeholder{width:100%;background:var(–parchment);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;position:relative;overflow:hidden;}
+.article-img-placeholder.wide{height:420px;}
+.article-img-placeholder.med{height:300px;}
+.article-img-placeholder svg{position:absolute;inset:0;width:100%;height:100%;}
+.article-img-placeholder-lbl{position:relative;z-index:1;font-family:‘Playfair Display’,serif;font-size:1rem;font-weight:700;color:var(–mud);text-align:center;padding:0 2rem;}
+.article-img-placeholder-sub{position:relative;z-index:1;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(–muted);}
+.article-h2{font-family:‘Playfair Display’,serif;font-size:1.8rem;font-weight:700;color:var(–terracotta);margin:3rem 0 1rem;}
+.article-footer{max-width:780px;margin:0 auto;padding:2rem 2rem 4rem;border-top:2px solid var(–rule);}
+.article-footer-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;}
+.article-footer-tag{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 0.8rem;background:var(–parchment);color:var(–mud);border:1px solid var(–rule);}
+.article-share{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(–muted);}
+.article-nav-btn{display:inline-flex;align-items:center;gap:0.5rem;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(–saffron);cursor:pointer;background:none;border:none;font-family:‘Crimson Pro’,serif;margin-top:1.5rem;}
+.article-nav-btn:hover{color:var(–terracotta);}
+
 /* ANIMATIONS */
 @keyframes slideUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
@@ -315,20 +353,20 @@ tr:hover td{background:rgba(232,98,26,0.04);}
   <div class="section-bar"><h3>Latest Essays</h3><span id="pcnt">6 articles</span></div>
 
   <div class="posts-grid" id="posts">
-    <div class="card wide" data-cat="design infrastructure">
+    <div class="card wide" data-cat="heritage design">
       <div><div class="pnum">01</div></div>
       <div style="display:flex;flex-direction:column;">
-        <div class="pcat">Design · Infrastructure</div>
-        <h2 class="ptitle">The Sidewalk as Social Contract: What Pedestrian Space Says About a City's Soul</h2>
-        <p class="pex">The width of a sidewalk is not a neutral measurement. It is a political statement. A city that narrows its footpaths to four feet is telling you exactly who the streets are for.</p>
-        <div class="pfoot"><span class="pdate">Apr 20, 2025</span><a href="#" class="plink">Read</a></div>
+        <div class="pcat">Heritage · Public Space · Gujarat</div>
+        <h2 class="ptitle">Ur-bane: Junagadh and the Loss of the Public Realm</h2>
+        <p class="pex">The Rang Mahal, the King's Road, the Divan Chowk — Junagadh's frozen fractals of civic architecture tell the story of what our cities were, and what modern planning has chosen to forget.</p>
+        <div class="pfoot"><span class="pdate">Nov 30, 2015</span><a href="#" class="plink">Read</a></div>
       </div>
     </div>
-    <div class="card" data-cat="housing">
-      <div class="pnum">02</div><div class="pcat">Housing</div>
-      <h2 class="ptitle">Missing Middle: The Housing Type That Could Fix Our Cities</h2>
-      <p class="pex">Duplexes, triplexes, courtyard apartments — the forgotten vocabulary of urban housing between the single-family home and the tower.</p>
-      <div class="pfoot"><span class="pdate">Apr 14, 2025</span><a href="#" class="plink">Read</a></div>
+    <div class="card" data-cat="design culture">
+      <div class="pnum">02</div><div class="pcat">Public Space · Rajkot</div>
+      <h2 class="ptitle">Urban Edge as a Binding Element: Race Course, Rajkot</h2>
+      <p class="pex">A 100-acre colonial-era racetrack turned city park, and the compound wall designed by Indubhai Parekh that made it one of the most democratic public spaces in Kathiawad.</p>
+      <div class="pfoot"><span class="pdate">Jan 17, 2020</span><a href="#" class="plink">Read</a></div>
     </div>
     <div class="card" data-cat="infrastructure">
       <div class="pnum">03</div><div class="pcat">Infrastructure</div>
@@ -703,7 +741,209 @@ tr:hover td{background:rgba(232,98,26,0.04);}
   <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · yourdomain.com</div></footer>
 </div>
 
+<!-- ═══════ ARTICLE: UR-BANE ═══════ -->
+
+<div class="page" id="page-article-urbane">
+  <div class="kathi-border"></div>
+  <div class="article-hero">
+    <div class="article-hero-in">
+      <button class="article-back" onclick="showPage('home')">← Back to Essays</button>
+      <span class="article-cat">Heritage · Public Space · Gujarat</span>
+      <h1 class="article-title">Ur-<em>bane</em></h1>
+      <div class="article-meta">
+        <span class="article-author">By <strong>Neerja Dave</strong></span>
+        <span class="article-date">November 30, 2015</span>
+        <span class="article-tag">Junagadh</span>
+        <span class="article-tag">Civic Architecture</span>
+        <span class="article-tag">Public Realm</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="kathi-border thin"></div>
+
+  <div class="article-body">
+
+```
+<p>History is the only means by which one can travel to the past. Built heritage holds enormous value in terms of encompassing facets of an entire era within itself. Older parts of our cities are frozen fractals. Each city from the pre-World War era emerged as one that was dominated by its public architecture.</p>
+
+<p>The city of Junagadh pre-dates written historical records as an ancient Greek regnum. Following which a streak of Hindu kings laid their regime over it till the 18th century, when the Muslim Nawabs ruled for a couple of decades and — under the influence of the British Raj — up to 1947. Magnificent edifices of architecture were constructed during this phase including the Aina Mahal, Rang Mahal, Circle Chowk, and the Lord Ray Gate, being just a few to name.</p>
+
+<!-- Rang Mahal image -->
+<div class="article-img">
+  <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2015/11/a-part-of-the-rang-mahal-e1520851901135.jpg" alt="Rang Mahal, Junagadh" onerror="this.parentElement.innerHTML='<div class=\'article-img-placeholder med\'><svg viewBox=\'0 0 800 300\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'800\' height=\'300\' fill=\'#C4875A\'/><pattern id=\'ap1\' x=\'0\' y=\'0\' width=\'40\' height=\'40\' patternUnits=\'userSpaceOnUse\'><rect width=\'40\' height=\'40\' fill=\'none\' stroke=\'#8B5E3C\' stroke-width=\'0.5\'/><circle cx=\'20\' cy=\'20\' r=\'8\' fill=\'none\' stroke=\'#8B5E3C\' stroke-width=\'1\'/></pattern><rect width=\'800\' height=\'300\' fill=\'url(#ap1)\' opacity=\'0.3\'/></svg><div class=\'article-img-placeholder-lbl\'>Rang Mahal, Junagadh</div></div>'"/>
+  <div class="article-img-caption">The Rang Mahal towers above the rest of the city — one of the final surviving excerpts of public architecture from the Nawabi era.</div>
+</div>
+
+<div class="article-pullquote">
+  <p>The Public Realm is out-rightly seconded in priority to the profit-oriented real estate market. Classical notions of city planning have long been replaced by modern and now post-modern ideas of designing our cities.</p>
+</div>
+
+<p>These are but the final few excerpts of public architecture that can be found in the city. The city boasts of a very strong architectural backdrop. Speaking of which, the only visual that can be imagined is that of colonial and pre-colonial buildings surrounding a public space or garden. Whereas on the other hand, all modern developments build an image that depicts faceless buildings and unusable public spaces, if any at all.</p>
+
+<p>This is a fundamental issue with our modern planning techniques and strategies. The Public Realm is outright seconded in priority to the profit-oriented real estate market. Classical notions of city planning have long been replaced by modern and now post-modern ideas of designing our cities. During the transition, the focus on providing spaces for the burgeoning class has shifted drastically — which, if it continues, shall render our cities faceless and without an identity of their own.</p>
+
+<!-- Divan Chowk image -->
+<div class="article-img">
+  <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2015/11/dsc_0096.jpg" alt="Divan Chowk, Junagadh" onerror="this.parentElement.innerHTML='<div class=\'article-img-placeholder wide\'><svg viewBox=\'0 0 800 420\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'800\' height=\'420\' fill=\'#B5451B\'/><pattern id=\'ap2\' x=\'0\' y=\'0\' width=\'48\' height=\'48\' patternUnits=\'userSpaceOnUse\'><circle cx=\'24\' cy=\'24\' r=\'20\' fill=\'none\' stroke=\'#8B3010\' stroke-width=\'0.8\'/></pattern><rect width=\'800\' height=\'420\' fill=\'url(#ap2)\' opacity=\'0.3\'/></svg><div class=\'article-img-placeholder-lbl\'>Divan Chowk, Junagadh</div></div>'"/>
+  <div class="article-img-caption">Divan Chowk, Junagadh. Today the Chowk is flanked by dirty pavements, haphazardly parked automobiles and randomly located chai-walas. It is but a scene of absolute chaos — and nobody could say this chowk was once, in history, located adjacent to a very grand palace.</div>
+</div>
+
+<h2 class="article-h2">The Organic Fort City</h2>
+
+<p>Discussing the case of Junagadh furthermore: the fort city has developed organically, with each urban fragment responding to its topography, climate, and community settlement patterns — which can be spelled as the major determinant factors during the course of development up to as recently as the early 18th century. All public structures were placed on topographic high-points and laid a strong axis that cut through the city.</p>
+
+<p>The newer developments, by contrast, are fragmented, failing to either hold on to or add to the existing city structure that had been laid out by preceding town planning — wherein all major city crossroads consisted of a hierarchy of scaled urban public spaces, or <em>chowks</em>.</p>
+
+<!-- King's Road image -->
+<div class="article-img">
+  <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2015/11/kings-road-e1520853641389.png" alt="The King's Road, Junagadh" onerror="this.parentElement.innerHTML='<div class=\'article-img-placeholder wide\'><svg viewBox=\'0 0 800 420\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'800\' height=\'420\' fill=\'#2C3E7A\'/><pattern id=\'ap3\' x=\'0\' y=\'0\' width=\'36\' height=\'36\' patternUnits=\'userSpaceOnUse\'><path d=\'M18 4 L32 32 L4 32 Z\' fill=\'none\' stroke=\'#C47A2B\' stroke-width=\'0.6\'/></pattern><rect width=\'800\' height=\'420\' fill=\'url(#ap3)\' opacity=\'0.3\'/></svg><div class=\'article-img-placeholder-lbl\'>The King\'s Road, Junagadh</div></div>'"/>
+  <div class="article-img-caption">The King's Road — the ceremonial spine of the city, consisting of all major public structures, community institutes and civic architecture built during the Nawabi era from the late 1700s to the colonial era of the 1940s.</div>
+</div>
+
+<h2 class="article-h2">The King's Road</h2>
+
+<p>The ceremonial spine of the city consists of all major public structures, community institutes, and civic architecture built during the early Nawabi era from the late 1700s to the late colonial era of up to the 1940s. Known as the King's Road, the spine provided immense scope for public participation and interaction of the political elite with the burgeoning class.</p>
+
+<!-- Schema image -->
+<div class="article-img">
+  <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2015/11/schema-of-the-public-entities-that-have-been-place-in-the-city-e1520850667691.jpg" alt="Schema of public entities in Junagadh" onerror="this.parentElement.innerHTML='<div class=\'article-img-placeholder med\'><svg viewBox=\'0 0 800 300\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'800\' height=\'300\' fill=\'#D4920A\'/><pattern id=\'ap4\' x=\'0\' y=\'0\' width=\'24\' height=\'24\' patternUnits=\'userSpaceOnUse\'><rect x=\'4\' y=\'4\' width=\'16\' height=\'16\' fill=\'none\' stroke=\'#B5451B\' stroke-width=\'0.8\'/></pattern><rect width=\'800\' height=\'300\' fill=\'url(#ap4)\' opacity=\'0.4\'/></svg><div class=\'article-img-placeholder-lbl\'>Schematic section — citadel to newer city</div></div>'"/>
+  <div class="article-img-caption">Schematic section from the citadel to the newer part of the city, depicting the scale and placement of civic buildings in the city fabric.</div>
+</div>
+
+<h2 class="article-h2">What Could Have Been</h2>
+
+<p>However, today one can only imagine what the city of Junagadh could have been, had these places of historical and public importance been maintained and restored to their previous glorious selves.</p>
+
+<p>As infrastructure and the real estate market have taken over as the key determinants of our urban-scapes in the present times, it is but difficult to come across an intent to build public architecture. In spite of this, efforts must be laid to formulate an evolved typology of civic architecture that satisfies the real estate market while simultaneously sufficing the need of a city to gain an identity of its own through its public architecture.</p>
+
+<div class="article-pullquote">
+  <p>Policies must be formulated by governing authorities to enrich urban pockets with a well-placed network of civic spaces and buildings — before the last frozen fractals of our heritage cities thaw away entirely.</p>
+</div>
+
+<p>Policies must be formulated by governing authorities to enrich urban pockets with a well-placed network of civic spaces and buildings.</p>
+```
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-footer-tags">
+      <span class="article-footer-tag">Junagadh</span>
+      <span class="article-footer-tag">Heritage</span>
+      <span class="article-footer-tag">Public Space</span>
+      <span class="article-footer-tag">Gujarat</span>
+      <span class="article-footer-tag">Civic Architecture</span>
+      <span class="article-footer-tag">Urban History</span>
+    </div>
+    <div class="article-share">Originally published November 30, 2015 on The Walk of Life Blog</div>
+    <button class="article-nav-btn" onclick="showPage('home')">← Back to all essays</button>
+  </div>
+
+  <div class="kathi-border thin"></div>
+  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · neerjadave.com</div></footer>
+</div>
+
+<!-- ═══════ ARTICLE: RACE COURSE RAJKOT ═══════ -->
+
+<div class="page" id="page-article-racecourse">
+  <div class="kathi-border"></div>
+  <div class="article-hero">
+    <div class="article-hero-in">
+      <button class="article-back" onclick="showPage('home')">← Back to Essays</button>
+      <span class="article-cat">Public Space · Rajkot · Urban Edge</span>
+      <h1 class="article-title">Urban Edge as a<br><em>Binding Element</em></h1>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(245,236,215,0.6);font-size:1.1rem;margin-top:1rem;margin-bottom:1.5rem;">A Case Study Analysis of Race Course, Rajkot</p>
+      <div class="article-meta">
+        <span class="article-author">By <strong>Neerja Dave</strong></span>
+        <span class="article-date">January 17, 2020</span>
+        <span class="article-tag">Rajkot</span>
+        <span class="article-tag">Public Space</span>
+        <span class="article-tag">Urban Edge</span>
+        <span class="article-tag">Kathiawad</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="kathi-border thin"></div>
+
+  <div class="article-body">
+
+```
+<p>Rajkot city is located in the central part of the Saurashtra Peninsula in the western part of India. And at its heart — binding the medieval town with its post-industrial growth — sits Race Course: a 100-acre public park that has become one of the most quietly successful urban spaces in the country.</p>
+
+<h2 class="article-h2">Importance in Urban Setting</h2>
+
+<p>Race Course binds the entire city together due to its placement at the junction of the medieval part of the town and the post-industrial developments. It sits in very close proximity to all three transport stations of the city — the airport, the railway station, and the City Bus Stand — a location that puts this public space in a uniquely democratic position.</p>
+
+<p>In terms of road networks, Race Course finds itself placed strategically at the crossings of all five major highways of the city, making it inevitable to pass by this public landmark on a daily travel route. This makes Race Course a very distinguished landmark in the memory of the city — not just a destination, but an unavoidable presence.</p>
+
+<div class="article-pullquote">
+  <p>In its beginning phase, Race Course was set up by the British Raj as a horse racing facility. Post Indian Independence, the 100-acre area was converted into a city park — a transformation that tells you everything about what a city chooses to do with inherited colonial space.</p>
+</div>
+
+<p>The park now houses sports amenities, gardens, a children's park, an art gallery, an amusement park, a planetarium, a library, and <em>maidaans</em> — free open spaces — to hold festive gatherings, commercial expo events, and an informal children's recreation zone.</p>
+
+<h2 class="article-h2">Composition of Urban Space</h2>
+
+<p>Race Course — Ring Road, as it is popularly referred to in the city — is a mix-bag of land uses. A vital part of the Indian economy is its informal sector, and Race Course, with its 100-acre potential, provides all necessary urban equipment and enables hawkers and street vendors to sell their services and goods in a very dignified manner.</p>
+
+<p>Trees are a major element. One of the intangible reasons why people are drawn towards this place is the microclimate. Rajkot, being situated in a semi-arid, hot-dry climate where temperatures rise to 40–43 degrees Celsius, benefits enormously from the significant tree cover across the entire patch of Race Course. It is measurably cooler during the daytime, and evenings are very pleasant. The trees provide shade — a fundamental urban amenity that is scandalously undervalued in contemporary Indian planning.</p>
+
+<p>The sports offer international standards of amenities at affordable prices: an international-level cricket stadium, football ground, tennis ground, hockey ground, indoor sports stadium, athletics ground, and an Olympic-size swimming pool. It is, by any measure, an extraordinary provision of public infrastructure for a mid-sized Indian city.</p>
+
+<h2 class="article-h2">The Compound Wall — A Design Lesson</h2>
+
+<div class="article-img">
+  <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2018/10/rcrjt.jpg" alt="Race Course, Rajkot" onerror="this.parentElement.innerHTML='<div class=\'article-img-placeholder wide\'><svg viewBox=\'0 0 800 420\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'800\' height=\'420\' fill=\'#4A6741\'/><pattern id=\'rp1\' x=\'0\' y=\'0\' width=\'40\' height=\'40\' patternUnits=\'userSpaceOnUse\'><line x1=\'0\' y1=\'0\' x2=\'40\' y2=\'40\' stroke=\'#3A5231\' stroke-width=\'0.5\'/><line x1=\'40\' y1=\'0\' x2=\'0\' y2=\'40\' stroke=\'#3A5231\' stroke-width=\'0.5\'/><circle cx=\'20\' cy=\'20\' r=\'6\' fill=\'none\' stroke=\'#3A5231\' stroke-width=\'0.7\'/></pattern><rect width=\'800\' height=\'420\' fill=\'url(#rp1)\' opacity=\'0.3\'/></svg><div class=\'article-img-placeholder-lbl\'>Race Course, Rajkot</div><div class=\'article-img-placeholder-sub\'>The compound wall and perimeter</div></div>'"/>
+  <div class="article-img-caption">Race Course, Rajkot — the 100-acre city park whose compound wall has become one of the most democratic urban edges in the Saurashtra region.</div>
+</div>
+
+<p>Race Course has been composed as a congregation of related and supporting land-use parcels along its 4 kilometres of perimeter. One string of adjacent land parcels is dedicated to colonial garden-front civic buildings and housing for the mayor and other local political figures. Another string includes mixed-use setups where the ground floors of majority of residential buildings are leased out to cafes, eateries, and restaurants — which turn out to be hotspots for health-conscious morning walkers, for youngsters in the evenings, and for families late into the night.</p>
+
+<p>The compound wall design was conceived specifically for users to sit in comfortable, clean, shade-providing space. Trees were planted along the perimeter of the 100 acres. This critical design decision brought the entire city — across all age groups, social divisions, and economic classes — to one solid ground of usability and recreation.</p>
+
+<div class="article-pullquote">
+  <p>The compound wall acts as a binding element for communities and economic classes alike. It is where almost the entire city crowds up on weekends and festivals — a democratic edge, designed by an architect who understood that affordability and dignity are not in opposition.</p>
+</div>
+
+<h2 class="article-h2">The Architect Behind the Edge</h2>
+
+<p>Originally, there wasn't a defined boundary to the Race Course, but as it was developed from a racing ground into a formal city park, a decision was taken by the city council to formalise its urban edge. Back in the early 1960s, Rajkot was a small but growing town with very little funding for public infrastructure.</p>
+
+<p>The architect commissioned to design the urban edge was <strong>Mr. Indubhai Parekh</strong> — a very revered figure in the architectural history of the Saurashtra peninsula. He had the task of minimising the building cost while providing maximum usability through the edge. He specialised in affordable building practices, and hence the design translated in the compound wall of Race Course was one that held vernacular spatial traits while fitting well within financial constraints.</p>
+
+<p>This is probably one of the reasons why the space has been such a huge success, even 50 years after its inception. Morning walkers throng the space starting from 4am up to 7am, on all days. Hawkers do not miss a chance — if you walk down the Race Course Road in early morning hours, it would not be a surprise to find people selling healthy soups and snacks. At noon, the edge — the compound wall space — is used by commuters to nap or rest in the shade, getting some relief from the scorching sun. Many employees from surrounding administration and civic office buildings use it as a lunching spot. But evenings are when the space truly comes to life, with the entire city and people of all age groups flocking to the city park.</p>
+
+<p>Indubhai Parekh designed something that textbooks rarely teach: a public edge that costs almost nothing to maintain, generates its own informal economy, and serves every demographic simultaneously. That is not luck. That is profound urban design intelligence.</p>
+```
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-footer-tags">
+      <span class="article-footer-tag">Rajkot</span>
+      <span class="article-footer-tag">Race Course</span>
+      <span class="article-footer-tag">Urban Edge</span>
+      <span class="article-footer-tag">Public Space</span>
+      <span class="article-footer-tag">Kathiawad</span>
+      <span class="article-footer-tag">Indubhai Parekh</span>
+      <span class="article-footer-tag">Informal Economy</span>
+    </div>
+    <div class="article-share">Originally published January 17, 2020 on The Walk of Life Blog</div>
+    <button class="article-nav-btn" onclick="showPage('article-urbane')">← Previous: Ur-bane</button>
+  </div>
+
+  <div class="kathi-border thin"></div>
+  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · neerjadave.com</div></footer>
+</div>
+
 <script>
+// ARTICLE LINKS
+document.querySelectorAll('.plink').forEach((l,i)=>{
+  if(i===0) l.onclick=function(e){e.preventDefault();showPage('article-urbane');};
+  if(i===1) l.onclick=function(e){e.preventDefault();showPage('article-racecourse');};
+});
+
 // PAGE ROUTING
 function showPage(name){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
