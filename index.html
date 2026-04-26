@@ -4,287 +4,346 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>URBANISM — Thoughts on Urban Design</title>
+<title>URBAN REALM — Neerja Dave</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Josefin+Sans:wght@100;300;400;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --saffron:#E8621A;
-  --turmeric:#D4920A;
-  --terracotta:#B5451B;
-  --indigo:#2C3E7A;
-  --deep-indigo:#1A2550;
-  --copper:#C47A2B;
-  --cream:#F5ECD7;
-  --warm-white:#FAF4E8;
-  --parchment:#EDE0C4;
-  --mud:#8B5E3C;
-  --dark-mud:#4A2F1A;
-  --leaf:#4A6741;
-  --pale-gold:#F0D080;
-  --text:#2A1A0E;
-  --muted:#7A5C3C;
-  --rule:#C8A87A;
+  --adobe:#C1714A;          /* warm terracotta - main accent */
+  --adobe-lt:#D4906E;       /* lighter adobe for hovers */
+  --brown:#7A4A2A;          /* light brownish adobe - replaces old chile/red */
+  --brown-dk:#5C3318;       /* deeper brown for nav/footers */
+  --gold:#E4A63D;           /* fiery gold */
+  --teal:#2A9D8F;           /* transformative teal */
+  --teal-lt:#3DBFB0;        /* lighter teal */
+  --pink:#B6928B;           /* pink adobe */
+  --pink-bg:#EDD9D4;        /* pink adobe as background - very light */
+  --pink-mid:#D4AEA8;       /* mid pink for cards/borders */
+  --ivory:#FAF6F0;          /* near-white */
+  --parchment:#F4EAD8;      /* warm cream */
+  --sand:#E8D5BC;           /* border/rule - warm light brown */
+  --sand-lt:#F0E4D0;        /* very light sand */
+  --text:#2A1408;           /* dark brown text */
+  --mid:#7A4A2A;            /* mid brown - same as --brown */
+  --muted:#9A7060;          /* muted warm text */
+  --deco:#C8A84A;           /* art deco gold */
+  --dline:rgba(200,168,74,0.25);
 }
 html{scroll-behavior:smooth;}
-body{background:var(--warm-white);color:var(--text);font-family:'Crimson Pro',serif;font-size:17px;line-height:1.7;overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(180,90,30,0.06) 1px,transparent 0);background-size:28px 28px;pointer-events:none;z-index:0;}
-
-/* PAGE SYSTEM */
+body{background:var(--ivory);color:var(--text);font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.75;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(193,113,74,0.06)' stroke-width='0.5'%3E%3Crect x='5' y='5' width='70' height='70'/%3E%3Crect x='20' y='20' width='40' height='40'/%3E%3Crect x='33' y='33' width='14' height='14'/%3E%3Cline x1='5' y1='5' x2='75' y2='75'/%3E%3Cline x1='75' y1='5' x2='5' y2='75'/%3E%3C/g%3E%3C/svg%3E");background-size:80px 80px;pointer-events:none;z-index:0;}
 .page{display:none;min-height:100vh;position:relative;z-index:1;}
 .page.active{display:block;}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:200;background:var(–dark-mud);border-bottom:3px solid var(–saffron);display:flex;align-items:stretch;justify-content:space-between;padding:0 2rem;}
-.nav-brand{font-family:‘Playfair Display’,serif;font-size:1.5rem;font-weight:900;color:var(–pale-gold);text-decoration:none;padding:0.9rem 0;display:flex;align-items:center;gap:0.6rem;letter-spacing:0.06em;cursor:pointer;}
-.nav-brand .bindi{width:10px;height:10px;background:var(–saffron);border-radius:50%;box-shadow:0 0 8px var(–saffron);}
-.nav-links{display:flex;align-items:center;gap:0;}
-.nav-links a{text-decoration:none;font-family:‘Crimson Pro’,serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,236,215,0.7);padding:0.9rem 1.1rem;border-left:1px solid rgba(200,168,122,0.2);transition:all 0.2s;cursor:pointer;}
-.nav-links a:hover,.nav-links a.active{color:var(–pale-gold);background:rgba(232,98,26,0.15);}
+nav{position:sticky;top:0;z-index:200;background:var(–brown-dk);border-bottom:1px solid var(–deco);box-shadow:0 2px 0 var(–dline);display:flex;align-items:stretch;justify-content:space-between;padding:0 1.5rem;}
+.nbrand{font-family:‘Josefin Sans’,sans-serif;font-size:0.95rem;font-weight:700;color:var(–gold);padding:1rem 0;display:flex;align-items:center;gap:0.6rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;}
+.nbrand .dot{width:7px;height:7px;background:var(–teal);border-radius:50%;box-shadow:0 0 6px var(–teal-lt);}
+.nlinks{display:flex;align-items:center;}
+.nlinks a{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;font-weight:400;color:rgba(250,246,240,0.5);padding:1rem 0.85rem;border-left:1px solid var(–dline);transition:all 0.2s;cursor:pointer;text-decoration:none;}
+.nlinks a:hover,.nlinks a.act{color:var(–gold);background:rgba(228,166,61,0.07);border-bottom:2px solid var(–teal);}
 
-/* KATHIAWADI BORDER */
-.kathi-border{height:12px;background:repeating-linear-gradient(90deg,var(–saffron) 0,var(–saffron) 8px,var(–turmeric) 8px,var(–turmeric) 16px,var(–terracotta) 16px,var(–terracotta) 24px,var(–indigo) 24px,var(–indigo) 32px,var(–copper) 32px,var(–copper) 40px);}
-.kathi-border.thin{height:5px;}
+/* STRIPE */
+.stripe{height:9px;background:repeating-linear-gradient(90deg,var(–adobe) 0,var(–adobe) 8px,var(–gold) 8px,var(–gold) 16px,var(–brown) 16px,var(–brown) 24px,var(–teal) 24px,var(–teal) 32px,var(–pink) 32px,var(–pink) 40px);}
+.stripe.sm{height:4px;}
 
-.eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(–saffron);display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;}
-.eyebrow::before{content:‘◆’;font-size:7px;}
+/* EYEBROW */
+.ey{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(–teal);display:flex;align-items:center;gap:0.4rem;margin-bottom:0.6rem;}
+.ey::before{content:‘◆’;font-size:6px;color:var(–gold);}
 
-/* ══ HOME ══ */
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;border-bottom:2px solid var(–rule);}
-.hero-left{background:var(–dark-mud);padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
-.hero-left::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0,transparent 18px,rgba(232,98,26,0.04) 18px,rgba(232,98,26,0.04) 19px);}
-.hero-vol{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,208,128,0.55);}
-.hero-title{font-family:‘Playfair Display’,serif;font-size:clamp(4rem,7vw,8.5rem);font-weight:900;line-height:0.88;color:var(–pale-gold);position:relative;z-index:1;animation:slideUp 0.9s cubic-bezier(0.16,1,0.3,1) both;}
-.hero-title em{font-style:italic;color:var(–saffron);display:block;}
-.hero-tagline{font-family:‘Crimson Pro’,serif;font-style:italic;font-size:1.2rem;color:rgba(245,236,215,0.65);max-width:340px;line-height:1.55;position:relative;z-index:1;}
-.hero-right{background:var(–parchment);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem;}
-.hero-city{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.hero-feat{position:relative;z-index:2;background:rgba(42,26,14,0.85);backdrop-filter:blur(2px);padding:1.4rem 1.8rem;border-left:4px solid var(–saffron);}
-.hero-feat .tag{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(–saffron);display:block;margin-bottom:0.4rem;}
-.hero-feat h2{font-family:‘Playfair Display’,serif;font-size:1.45rem;line-height:1.2;color:var(–pale-gold);}
+/* DECO DIAMOND RULE */
+.dr{display:flex;align-items:center;margin:1.5rem 0;}
+.dr::before,.dr::after{content:’’;flex:1;height:1px;background:var(–deco);}
+.dr::before{box-shadow:0 3px 0 var(–deco);}
+.dr::after{box-shadow:0 -3px 0 var(–deco);}
+.dr span{width:8px;height:8px;background:var(–deco);transform:rotate(45deg);flex-shrink:0;margin:0 10px;}
 
-.ticker-wrap{background:var(–saffron);overflow:hidden;padding:0.55rem 0;border-bottom:2px solid var(–terracotta);}
-.ticker{display:inline-block;animation:ticker 32s linear infinite;white-space:nowrap;}
-.ticker span{font-family:‘Playfair Display’,serif;font-size:1rem;letter-spacing:0.06em;color:var(–dark-mud);margin:0 1.5rem;}
-.ticker span::before{content:‘❖’;margin-right:1.5rem;opacity:0.5;}
+/* FOOTER */
+footer{background:var(–brown-dk);border-top:1px solid var(–deco);padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;}
+.fb{font-family:‘Josefin Sans’,sans-serif;font-size:0.85rem;color:var(–gold);font-weight:700;letter-spacing:0.2em;}
+.fc{font-family:‘Josefin Sans’,sans-serif;font-size:9px;color:rgba(250,246,240,0.3);letter-spacing:0.1em;text-transform:uppercase;}
 
-.topics-band{padding:1.2rem 2rem;display:flex;flex-wrap:wrap;align-items:center;gap:0.7rem;border-bottom:1px solid var(–rule);background:var(–cream);}
-.lbl{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(–muted);}
-.pill{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;padding:0.3rem 0.85rem;border:1.5px solid var(–mud);background:transparent;color:var(–mud);cursor:pointer;transition:all 0.15s;font-family:‘Crimson Pro’,serif;}
-.pill:hover,.pill.active{background:var(–saffron);border-color:var(–saffron);color:var(–warm-white);}
+/* ── HOME ── */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;border-bottom:2px solid var(–sand);}
+.hl{background:var(–brown-dk);padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.hl::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0,transparent 18px,rgba(228,166,61,0.025) 18px,rgba(228,166,61,0.025) 19px);}
+.hl::after{content:’’;position:absolute;bottom:-60px;right:-60px;width:260px;height:260px;background:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 200 200’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cg opacity=‘0.07’ fill=‘none’ stroke=’%23E4A63D’ stroke-width=‘0.8’%3E%3Ccircle cx=‘100’ cy=‘100’ r=‘90’/%3E%3Ccircle cx=‘100’ cy=‘100’ r=‘70’/%3E%3Ccircle cx=‘100’ cy=‘100’ r=‘50’/%3E%3Ccircle cx=‘100’ cy=‘100’ r=‘30’/%3E%3Cline x1=‘100’ y1=‘10’ x2=‘100’ y2=‘190’/%3E%3Cline x1=‘10’ y1=‘100’ x2=‘190’ y2=‘100’/%3E%3Cline x1=‘27’ y1=‘27’ x2=‘173’ y2=‘173’/%3E%3Cline x1=‘173’ y1=‘27’ x2=‘27’ y2=‘173’/%3E%3C/g%3E%3C/svg%3E”) no-repeat center;background-size:contain;pointer-events:none;z-index:0;}
+.hvol{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(250,246,240,0.35);}
+.htitle{font-family:‘Cormorant Garamond’,serif;font-size:clamp(4rem,7vw,8rem);font-weight:300;line-height:0.88;color:var(–ivory);position:relative;z-index:1;animation:up 0.9s cubic-bezier(0.16,1,0.3,1) both;letter-spacing:0.01em;}
+.htitle em{font-style:italic;color:var(–gold);display:block;}
+.htag{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:1.1rem;color:rgba(250,246,240,0.55);max-width:320px;line-height:1.65;position:relative;z-index:1;}
+.hr{background:var(–parchment);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;}
+.hcity{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.hfeat{position:relative;z-index:2;background:rgba(67,3,2,0.88);backdrop-filter:blur(2px);padding:1.2rem 1.6rem;border-left:4px solid var(–teal);}
+.hfeat .ftag{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(–teal-lt);display:block;margin-bottom:0.4rem;}
+.hfeat h2{font-family:‘Cormorant Garamond’,serif;font-size:1.35rem;line-height:1.25;color:var(–ivory);font-weight:400;}
 
-.section-bar{padding:1.2rem 2rem;border-bottom:1px solid var(–rule);display:flex;align-items:baseline;gap:1rem;}
-.section-bar h3{font-family:‘Playfair Display’,serif;font-size:1.3rem;font-weight:700;}
-.section-bar span{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(–muted);}
+/* TICKER */
+.tick-w{background:var(–adobe);overflow:hidden;padding:0.45rem 0;border-bottom:2px solid var(–brown);}
+.tick{display:inline-block;animation:tick 32s linear infinite;white-space:nowrap;}
+.tick span{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(–ivory);margin:0 1.5rem;font-weight:600;}
+.tick span::before{content:‘◆’;margin-right:1.5rem;opacity:0.4;font-size:7px;}
 
-.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);}
-.card{border-right:1px solid var(–rule);border-bottom:1px solid var(–rule);padding:2rem 1.8rem;transition:background 0.2s;cursor:pointer;display:flex;flex-direction:column;animation:fadeIn 0.5s ease both;}
-.card:nth-child(3n){border-right:none;}
-.card:hover{background:rgba(232,98,26,0.05);}
-.card.wide{grid-column:span 2;display:grid;grid-template-columns:auto 1fr;gap:2rem;border-right:1px solid var(–rule);}
-.pnum{font-family:‘Playfair Display’,serif;font-size:4rem;line-height:1;color:var(–parchment);font-weight:900;}
-.pcat{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(–indigo);font-weight:700;margin-bottom:0.6rem;}
-.ptitle{font-family:‘Playfair Display’,serif;font-size:1.2rem;line-height:1.25;margin-bottom:0.7rem;}
-.card.wide .ptitle{font-size:1.7rem;}
-.pex{font-size:14px;color:var(–muted);line-height:1.7;margin-bottom:1rem;flex:1;}
-.pfoot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(–rule);padding-top:0.8rem;margin-top:auto;}
-.pdate{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(–muted);}
-.plink{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(–saffron);text-decoration:none;}
-.plink::after{content:’ →’;}
+/* PILLS */
+.pband{padding:0.9rem 2rem;display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem;border-bottom:1px solid var(–sand);background:var(–pink-bg);}
+.plbl{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(–muted);}
+.pill{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;padding:0.28rem 0.8rem;border:1.5px solid var(–pink-mid);background:transparent;color:var(–brown);cursor:pointer;transition:all 0.15s;}
+.pill:hover,.pill.on{background:var(–teal);border-color:var(–teal);color:var(–ivory);}
 
-.newslet{background:var(–dark-mud);color:var(–cream);padding:5rem 2rem;text-align:center;position:relative;overflow:hidden;border-top:3px solid var(–saffron);}
-.newslet::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0,transparent 20px,rgba(232,98,26,0.03) 20px,rgba(232,98,26,0.03) 21px);}
-.newslet h2{font-family:‘Playfair Display’,serif;font-size:2.8rem;font-weight:900;margin-bottom:0.5rem;color:var(–pale-gold);position:relative;}
-.newslet p{color:rgba(245,236,215,0.55);font-style:italic;margin-bottom:2rem;position:relative;}
-.sform{display:flex;justify-content:center;gap:0;max-width:420px;margin:0 auto;position:relative;}
-.sform input{flex:1;padding:0.85rem 1.2rem;background:rgba(255,255,255,0.07);border:1.5px solid rgba(200,168,122,0.3);border-right:none;color:var(–cream);font-family:‘Crimson Pro’,serif;font-size:15px;outline:none;}
-.sform input::placeholder{color:rgba(245,236,215,0.35);}
-.sform button{padding:0.85rem 1.5rem;background:var(–saffron);color:var(–dark-mud);border:none;font-family:‘Playfair Display’,serif;font-size:1rem;font-weight:700;letter-spacing:0.1em;cursor:pointer;transition:background 0.2s;}
-.sform button:hover{background:var(–turmeric);}
+/* POSTS */
+.sbar{padding:0.9rem 2rem;border-bottom:1px solid var(–sand);display:flex;align-items:baseline;gap:1rem;background:var(–ivory);}
+.sbar h3{font-family:‘Josefin Sans’,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;}
+.sbar span{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(–muted);}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);}
+.pc{border-right:1px solid var(–sand);border-bottom:1px solid var(–sand);padding:1.8rem;transition:background 0.2s;cursor:pointer;display:flex;flex-direction:column;animation:fd 0.5s ease both;}
+.pc:nth-child(3n){border-right:none;}
+.pc:hover{background:rgba(42,157,143,0.04);}
+.pc.wide{grid-column:span 2;display:grid;grid-template-columns:auto 1fr;gap:1.8rem;border-right:1px solid var(–sand);}
+.pn{font-family:‘Cormorant Garamond’,serif;font-size:3.5rem;line-height:1;color:var(–sand);font-weight:300;}
+.pcat{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(–teal);font-weight:600;margin-bottom:0.5rem;}
+.ptit{font-family:‘Cormorant Garamond’,serif;font-size:1.2rem;line-height:1.25;margin-bottom:0.6rem;color:var(–text);font-weight:600;}
+.pc.wide .ptit{font-size:1.7rem;font-weight:400;}
+.pex{font-size:15px;color:var(–muted);line-height:1.75;margin-bottom:0.9rem;flex:1;}
+.pft{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(–sand);padding-top:0.7rem;margin-top:auto;}
+.pdt{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(–muted);}
+.plnk{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(–adobe);text-decoration:none;}
+.plnk::after{content:’ →’;}
 
-footer{border-top:2px solid var(–dark-mud);background:var(–dark-mud);padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;}
-.fbrand{font-family:‘Playfair Display’,serif;font-size:1.3rem;color:var(–pale-gold);font-weight:900;}
-.fcopy{font-size:11px;letter-spacing:0.1em;color:rgba(245,236,215,0.4);text-transform:uppercase;}
+/* NEWSLETTER */
+.nl{background:var(–brown);color:var(–ivory);padding:4.5rem 2rem;text-align:center;position:relative;overflow:hidden;border-top:3px solid var(–teal);}
+.nl::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0,transparent 20px,rgba(228,166,61,0.025) 20px,rgba(228,166,61,0.025) 21px);}
+.nl h2{font-family:‘Cormorant Garamond’,serif;font-size:2.6rem;font-weight:300;margin-bottom:0.5rem;color:var(–ivory);position:relative;letter-spacing:0.03em;}
+.nl p{color:rgba(250,246,240,0.45);font-style:italic;margin-bottom:1.8rem;position:relative;}
+.nf{display:flex;justify-content:center;gap:0;max-width:400px;margin:0 auto;position:relative;}
+.nf input{flex:1;padding:0.8rem 1.1rem;background:rgba(250,246,240,0.06);border:1px solid rgba(228,166,61,0.25);border-right:none;color:var(–ivory);font-family:‘Cormorant Garamond’,serif;font-size:16px;outline:none;}
+.nf input::placeholder{color:rgba(250,246,240,0.25);}
+.nf button{padding:0.8rem 1.3rem;background:var(–teal);color:var(–ivory);border:none;font-family:‘Josefin Sans’,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.nf button:hover{background:var(–teal-lt);}
 
-/* ══ BIO ══ */
-.bio-top{background:var(–dark-mud);padding:5rem 2rem 0;position:relative;overflow:hidden;}
-.bio-top::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0,transparent 24px,rgba(232,98,26,0.05) 24px,rgba(232,98,26,0.05) 25px);}
-.bio-top-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;gap:5rem;align-items:end;position:relative;z-index:1;}
-.bio-portrait{width:260px;height:330px;background:var(–parchment);border:3px solid var(–copper);position:relative;box-shadow:8px 8px 0 var(–saffron);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;}
-.bio-portrait-icon{font-size:5rem;opacity:0.25;color:var(–dark-mud);}
-.bio-portrait-hint{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(–mud);}
-.bio-name{font-family:‘Playfair Display’,serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:900;line-height:0.95;color:var(–pale-gold);margin-bottom:1rem;padding-bottom:4rem;}
-.bio-name em{color:var(–saffron);font-style:italic;}
-.bio-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.2rem;}
-.bio-tag{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;padding:0.25rem 0.75rem;border:1.5px solid rgba(200,168,122,0.4);color:rgba(245,236,215,0.7);}
-.bio-intro{font-size:1.15rem;font-style:italic;color:rgba(245,236,215,0.7);line-height:1.65;max-width:520px;}
-
-.bio-body{max-width:1100px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:2fr 1fr;gap:4rem;}
-.bio-body h3{font-family:‘Playfair Display’,serif;font-size:1.5rem;font-weight:700;color:var(–terracotta);margin:2.5rem 0 1rem;}
-.bio-body h3:first-child{margin-top:0;}
-.bio-body p{color:var(–text);font-size:1.05rem;margin-bottom:1.2rem;line-height:1.8;}
-.bio-body strong{color:var(–dark-mud);}
-.scard{background:var(–cream);border:1px solid var(–rule);padding:1.5rem;margin-bottom:1.5rem;position:relative;}
-.scard::before{content:’’;position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(–saffron),var(–turmeric),var(–copper));}
-.scard h4{font-family:‘Playfair Display’,serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(–dark-mud);margin-bottom:1rem;font-weight:700;}
-.srow{display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px dotted var(–rule);}
-.srow:last-child{border-bottom:none;}
+/* ── BIO ── */
+.btop{background:var(–brown-dk);padding:5rem 2rem 0;position:relative;overflow:hidden;}
+.btop::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0,transparent 24px,rgba(228,166,61,0.03) 24px,rgba(228,166,61,0.03) 25px);}
+.btin{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:260px 1fr;gap:4rem;align-items:end;position:relative;z-index:1;}
+.bport{width:240px;height:310px;background:var(–parchment);border:2px solid var(–deco);position:relative;box-shadow:8px 8px 0 var(–teal);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.8rem;}
+.bport-ico{font-size:4rem;opacity:0.2;}
+.bport-hint{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(–muted);}
+.bname{font-family:‘Cormorant Garamond’,serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:1rem;padding-bottom:3.5rem;}
+.bname em{color:var(–gold);font-style:italic;}
+.btags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.1rem;}
+.btag{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;padding:0.22rem 0.7rem;border:1px solid rgba(228,166,61,0.3);color:rgba(250,246,240,0.6);}
+.bintro{font-size:1.1rem;font-style:italic;color:rgba(250,246,240,0.6);line-height:1.65;max-width:500px;}
+.bbody{max-width:1100px;margin:0 auto;padding:3.5rem 2rem;display:grid;grid-template-columns:2fr 1fr;gap:4rem;}
+.bbody h3{font-family:‘Josefin Sans’,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(–adobe);margin:2.2rem 0 0.8rem;border-bottom:1px solid var(–sand);padding-bottom:0.4rem;}
+.bbody h3:first-child{margin-top:0;}
+.bbody p{color:var(–text);font-size:1.05rem;margin-bottom:1.1rem;line-height:1.85;}
+.bbody strong{color:var(–brown-dk);}
+.sc{background:var(–parchment);border:1px solid var(–sand);padding:1.4rem;margin-bottom:1.3rem;position:relative;}
+.sc::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(–adobe),var(–gold),var(–teal));}
+.sc h4{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(–text);margin-bottom:0.9rem;font-weight:700;}
+.sr{display:flex;justify-content:space-between;padding:0.38rem 0;border-bottom:1px dotted var(–sand);}
+.sr:last-child{border-bottom:none;}
 .srl{font-size:13px;color:var(–muted);}
-.srv{font-size:13px;font-weight:700;color:var(–dark-mud);}
-.sint{display:flex;align-items:flex-start;gap:0.8rem;padding:0.6rem 0;border-bottom:1px dotted var(–rule);}
-.sint:last-child{border-bottom:none;}
-.sint-ico{font-size:1.1rem;flex-shrink:0;}
-.sint-txt{font-size:13px;color:var(–muted);line-height:1.5;}
+.srv{font-size:13px;font-weight:600;color:var(–text);}
+.si{display:flex;align-items:flex-start;gap:0.7rem;padding:0.55rem 0;border-bottom:1px dotted var(–sand);}
+.si:last-child{border-bottom:none;}
+.si-ico{font-size:0.95rem;flex-shrink:0;}
+.si-txt{font-size:13px;color:var(–muted);line-height:1.5;}
 
-/* ══ PHOTOGRAPHY ══ */
-.photo-hd{background:var(–dark-mud);padding:4rem 2rem 3rem;border-bottom:3px solid var(–saffron);position:relative;overflow:hidden;}
-.photo-hd::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent 40px,rgba(232,98,26,0.04) 40px,rgba(232,98,26,0.04) 41px);}
-.photo-hd-in{max-width:900px;margin:0 auto;position:relative;z-index:1;}
-.photo-hd h1{font-family:‘Playfair Display’,serif;font-size:clamp(3rem,6vw,6rem);font-weight:900;line-height:0.95;color:var(–pale-gold);margin-bottom:0.8rem;}
-.photo-hd h1 em{color:var(–saffron);font-style:italic;}
-.photo-hd p{font-style:italic;color:rgba(245,236,215,0.6);font-size:1.1rem;max-width:500px;}
-
-.photo-fbar{padding:1rem 2rem;background:var(–cream);display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;border-bottom:1px solid var(–rule);}
-
-.masonry{columns:3;column-gap:0;}
-.photo-item{break-inside:avoid;position:relative;overflow:hidden;cursor:pointer;border:3px solid var(–warm-white);}
-.photo-item:hover .photo-ov{opacity:1;}
-.ph{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;position:relative;}
+/* ── PHOTOGRAPHY ── */
+.phd{background:var(–brown-dk);padding:4rem 2rem 3rem;border-bottom:3px solid var(–teal);position:relative;overflow:hidden;}
+.phd::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent 40px,rgba(228,166,61,0.025) 40px,rgba(228,166,61,0.025) 41px);}
+.phd-in{max-width:900px;margin:0 auto;position:relative;z-index:1;}
+.phd h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(3rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:0.7rem;}
+.phd h1 em{color:var(–gold);font-style:italic;}
+.phd p{font-style:italic;color:rgba(250,246,240,0.5);font-size:1.1rem;max-width:480px;}
+.pfbar{padding:0.9rem 2rem;background:var(–pink-bg);display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;border-bottom:1px solid var(–sand);}
+.mason{columns:3;column-gap:0;}
+.pi{break-inside:avoid;position:relative;overflow:hidden;cursor:pointer;border:3px solid var(–ivory);}
+.pi:hover .pov{opacity:1;}
+.ph{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.4rem;position:relative;}
 .ph.tall{height:380px;}
 .ph.med{height:260px;}
 .ph.short{height:200px;}
 .ph svg{position:absolute;inset:0;width:100%;height:100%;}
-.ph-lbl{position:relative;z-index:1;font-family:‘Playfair Display’,serif;font-size:1rem;font-weight:700;color:var(–mud);text-align:center;padding:0 1rem;}
-.ph-sub{position:relative;z-index:1;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(–muted);}
-.photo-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(42,26,14,0.92) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;}
-.ov-tag{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(–saffron);margin-bottom:0.3rem;}
-.ov-city{font-family:‘Playfair Display’,serif;font-size:1.1rem;font-weight:700;color:var(–pale-gold);}
+.ph-l{position:relative;z-index:1;font-family:‘Cormorant Garamond’,serif;font-size:1rem;font-weight:600;color:var(–ivory);text-align:center;padding:0 1rem;}
+.ph-s{position:relative;z-index:1;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,246,240,0.6);}
+.pov{position:absolute;inset:0;background:linear-gradient(to top,rgba(67,3,2,0.92) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem;}
+.ov-t{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(–teal-lt);margin-bottom:0.2rem;}
+.ov-c{font-family:‘Cormorant Garamond’,serif;font-size:1.1rem;font-weight:600;color:var(–ivory);}
 
-/* ══ TRAVEL ══ */
-.travel-hd{background:linear-gradient(135deg,var(–dark-mud) 0%,var(–deep-indigo) 100%);padding:4rem 2rem 3rem;border-bottom:3px solid var(–turmeric);position:relative;overflow:hidden;}
-.travel-hd-in{max-width:1000px;margin:0 auto;position:relative;z-index:1;}
-.travel-hd h1{font-family:‘Playfair Display’,serif;font-size:clamp(3rem,6vw,6.5rem);font-weight:900;line-height:0.92;color:var(–pale-gold);margin-bottom:0.8rem;}
-.travel-hd h1 span{color:var(–saffron);}
-.travel-hd p{font-style:italic;color:rgba(245,236,215,0.6);font-size:1.1rem;}
+/* ── TRAVEL ── */
+.thd{background:linear-gradient(135deg,var(–brown-dk) 0%,#200A08 100%);padding:4rem 2rem 3rem;border-bottom:3px solid var(–gold);position:relative;overflow:hidden;}
+.thd-in{max-width:1000px;margin:0 auto;position:relative;z-index:1;}
+.thd h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(3rem,6vw,6.5rem);font-weight:300;line-height:0.92;color:var(–ivory);margin-bottom:0.7rem;}
+.thd h1 span{color:var(–gold);}
+.thd p{font-style:italic;color:rgba(250,246,240,0.5);font-size:1.1rem;}
+.tst{background:var(–brown-dk);border-bottom:1px solid rgba(228,166,61,0.15);display:grid;grid-template-columns:repeat(4,1fr);}
+.tsn{padding:1.8rem;border-right:1px solid rgba(228,166,61,0.12);text-align:center;}
+.tsn:last-child{border-right:none;}
+.tsn-n{font-family:‘Cormorant Garamond’,serif;font-size:3rem;font-weight:300;color:var(–gold);line-height:1;margin-bottom:0.2rem;}
+.tsn-l{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(250,246,240,0.4);}
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);border-bottom:1px solid var(–sand);}
+.tc{border-right:1px solid var(–sand);border-bottom:1px solid var(–sand);overflow:hidden;cursor:pointer;transition:transform 0.2s;}
+.tc:nth-child(2n){border-right:none;}
+.tc:hover{transform:translateY(-2px);}
+.tc-img{height:220px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.tc-body{padding:1.4rem;}
+.tc-ctry{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(–adobe);font-weight:700;margin-bottom:0.35rem;}
+.tc-city{font-family:‘Cormorant Garamond’,serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem;color:var(–text);}
+.tc-desc{font-size:14px;color:var(–muted);line-height:1.7;margin-bottom:0.9rem;}
+.tc-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.tt{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:0.18rem 0.55rem;background:var(–pink-bg);color:var(–muted);border:1px solid var(–sand);}
+.tc.feat{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;border-right:none;}
+.tc.feat .tc-img{height:100%;min-height:280px;}
+.tc.feat .tc-city{font-size:1.9rem;}
 
-.tstats{background:var(–dark-mud);border-bottom:2px solid rgba(200,168,122,0.2);display:grid;grid-template-columns:repeat(4,1fr);}
-.tstat{padding:2rem;border-right:1px solid rgba(200,168,122,0.2);text-align:center;}
-.tstat:last-child{border-right:none;}
-.tstat-n{font-family:‘Playfair Display’,serif;font-size:3rem;font-weight:900;color:var(–saffron);line-height:1;margin-bottom:0.3rem;}
-.tstat-l{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,236,215,0.5);}
-
-.tgrid{display:grid;grid-template-columns:repeat(2,1fr);border-bottom:1px solid var(–rule);}
-.tcard{border-right:1px solid var(–rule);border-bottom:1px solid var(–rule);overflow:hidden;cursor:pointer;transition:transform 0.2s;}
-.tcard:nth-child(2n){border-right:none;}
-.tcard:hover{transform:translateY(-2px);}
-.tcard-img{height:220px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.tcard-body{padding:1.5rem;}
-.tcard-ctry{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(–saffron);font-weight:700;margin-bottom:0.4rem;}
-.tcard-city{font-family:‘Playfair Display’,serif;font-size:1.5rem;font-weight:700;margin-bottom:0.6rem;}
-.tcard-desc{font-size:14px;color:var(–muted);line-height:1.65;margin-bottom:1rem;}
-.tcard-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
-.ttag{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.6rem;background:var(–parchment);color:var(–mud);border:1px solid var(–rule);}
-.tcard.feat{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;border-right:none;}
-.tcard.feat .tcard-img{height:100%;min-height:300px;}
-.tcard.feat .tcard-city{font-size:2rem;}
-
-/* ══ WORLD MAP ══ */
-.map-hd{background:var(–dark-mud);padding:3rem 2rem;border-bottom:3px solid var(–turmeric);}
-.map-hd-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;}
-.map-hd h1{font-family:‘Playfair Display’,serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:900;line-height:0.95;color:var(–pale-gold);}
-.map-hd h1 em{color:var(–saffron);font-style:italic;}
-.map-hd-sub{font-style:italic;color:rgba(245,236,215,0.5);font-size:1rem;max-width:300px;text-align:right;}
-
-.map-wrap{background:var(–deep-indigo);padding:2rem;position:relative;min-height:520px;overflow:hidden;}
-
-.map-legend{background:var(–dark-mud);border-top:1px solid rgba(200,168,122,0.2);padding:1.2rem 2rem;display:flex;gap:2rem;align-items:center;flex-wrap:wrap;}
-.leg-item{display:flex;align-items:center;gap:0.5rem;}
-.leg-dot{width:10px;height:10px;border-radius:50%;border:2px solid var(–pale-gold);}
-.leg-lbl{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,236,215,0.6);}
-
-.cities-data{max-width:1100px;margin:0 auto;padding:3rem 2rem;}
-.cities-data h2{font-family:‘Playfair Display’,serif;font-size:2rem;font-weight:700;color:var(–dark-mud);margin-bottom:2rem;}
+/* ── WORLD MAP ── */
+.mhd{background:var(–brown-dk);padding:3rem 2rem;border-bottom:3px solid var(–gold);}
+.mhd-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;}
+.mhd h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:300;line-height:0.95;color:var(–ivory);}
+.mhd h1 em{color:var(–gold);font-style:italic;}
+.mhd-sub{font-style:italic;color:rgba(250,246,240,0.4);font-size:1rem;max-width:280px;text-align:right;}
+.mleg{background:var(–brown-dk);border-top:1px solid rgba(228,166,61,0.15);padding:1rem 2rem;display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+.ml{display:flex;align-items:center;gap:0.4rem;}
+.ml-dot{width:8px;height:8px;border-radius:50%;border:1.5px solid var(–ivory);}
+.ml-l{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,246,240,0.5);}
+.cdata{max-width:1100px;margin:0 auto;padding:2.5rem 2rem;}
+.cdata h2{font-family:‘Josefin Sans’,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(–text);margin-bottom:1.5rem;border-bottom:1px solid var(–sand);padding-bottom:0.7rem;}
 table{width:100%;border-collapse:collapse;}
-th{background:var(–dark-mud);color:var(–pale-gold);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;padding:0.9rem 1.2rem;text-align:left;font-family:‘Crimson Pro’,serif;font-weight:600;}
-td{padding:0.9rem 1.2rem;border-bottom:1px solid var(–rule);font-size:14px;vertical-align:middle;}
-tr:hover td{background:rgba(232,98,26,0.04);}
-.cf{font-size:1.3rem;margin-right:0.4rem;}
-.cn{font-family:‘Playfair Display’,serif;font-size:1rem;font-weight:700;}
-.fbar{height:6px;background:var(–parchment);border-radius:3px;overflow:hidden;width:120px;}
-.ffill{height:100%;background:linear-gradient(90deg,var(–saffron),var(–turmeric));border-radius:3px;}
-.rbadge{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.6rem;font-weight:700;}
-.ri{background:rgba(232,98,26,0.15);color:var(–saffron);}
-.re{background:rgba(196,122,43,0.15);color:var(–copper);}
-.rs{background:rgba(74,103,65,0.15);color:var(–leaf);}
-.rm{background:rgba(181,69,27,0.15);color:var(–terracotta);}
+th{background:var(–brown-dk);color:var(–gold);font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;padding:0.8rem 1.1rem;text-align:left;font-weight:600;}
+td{padding:0.8rem 1.1rem;border-bottom:1px solid var(–sand);font-size:14px;vertical-align:middle;}
+tr:hover td{background:rgba(42,157,143,0.04);}
+.cf{font-size:1.1rem;margin-right:0.3rem;}
+.cn{font-family:‘Cormorant Garamond’,serif;font-size:0.95rem;font-weight:600;}
+.fb2{height:5px;background:var(–pink-bg);border-radius:2px;overflow:hidden;width:110px;}
+.ff{height:100%;background:linear-gradient(90deg,var(–adobe),var(–gold));border-radius:2px;}
+.rb{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:0.18rem 0.55rem;font-weight:700;}
+.ri{background:rgba(193,113,74,0.12);color:var(–adobe);}
+.re{background:rgba(42,157,143,0.12);color:var(–teal);}
+.rs{background:rgba(67,3,2,0.07);color:var(–mid);}
+.rm{background:rgba(228,166,61,0.12);color:var(–mid);}
 
-/* ══ ARTICLE PAGE ══ */
-.article-hero{background:var(–dark-mud);padding:5rem 2rem 4rem;position:relative;overflow:hidden;border-bottom:3px solid var(–saffron);}
-.article-hero::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0,transparent 24px,rgba(232,98,26,0.04) 24px,rgba(232,98,26,0.04) 25px);}
-.article-hero-in{max-width:780px;margin:0 auto;position:relative;z-index:1;}
-.article-back{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,208,128,0.5);cursor:pointer;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:2rem;background:none;border:none;font-family:‘Crimson Pro’,serif;}
-.article-back:hover{color:var(–saffron);}
-.article-cat{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(–saffron);font-weight:700;margin-bottom:1rem;display:block;}
-.article-title{font-family:‘Playfair Display’,serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:0.95;color:var(–pale-gold);margin-bottom:1.5rem;}
-.article-title em{color:var(–saffron);font-style:italic;}
-.article-meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;border-top:1px solid rgba(200,168,122,0.2);padding-top:1.2rem;}
-.article-author{font-size:13px;color:rgba(245,236,215,0.7);letter-spacing:0.06em;}
-.article-author strong{color:var(–pale-gold);}
-.article-date{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,236,215,0.4);}
-.article-tag{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;padding:0.2rem 0.7rem;border:1px solid rgba(200,168,122,0.3);color:rgba(245,236,215,0.5);}
+/* ── ARTICLE ── */
+.ahd{background:var(–brown-dk);padding:5rem 2rem 4rem;position:relative;overflow:hidden;border-bottom:3px solid var(–teal);}
+.ahd-in{max-width:780px;margin:0 auto;position:relative;z-index:1;}
+.abk{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(250,246,240,0.4);cursor:pointer;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.8rem;background:none;border:none;}
+.abk:hover{color:var(–teal-lt);}
+.acat{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(–teal-lt);font-weight:600;margin-bottom:0.9rem;display:block;}
+.atit{font-family:‘Cormorant Garamond’,serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:1.4rem;}
+.atit em{color:var(–gold);font-style:italic;}
+.ameta{display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap;border-top:1px solid rgba(228,166,61,0.18);padding-top:1.1rem;}
+.ameta-au{font-size:14px;color:rgba(250,246,240,0.6);}
+.ameta-au strong{color:var(–gold);}
+.ameta-dt{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,246,240,0.3);}
+.atag{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:0.18rem 0.6rem;border:1px solid rgba(228,166,61,0.2);color:rgba(250,246,240,0.35);}
+.abody{max-width:780px;margin:0 auto;padding:3.5rem 2rem;}
+.abody p{font-size:1.08rem;line-height:1.95;color:var(–text);margin-bottom:1.5rem;}
+.abody p:first-child::first-letter{font-family:‘Cormorant Garamond’,serif;font-size:4.5rem;font-weight:700;color:var(–adobe);float:left;line-height:0.75;margin:0.1rem 0.15rem 0 0;}
+.apq{border-left:3px solid var(–teal);padding:1.1rem 1.8rem;margin:2.2rem 0;background:var(–pink-bg);}
+.apq p{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:1.25rem;color:var(–brown-dk);margin:0;line-height:1.55;}
+.apq p::first-letter{font-size:1.25rem;float:none;}
+.aimg{margin:2.2rem -1rem;position:relative;}
+.aimg img{width:100%;height:auto;display:block;}
+.acap{font-family:‘Josefin Sans’,sans-serif;font-size:10px;color:var(–muted);letter-spacing:0.06em;padding:0.55rem 1rem;background:var(–pink-bg);border-bottom:2px solid var(–sand);line-height:1.5;}
+.aph{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.4rem;position:relative;overflow:hidden;}
+.aph.wide{height:400px;}
+.aph.med{height:280px;}
+.aph svg{position:absolute;inset:0;width:100%;height:100%;}
+.aph-l{position:relative;z-index:1;font-family:‘Cormorant Garamond’,serif;font-size:1rem;font-weight:600;color:var(–ivory);text-align:center;padding:0 2rem;}
+.aph-s{position:relative;z-index:1;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,246,240,0.55);}
+.ah2{font-family:‘Josefin Sans’,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(–adobe);margin:2.8rem 0 0.9rem;border-bottom:1px solid var(–sand);padding-bottom:0.4rem;}
+.aft{max-width:780px;margin:0 auto;padding:1.8rem 2rem 3.5rem;border-top:2px solid var(–sand);}
+.aft-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.3rem;}
+.aft-tag{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.7rem;background:var(–pink-bg);color:var(–muted);border:1px solid var(–sand);}
+.aft-src{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(–muted);}
+.abtn{display:inline-flex;align-items:center;gap:0.4rem;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:var(–adobe);cursor:pointer;background:none;border:none;margin-top:1.3rem;}
+.abtn:hover{color:var(–teal);}
 
-.article-body{max-width:780px;margin:0 auto;padding:4rem 2rem;}
-.article-body p{font-size:1.1rem;line-height:1.9;color:var(–text);margin-bottom:1.6rem;}
-.article-body p:first-child::first-letter{font-family:‘Playfair Display’,serif;font-size:4rem;font-weight:900;color:var(–saffron);float:left;line-height:0.8;margin:0.1rem 0.15rem 0 0;padding:0.1rem;}
-.article-pullquote{border-left:4px solid var(–saffron);padding:1.2rem 2rem;margin:2.5rem 0;background:var(–cream);}
-.article-pullquote p{font-family:‘Playfair Display’,serif;font-style:italic;font-size:1.3rem;color:var(–dark-mud);margin:0;line-height:1.5;}
-.article-pullquote p::first-letter{font-size:1.3rem;float:none;}
-.article-img{margin:2.5rem -1rem;position:relative;}
-.article-img img{width:100%;height:auto;display:block;}
-.article-img-caption{font-size:12px;color:var(–muted);font-style:italic;padding:0.6rem 1rem;background:var(–cream);border-bottom:2px solid var(–rule);line-height:1.5;}
-.article-img-placeholder{width:100%;background:var(–parchment);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;position:relative;overflow:hidden;}
-.article-img-placeholder.wide{height:420px;}
-.article-img-placeholder.med{height:300px;}
-.article-img-placeholder svg{position:absolute;inset:0;width:100%;height:100%;}
-.article-img-placeholder-lbl{position:relative;z-index:1;font-family:‘Playfair Display’,serif;font-size:1rem;font-weight:700;color:var(–mud);text-align:center;padding:0 2rem;}
-.article-img-placeholder-sub{position:relative;z-index:1;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(–muted);}
-.article-h2{font-family:‘Playfair Display’,serif;font-size:1.8rem;font-weight:700;color:var(–terracotta);margin:3rem 0 1rem;}
-.article-footer{max-width:780px;margin:0 auto;padding:2rem 2rem 4rem;border-top:2px solid var(–rule);}
-.article-footer-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;}
-.article-footer-tag{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 0.8rem;background:var(–parchment);color:var(–mud);border:1px solid var(–rule);}
-.article-share{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(–muted);}
-.article-nav-btn{display:inline-flex;align-items:center;gap:0.5rem;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(–saffron);cursor:pointer;background:none;border:none;font-family:‘Crimson Pro’,serif;margin-top:1.5rem;}
-.article-nav-btn:hover{color:var(–terracotta);}
+/* ── VOLUNTEER ── */
+.vhd{background:var(–brown-dk);padding:4rem 2rem 3rem;position:relative;overflow:hidden;border-bottom:3px solid var(–adobe);}
+.vhd-in{max-width:900px;margin:0 auto;position:relative;z-index:1;}
+.vhd h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(3rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:0.7rem;}
+.vhd h1 em{color:var(–gold);font-style:italic;}
+.vhd p{font-style:italic;color:rgba(250,246,240,0.5);font-size:1.1rem;max-width:540px;}
+.vgrid{display:grid;grid-template-columns:repeat(2,1fr);}
+.vc{border-right:1px solid var(–sand);border-bottom:1px solid var(–sand);padding:2.2rem;}
+.vc:nth-child(2n){border-right:none;}
+.vc-img{width:100%;height:190px;margin-bottom:1.3rem;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.4rem;background:var(–pink-bg);}
+.vc-img svg{position:absolute;inset:0;width:100%;height:100%;}
+.vc-ico{position:relative;z-index:1;font-size:2.2rem;}
+.vc-hint{position:relative;z-index:1;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(–muted);}
+.vc-hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem;}
+.vc-cat{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(–adobe);font-weight:700;}
+.vc-yr{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;color:var(–muted);text-transform:uppercase;}
+.vc-name{font-family:‘Cormorant Garamond’,serif;font-size:1.35rem;font-weight:600;color:var(–text);margin-bottom:0.3rem;}
+.vc-role{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(–teal);font-weight:600;margin-bottom:0.7rem;}
+.vc-desc{font-size:14px;color:var(–muted);line-height:1.75;margin-bottom:0.9rem;}
+.vc-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
+
+/* ── CONTACT ── */
+.chd{background:var(–brown-dk);padding:5rem 2rem 4rem;position:relative;overflow:hidden;border-bottom:3px solid var(–teal);}
+.chd-in{max-width:700px;margin:0 auto;position:relative;z-index:1;text-align:center;}
+.chd h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;color:var(–ivory);line-height:0.95;margin-bottom:0.8rem;}
+.chd h1 em{color:var(–gold);font-style:italic;}
+.chd p{font-style:italic;color:rgba(250,246,240,0.5);font-size:1.1rem;}
+.cbox{display:grid;grid-template-columns:1fr 1fr;min-height:55vh;}
+.cleft{padding:3.5rem 2.5rem;border-right:1px solid var(–sand);background:var(–ivory);}
+.cright{padding:3.5rem 2.5rem;background:var(–pink-bg);position:relative;overflow:hidden;}
+.csec{background:var(–pink-bg);border:1px solid var(–sand);padding:1.3rem;margin-bottom:1.2rem;position:relative;}
+.csec.teal-b{border-left:4px solid var(–teal);}
+.csec.adobe-b{border-left:4px solid var(–adobe);}
+.csec.gold-b{border-left:4px solid var(–gold);}
+.csec-lbl{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.4rem;}
+.csec-lbl.tc{color:var(–teal);}
+.csec-lbl.ac{color:var(–adobe);}
+.csec-lbl.gc{color:var(–mid);}
+.csec a{font-family:‘Cormorant Garamond’,serif;font-size:1.2rem;color:var(–brown-dk);text-decoration:none;font-weight:600;display:block;}
+.cbt{display:inline-flex;align-items:center;gap:0.4rem;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(–ivory);background:var(–teal);padding:0.45rem 0.9rem;text-decoration:none;margin-top:0.5rem;}
+.csub{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;color:var(–muted);text-transform:uppercase;margin-top:0.3rem;}
+.copen{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid var(–sand);}
+.copen:last-child{border-bottom:none;}
+.copen-ico{width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.95rem;}
+.copen-ico.t{background:var(–teal);}
+.copen-ico.a{background:var(–adobe);}
+.copen-ico.g{background:var(–gold);}
+.copen-ico.s{background:var(–brown-dk);border:1px solid var(–sand);}
+.copen-ttl{font-family:‘Josefin Sans’,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(–brown-dk);margin-bottom:0.15rem;}
+.copen-txt{font-size:13px;color:var(–muted);line-height:1.6;}
+.cq{background:var(–brown);padding:3rem 2rem;text-align:center;border-top:2px solid var(–teal);position:relative;overflow:hidden;}
+.cq p{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:1.3rem;color:rgba(250,246,240,0.7);line-height:1.7;max-width:540px;margin:0 auto;}
+.cq span{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,246,240,0.28);display:block;margin-top:0.7rem;}
 
 /* ANIMATIONS */
-@keyframes slideUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
-@keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
-@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-@keyframes pulse{0%{r:6;}50%{r:14;opacity:0.1;}100%{r:6;opacity:0;}}
+@keyframes up{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fd{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* RESPONSIVE */
 @media(max-width:900px){
 .hero{grid-template-columns:1fr;min-height:auto;}
-.hero-right{height:300px;}
-.posts-grid{grid-template-columns:1fr 1fr;}
-.card.wide{grid-column:span 2;grid-template-columns:1fr;}
-.bio-top-in{grid-template-columns:1fr;gap:2rem;}
-.bio-body{grid-template-columns:1fr;}
-.masonry{columns:2;}
+.hr{height:280px;}
+.pgrid{grid-template-columns:1fr 1fr;}
+.pc.wide{grid-column:span 2;grid-template-columns:1fr;}
+.btin{grid-template-columns:1fr;gap:2rem;}
+.bbody{grid-template-columns:1fr;}
+.mason{columns:2;}
 .tgrid{grid-template-columns:1fr;}
-.tcard.feat{grid-column:span 1;grid-template-columns:1fr;}
-.tcard.feat .tcard-img{height:220px;}
-.tstats{grid-template-columns:repeat(2,1fr);}
-.map-hd-in{flex-direction:column;gap:1rem;}
-.map-hd-sub{text-align:left;}
+.tc.feat{grid-column:span 1;grid-template-columns:1fr;}
+.tc.feat .tc-img{height:220px;}
+.tst{grid-template-columns:repeat(2,1fr);}
+.mhd-in{flex-direction:column;gap:1rem;}
+.mhd-sub{text-align:left;}
+.vgrid{grid-template-columns:1fr;}
+.cbox{grid-template-columns:1fr;}
+.cleft{border-right:none;border-bottom:1px solid var(–sand);}
 }
 @media(max-width:600px){
-.posts-grid,.tgrid{grid-template-columns:1fr;}
-.card.wide,.tcard.feat{grid-column:span 1;}
-.masonry{columns:1;}
-.nav-links a{padding:0.9rem 0.6rem;font-size:11px;letter-spacing:0.08em;}
-.tstats{grid-template-columns:repeat(2,1fr);}
+.pgrid,.tgrid,.vgrid{grid-template-columns:1fr;}
+.pc.wide,.tc.feat{grid-column:span 1;}
+.mason{columns:1;}
+.nlinks a{padding:0.9rem 0.5rem;font-size:8px;}
+.tst{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 
@@ -292,764 +351,641 @@ tr:hover td{background:rgba(232,98,26,0.04);}
 <body>
 
 <nav>
-  <div class="nav-brand" onclick="showPage('home')"><span class="bindi"></span>URBANISM</div>
-  <div class="nav-links">
-    <a onclick="showPage('home')" class="active" id="nav-home">Essays</a>
+  <div class="nbrand" onclick="showPage('home')"><span class="dot"></span>URBAN REALM</div>
+  <div class="nlinks">
+    <a onclick="showPage('home')" class="act" id="nav-home">Essays</a>
     <a onclick="showPage('bio')" id="nav-bio">About Me</a>
     <a onclick="showPage('photography')" id="nav-photography">Photography</a>
     <a onclick="showPage('travel')" id="nav-travel">Travel</a>
     <a onclick="showPage('map')" id="nav-map">World Map</a>
+    <a onclick="showPage('volunteer')" id="nav-volunteer">Volunteer</a>
+    <a onclick="showPage('contact')" id="nav-contact">Contact</a>
   </div>
 </nav>
 
-<!-- ═══════ HOME ═══════ -->
+<!-- ═══ HOME ═══ -->
 
 <div class="page active" id="page-home">
-  <div class="kathi-border"></div>
+  <div class="stripe"></div>
   <section class="hero">
-    <div class="hero-left">
-      <div class="hero-vol">Vol. I · Est. 2025 · Kathiawad to the World</div>
-      <h1 class="hero-title">THE<br><em>CITY</em><br>SPEAKS</h1>
-      <p class="hero-tagline">Deep dives into the forces that shape our cities — architecture, policy, culture, and the invisible grids beneath our feet.</p>
+    <div class="hl">
+      <div class="hvol">Vol. I · Est. 2025 · Kathiawad to the World</div>
+      <h1 class="htitle">THE<br><em>CITY</em><br>SPEAKS</h1>
+      <p class="htag">Deep dives into the forces that shape our cities — architecture, policy, culture, and the invisible grids beneath our feet.</p>
     </div>
-    <div class="hero-right">
-      <svg class="hero-city" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <div class="hr">
+      <svg class="hcity" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
         <defs>
-          <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1A2550"/><stop offset="100%" stop-color="#2C3E7A"/></linearGradient>
-          <linearGradient id="og" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8621A" stop-opacity="0.5"/><stop offset="100%" stop-color="#E8621A" stop-opacity="0"/></linearGradient>
+          <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0D1A18"/><stop offset="100%" stop-color="#1A3532"/></linearGradient>
+          <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2A9D8F" stop-opacity="0.4"/><stop offset="100%" stop-color="#2A9D8F" stop-opacity="0"/></linearGradient>
         </defs>
         <rect width="600" height="500" fill="url(#sg)"/>
-        <circle cx="50" cy="40" r="1" fill="#F0D080" opacity="0.8"/><circle cx="120" cy="25" r="1.2" fill="#F0D080" opacity="0.6"/><circle cx="200" cy="55" r="0.8" fill="#F0D080" opacity="0.9"/><circle cx="310" cy="30" r="1" fill="#F0D080" opacity="0.7"/><circle cx="420" cy="45" r="1.2" fill="#F0D080" opacity="0.5"/><circle cx="490" cy="20" r="0.9" fill="#F0D080" opacity="0.8"/><circle cx="555" cy="60" r="1" fill="#F0D080" opacity="0.6"/>
-        <circle cx="520" cy="60" r="18" fill="#F0D080" opacity="0.12"/><circle cx="527" cy="55" r="14" fill="#1A2550"/>
-        <rect x="0" y="280" width="55" height="120" fill="#2A1A0E" opacity="0.9"/><rect x="5" y="290" width="7" height="9" fill="#E8621A" opacity="0.7"/><rect x="5" y="304" width="7" height="9" fill="#D4920A" opacity="0.5"/><rect x="16" y="294" width="7" height="9" fill="#F0D080" opacity="0.4"/>
-        <rect x="60" y="220" width="65" height="180" fill="#3A2010"/><rect x="67" y="230" width="9" height="11" fill="#E8621A" opacity="0.8"/><rect x="81" y="230" width="9" height="11" fill="#F0D080" opacity="0.5"/><rect x="95" y="230" width="9" height="11" fill="#D4920A" opacity="0.9"/><rect x="67" y="246" width="9" height="11" fill="#F0D080" opacity="0.7"/><rect x="81" y="246" width="9" height="11" fill="#E8621A" opacity="0.4"/><rect x="95" y="246" width="9" height="11" fill="#F0D080" opacity="0.6"/><rect x="67" y="262" width="9" height="11" fill="#D4920A" opacity="0.8"/><rect x="81" y="262" width="9" height="11" fill="#F0D080" opacity="0.3"/><rect x="95" y="262" width="9" height="11" fill="#E8621A" opacity="0.7"/>
-        <rect x="83" y="195" width="5" height="26" fill="#3A2010"/><polygon points="85.5,185 79,200 92,200" fill="#C47A2B"/>
-        <rect x="140" y="250" width="75" height="150" fill="#2A1A0E"/><rect x="148" y="260" width="8" height="10" fill="#E8621A" opacity="0.9"/><rect x="161" y="260" width="8" height="10" fill="#F0D080" opacity="0.6"/><rect x="174" y="260" width="8" height="10" fill="#D4920A" opacity="0.7"/><rect x="148" y="276" width="8" height="10" fill="#F0D080" opacity="0.8"/><rect x="161" y="276" width="8" height="10" fill="#E8621A" opacity="0.5"/><rect x="174" y="276" width="8" height="10" fill="#F0D080" opacity="0.9"/>
-        <rect x="235" y="170" width="90" height="230" fill="#3A2010"/><rect x="245" y="182" width="10" height="12" fill="#D4920A" opacity="0.9"/><rect x="260" y="182" width="10" height="12" fill="#F0D080" opacity="0.7"/><rect x="275" y="182" width="10" height="12" fill="#E8621A" opacity="0.8"/><rect x="290" y="182" width="10" height="12" fill="#F0D080" opacity="0.5"/><rect x="245" y="200" width="10" height="12" fill="#F0D080" opacity="0.4"/><rect x="260" y="200" width="10" height="12" fill="#E8621A" opacity="0.9"/><rect x="275" y="200" width="10" height="12" fill="#D4920A" opacity="0.6"/><rect x="290" y="200" width="10" height="12" fill="#F0D080" opacity="0.8"/>
-        <ellipse cx="280" cy="160" rx="22" ry="12" fill="#C47A2B"/><rect x="278" y="140" width="4" height="22" fill="#3A2010"/><circle cx="280" cy="138" r="4" fill="#E8621A"/>
-        <rect x="345" y="230" width="60" height="170" fill="#2A1A0E"/><rect x="353" y="240" width="8" height="10" fill="#E8621A" opacity="0.8"/><rect x="366" y="240" width="8" height="10" fill="#F0D080" opacity="0.5"/><rect x="379" y="240" width="8" height="10" fill="#D4920A" opacity="0.9"/><rect x="353" y="256" width="8" height="10" fill="#F0D080" opacity="0.7"/><rect x="366" y="256" width="8" height="10" fill="#E8621A" opacity="0.4"/><rect x="379" y="256" width="8" height="10" fill="#F0D080" opacity="0.6"/>
-        <rect x="425" y="200" width="70" height="200" fill="#3A2010"/><rect x="433" y="212" width="9" height="11" fill="#E8621A" opacity="0.9"/><rect x="447" y="212" width="9" height="11" fill="#D4920A" opacity="0.6"/><rect x="461" y="212" width="9" height="11" fill="#F0D080" opacity="0.7"/><rect x="475" y="212" width="9" height="11" fill="#E8621A" opacity="0.4"/><rect x="433" y="228" width="9" height="11" fill="#F0D080" opacity="0.8"/><rect x="447" y="228" width="9" height="11" fill="#E8621A" opacity="0.5"/><rect x="461" y="228" width="9" height="11" fill="#D4920A" opacity="0.9"/><rect x="475" y="228" width="9" height="11" fill="#F0D080" opacity="0.3"/>
-        <rect x="510" y="260" width="50" height="140" fill="#2A1A0E"/><rect x="518" y="270" width="7" height="9" fill="#D4920A" opacity="0.8"/><rect x="529" y="270" width="7" height="9" fill="#F0D080" opacity="0.5"/><rect x="540" y="270" width="7" height="9" fill="#E8621A" opacity="0.7"/>
-        <rect x="0" y="396" width="600" height="104" fill="#0A0704"/>
-        <rect x="0" y="396" width="600" height="50" fill="url(#og)" opacity="0.6"/>
-        <rect x="80" y="414" width="35" height="2" fill="#E8621A" opacity="0.25" rx="1"/><rect x="180" y="414" width="35" height="2" fill="#E8621A" opacity="0.25" rx="1"/><rect x="280" y="414" width="35" height="2" fill="#E8621A" opacity="0.25" rx="1"/><rect x="380" y="414" width="35" height="2" fill="#E8621A" opacity="0.25" rx="1"/>
+        <circle cx="60" cy="40" r="1" fill="#E4A63D" opacity="0.8"/><circle cx="130" cy="25" r="1.2" fill="#E4A63D" opacity="0.6"/><circle cx="210" cy="55" r="0.8" fill="#E4A63D" opacity="0.9"/><circle cx="320" cy="30" r="1" fill="#E4A63D" opacity="0.7"/><circle cx="430" cy="45" r="1.1" fill="#E4A63D" opacity="0.5"/><circle cx="500" cy="20" r="0.9" fill="#E4A63D" opacity="0.8"/>
+        <circle cx="520" cy="58" r="16" fill="#E4A63D" opacity="0.1"/><circle cx="527" cy="53" r="12" fill="#0D1A18"/>
+        <!-- Buildings -->
+        <rect x="0" y="280" width="55" height="120" fill="#1A0A04" opacity="0.9"/>
+        <rect x="5" y="290" width="7" height="9" fill="#E4A63D" opacity="0.6"/><rect x="5" y="304" width="7" height="9" fill="#2A9D8F" opacity="0.5"/><rect x="16" y="294" width="7" height="9" fill="#C1714A" opacity="0.5"/>
+        <rect x="60" y="220" width="65" height="180" fill="#2A0A04"/>
+        <rect x="67" y="230" width="9" height="11" fill="#E4A63D" opacity="0.8"/><rect x="81" y="230" width="9" height="11" fill="#C1714A" opacity="0.5"/><rect x="95" y="230" width="9" height="11" fill="#2A9D8F" opacity="0.7"/>
+        <rect x="67" y="246" width="9" height="11" fill="#E4A63D" opacity="0.5"/><rect x="81" y="246" width="9" height="11" fill="#C1714A" opacity="0.7"/><rect x="95" y="246" width="9" height="11" fill="#E4A63D" opacity="0.4"/>
+        <rect x="83" y="196" width="5" height="25" fill="#2A0A04"/><polygon points="85.5,186 79,201 92,201" fill="#C1714A"/>
+        <rect x="140" y="250" width="75" height="150" fill="#1A0A04"/>
+        <rect x="148" y="260" width="8" height="10" fill="#E4A63D" opacity="0.9"/><rect x="161" y="260" width="8" height="10" fill="#2A9D8F" opacity="0.6"/><rect x="174" y="260" width="8" height="10" fill="#C1714A" opacity="0.7"/>
+        <rect x="148" y="276" width="8" height="10" fill="#2A9D8F" opacity="0.8"/><rect x="161" y="276" width="8" height="10" fill="#E4A63D" opacity="0.5"/><rect x="174" y="276" width="8" height="10" fill="#E4A63D" opacity="0.9"/>
+        <rect x="235" y="170" width="90" height="230" fill="#2A0A04"/>
+        <rect x="245" y="182" width="10" height="12" fill="#E4A63D" opacity="0.9"/><rect x="260" y="182" width="10" height="12" fill="#2A9D8F" opacity="0.7"/><rect x="275" y="182" width="10" height="12" fill="#C1714A" opacity="0.8"/><rect x="290" y="182" width="10" height="12" fill="#E4A63D" opacity="0.5"/>
+        <rect x="245" y="200" width="10" height="12" fill="#2A9D8F" opacity="0.6"/><rect x="260" y="200" width="10" height="12" fill="#E4A63D" opacity="0.9"/><rect x="275" y="200" width="10" height="12" fill="#C1714A" opacity="0.5"/><rect x="290" y="200" width="10" height="12" fill="#2A9D8F" opacity="0.8"/>
+        <ellipse cx="280" cy="162" rx="22" ry="11" fill="#C1714A" opacity="0.8"/><rect x="278" y="142" width="4" height="22" fill="#2A0A04"/><circle cx="280" cy="140" r="4" fill="#E4A63D"/>
+        <rect x="345" y="230" width="60" height="170" fill="#1A0A04"/>
+        <rect x="353" y="240" width="8" height="10" fill="#E4A63D" opacity="0.8"/><rect x="366" y="240" width="8" height="10" fill="#2A9D8F" opacity="0.5"/><rect x="379" y="240" width="8" height="10" fill="#C1714A" opacity="0.9"/>
+        <rect x="353" y="256" width="8" height="10" fill="#2A9D8F" opacity="0.7"/><rect x="366" y="256" width="8" height="10" fill="#E4A63D" opacity="0.4"/><rect x="379" y="256" width="8" height="10" fill="#E4A63D" opacity="0.6"/>
+        <rect x="425" y="200" width="70" height="200" fill="#2A0A04"/>
+        <rect x="433" y="212" width="9" height="11" fill="#E4A63D" opacity="0.9"/><rect x="447" y="212" width="9" height="11" fill="#C1714A" opacity="0.6"/><rect x="461" y="212" width="9" height="11" fill="#2A9D8F" opacity="0.7"/><rect x="475" y="212" width="9" height="11" fill="#E4A63D" opacity="0.4"/>
+        <rect x="433" y="228" width="9" height="11" fill="#2A9D8F" opacity="0.8"/><rect x="447" y="228" width="9" height="11" fill="#E4A63D" opacity="0.5"/><rect x="461" y="228" width="9" height="11" fill="#C1714A" opacity="0.9"/><rect x="475" y="228" width="9" height="11" fill="#2A9D8F" opacity="0.3"/>
+        <rect x="510" y="260" width="50" height="140" fill="#1A0A04"/>
+        <rect x="518" y="270" width="7" height="9" fill="#C1714A" opacity="0.8"/><rect x="529" y="270" width="7" height="9" fill="#E4A63D" opacity="0.5"/><rect x="540" y="270" width="7" height="9" fill="#2A9D8F" opacity="0.7"/>
+        <rect x="0" y="396" width="600" height="104" fill="#080402"/>
+        <rect x="0" y="396" width="600" height="50" fill="url(#tg)" opacity="0.5"/>
+        <rect x="80" y="414" width="35" height="2" fill="#2A9D8F" opacity="0.2" rx="1"/><rect x="200" y="414" width="35" height="2" fill="#2A9D8F" opacity="0.2" rx="1"/><rect x="320" y="414" width="35" height="2" fill="#2A9D8F" opacity="0.2" rx="1"/><rect x="440" y="414" width="35" height="2" fill="#2A9D8F" opacity="0.2" rx="1"/>
       </svg>
-      <div class="hero-feat"><span class="tag">★ Featured Essay</span><h2>Why Every City Feels the Same Now</h2></div>
+      <div class="hfeat"><span class="ftag">★ Featured Essay</span><h2>Ur-bane: Junagadh and the Loss of the Public Realm</h2></div>
     </div>
   </section>
 
-  <div class="ticker-wrap"><div class="ticker"><span>Zoning Laws</span><span>Walkability</span><span>Gentrification</span><span>Transit Infrastructure</span><span>Public Space</span><span>Mixed-Use Urbanism</span><span>Housing Density</span><span>Street Design</span><span>Urban Heat Islands</span><span>The 15-Minute City</span><span>Heritage & Modernity</span><span>Pedestrian Networks</span><span>Zoning Laws</span><span>Walkability</span><span>Gentrification</span><span>Transit Infrastructure</span><span>Public Space</span><span>Mixed-Use Urbanism</span><span>Housing Density</span><span>Street Design</span><span>Urban Heat Islands</span><span>The 15-Minute City</span><span>Heritage & Modernity</span><span>Pedestrian Networks</span></div></div>
+  <div class="tick-w"><div class="tick"><span>Zoning Laws</span><span>Walkability</span><span>Gentrification</span><span>Transit Infrastructure</span><span>Public Space</span><span>Mixed-Use Urbanism</span><span>Housing Density</span><span>Street Design</span><span>Urban Heat Islands</span><span>The 15-Minute City</span><span>Heritage &amp; Modernity</span><span>Pedestrian Networks</span><span>Zoning Laws</span><span>Walkability</span><span>Gentrification</span><span>Transit Infrastructure</span><span>Public Space</span><span>Mixed-Use Urbanism</span><span>Housing Density</span><span>Street Design</span><span>Urban Heat Islands</span><span>The 15-Minute City</span><span>Heritage &amp; Modernity</span><span>Pedestrian Networks</span></div></div>
 
-  <div class="topics-band">
-    <span class="lbl">Topics ·</span>
-    <button class="pill active" onclick="filterPosts(this,'all')">All</button>
+  <div class="pband">
+    <span class="plbl">Topics ·</span>
+    <button class="pill on" onclick="filterPosts(this,'all')">All</button>
     <button class="pill" onclick="filterPosts(this,'infrastructure')">Infrastructure</button>
     <button class="pill" onclick="filterPosts(this,'housing')">Housing</button>
     <button class="pill" onclick="filterPosts(this,'culture')">Culture</button>
     <button class="pill" onclick="filterPosts(this,'policy')">Policy</button>
-    <button class="pill" onclick="filterPosts(this,'design')">Design</button>
+    <button class="pill" onclick="filterPosts(this,'heritage')">Heritage</button>
     <button class="pill" onclick="filterPosts(this,'ecology')">Ecology</button>
   </div>
-  <div class="section-bar"><h3>Latest Essays</h3><span id="pcnt">6 articles</span></div>
+  <div class="sbar"><h3>Latest Essays</h3><span id="pcnt">6 articles</span></div>
 
-  <div class="posts-grid" id="posts">
-    <div class="card wide" data-cat="heritage design">
-      <div><div class="pnum">01</div></div>
+  <div class="pgrid" id="posts">
+    <div class="pc wide" data-cat="heritage design">
+      <div><div class="pn">01</div></div>
       <div style="display:flex;flex-direction:column;">
         <div class="pcat">Heritage · Public Space · Gujarat</div>
-        <h2 class="ptitle">Ur-bane: Junagadh and the Loss of the Public Realm</h2>
+        <h2 class="ptit">Ur-bane: Junagadh and the Loss of the Public Realm</h2>
         <p class="pex">The Rang Mahal, the King's Road, the Divan Chowk — Junagadh's frozen fractals of civic architecture tell the story of what our cities were, and what modern planning has chosen to forget.</p>
-        <div class="pfoot"><span class="pdate">Nov 30, 2015</span><a href="#" class="plink">Read</a></div>
+        <div class="pft"><span class="pdt">Nov 30, 2015</span><a href="#" class="plnk">Read</a></div>
       </div>
     </div>
-    <div class="card" data-cat="design culture">
-      <div class="pnum">02</div><div class="pcat">Public Space · Rajkot</div>
-      <h2 class="ptitle">Urban Edge as a Binding Element: Race Course, Rajkot</h2>
-      <p class="pex">A 100-acre colonial-era racetrack turned city park, and the compound wall designed by Indubhai Parekh that made it one of the most democratic public spaces in Kathiawad.</p>
-      <div class="pfoot"><span class="pdate">Jan 17, 2020</span><a href="#" class="plink">Read</a></div>
+    <div class="pc" data-cat="heritage design culture">
+      <div class="pn">02</div><div class="pcat">Public Space · Rajkot</div>
+      <h2 class="ptit">Urban Edge as a Binding Element: Race Course, Rajkot</h2>
+      <p class="pex">A 100-acre colonial-era racetrack turned city park, and the compound wall that made it one of the most democratic public spaces in Kathiawad.</p>
+      <div class="pft"><span class="pdt">Jan 17, 2020</span><a href="#" class="plnk">Read</a></div>
     </div>
-    <div class="card" data-cat="infrastructure">
-      <div class="pnum">03</div><div class="pcat">Infrastructure</div>
-      <h2 class="ptitle">Highways Through Hearts: The Urban Renewal Disaster</h2>
+    <div class="pc" data-cat="infrastructure">
+      <div class="pn">03</div><div class="pcat">Infrastructure</div>
+      <h2 class="ptit">Highways Through Hearts: The Urban Renewal Disaster</h2>
       <p class="pex">Cities across the world destroyed thriving neighbourhoods to build freeways. Some are only now reckoning with that legacy.</p>
-      <div class="pfoot"><span class="pdate">Apr 8, 2025</span><a href="#" class="plink">Read</a></div>
+      <div class="pft"><span class="pdt">Coming soon</span><a href="#" class="plnk">Read</a></div>
     </div>
-    <div class="card" data-cat="ecology design">
-      <div class="pnum">04</div><div class="pcat">Ecology · Design</div>
-      <h2 class="ptitle">Trees Per Block: How Urban Canopy Became a Justice Issue</h2>
+    <div class="pc" data-cat="ecology">
+      <div class="pn">04</div><div class="pcat">Ecology · Design</div>
+      <h2 class="ptit">Trees Per Block: How Urban Canopy Became a Justice Issue</h2>
       <p class="pex">Richer neighbourhoods have more trees, cooler summers, lower asthma rates. Urban greening is no longer just aesthetic — it's a public health mandate.</p>
-      <div class="pfoot"><span class="pdate">Apr 1, 2025</span><a href="#" class="plink">Read</a></div>
+      <div class="pft"><span class="pdt">Coming soon</span><a href="#" class="plnk">Read</a></div>
     </div>
-    <div class="card" data-cat="policy">
-      <div class="pnum">05</div><div class="pcat">Policy</div>
-      <h2 class="ptitle">Parking Minimums: The Quiet Rule That Ate Our Cities</h2>
+    <div class="pc" data-cat="policy">
+      <div class="pn">05</div><div class="pcat">Policy</div>
+      <h2 class="ptit">Parking Minimums: The Quiet Rule That Ate Our Cities</h2>
       <p class="pex">Zoning codes demanded vast oceans of parking. The result: a built environment optimised for empty asphalt rather than human life.</p>
-      <div class="pfoot"><span class="pdate">Mar 24, 2025</span><a href="#" class="plink">Read</a></div>
+      <div class="pft"><span class="pdt">Coming soon</span><a href="#" class="plnk">Read</a></div>
     </div>
-    <div class="card" data-cat="culture">
-      <div class="pnum">06</div><div class="pcat">Culture</div>
-      <h2 class="ptitle">Third Places and the Crisis of Belonging in the Modern City</h2>
+    <div class="pc" data-cat="culture">
+      <div class="pn">06</div><div class="pcat">Culture</div>
+      <h2 class="ptit">Third Places and the Crisis of Belonging in the Modern City</h2>
       <p class="pex">Not home, not work — the tea stall, the library, the park bench. As commercial pressure erodes these spaces, something essential disappears.</p>
-      <div class="pfoot"><span class="pdate">Mar 17, 2025</span><a href="#" class="plink">Read</a></div>
+      <div class="pft"><span class="pdt">Coming soon</span><a href="#" class="plnk">Read</a></div>
     </div>
   </div>
 
-  <div class="newslet"><h2>Join the Conversation</h2><p>Essays on cities, design, and everything in between. No spam. Ever.</p><div class="sform"><input type="email" placeholder="your@email.com"/><button>Subscribe</button></div></div>
-  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · All essays original · yourdomain.com</div></footer>
+  <div class="nl"><h2>Join the Conversation</h2><p>Essays on cities, design, and everything in between. No spam. Ever.</p><div class="nf"><input type="email" placeholder="your@email.com"/><button>Subscribe</button></div></div>
+  <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · Neerja Dave · neerjadave.com</div></footer>
 </div>
 
-<!-- ═══════ BIO ═══════ -->
+<!-- ═══ BIO ═══ -->
 
 <div class="page" id="page-bio">
-  <div class="kathi-border"></div>
-  <div class="bio-top">
-    <div class="bio-top-in">
+  <div class="stripe"></div>
+  <div class="btop">
+    <div class="btin">
+      <div><div class="bport"><div class="bport-ico">🪬</div><div class="bport-hint">Your photo here</div></div></div>
       <div>
-        <div class="bio-portrait">
-          <div class="bio-portrait-icon">🪬</div>
-          <div class="bio-portrait-hint">Your photo here</div>
-        </div>
-      </div>
-      <div>
-        <div class="eyebrow" style="color:rgba(240,208,128,0.55);">The person behind the words</div>
-        <h1 class="bio-name">Your<br><em>Name Here</em></h1>
-        <div class="bio-tags">
-          <span class="bio-tag">Urban Design Thinker</span><span class="bio-tag">Writer</span>
-          <span class="bio-tag">Photographer</span><span class="bio-tag">Kathiawadi</span><span class="bio-tag">Traveller</span>
-        </div>
-        <p class="bio-intro">From the dusty polychrome streets of Kathiawad to the grid-planned boulevards of cities across three continents — this blog is how I make sense of the spaces humans build for themselves.</p>
+        <div class="ey" style="color:rgba(250,246,240,0.45);">Project Manager · Urban Designer · Architectural Designer</div>
+        <h1 class="bname">Neerja<br><em>Dave</em></h1>
+        <div class="btags"><span class="btag">LEED AP</span><span class="btag">MS Urban Design · Georgia Tech</span><span class="btag">Jacobs · San Francisco</span><span class="btag">Kathiawadi</span><span class="btag">Writer · Traveller</span></div>
+        <p class="bintro">From the <em>pols</em> and <em>chowks</em> of Kathiawad to master plans across three continents — I design cities for people, and write about them for anyone willing to look closely.</p>
       </div>
     </div>
   </div>
-  <div class="kathi-border thin"></div>
-  <div class="bio-body">
+  <div class="stripe sm"></div>
+  <div class="bbody">
     <div>
+      <h3>Who I Am</h3>
+      <p>I am a <strong>Project Manager and Urban Designer</strong> at Jacobs, San Francisco, leading complex, multidisciplinary projects across large-scale urban districts, institutional and corporate campuses, data centers, and advanced manufacturing facilities. With formal training in Urban Design and Architecture, I bring expertise in delivering design vision with efficiency and operational excellence.</p>
+      <p>My design philosophy centres on <strong>community-first principles</strong>, drawing from the 15-minute city framework and climate resilience strategies. My graduate research with Professor Ellen Dunham-Jones — Director of Urban Design at Georgia Tech — on autonomous public transit and micromobility informed innovative solutions to first- and last-mile connectivity in suburban Atlanta.</p>
       <h3>Where I Come From</h3>
-      <p>I grew up in <strong>Kathiawad</strong> — the Saurashtra peninsula of Gujarat, a place of extraordinary built heritage. Kathiawadi towns have a distinct urban logic: the <em>chowk</em> at the centre, the <em>pol</em> neighbourhood system, the jharokhas that project from every facade. Long before I knew the word "urbanism," I was already living inside one of its most sophisticated experiments.</p>
-      <p>That upbringing gave me an intuition that cities are not neutral containers for people, but active participants in shaping behaviour, identity, and power. The placement of a well, the width of a lane, the temple at a crossroads: everything is a decision, and every decision is political.</p>
-      <h3>What I Write About</h3>
-      <p>This blog is about <strong>urban design</strong> in the broadest sense — the forces that determine why cities look and feel the way they do. Zoning law, yes, but also colonial street plans and their afterlives, the economics of gentrification, the psychology of public space, the politics of parking. I write from the perspective of someone who moves between cities rather than living exclusively in one.</p>
-      <p>I'm particularly interested in the tension between <strong>heritage and modernity</strong> in South Asian cities: how Ahmedabad, Jamnagar, and Rajkot are negotiating their architectural pasts in the face of rapid economic growth.</p>
-      <h3>Photography & Observation</h3>
-      <p>I photograph cities the way a naturalist photographs birds — patiently, at street level, looking for the moments when the built environment reveals its logic. A broken step worn smooth by a century of feet. A wall repainted twelve times, each colour bleeding through. These images are the raw material of the essays.</p>
-      <h3>A Note on Perspective</h3>
-      <p>I write with a <strong>situated point of view</strong> — from the Global South, from a small city rather than a megacity, from a pedestrian rather than a planner. So much urban writing assumes the vantage point of the wealthy, Western, automobile-owning professional. That is not me, and this blog reflects it.</p>
+      <p>I grew up in <strong>Kathiawad</strong> — the Saurashtra peninsula of Gujarat, a place of extraordinary built heritage. I studied architecture at the <strong>Indubhai Parekh School of Architecture</strong> in Rajkot, before a diploma in <strong>Built Heritage Conservation Science</strong> at J.J. College of Architecture, Mumbai, and an <strong>MS in Urban Design at Georgia Institute of Technology</strong>, Atlanta.</p>
+      <p>Kathiawadi towns gave me my first lessons in urbanism long before I had the vocabulary for it: the <em>chowk</em> at the centre, the <em>pol</em> neighbourhood system, the jharokhas projecting from every facade. Cities are not neutral containers — they are active participants in shaping behaviour, identity, and power.</p>
+      <h3>Professional Work</h3>
+      <p>At <strong>Jacobs</strong> (2021–Present), I lead projects spanning urban design, master planning, and project management across the USA and internationally — from Transit Oriented Development for LA Metro and Phoenix, to urban design for the Diriyah Gate in Riyadh, to the <strong>LA 2028 Olympic Games Mobility Concept Plan</strong>, to semiconductor campus master planning.</p>
+      <p>Previously at <strong>Studio H (SHAPE), Atlanta</strong>, I led the <strong>Microsoft Campus Master Plan</strong> (70 acres), Paschals' Campus Redevelopment, and trauma-informed housing design. Earlier, I founded <strong>The Studio Re</strong> — my own practice — working on projects from eco-resorts in Bihar to sports cafes in Rajkot.</p>
+      <h3>Research &amp; Teaching</h3>
+      <p>As a <strong>Graduate Research Assistant at Georgia Tech</strong>, I contributed to best practices for autonomous shuttle user experience as a Georgia Smart Communities Challenge scholar. I have also been a Research Associate at <strong>CEPT University</strong>, Ahmedabad, and taught Architectural Design and History of Architecture at Marwadi University, Rajkot.</p>
+      <h3>What This Blog Is About</h3>
+      <p>This blog is the personal side of a professional life spent thinking about cities — written freely, from the perspective of a Kathiawadi woman who has lived and worked across India, the USA, and beyond.</p>
     </div>
     <div>
-      <div class="scard">
+      <div class="sc">
         <h4>At a Glance</h4>
-        <div class="srow"><span class="srl">Origin</span><span class="srv">Kathiawad, Gujarat</span></div>
-        <div class="srow"><span class="srl">Based in</span><span class="srv">Update me</span></div>
-        <div class="srow"><span class="srl">Cities lived in</span><span class="srv">—</span></div>
-        <div class="srow"><span class="srl">Countries visited</span><span class="srv">—</span></div>
-        <div class="srow"><span class="srl">Essays published</span><span class="srv">6 so far</span></div>
-        <div class="srow"><span class="srl">Photos taken</span><span class="srv">∞</span></div>
+        <div class="sr"><span class="srl">Origin</span><span class="srv">Kathiawad, Gujarat</span></div>
+        <div class="sr"><span class="srl">Based in</span><span class="srv">San Francisco, CA</span></div>
+        <div class="sr"><span class="srl">Current role</span><span class="srv">Project Manager, Jacobs</span></div>
+        <div class="sr"><span class="srl">MS Urban Design</span><span class="srv">Georgia Tech</span></div>
+        <div class="sr"><span class="srl">B.Arch</span><span class="srv">IPSA, Rajkot</span></div>
+        <div class="sr"><span class="srl">Heritage Diploma</span><span class="srv">J.J. College, Mumbai</span></div>
+        <div class="sr"><span class="srl">Certification</span><span class="srv">LEED AP</span></div>
       </div>
-      <div class="scard">
-        <h4>Interests & Obsessions</h4>
-        <div class="sint"><span class="sint-ico">🏛️</span><span class="sint-txt">Heritage architecture and adaptive reuse</span></div>
-        <div class="sint"><span class="sint-ico">🚶</span><span class="sint-txt">Walkability and pedestrian infrastructure</span></div>
-        <div class="sint"><span class="sint-ico">🏘️</span><span class="sint-txt">Housing policy and affordable urbanism</span></div>
-        <div class="sint"><span class="sint-ico">🌿</span><span class="sint-txt">Urban ecology and the green city</span></div>
-        <div class="sint"><span class="sint-ico">📷</span><span class="sint-txt">Street photography as urban documentation</span></div>
-        <div class="sint"><span class="sint-ico">🎨</span><span class="sint-txt">Vernacular architecture of western India</span></div>
-        <div class="sint"><span class="sint-ico">🛤️</span><span class="sint-txt">Transit networks and mobility justice</span></div>
+      <div class="sc">
+        <h4>Core Skills</h4>
+        <div class="si"><span class="si-ico">🏙️</span><span class="si-txt">Master Planning &amp; Urban Design</span></div>
+        <div class="si"><span class="si-ico">🚇</span><span class="si-txt">Transit Oriented Development</span></div>
+        <div class="si"><span class="si-ico">🗺️</span><span class="si-txt">GIS &amp; Spatial Analysis</span></div>
+        <div class="si"><span class="si-ico">🤝</span><span class="si-txt">Community Charettes &amp; Public Facilitation</span></div>
+        <div class="si"><span class="si-ico">🏛️</span><span class="si-txt">Heritage Conservation</span></div>
+        <div class="si"><span class="si-ico">🌿</span><span class="si-txt">Climate Resilience &amp; Green Systems</span></div>
+        <div class="si"><span class="si-ico">📋</span><span class="si-txt">Project &amp; Stakeholder Management</span></div>
       </div>
-      <div class="scard">
+      <div class="sc">
+        <h4>Selected Projects</h4>
+        <div class="si"><span class="si-ico">🏅</span><span class="si-txt">LA 2028 Olympic Games Mobility Plan</span></div>
+        <div class="si"><span class="si-ico">🇸🇦</span><span class="si-txt">Diriyah Gate, Riyadh</span></div>
+        <div class="si"><span class="si-ico">🚆</span><span class="si-txt">Norwalk &amp; Houston Metro TOD</span></div>
+        <div class="si"><span class="si-ico">💻</span><span class="si-txt">Microsoft Campus, Atlanta (70 acres)</span></div>
+        <div class="si"><span class="si-ico">🛣️</span><span class="si-txt">TXDOT I-35, Austin — Mobility Design</span></div>
+        <div class="si"><span class="si-ico">🌲</span><span class="si-txt">Sunrise Corridor, Oregon</span></div>
+      </div>
+      <div class="sc">
         <h4>Get in Touch</h4>
-        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:0.8rem;">For collaborations, commissions, or to argue about roundabouts — write to me.</p>
-        <a href="mailto:you@yourdomain.com" style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--saffron);font-weight:700;text-decoration:none;">you@yourdomain.com →</a>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:0.8rem;">For collaborations, writing, or to talk about cities:</p>
+        <a href="mailto:daveneerja@gmail.com" style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);font-weight:700;text-decoration:none;display:block;margin-bottom:0.4rem;">daveneerja@gmail.com →</a>
+        <a href="https://www.linkedin.com/in/neerjadave/" target="_blank" style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--adobe);font-weight:700;text-decoration:none;">LinkedIn Profile →</a>
       </div>
     </div>
   </div>
-  <div class="kathi-border thin"></div>
-  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · yourdomain.com</div></footer>
+  <div class="stripe sm"></div>
+  <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
 </div>
 
-<!-- ═══════ PHOTOGRAPHY ═══════ -->
+<!-- ═══ PHOTOGRAPHY ═══ -->
 
 <div class="page" id="page-photography">
-  <div class="kathi-border"></div>
-  <div class="photo-hd">
-    <div class="photo-hd-in">
-      <div class="eyebrow" style="color:rgba(240,208,128,0.5);">Seeing the city</div>
+  <div class="stripe"></div>
+  <div class="phd">
+    <div class="phd-in">
+      <div class="ey" style="color:rgba(250,246,240,0.4);">Seeing the city</div>
       <h1>Urban<br><em>Frames</em></h1>
       <p>Cities photographed at street level — the textures, shadows, and human details that reveal how a place really works.</p>
     </div>
   </div>
-  <div class="photo-fbar">
-    <span class="lbl" style="margin-right:0.5rem;">Filter ·</span>
-    <button class="pill active" onclick="filterPhotos(this,'all')">All</button>
+  <div class="pfbar">
+    <span class="plbl" style="margin-right:0.4rem;">Filter ·</span>
+    <button class="pill on" onclick="filterPhotos(this,'all')">All</button>
     <button class="pill" onclick="filterPhotos(this,'india')">India</button>
     <button class="pill" onclick="filterPhotos(this,'europe')">Europe</button>
     <button class="pill" onclick="filterPhotos(this,'asia')">Asia</button>
     <button class="pill" onclick="filterPhotos(this,'street')">Street</button>
     <button class="pill" onclick="filterPhotos(this,'architecture')">Architecture</button>
-    <button class="pill" onclick="filterPhotos(this,'pattern')">Pattern & Texture</button>
+    <button class="pill" onclick="filterPhotos(this,'pattern')">Pattern</button>
   </div>
-  <div class="masonry" id="photo-grid">
-    <div class="photo-item" data-cat="india architecture"><div class="ph tall" style="background:#C4875A;">
-      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#C4875A"/><pattern id="p1" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="none" stroke="#8B5E3C" stroke-width="0.5"/><circle cx="20" cy="20" r="8" fill="none" stroke="#8B5E3C" stroke-width="1"/><circle cx="20" cy="20" r="3" fill="#B5451B" opacity="0.5"/><line x1="0" y1="20" x2="12" y2="20" stroke="#8B5E3C" stroke-width="0.5"/><line x1="28" y1="20" x2="40" y2="20" stroke="#8B5E3C" stroke-width="0.5"/><line x1="20" y1="0" x2="20" y2="12" stroke="#8B5E3C" stroke-width="0.5"/><line x1="20" y1="28" x2="20" y2="40" stroke="#8B5E3C" stroke-width="0.5"/></pattern><rect width="300" height="380" fill="url(#p1)" opacity="0.4"/></svg>
-      <div class="ph-lbl">Jamnagar Pol</div><div class="ph-sub">Gujarat · 2024</div></div>
-      <div class="photo-ov"><div class="ov-tag">India · Architecture</div><div class="ov-city">Jamnagar, Gujarat</div></div>
+  <div class="mason" id="photo-grid">
+    <div class="pi" data-cat="india architecture"><div class="ph tall" style="background:#8B4513;">
+      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#C1714A" opacity="0.4"/><pattern id="p1" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="none" stroke="#8B4513" stroke-width="0.5"/><circle cx="20" cy="20" r="8" fill="none" stroke="#8B4513" stroke-width="1"/><circle cx="20" cy="20" r="3" fill="#430302" opacity="0.4"/><line x1="0" y1="20" x2="12" y2="20" stroke="#8B4513" stroke-width="0.5"/><line x1="28" y1="20" x2="40" y2="20" stroke="#8B4513" stroke-width="0.5"/><line x1="20" y1="0" x2="20" y2="12" stroke="#8B4513" stroke-width="0.5"/><line x1="20" y1="28" x2="20" y2="40" stroke="#8B4513" stroke-width="0.5"/></pattern><rect width="300" height="380" fill="url(#p1)" opacity="0.5"/></svg>
+      <div class="ph-l">Jamnagar Pol</div><div class="ph-s">Gujarat · 2024</div></div>
+      <div class="pov"><div class="ov-t">India · Architecture</div><div class="ov-c">Jamnagar, Gujarat</div></div>
     </div>
-    <div class="photo-item" data-cat="europe street"><div class="ph med" style="background:#4A6741;">
-      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#4A6741"/><pattern id="p2" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="none" stroke="#3A5231" stroke-width="0.5"/><polygon points="15,3 27,27 3,27" fill="none" stroke="#3A5231" stroke-width="0.8"/></pattern><rect width="300" height="260" fill="url(#p2)" opacity="0.3"/></svg>
-      <div class="ph-lbl">Bologna Arcades</div><div class="ph-sub">Italy · 2023</div></div>
-      <div class="photo-ov"><div class="ov-tag">Europe · Street</div><div class="ov-city">Bologna, Italy</div></div>
+    <div class="pi" data-cat="europe street"><div class="ph med" style="background:#2A6B5A;">
+      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#2A9D8F" opacity="0.3"/><pattern id="p2" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="none" stroke="#1A6B5A" stroke-width="0.5"/><polygon points="15,3 27,27 3,27" fill="none" stroke="#1A6B5A" stroke-width="0.8"/></pattern><rect width="300" height="260" fill="url(#p2)" opacity="0.4"/></svg>
+      <div class="ph-l">Bologna Arcades</div><div class="ph-s">Italy · 2023</div></div>
+      <div class="pov"><div class="ov-t">Europe · Street</div><div class="ov-c">Bologna, Italy</div></div>
     </div>
-    <div class="photo-item" data-cat="india pattern"><div class="ph short" style="background:#D4920A;">
-      <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#D4920A"/><pattern id="p3" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="none"/><rect x="4" y="4" width="16" height="16" fill="none" stroke="#B5451B" stroke-width="0.8"/><circle cx="12" cy="12" r="4" fill="#B5451B" opacity="0.4"/></pattern><rect width="300" height="200" fill="url(#p3)" opacity="0.5"/></svg>
-      <div class="ph-lbl">Rajkot Stepwell</div><div class="ph-sub">Gujarat · 2024</div></div>
-      <div class="photo-ov"><div class="ov-tag">India · Pattern</div><div class="ov-city">Rajkot, Gujarat</div></div>
+    <div class="pi" data-cat="india pattern"><div class="ph short" style="background:#C8821A;">
+      <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#E4A63D" opacity="0.3"/><pattern id="p3" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="none"/><rect x="4" y="4" width="16" height="16" fill="none" stroke="#8B5A00" stroke-width="0.8"/><circle cx="12" cy="12" r="4" fill="#430302" opacity="0.3"/></pattern><rect width="300" height="200" fill="url(#p3)" opacity="0.5"/></svg>
+      <div class="ph-l">Rajkot Stepwell</div><div class="ph-s">Gujarat · 2024</div></div>
+      <div class="pov"><div class="ov-t">India · Pattern</div><div class="ov-c">Rajkot, Gujarat</div></div>
     </div>
-    <div class="photo-item" data-cat="asia street"><div class="ph med" style="background:#2C3E7A;">
-      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#2C3E7A"/><pattern id="p4" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="none" stroke="#1A2550" stroke-width="0.5"/><path d="M18 4 L32 32 L4 32 Z" fill="none" stroke="#C47A2B" stroke-width="0.6"/></pattern><rect width="300" height="260" fill="url(#p4)" opacity="0.3"/></svg>
-      <div class="ph-lbl">Hanoi Old Quarter</div><div class="ph-sub">Vietnam · 2023</div></div>
-      <div class="photo-ov"><div class="ov-tag">Asia · Street</div><div class="ov-city">Hanoi, Vietnam</div></div>
+    <div class="pi" data-cat="asia street"><div class="ph med" style="background:#1A3A6A;">
+      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#1A3A6A" opacity="0.4"/><pattern id="p4" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="none" stroke="#2A5A9A" stroke-width="0.5"/><path d="M18 4 L32 32 L4 32 Z" fill="none" stroke="#C1714A" stroke-width="0.6"/></pattern><rect width="300" height="260" fill="url(#p4)" opacity="0.4"/></svg>
+      <div class="ph-l">Hanoi Old Quarter</div><div class="ph-s">Vietnam · 2023</div></div>
+      <div class="pov"><div class="ov-t">Asia · Street</div><div class="ov-c">Hanoi, Vietnam</div></div>
     </div>
-    <div class="photo-item" data-cat="india architecture pattern"><div class="ph tall" style="background:#B5451B;">
-      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#B5451B"/><pattern id="p5" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse"><circle cx="24" cy="24" r="20" fill="none" stroke="#8B3010" stroke-width="1"/><circle cx="24" cy="24" r="10" fill="none" stroke="#8B3010" stroke-width="0.7"/><line x1="4" y1="24" x2="44" y2="24" stroke="#8B3010" stroke-width="0.5"/><line x1="24" y1="4" x2="24" y2="44" stroke="#8B3010" stroke-width="0.5"/><line x1="9" y1="9" x2="39" y2="39" stroke="#8B3010" stroke-width="0.3"/><line x1="39" y1="9" x2="9" y2="39" stroke="#8B3010" stroke-width="0.3"/></pattern><rect width="300" height="380" fill="url(#p5)" opacity="0.35"/></svg>
-      <div class="ph-lbl">Ahmedabad Heritage District</div><div class="ph-sub">Gujarat · 2024</div></div>
-      <div class="photo-ov"><div class="ov-tag">India · Architecture</div><div class="ov-city">Ahmedabad, Gujarat</div></div>
+    <div class="pi" data-cat="india architecture pattern"><div class="ph tall" style="background:#8B2010;">
+      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#430302" opacity="0.5"/><pattern id="p5" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse"><circle cx="24" cy="24" r="20" fill="none" stroke="#C1714A" stroke-width="1"/><circle cx="24" cy="24" r="10" fill="none" stroke="#C1714A" stroke-width="0.7"/><line x1="4" y1="24" x2="44" y2="24" stroke="#C1714A" stroke-width="0.5"/><line x1="24" y1="4" x2="24" y2="44" stroke="#C1714A" stroke-width="0.5"/><line x1="9" y1="9" x2="39" y2="39" stroke="#C1714A" stroke-width="0.3"/><line x1="39" y1="9" x2="9" y2="39" stroke="#C1714A" stroke-width="0.3"/></pattern><rect width="300" height="380" fill="url(#p5)" opacity="0.4"/></svg>
+      <div class="ph-l">Ahmedabad Heritage District</div><div class="ph-s">Gujarat · 2024</div></div>
+      <div class="pov"><div class="ov-t">India · Architecture</div><div class="ov-c">Ahmedabad, Gujarat</div></div>
     </div>
-    <div class="photo-item" data-cat="europe architecture"><div class="ph short" style="background:#8B5E3C;">
-      <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#8B5E3C"/><pattern id="p6" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="none" stroke="#6A4520" stroke-width="0.5"/><rect x="5" y="5" width="10" height="10" fill="#6A4520" opacity="0.2"/></pattern><rect width="300" height="200" fill="url(#p6)" opacity="0.4"/></svg>
-      <div class="ph-lbl">Porto Tilework</div><div class="ph-sub">Portugal · 2022</div></div>
-      <div class="photo-ov"><div class="ov-tag">Europe · Pattern</div><div class="ov-city">Porto, Portugal</div></div>
+    <div class="pi" data-cat="europe architecture"><div class="ph short" style="background:#5A3A2A;">
+      <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#8B5A3A" opacity="0.4"/><pattern id="p6" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="none" stroke="#5A3A2A" stroke-width="0.5"/><rect x="5" y="5" width="10" height="10" fill="#5A3A2A" opacity="0.2"/></pattern><rect width="300" height="200" fill="url(#p6)" opacity="0.4"/></svg>
+      <div class="ph-l">Porto Tilework</div><div class="ph-s">Portugal · 2022</div></div>
+      <div class="pov"><div class="ov-t">Europe · Pattern</div><div class="ov-c">Porto, Portugal</div></div>
     </div>
-    <div class="photo-item" data-cat="india street"><div class="ph med" style="background:#E8A048;">
-      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#E8A048"/><pattern id="p7" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M16 0 L32 16 L16 32 L0 16 Z" fill="none" stroke="#C47A2B" stroke-width="0.8"/><circle cx="16" cy="16" r="5" fill="#C47A2B" opacity="0.3"/></pattern><rect width="300" height="260" fill="url(#p7)" opacity="0.4"/></svg>
-      <div class="ph-lbl">Bhavnagar Old City</div><div class="ph-sub">Gujarat · 2024</div></div>
-      <div class="photo-ov"><div class="ov-tag">India · Street</div><div class="ov-city">Bhavnagar, Gujarat</div></div>
+    <div class="pi" data-cat="india street"><div class="ph med" style="background:#B06820;">
+      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#E4A63D" opacity="0.25"/><pattern id="p7" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M16 0 L32 16 L16 32 L0 16 Z" fill="none" stroke="#8B5A00" stroke-width="0.8"/><circle cx="16" cy="16" r="5" fill="#430302" opacity="0.2"/></pattern><rect width="300" height="260" fill="url(#p7)" opacity="0.4"/></svg>
+      <div class="ph-l">Bhavnagar Old City</div><div class="ph-s">Gujarat · 2024</div></div>
+      <div class="pov"><div class="ov-t">India · Street</div><div class="ov-c">Bhavnagar, Gujarat</div></div>
     </div>
-    <div class="photo-item" data-cat="asia architecture"><div class="ph tall" style="background:#4A6741;">
-      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#4A6741"/><pattern id="p8" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="40" y2="40" stroke="#3A5231" stroke-width="0.5"/><line x1="40" y1="0" x2="0" y2="40" stroke="#3A5231" stroke-width="0.5"/><circle cx="20" cy="20" r="6" fill="none" stroke="#3A5231" stroke-width="0.7"/></pattern><rect width="300" height="380" fill="url(#p8)" opacity="0.35"/></svg>
-      <div class="ph-lbl">Kyoto Back Streets</div><div class="ph-sub">Japan · 2022</div></div>
-      <div class="photo-ov"><div class="ov-tag">Asia · Architecture</div><div class="ov-city">Kyoto, Japan</div></div>
+    <div class="pi" data-cat="asia architecture"><div class="ph tall" style="background:#2A5A3A;">
+      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#2A6B4A" opacity="0.4"/><pattern id="p8" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="40" y2="40" stroke="#1A4A2A" stroke-width="0.5"/><line x1="40" y1="0" x2="0" y2="40" stroke="#1A4A2A" stroke-width="0.5"/><circle cx="20" cy="20" r="6" fill="none" stroke="#2A9D8F" stroke-width="0.7"/></pattern><rect width="300" height="380" fill="url(#p8)" opacity="0.4"/></svg>
+      <div class="ph-l">Kyoto Back Streets</div><div class="ph-s">Japan · 2022</div></div>
+      <div class="pov"><div class="ov-t">Asia · Architecture</div><div class="ov-c">Kyoto, Japan</div></div>
     </div>
-    <div class="photo-item" data-cat="europe street"><div class="ph med" style="background:#C47A2B;">
-      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#C47A2B"/><pattern id="p9" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse"><rect width="28" height="28" fill="none" stroke="#9A5A1A" stroke-width="0.5"/><path d="M0 14 Q7 7 14 14 Q21 21 28 14" fill="none" stroke="#9A5A1A" stroke-width="0.8"/></pattern><rect width="300" height="260" fill="url(#p9)" opacity="0.3"/></svg>
-      <div class="ph-lbl">Lisbon Miradouro</div><div class="ph-sub">Portugal · 2022</div></div>
-      <div class="photo-ov"><div class="ov-tag">Europe · Street</div><div class="ov-city">Lisbon, Portugal</div></div>
+    <div class="pi" data-cat="europe street"><div class="ph med" style="background:#7A5020;">
+      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#C1714A" opacity="0.3"/><pattern id="p9" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse"><rect width="28" height="28" fill="none" stroke="#7A4A1A" stroke-width="0.5"/><path d="M0 14 Q7 7 14 14 Q21 21 28 14" fill="none" stroke="#7A4A1A" stroke-width="0.8"/></pattern><rect width="300" height="260" fill="url(#p9)" opacity="0.4"/></svg>
+      <div class="ph-l">Lisbon Miradouro</div><div class="ph-s">Portugal · 2022</div></div>
+      <div class="pov"><div class="ov-t">Europe · Street</div><div class="ov-c">Lisbon, Portugal</div></div>
     </div>
   </div>
-  <div style="text-align:center;padding:2.5rem;border-top:1px solid var(--rule);background:var(--cream);">
-    <p style="font-style:italic;color:var(--muted);font-size:1rem;">Replace each coloured placeholder with your own photograph using an <code style="background:var(--parchment);padding:0.1rem 0.4rem;font-size:12px;">&lt;img&gt;</code> tag inside the <code style="background:var(--parchment);padding:0.1rem 0.4rem;font-size:12px;">.ph</code> div.</p>
+  <div style="text-align:center;padding:2rem;border-top:1px solid var(--sand);background:var(--pink-bg);">
+    <p style="font-style:italic;color:var(--muted);font-size:1rem;">Replace placeholders with your photos using an <code style="background:var(--sand);padding:0.1rem 0.4rem;font-size:12px;">&lt;img&gt;</code> tag inside each <code style="background:var(--sand);padding:0.1rem 0.4rem;font-size:12px;">.ph</code> div.</p>
   </div>
-  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · yourdomain.com</div></footer>
+  <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
 </div>
 
-<!-- ═══════ TRAVEL ═══════ -->
+<!-- ═══ TRAVEL ═══ -->
 
 <div class="page" id="page-travel">
-  <div class="kathi-border"></div>
-  <div class="travel-hd">
-    <div class="travel-hd-in">
-      <div class="eyebrow" style="color:rgba(240,208,128,0.5);">Cities as destinations</div>
-      <h1>Travels<br><span>&</span> Urban Notes</h1>
-      <p>Not a travel blog — a record of cities observed and dissected. Every trip is an opportunity to understand how different societies solve the same problem: how to live together.</p>
+  <div class="stripe"></div>
+  <div class="thd">
+    <div class="thd-in">
+      <div class="ey" style="color:rgba(250,246,240,0.4);">Cities as destinations</div>
+      <h1>Travels <span>&amp;</span> Urban Notes</h1>
+      <p>Not a travel blog — a record of cities observed and dissected.</p>
     </div>
   </div>
-  <div class="tstats">
-    <div class="tstat"><div class="tstat-n">12+</div><div class="tstat-l">Countries</div></div>
-    <div class="tstat"><div class="tstat-n">30+</div><div class="tstat-l">Cities</div></div>
-    <div class="tstat"><div class="tstat-n">4</div><div class="tstat-l">Continents</div></div>
-    <div class="tstat"><div class="tstat-n">∞</div><div class="tstat-l">Hours Walking</div></div>
+  <div class="tst">
+    <div class="tsn"><div class="tsn-n">12+</div><div class="tsn-l">Countries</div></div>
+    <div class="tsn"><div class="tsn-n">30+</div><div class="tsn-l">Cities</div></div>
+    <div class="tsn"><div class="tsn-n">4</div><div class="tsn-l">Continents</div></div>
+    <div class="tsn"><div class="tsn-n">∞</div><div class="tsn-l">Hours Walking</div></div>
   </div>
-  <div class="kathi-border thin"></div>
+  <div class="stripe sm"></div>
   <div class="tgrid">
-    <div class="tcard feat">
-      <div class="tcard-img" style="background:linear-gradient(135deg,var(--dark-mud),var(--deep-indigo));">
-        <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;opacity:0.5"><pattern id="fp" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="20" fill="none" stroke="#E8621A" stroke-width="0.5"/><path d="M5 25 L45 25 M25 5 L25 45" stroke="#C47A2B" stroke-width="0.3"/></pattern><rect width="500" height="320" fill="url(#fp)" opacity="0.4"/></svg>
-        <div style="position:relative;z-index:2;text-align:center;font-size:5rem;">🪬</div>
+    <div class="tc feat">
+      <div class="tc-img" style="background:linear-gradient(135deg,var(--brown-dk),#200A06);">
+        <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;opacity:0.4"><pattern id="fp" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="20" fill="none" stroke="#C1714A" stroke-width="0.5"/><path d="M5 25 L45 25 M25 5 L25 45" stroke="#E4A63D" stroke-width="0.3"/></pattern><rect width="500" height="300" fill="url(#fp)"/></svg>
+        <div style="position:relative;z-index:2;font-size:4rem;">🪬</div>
       </div>
-      <div class="tcard-body">
-        <div class="tcard-ctry">India · Gujarat</div>
-        <h2 class="tcard-city">The Kathiawad Circuit</h2>
-        <p class="tcard-desc">A slow traverse through the Saurashtra peninsula — Rajkot, Jamnagar, Bhavnagar, Palitana — tracing how a distinct regional urbanism survived centuries of trade, colonial rule, and post-independence planning. The <em>pol</em> neighbourhoods, the <em>khancha</em> lanes, the stepwells: a complete urban vocabulary that modern planning has largely ignored.</p>
-        <div class="tcard-tags"><span class="ttag">Heritage</span><span class="ttag">Walking Tour</span><span class="ttag">Vernacular Architecture</span></div>
+      <div class="tc-body">
+        <div class="tc-ctry">India · Gujarat</div>
+        <h2 class="tc-city">The Kathiawad Circuit</h2>
+        <p class="tc-desc">A slow traverse through Saurashtra — Rajkot, Jamnagar, Bhavnagar, Palitana — tracing how a distinct regional urbanism survived centuries of trade, colonial rule, and post-independence planning.</p>
+        <div class="tc-tags"><span class="tt">Heritage</span><span class="tt">Walking Tour</span><span class="tt">Vernacular Architecture</span></div>
       </div>
     </div>
-    <div class="tcard"><div class="tcard-img" style="background:linear-gradient(135deg,#2C3E7A,#1A2550);"><svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:0.4"><pattern id="tp2" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="none" stroke="#C47A2B" stroke-width="0.4"/></pattern><rect width="300" height="220" fill="url(#tp2)"/></svg><div style="position:absolute;bottom:1rem;left:1rem;font-size:2.5rem;">🏛️</div></div><div class="tcard-body"><div class="tcard-ctry">Italy · Emilia-Romagna</div><h2 class="tcard-city">Bologna</h2><p class="tcard-desc">40km of covered walkways — the world's longest arcaded streetscape — as an urban design lesson in public-private space and climate adaptation predating the concept by 600 years.</p><div class="tcard-tags"><span class="ttag">Arcades</span><span class="ttag">Historic Centre</span><span class="ttag">Walkability</span></div></div></div>
-    <div class="tcard"><div class="tcard-img" style="background:linear-gradient(135deg,var(--terracotta),var(--mud));"><svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:0.4"><pattern id="tp3" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M12 0 L24 12 L12 24 L0 12 Z" fill="none" stroke="#F0D080" stroke-width="0.4"/></pattern><rect width="300" height="220" fill="url(#tp3)"/></svg><div style="position:absolute;bottom:1rem;left:1rem;font-size:2.5rem;">🌊</div></div><div class="tcard-body"><div class="tcard-ctry">Portugal · Atlantic Coast</div><h2 class="tcard-city">Lisbon & Porto</h2><p class="tcard-desc">Two cities navigating the same tension: spectacular heritage versus tourism pressure, gentrification, and housing unaffordability. The azulejo tiles are gorgeous; the displacement is real.</p><div class="tcard-tags"><span class="ttag">Heritage</span><span class="ttag">Gentrification</span><span class="ttag">Coastal City</span></div></div></div>
-    <div class="tcard"><div class="tcard-img" style="background:linear-gradient(135deg,var(--leaf),#2A4020);"><svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:0.4"><pattern id="tp4" x="0" y="0" width="20" height="34.6" patternUnits="userSpaceOnUse"><polygon points="10,0 20,17.3 10,34.6 0,17.3" fill="none" stroke="#F0D080" stroke-width="0.4"/></pattern><rect width="300" height="220" fill="url(#tp4)"/></svg><div style="position:absolute;bottom:1rem;left:1rem;font-size:2.5rem;">⛩️</div></div><div class="tcard-body"><div class="tcard-ctry">Japan · Kansai</div><h2 class="tcard-city">Kyoto & Osaka</h2><p class="tcard-desc">Japan's approach to urban heritage preservation — rigorous, obsessive — set against Osaka's gleeful maximalism. Two cities, 40 minutes apart, with almost nothing in common.</p><div class="tcard-tags"><span class="ttag">Heritage Policy</span><span class="ttag">Urban Contrast</span><span class="ttag">Transit</span></div></div></div>
-    <div class="tcard"><div class="tcard-img" style="background:linear-gradient(135deg,#5A3A6A,#2C3E7A);"><svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:0.4"><pattern id="tp5" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="16" cy="16" r="12" fill="none" stroke="#E8621A" stroke-width="0.4"/></pattern><rect width="300" height="220" fill="url(#tp5)"/></svg><div style="position:absolute;bottom:1rem;left:1rem;font-size:2.5rem;">🌙</div></div><div class="tcard-body"><div class="tcard-ctry">Morocco · Atlantic</div><h2 class="tcard-city">Marrakech & Fès</h2><p class="tcard-desc">The Arab-Berber medina as urban laboratory: a city designed entirely for pedestrians, organised by craft guild — a system modern planners still struggle to understand or replicate.</p><div class="tcard-tags"><span class="ttag">Medina</span><span class="ttag">Pedestrian City</span><span class="ttag">Islamic Urbanism</span></div></div></div>
-    <div class="tcard"><div class="tcard-img" style="background:linear-gradient(135deg,var(--copper),var(--terracotta));"><svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:0.4"><pattern id="tp6" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><rect x="5" y="5" width="30" height="30" fill="none" stroke="#2A1A0E" stroke-width="0.5"/></pattern><rect width="300" height="220" fill="url(#tp6)"/></svg><div style="position:absolute;bottom:1rem;left:1rem;font-size:2.5rem;">🏗️</div></div><div class="tcard-body"><div class="tcard-ctry">India · Maharashtra</div><h2 class="tcard-city">Mumbai</h2><p class="tcard-desc">The most extreme urban density outside Hong Kong. Dharavi as misunderstood city-within-a-city; the Gothic Revival station as monument to colonial ambition; the mill district transformation.</p><div class="tcard-tags"><span class="ttag">Density</span><span class="ttag">Informal Urbanism</span><span class="ttag">Colonial Heritage</span></div></div></div>
+    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#1A3A6A,#0A1A3A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏛️</div></div><div class="tc-body"><div class="tc-ctry">Italy · Emilia-Romagna</div><h2 class="tc-city">Bologna</h2><p class="tc-desc">40km of covered walkways as an urban design lesson in public-private space and climate adaptation predating the concept by 600 years.</p><div class="tc-tags"><span class="tt">Arcades</span><span class="tt">Walkability</span></div></div></div>
+    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,var(--adobe),#6A2A10);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🌊</div></div><div class="tc-body"><div class="tc-ctry">Portugal</div><h2 class="tc-city">Lisbon &amp; Porto</h2><p class="tc-desc">Two cities navigating the same tension: spectacular heritage versus the pressures of tourism and housing unaffordability.</p><div class="tc-tags"><span class="tt">Heritage</span><span class="tt">Gentrification</span></div></div></div>
+    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#1A4A2A,#0A2A1A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">⛩️</div></div><div class="tc-body"><div class="tc-ctry">Japan · Kansai</div><h2 class="tc-city">Kyoto &amp; Osaka</h2><p class="tc-desc">Heritage preservation obsession set against Osaka's gleeful maximalism. Two cities, 40 minutes apart, nothing in common.</p><div class="tc-tags"><span class="tt">Heritage Policy</span><span class="tt">Transit</span></div></div></div>
+    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#3A1A4A,#1A0A2A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🌙</div></div><div class="tc-body"><div class="tc-ctry">Morocco</div><h2 class="tc-city">Marrakech &amp; Fès</h2><p class="tc-desc">The Arab-Berber medina as urban laboratory — a city designed entirely for pedestrians, organised by craft guild.</p><div class="tc-tags"><span class="tt">Medina</span><span class="tt">Pedestrian City</span></div></div></div>
+    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,var(--gold),#7A4A00);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏗️</div></div><div class="tc-body"><div class="tc-ctry">India · Maharashtra</div><h2 class="tc-city">Mumbai</h2><p class="tc-desc">The most extreme urban density outside Hong Kong. Dharavi as misunderstood city-within-a-city; the mill district transformation.</p><div class="tc-tags"><span class="tt">Density</span><span class="tt">Informal Urbanism</span></div></div></div>
   </div>
-  <div class="newslet" style="margin-top:0;"><h2>New destinations, regularly</h2><p>Each city I visit becomes an essay. Subscribe so you don't miss one.</p><div class="sform"><input type="email" placeholder="your@email.com"/><button>Subscribe</button></div></div>
-  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · yourdomain.com</div></footer>
+  <div class="nl" style="margin-top:0;"><h2>New destinations, regularly</h2><p>Each city I visit becomes an essay. Subscribe so you don't miss one.</p><div class="nf"><input type="email" placeholder="your@email.com"/><button>Subscribe</button></div></div>
+  <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
 </div>
 
-<!-- ═══════ WORLD MAP ═══════ -->
+<!-- ═══ WORLD MAP ═══ -->
 
 <div class="page" id="page-map">
-  <div class="kathi-border"></div>
-  <div class="map-hd">
-    <div class="map-hd-in">
-      <div><div class="eyebrow" style="color:rgba(240,208,128,0.5);">The grand itinerary</div><h1>Cities<br><em>Mapped</em></h1></div>
-      <p class="map-hd-sub">Every dot is a city walked, studied, photographed. Every city changed how I see every other city.</p>
+  <div class="stripe"></div>
+  <div class="mhd">
+    <div class="mhd-in">
+      <div>
+        <div class="ey" style="color:rgba(250,246,240,0.4);">The grand itinerary</div>
+        <h1>Cities <em>Mapped</em></h1>
+      </div>
+      <p class="mhd-sub">Every dot is a city walked, studied, photographed. Every city changed how I see every other city.</p>
     </div>
   </div>
-
-  <div class="map-wrap" id="map-wrap">
-    <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
-      <defs><linearGradient id="oceanGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1A2550"/><stop offset="100%" stop-color="#0E1830"/></linearGradient></defs>
-      <rect width="1000" height="500" fill="url(#oceanGrad)"/>
-      <!-- Grid -->
-      <line x1="0" y1="250" x2="1000" y2="250" stroke="rgba(200,168,122,0.1)" stroke-width="0.5"/>
-      <line x1="500" y1="0" x2="500" y2="500" stroke="rgba(200,168,122,0.1)" stroke-width="0.5"/>
-      <line x1="0" y1="178" x2="1000" y2="178" stroke="rgba(200,168,122,0.08)" stroke-width="0.5" stroke-dasharray="5,5"/>
-      <line x1="0" y1="322" x2="1000" y2="322" stroke="rgba(200,168,122,0.08)" stroke-width="0.5" stroke-dasharray="5,5"/>
-      <text x="6" y="175" font-size="6" fill="rgba(200,168,122,0.3)" font-family="monospace">Tropic of Cancer</text>
-      <text x="6" y="319" font-size="6" fill="rgba(200,168,122,0.3)" font-family="monospace">Tropic of Capricorn</text>
-      <!-- North America -->
-      <path d="M80,60 L200,50 L230,80 L220,130 L200,180 L180,220 L160,230 L140,210 L120,190 L100,160 L85,120 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.8" opacity="0.9"/>
-      <path d="M160,230 L180,240 L175,260 L160,265 L150,255 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.6" opacity="0.85"/>
-      <!-- South America -->
-      <path d="M175,270 L210,260 L240,280 L255,320 L250,380 L220,420 L195,410 L180,370 L170,320 L165,290 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.8" opacity="0.9"/>
-      <!-- Europe -->
-      <path d="M440,60 L490,55 L510,70 L520,90 L510,110 L480,120 L460,115 L445,100 L438,80 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.8" opacity="0.9"/>
-      <path d="M455,40 L480,35 L490,55 L470,60 L455,55 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.6" opacity="0.85"/>
-      <path d="M428,66 L440,62 L444,76 L434,80 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.6" opacity="0.85"/>
-      <!-- Africa -->
-      <path d="M455,140 L500,130 L530,140 L545,175 L540,230 L520,280 L495,310 L475,305 L460,270 L450,220 L448,175 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.8" opacity="0.9"/>
-      <!-- Middle East -->
-      <path d="M530,110 L570,105 L590,120 L585,145 L555,150 L535,140 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.7" opacity="0.85"/>
-      <!-- Russia -->
-      <path d="M490,40 L650,30 L720,50 L700,80 L640,90 L580,85 L530,75 L505,65 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.7" opacity="0.85"/>
-      <!-- India (highlighted) -->
-      <path d="M590,130 L630,125 L650,140 L655,175 L645,205 L625,215 L610,200 L598,170 L592,148 Z" fill="#4A2A10" stroke="#E8621A" stroke-width="1.5" opacity="0.95"/>
-      <!-- SE Asia -->
-      <path d="M680,140 L720,135 L730,155 L720,175 L700,180 L685,165 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.7" opacity="0.85"/>
-      <!-- China -->
-      <path d="M660,80 L730,70 L760,85 L770,110 L755,135 L720,135 L690,120 L665,105 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.7" opacity="0.85"/>
-      <!-- Japan -->
-      <path d="M780,82 L796,78 L800,93 L790,103 L778,96 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.6" opacity="0.85"/>
-      <!-- Australia -->
-      <path d="M760,300 L830,285 L860,305 L855,355 L820,375 L780,365 L762,340 Z" fill="#3A2A15" stroke="#C47A2B" stroke-width="0.8" opacity="0.85"/>
-
-```
-  <!-- CITY MARKERS with pulse animations -->
-  <!-- Rajkot -->
-  <circle cx="601" cy="158" r="5.5" fill="#E8621A" stroke="#F0D080" stroke-width="2" opacity="0.95"/>
-  <circle cx="601" cy="158" r="5.5" fill="none" stroke="#E8621A" stroke-width="1" opacity="0.6"><animate attributeName="r" values="5.5;14;5.5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/></circle>
-  <text x="604" y="154" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.9">Rajkot</text>
-
-  <!-- Jamnagar -->
-  <circle cx="595" cy="163" r="5" fill="#E8621A" stroke="#F0D080" stroke-width="1.5" opacity="0.9"/>
-  <text x="598" y="174" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.85">Jamnagar</text>
-
-  <!-- Ahmedabad -->
-  <circle cx="614" cy="168" r="6" fill="#E8621A" stroke="#F0D080" stroke-width="2" opacity="0.95"/>
-  <circle cx="614" cy="168" r="6" fill="none" stroke="#E8621A" stroke-width="1.2" opacity="0.5"><animate attributeName="r" values="6;16;6" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite"/></circle>
-  <text x="620" y="166" font-size="7.5" fill="#F0D080" font-family="Georgia" font-weight="bold" opacity="0.95">Ahmedabad</text>
-
-  <!-- Mumbai -->
-  <circle cx="612" cy="188" r="6" fill="#E8621A" stroke="#F0D080" stroke-width="2" opacity="0.95"/>
-  <circle cx="612" cy="188" r="6" fill="none" stroke="#E8621A" stroke-width="1" opacity="0.5"><animate attributeName="r" values="6;15;6" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite"/></circle>
-  <text x="618" y="186" font-size="7.5" fill="#F0D080" font-family="Georgia" font-weight="bold" opacity="0.95">Mumbai</text>
-
-  <!-- Delhi -->
-  <circle cx="624" cy="150" r="5" fill="#E8621A" stroke="#F0D080" stroke-width="1.5" opacity="0.9"/>
-  <text x="628" y="148" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.85">Delhi</text>
-
-  <!-- Bologna -->
-  <circle cx="473" cy="93" r="5.5" fill="#C47A2B" stroke="#F0D080" stroke-width="1.5" opacity="0.95"/>
-  <circle cx="473" cy="93" r="5.5" fill="none" stroke="#C47A2B" stroke-width="1" opacity="0.5"><animate attributeName="r" values="5.5;13;5.5" dur="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.2s" repeatCount="indefinite"/></circle>
-  <text x="478" y="91" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.9">Bologna</text>
-
-  <!-- Lisbon -->
-  <circle cx="433" cy="100" r="5" fill="#C47A2B" stroke="#F0D080" stroke-width="1.5" opacity="0.9"/>
-  <text x="420" y="112" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.85">Lisbon</text>
-
-  <!-- Porto -->
-  <circle cx="431" cy="94" r="4.5" fill="#C47A2B" stroke="#F0D080" stroke-width="1.5" opacity="0.85"/>
-  <text x="418" y="92" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.8">Porto</text>
-
-  <!-- London -->
-  <circle cx="446" cy="74" r="5" fill="#C47A2B" stroke="#F0D080" stroke-width="1.5" opacity="0.9"/>
-  <text x="450" y="72" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.85">London</text>
-
-  <!-- Amsterdam -->
-  <circle cx="461" cy="70" r="4.5" fill="#C47A2B" stroke="#F0D080" stroke-width="1.5" opacity="0.85"/>
-  <text x="465" y="68" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.8">Amsterdam</text>
-
-  <!-- Kyoto -->
-  <circle cx="784" cy="115" r="5.5" fill="#4A6741" stroke="#F0D080" stroke-width="1.5" opacity="0.95"/>
-  <circle cx="784" cy="115" r="5.5" fill="none" stroke="#4A6741" stroke-width="1" opacity="0.5"><animate attributeName="r" values="5.5;13;5.5" dur="1.9s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="1.9s" repeatCount="indefinite"/></circle>
-  <text x="788" y="113" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.9">Kyoto</text>
-
-  <!-- Osaka -->
-  <circle cx="787" cy="120" r="4.5" fill="#4A6741" stroke="#F0D080" stroke-width="1.5" opacity="0.85"/>
-  <text x="790" y="130" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.8">Osaka</text>
-
-  <!-- Hanoi -->
-  <circle cx="711" cy="164" r="5" fill="#4A6741" stroke="#F0D080" stroke-width="1.5" opacity="0.9"/>
-  <text x="715" y="162" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.85">Hanoi</text>
-
-  <!-- Marrakech -->
-  <circle cx="447" cy="150" r="5.5" fill="#B5451B" stroke="#F0D080" stroke-width="1.5" opacity="0.95"/>
-  <circle cx="447" cy="150" r="5.5" fill="none" stroke="#B5451B" stroke-width="1" opacity="0.5"><animate attributeName="r" values="5.5;14;5.5" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite"/></circle>
-  <text x="452" y="148" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.9">Marrakech</text>
-
-  <!-- Fes -->
-  <circle cx="451" cy="144" r="4.5" fill="#B5451B" stroke="#F0D080" stroke-width="1.5" opacity="0.85"/>
-  <text x="455" y="142" font-size="7" fill="#F0D080" font-family="Georgia" opacity="0.8">Fès</text>
-</svg>
-
-<div id="mtt" style="position:absolute;display:none;background:var(--dark-mud);border:1.5px solid var(--saffron);padding:0.7rem 1rem;pointer-events:none;z-index:50;min-width:160px;">
-  <div id="mtt-city" style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--pale-gold);margin-bottom:0.3rem;"></div>
-  <div id="mtt-country" style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--saffron);margin-bottom:0.5rem;"></div>
-  <div style="height:4px;background:rgba(200,168,122,0.2);border-radius:2px;overflow:hidden;">
-    <div id="mtt-bar" style="height:100%;background:linear-gradient(90deg,var(--saffron),var(--turmeric));border-radius:2px;width:0%;transition:width 0.3s;"></div>
+  <div style="background:#0D1A18;padding:0;min-height:620px;">
+    <iframe src="https://arcg.is/1eGmb8" width="100%" height="620" frameborder="0" allowfullscreen style="display:block;border:none;" title="Urban Spaces Around the World — Neerja Dave"></iframe>
   </div>
-  <div id="mtt-score" style="font-size:10px;color:var(--muted);margin-top:0.3rem;letter-spacing:0.1em;"></div>
-</div>
-```
-
+  <div class="mleg">
+    <span style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(250,246,240,0.3);margin-right:0.5rem;">Legend ·</span>
+    <div class="ml"><div class="ml-dot" style="background:var(--adobe);"></div><span class="ml-l">India</span></div>
+    <div class="ml"><div class="ml-dot" style="background:var(--teal);"></div><span class="ml-l">Europe</span></div>
+    <div class="ml"><div class="ml-dot" style="background:var(--gold);"></div><span class="ml-l">East / SE Asia</span></div>
+    <div class="ml"><div class="ml-dot" style="background:var(--pink);"></div><span class="ml-l">Africa / Middle East</span></div>
   </div>
-
-  <div class="map-legend">
-    <span style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,236,215,0.35);margin-right:0.5rem;">Legend ·</span>
-    <div class="leg-item"><div class="leg-dot" style="background:#E8621A;"></div><span class="leg-lbl">India</span></div>
-    <div class="leg-item"><div class="leg-dot" style="background:#C47A2B;"></div><span class="leg-lbl">Europe</span></div>
-    <div class="leg-item"><div class="leg-dot" style="background:#4A6741;"></div><span class="leg-lbl">East / SE Asia</span></div>
-    <div class="leg-item"><div class="leg-dot" style="background:#B5451B;"></div><span class="leg-lbl">Africa / Middle East</span></div>
-    <span style="font-size:10px;color:rgba(245,236,215,0.25);margin-left:auto;">Hover dots for details</span>
-  </div>
-
-  <div class="cities-data">
+  <div class="cdata">
     <h2>Cities — Urban Observations Index</h2>
     <table>
       <thead><tr><th>City</th><th>Country</th><th>Region</th><th>Urban Focus</th><th>Score</th><th>Key Insight</th></tr></thead>
       <tbody>
-        <tr><td><span class="cf">🪬</span><span class="cn">Rajkot</span></td><td>India</td><td><span class="rbadge ri">India</span></td><td><div class="fbar"><div class="ffill" style="width:95%"></div></div></td><td style="font-weight:700;color:var(--saffron);">95%</td><td style="font-size:13px;color:var(--muted);">Home city — Kathiawadi urban grain</td></tr>
-        <tr><td><span class="cf">🏛️</span><span class="cn">Ahmedabad</span></td><td>India</td><td><span class="rbadge ri">India</span></td><td><div class="fbar"><div class="ffill" style="width:90%"></div></div></td><td style="font-weight:700;color:var(--saffron);">90%</td><td style="font-size:13px;color:var(--muted);">UNESCO Heritage, pol network, BRTS</td></tr>
-        <tr><td><span class="cf">🌊</span><span class="cn">Jamnagar</span></td><td>India</td><td><span class="rbadge ri">India</span></td><td><div class="fbar"><div class="ffill" style="width:88%"></div></div></td><td style="font-weight:700;color:var(--saffron);">88%</td><td style="font-size:13px;color:var(--muted);">Circular plan, Lakhota Lake integration</td></tr>
-        <tr><td><span class="cf">🏗️</span><span class="cn">Mumbai</span></td><td>India</td><td><span class="rbadge ri">India</span></td><td><div class="fbar"><div class="ffill" style="width:80%"></div></div></td><td style="font-weight:700;color:var(--saffron);">80%</td><td style="font-size:13px;color:var(--muted);">Dharavi, density, Victorian Gothic</td></tr>
-        <tr><td><span class="cf">🍕</span><span class="cn">Bologna</span></td><td>Italy</td><td><span class="rbadge re">Europe</span></td><td><div class="fbar"><div class="ffill" style="width:70%"></div></div></td><td style="font-weight:700;color:var(--copper);">70%</td><td style="font-size:13px;color:var(--muted);">40km portici, walkability benchmark</td></tr>
-        <tr><td><span class="cf">🌸</span><span class="cn">Kyoto</span></td><td>Japan</td><td><span class="rbadge rs">SE Asia</span></td><td><div class="fbar"><div class="ffill" style="width:70%"></div></div></td><td style="font-weight:700;color:var(--leaf);">70%</td><td style="font-size:13px;color:var(--muted);">Heritage preservation, machiya townhouses</td></tr>
-        <tr><td><span class="cf">🌉</span><span class="cn">Lisbon</span></td><td>Portugal</td><td><span class="rbadge re">Europe</span></td><td><div class="fbar"><div class="ffill" style="width:65%"></div></div></td><td style="font-weight:700;color:var(--copper);">65%</td><td style="font-size:13px;color:var(--muted);">Azulejo, hillside urbanism, gentrification</td></tr>
-        <tr><td><span class="cf">🌙</span><span class="cn">Marrakech</span></td><td>Morocco</td><td><span class="rbadge rm">Africa/ME</span></td><td><div class="fbar"><div class="ffill" style="width:65%"></div></div></td><td style="font-weight:700;color:var(--terracotta);">65%</td><td style="font-size:13px;color:var(--muted);">Medina logic, pedestrian city, waqf</td></tr>
-        <tr><td><span class="cf">🫖</span><span class="cn">London</span></td><td>UK</td><td><span class="rbadge re">Europe</span></td><td><div class="fbar"><div class="ffill" style="width:60%"></div></div></td><td style="font-weight:700;color:var(--copper);">60%</td><td style="font-size:13px;color:var(--muted);">Mixed housing, TOD, borough diversity</td></tr>
-        <tr><td><span class="cf">🛵</span><span class="cn">Hanoi</span></td><td>Vietnam</td><td><span class="rbadge rs">SE Asia</span></td><td><div class="fbar"><div class="ffill" style="width:55%"></div></div></td><td style="font-weight:700;color:var(--leaf);">55%</td><td style="font-size:13px;color:var(--muted);">36 Streets, colonial overlay, moped city</td></tr>
+        <tr><td><span class="cf">🪬</span><span class="cn">Rajkot</span></td><td>India</td><td><span class="rb ri">India</span></td><td><div class="fb2"><div class="ff" style="width:95%"></div></div></td><td style="font-weight:700;color:var(--adobe);">95%</td><td style="font-size:13px;color:var(--muted);">Home city — Kathiawadi urban grain</td></tr>
+        <tr><td><span class="cf">🏛️</span><span class="cn">Ahmedabad</span></td><td>India</td><td><span class="rb ri">India</span></td><td><div class="fb2"><div class="ff" style="width:90%"></div></div></td><td style="font-weight:700;color:var(--adobe);">90%</td><td style="font-size:13px;color:var(--muted);">UNESCO Heritage, pol network, BRTS</td></tr>
+        <tr><td><span class="cf">🌊</span><span class="cn">Jamnagar</span></td><td>India</td><td><span class="rb ri">India</span></td><td><div class="fb2"><div class="ff" style="width:88%"></div></div></td><td style="font-weight:700;color:var(--adobe);">88%</td><td style="font-size:13px;color:var(--muted);">Circular plan, Lakhota Lake integration</td></tr>
+        <tr><td><span class="cf">🏗️</span><span class="cn">Mumbai</span></td><td>India</td><td><span class="rb ri">India</span></td><td><div class="fb2"><div class="ff" style="width:80%"></div></div></td><td style="font-weight:700;color:var(--adobe);">80%</td><td style="font-size:13px;color:var(--muted);">Dharavi, density, Victorian Gothic</td></tr>
+        <tr><td><span class="cf">🍕</span><span class="cn">Bologna</span></td><td>Italy</td><td><span class="rb re">Europe</span></td><td><div class="fb2"><div class="ff" style="width:70%"></div></div></td><td style="font-weight:700;color:var(--teal);">70%</td><td style="font-size:13px;color:var(--muted);">40km portici, walkability benchmark</td></tr>
+        <tr><td><span class="cf">🌸</span><span class="cn">Kyoto</span></td><td>Japan</td><td><span class="rb rs">Asia</span></td><td><div class="fb2"><div class="ff" style="width:70%"></div></div></td><td style="font-weight:700;color:var(--mid);">70%</td><td style="font-size:13px;color:var(--muted);">Heritage preservation, machiya townhouses</td></tr>
+        <tr><td><span class="cf">🌉</span><span class="cn">Lisbon</span></td><td>Portugal</td><td><span class="rb re">Europe</span></td><td><div class="fb2"><div class="ff" style="width:65%"></div></div></td><td style="font-weight:700;color:var(--teal);">65%</td><td style="font-size:13px;color:var(--muted);">Azulejo, hillside urbanism, gentrification</td></tr>
+        <tr><td><span class="cf">🌙</span><span class="cn">Marrakech</span></td><td>Morocco</td><td><span class="rb rm">Africa/ME</span></td><td><div class="fb2"><div class="ff" style="width:65%"></div></div></td><td style="font-weight:700;color:var(--mid);">65%</td><td style="font-size:13px;color:var(--muted);">Medina logic, pedestrian city, waqf</td></tr>
+        <tr><td><span class="cf">🫖</span><span class="cn">London</span></td><td>UK</td><td><span class="rb re">Europe</span></td><td><div class="fb2"><div class="ff" style="width:60%"></div></div></td><td style="font-weight:700;color:var(--teal);">60%</td><td style="font-size:13px;color:var(--muted);">Mixed housing, TOD, borough diversity</td></tr>
+        <tr><td><span class="cf">🛵</span><span class="cn">Hanoi</span></td><td>Vietnam</td><td><span class="rb rs">Asia</span></td><td><div class="fb2"><div class="ff" style="width:55%"></div></div></td><td style="font-weight:700;color:var(--mid);">55%</td><td style="font-size:13px;color:var(--muted);">36 Streets, colonial overlay, moped city</td></tr>
       </tbody>
     </table>
   </div>
-
-  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · yourdomain.com</div></footer>
+  <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
 </div>
 
-<!-- ═══════ ARTICLE: UR-BANE ═══════ -->
+<!-- ═══ VOLUNTEER ═══ -->
+
+<div class="page" id="page-volunteer">
+  <div class="stripe"></div>
+  <div class="vhd">
+    <div class="vhd-in">
+      <div class="ey" style="color:rgba(250,246,240,0.4);">Beyond the brief</div>
+      <h1>Volunteer <em>Work</em></h1>
+      <p>Cities are only as good as the people willing to show up for them — without a brief, without billing, and often before sunrise.</p>
+    </div>
+  </div>
+  <div style="background:var(--pink-bg);padding:1.5rem 2rem;border-bottom:1px solid var(--sand);">
+    <p style="max-width:700px;margin:0 auto;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--brown-dk);line-height:1.6;border-left:3px solid var(--teal);padding-left:1.2rem;">Urban design is not a profession you can practise only from behind a desk. The city is a living system, and understanding it requires being present in it — not just as an observer, but as a participant.</p>
+  </div>
+  <div class="vgrid">
+    <!-- 1 Art Forum SF -->
+    <div class="vc">
+      <div class="vc-img"><svg viewBox="0 0 400 190" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;"><rect width="400" height="190" fill="#C1714A" opacity="0.15"/><pattern id="v1" x="0" y="0" width="44" height="44" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="40" height="40" fill="none" stroke="#C1714A" stroke-width="0.5"/><rect x="10" y="10" width="24" height="24" fill="none" stroke="#C1714A" stroke-width="0.4"/><rect x="18" y="18" width="8" height="8" fill="#C1714A" opacity="0.2"/><line x1="2" y1="2" x2="42" y2="42" stroke="#C1714A" stroke-width="0.3"/><line x1="42" y1="2" x2="2" y2="42" stroke="#C1714A" stroke-width="0.3"/></pattern><rect width="400" height="190" fill="url(#v1)" opacity="0.5"/></svg>
+        <div class="vc-ico">🎭</div><div class="vc-hint">Photo coming soon</div>
+      </div>
+      <div class="vc-hd"><div class="vc-cat">Site Planning · Arts</div><div class="vc-yr">2024 – Present</div></div>
+      <div class="vc-name">Art Forum SF</div>
+      <div class="vc-role">Volunteer Site Planner · San Francisco, CA</div>
+      <p class="vc-desc">Supporting site planning, layout coordination, and on-site logistics for the <strong>South Asian Literature &amp; Arts Festival</strong> at Menlo College and Stanford University — bringing spatial thinking to the organisation of cultural public space.</p>
+      <div class="vc-tags"><span class="tt">Site Planning</span><span class="tt">South Asian Arts</span><span class="tt">Stanford</span></div>
+    </div>
+    <!-- 2 Friends of Alameda Library -->
+    <div class="vc">
+      <div class="vc-img"><svg viewBox="0 0 400 190" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;"><rect width="400" height="190" fill="#2A9D8F" opacity="0.12"/><pattern id="v2" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="22" fill="none" stroke="#2A9D8F" stroke-width="0.5"/><circle cx="25" cy="25" r="14" fill="none" stroke="#2A9D8F" stroke-width="0.4"/><circle cx="25" cy="25" r="5" fill="#2A9D8F" opacity="0.12"/><line x1="3" y1="25" x2="47" y2="25" stroke="#2A9D8F" stroke-width="0.3"/><line x1="25" y1="3" x2="25" y2="47" stroke="#2A9D8F" stroke-width="0.3"/></pattern><rect width="400" height="190" fill="url(#v2)" opacity="0.5"/></svg>
+        <div class="vc-ico">📚</div><div class="vc-hint">Photo coming soon</div>
+      </div>
+      <div class="vc-hd"><div class="vc-cat">Education · Community</div><div class="vc-yr">2024 – Present</div></div>
+      <div class="vc-name">Friends of Alameda Library</div>
+      <div class="vc-role">Board Member · Alameda, CA</div>
+      <p class="vc-desc">Managing the <strong>Art Docent Program</strong> and the <strong>Authorship Program</strong>, alongside outreach, networking, and board administration. The public library is one of the last truly free third places in American cities.</p>
+      <div class="vc-tags"><span class="tt">Board Member</span><span class="tt">Arts Education</span><span class="tt">Third Places</span></div>
+    </div>
+    <!-- 3 Doug Allen Institute -->
+    <div class="vc">
+      <div class="vc-img"><svg viewBox="0 0 400 190" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;"><rect width="400" height="190" fill="#E4A63D" opacity="0.12"/><pattern id="v3" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M20 2 L38 20 L20 38 L2 20 Z" fill="none" stroke="#E4A63D" stroke-width="0.5"/><path d="M20 10 L30 20 L20 30 L10 20 Z" fill="none" stroke="#E4A63D" stroke-width="0.4"/><circle cx="20" cy="20" r="3" fill="#E4A63D" opacity="0.25"/></pattern><rect width="400" height="190" fill="url(#v3)" opacity="0.5"/></svg>
+        <div class="vc-ico">✏️</div><div class="vc-hint">Photo coming soon</div>
+      </div>
+      <div class="vc-hd"><div class="vc-cat">Research · Publishing</div><div class="vc-yr">2020 – 2022</div></div>
+      <div class="vc-name">Doug Allen Institute for the Study of Cities</div>
+      <div class="vc-role">Co-Editor &amp; Creative Designer · Atlanta, GA</div>
+      <p class="vc-desc">Urban form and urban design research for the <strong>OTIUM journal</strong> — co-editing, creative design, and data organisation. Where rigorous academic thinking about cities met public-facing design.</p>
+      <div class="vc-tags"><span class="tt">Urban Research</span><span class="tt">OTIUM Journal</span><span class="tt">Georgia Tech</span></div>
+    </div>
+    <!-- 4 Architecture with a Difference -->
+    <div class="vc">
+      <div class="vc-img"><svg viewBox="0 0 400 190" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;"><rect width="400" height="190" fill="#430302" opacity="0.1"/><pattern id="v4" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="none" stroke="#C1714A" stroke-width="0.5"/><line x1="0" y1="18" x2="36" y2="18" stroke="#C1714A" stroke-width="0.3"/><line x1="18" y1="0" x2="18" y2="36" stroke="#C1714A" stroke-width="0.3"/><circle cx="18" cy="18" r="6" fill="none" stroke="#C1714A" stroke-width="0.4"/></pattern><rect width="400" height="190" fill="url(#v4)" opacity="0.5"/></svg>
+        <div class="vc-ico">🏘️</div><div class="vc-hint">Photo coming soon</div>
+      </div>
+      <div class="vc-hd"><div class="vc-cat">Heritage · Conservation</div><div class="vc-yr">2018</div></div>
+      <div class="vc-name">'Architecture with a Difference'</div>
+      <div class="vc-role">Community Outreach &amp; Workshop · Ahmedabad</div>
+      <p class="vc-desc">Precinct conservation through <strong>mapping heritage assets</strong>, architectural documentation of homes, community outreach, and preparing a roster for hierarchical heritage listing — the ground-level work that preservation policy depends on.</p>
+      <div class="vc-tags"><span class="tt">Heritage Mapping</span><span class="tt">Conservation</span><span class="tt">Ahmedabad</span></div>
+    </div>
+    <!-- 5 Wildlife Centre -->
+    <div class="vc">
+      <div class="vc-img"><svg viewBox="0 0 400 190" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;"><rect width="400" height="190" fill="#2A6B4A" opacity="0.12"/><pattern id="v5" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="40" y2="40" stroke="#2A6B4A" stroke-width="0.5"/><line x1="40" y1="0" x2="0" y2="40" stroke="#2A6B4A" stroke-width="0.5"/><circle cx="20" cy="20" r="8" fill="none" stroke="#2A9D8F" stroke-width="0.4"/><circle cx="20" cy="20" r="3" fill="#2A9D8F" opacity="0.2"/></pattern><rect width="400" height="190" fill="url(#v5)" opacity="0.5"/></svg>
+        <div class="vc-ico">🦅</div><div class="vc-hint">Photo coming soon</div>
+      </div>
+      <div class="vc-hd"><div class="vc-cat">Wildlife · Design</div><div class="vc-yr">2015 – 2020</div></div>
+      <div class="vc-name">Centre for Conservation &amp; Rehabilitation of Wildlife</div>
+      <div class="vc-role">Volunteer · Creative Head · Rajkot, Gujarat</div>
+      <p class="vc-desc">Community outreach, animal rescue operations, and <strong>architectural design for the raptor centre</strong> — combining design skills with a commitment to the natural ecosystems that urban sprawl most directly threatens.</p>
+      <div class="vc-tags"><span class="tt">Wildlife</span><span class="tt">Architectural Design</span><span class="tt">Rajkot</span></div>
+    </div>
+    <!-- 6 placeholder -->
+    <div class="vc" style="background:var(--pink-bg);border:2px dashed var(--sand);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;">
+      <svg width="48" height="48" viewBox="0 0 48 48" style="margin-bottom:0.8rem;opacity:0.2;"><g fill="none" stroke="var(--mid)" stroke-width="1"><rect x="4" y="4" width="40" height="40"/><rect x="12" y="12" width="24" height="24"/><rect x="20" y="20" width="8" height="8"/><line x1="4" y1="4" x2="44" y2="44"/><line x1="44" y1="4" x2="4" y2="44"/></g></svg>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--muted);text-align:center;">More stories to come.</p>
+    </div>
+  </div>
+  <div style="background:var(--brown);padding:3rem 2rem;text-align:center;border-top:2px solid var(--adobe);position:relative;overflow:hidden;">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:rgba(250,246,240,0.7);line-height:1.7;max-width:520px;margin:0 auto;">"A city is not made by its buildings. It is made by the people who choose to show up for it — day after day, without applause."</p>
+    <p style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,246,240,0.28);margin-top:0.7rem;">— Neerja Dave</p>
+  </div>
+  <div class="stripe sm"></div>
+  <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+
+<div class="page" id="page-contact">
+  <div class="stripe"></div>
+  <div class="chd">
+    <div class="chd-in">
+      <div class="ey" style="color:rgba(250,246,240,0.4);justify-content:center;">Let's talk cities</div>
+      <h1>Get In <em>Touch</em></h1>
+      <p>For collaborations, commissions, lectures, or to argue about roundabouts and parking minimums.</p>
+    </div>
+  </div>
+  <div class="stripe sm"></div>
+  <div class="cbox">
+    <div class="cleft">
+      <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem;">
+        <div style="height:1px;background:var(--deco);flex:1;"></div>
+        <svg width="9" height="9" viewBox="0 0 9 9"><rect x="0.5" y="0.5" width="8" height="8" fill="var(--deco)" transform="rotate(45 4.5 4.5)"/></svg>
+        <span style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--deco);">Write to me</span>
+        <svg width="9" height="9" viewBox="0 0 9 9"><rect x="0.5" y="0.5" width="8" height="8" fill="var(--deco)" transform="rotate(45 4.5 4.5)"/></svg>
+        <div style="height:1px;background:var(--deco);flex:1;"></div>
+      </div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--brown-dk);margin-bottom:0.3rem;">Neerja Dave</h2>
+      <p style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--adobe);margin-bottom:1.8rem;">Project Manager · Urban Designer · Writer</p>
+      <div class="csec teal-b">
+        <div class="csec-lbl tc">Personal Email</div>
+        <a href="mailto:daveneerja@gmail.com">daveneerja@gmail.com</a>
+        <a href="mailto:daveneerja@gmail.com" class="cbt">Send Email →</a>
+      </div>
+      <div class="csec adobe-b">
+        <div class="csec-lbl ac">Work / Professional</div>
+        <a href="mailto:neerja.dave@jacobs.com">neerja.dave@jacobs.com</a>
+        <p class="csub">Project Management · Urban Design · Jacobs</p>
+      </div>
+      <div class="csec gold-b">
+        <div class="csec-lbl gc">LinkedIn</div>
+        <a href="https://www.linkedin.com/in/neerjadave/" target="_blank">linkedin.com/in/neerjadave</a>
+      </div>
+    </div>
+    <div class="cright">
+      <svg style="position:absolute;bottom:-30px;right:-30px;width:240px;height:240px;opacity:0.05;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#430302" stroke-width="0.8"><rect x="5" y="5" width="190" height="190"/><rect x="25" y="25" width="150" height="150"/><rect x="50" y="50" width="100" height="100"/><rect x="75" y="75" width="50" height="50"/><rect x="90" y="90" width="20" height="20"/><line x1="5" y1="5" x2="195" y2="195"/><line x1="195" y1="5" x2="5" y2="195"/></g></svg>
+      <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem;position:relative;z-index:1;">
+        <div style="height:1px;background:var(--deco);flex:1;"></div>
+        <svg width="9" height="9" viewBox="0 0 9 9"><rect x="0.5" y="0.5" width="8" height="8" fill="var(--deco)" transform="rotate(45 4.5 4.5)"/></svg>
+        <span style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--deco);">I'm open to</span>
+        <svg width="9" height="9" viewBox="0 0 9 9"><rect x="0.5" y="0.5" width="8" height="8" fill="var(--deco)" transform="rotate(45 4.5 4.5)"/></svg>
+        <div style="height:1px;background:var(--deco);flex:1;"></div>
+      </div>
+      <div style="position:relative;z-index:1;">
+        <div class="copen"><div class="copen-ico t">✍️</div><div><div class="copen-ttl">Writing &amp; Columns</div><p class="copen-txt">Guest essays, opinion pieces, and long-form journalism on urban design and the built environment.</p></div></div>
+        <div class="copen"><div class="copen-ico a">🎙️</div><div><div class="copen-ttl">Speaking &amp; Lectures</div><p class="copen-txt">Talks on urban design, the 15-minute city, heritage conservation, mobility, and South Asian urbanism.</p></div></div>
+        <div class="copen"><div class="copen-ico g">🤝</div><div><div class="copen-ttl">Collaboration</div><p class="copen-txt">Community engagement, workshops, heritage walks, research partnerships, and creative urban projects.</p></div></div>
+        <div class="copen"><div class="copen-ico s">📷</div><div><div class="copen-ttl">Photography</div><p class="copen-txt">Licensing urban photography for editorial, academic, or publication use. Always with full attribution.</p></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cq">
+    <svg style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:260px;height:260px;opacity:0.05;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#E4A63D" stroke-width="0.6"><rect x="5" y="5" width="190" height="190"/><rect x="22" y="22" width="156" height="156"/><rect x="44" y="44" width="112" height="112"/><rect x="66" y="66" width="68" height="68"/><rect x="88" y="88" width="24" height="24"/><line x1="5" y1="5" x2="195" y2="195"/><line x1="195" y1="5" x2="5" y2="195"/></g></svg>
+    <p style="position:relative;z-index:1;">"The best conversations about cities begin outside — on a pavement, at a chowk, beside a compound wall at dusk."</p>
+    <span style="position:relative;z-index:1;">— Neerja Dave</span>
+  </div>
+  <div class="stripe sm"></div>
+  <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com · daveneerja@gmail.com</div></footer>
+</div>
+
+<!-- ═══ ARTICLE 1: UR-BANE ═══ -->
 
 <div class="page" id="page-article-urbane">
-  <div class="kathi-border"></div>
-  <div class="article-hero">
-    <div class="article-hero-in">
-      <button class="article-back" onclick="showPage('home')">← Back to Essays</button>
-      <span class="article-cat">Heritage · Public Space · Gujarat</span>
-      <h1 class="article-title">Ur-<em>bane</em></h1>
-      <div class="article-meta">
-        <span class="article-author">By <strong>Neerja Dave</strong></span>
-        <span class="article-date">November 30, 2015</span>
-        <span class="article-tag">Junagadh</span>
-        <span class="article-tag">Civic Architecture</span>
-        <span class="article-tag">Public Realm</span>
+  <div class="stripe"></div>
+  <div class="ahd">
+    <div class="ahd-in">
+      <button class="abk" onclick="showPage('home')">← Back to Essays</button>
+      <span class="acat">Heritage · Public Space · Gujarat</span>
+      <h1 class="atit">Ur-<em>bane</em></h1>
+      <div class="ameta">
+        <span class="ameta-au">By <strong>Neerja Dave</strong></span>
+        <span class="ameta-dt">November 30, 2015</span>
+        <span class="atag">Junagadh</span><span class="atag">Civic Architecture</span><span class="atag">Public Realm</span>
       </div>
     </div>
   </div>
-
-  <div class="kathi-border thin"></div>
-
-  <div class="article-body">
-
-```
-<p>History is the only means by which one can travel to the past. Built heritage holds enormous value in terms of encompassing facets of an entire era within itself. Older parts of our cities are frozen fractals. Each city from the pre-World War era emerged as one that was dominated by its public architecture.</p>
-
-<p>The city of Junagadh pre-dates written historical records as an ancient Greek regnum. Following which a streak of Hindu kings laid their regime over it till the 18th century, when the Muslim Nawabs ruled for a couple of decades and — under the influence of the British Raj — up to 1947. Magnificent edifices of architecture were constructed during this phase including the Aina Mahal, Rang Mahal, Circle Chowk, and the Lord Ray Gate, being just a few to name.</p>
-
-<!-- Rang Mahal image -->
-<div class="article-img">
-  <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2015/11/a-part-of-the-rang-mahal-e1520851901135.jpg" alt="Rang Mahal, Junagadh" onerror="this.parentElement.innerHTML='<div class=\'article-img-placeholder med\'><svg viewBox=\'0 0 800 300\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'800\' height=\'300\' fill=\'#C4875A\'/><pattern id=\'ap1\' x=\'0\' y=\'0\' width=\'40\' height=\'40\' patternUnits=\'userSpaceOnUse\'><rect width=\'40\' height=\'40\' fill=\'none\' stroke=\'#8B5E3C\' stroke-width=\'0.5\'/><circle cx=\'20\' cy=\'20\' r=\'8\' fill=\'none\' stroke=\'#8B5E3C\' stroke-width=\'1\'/></pattern><rect width=\'800\' height=\'300\' fill=\'url(#ap1)\' opacity=\'0.3\'/></svg><div class=\'article-img-placeholder-lbl\'>Rang Mahal, Junagadh</div></div>'"/>
-  <div class="article-img-caption">The Rang Mahal towers above the rest of the city — one of the final surviving excerpts of public architecture from the Nawabi era.</div>
-</div>
-
-<div class="article-pullquote">
-  <p>The Public Realm is out-rightly seconded in priority to the profit-oriented real estate market. Classical notions of city planning have long been replaced by modern and now post-modern ideas of designing our cities.</p>
-</div>
-
-<p>These are but the final few excerpts of public architecture that can be found in the city. The city boasts of a very strong architectural backdrop. Speaking of which, the only visual that can be imagined is that of colonial and pre-colonial buildings surrounding a public space or garden. Whereas on the other hand, all modern developments build an image that depicts faceless buildings and unusable public spaces, if any at all.</p>
-
-<p>This is a fundamental issue with our modern planning techniques and strategies. The Public Realm is outright seconded in priority to the profit-oriented real estate market. Classical notions of city planning have long been replaced by modern and now post-modern ideas of designing our cities. During the transition, the focus on providing spaces for the burgeoning class has shifted drastically — which, if it continues, shall render our cities faceless and without an identity of their own.</p>
-
-<!-- Divan Chowk image -->
-<div class="article-img">
-  <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2015/11/dsc_0096.jpg" alt="Divan Chowk, Junagadh" onerror="this.parentElement.innerHTML='<div class=\'article-img-placeholder wide\'><svg viewBox=\'0 0 800 420\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'800\' height=\'420\' fill=\'#B5451B\'/><pattern id=\'ap2\' x=\'0\' y=\'0\' width=\'48\' height=\'48\' patternUnits=\'userSpaceOnUse\'><circle cx=\'24\' cy=\'24\' r=\'20\' fill=\'none\' stroke=\'#8B3010\' stroke-width=\'0.8\'/></pattern><rect width=\'800\' height=\'420\' fill=\'url(#ap2)\' opacity=\'0.3\'/></svg><div class=\'article-img-placeholder-lbl\'>Divan Chowk, Junagadh</div></div>'"/>
-  <div class="article-img-caption">Divan Chowk, Junagadh. Today the Chowk is flanked by dirty pavements, haphazardly parked automobiles and randomly located chai-walas. It is but a scene of absolute chaos — and nobody could say this chowk was once, in history, located adjacent to a very grand palace.</div>
-</div>
-
-<h2 class="article-h2">The Organic Fort City</h2>
-
-<p>Discussing the case of Junagadh furthermore: the fort city has developed organically, with each urban fragment responding to its topography, climate, and community settlement patterns — which can be spelled as the major determinant factors during the course of development up to as recently as the early 18th century. All public structures were placed on topographic high-points and laid a strong axis that cut through the city.</p>
-
-<p>The newer developments, by contrast, are fragmented, failing to either hold on to or add to the existing city structure that had been laid out by preceding town planning — wherein all major city crossroads consisted of a hierarchy of scaled urban public spaces, or <em>chowks</em>.</p>
-
-<!-- King's Road image -->
-<div class="article-img">
-  <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2015/11/kings-road-e1520853641389.png" alt="The King's Road, Junagadh" onerror="this.parentElement.innerHTML='<div class=\'article-img-placeholder wide\'><svg viewBox=\'0 0 800 420\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'800\' height=\'420\' fill=\'#2C3E7A\'/><pattern id=\'ap3\' x=\'0\' y=\'0\' width=\'36\' height=\'36\' patternUnits=\'userSpaceOnUse\'><path d=\'M18 4 L32 32 L4 32 Z\' fill=\'none\' stroke=\'#C47A2B\' stroke-width=\'0.6\'/></pattern><rect width=\'800\' height=\'420\' fill=\'url(#ap3)\' opacity=\'0.3\'/></svg><div class=\'article-img-placeholder-lbl\'>The King\'s Road, Junagadh</div></div>'"/>
-  <div class="article-img-caption">The King's Road — the ceremonial spine of the city, consisting of all major public structures, community institutes and civic architecture built during the Nawabi era from the late 1700s to the colonial era of the 1940s.</div>
-</div>
-
-<h2 class="article-h2">The King's Road</h2>
-
-<p>The ceremonial spine of the city consists of all major public structures, community institutes, and civic architecture built during the early Nawabi era from the late 1700s to the late colonial era of up to the 1940s. Known as the King's Road, the spine provided immense scope for public participation and interaction of the political elite with the burgeoning class.</p>
-
-<!-- Schema image -->
-<div class="article-img">
-  <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2015/11/schema-of-the-public-entities-that-have-been-place-in-the-city-e1520850667691.jpg" alt="Schema of public entities in Junagadh" onerror="this.parentElement.innerHTML='<div class=\'article-img-placeholder med\'><svg viewBox=\'0 0 800 300\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'800\' height=\'300\' fill=\'#D4920A\'/><pattern id=\'ap4\' x=\'0\' y=\'0\' width=\'24\' height=\'24\' patternUnits=\'userSpaceOnUse\'><rect x=\'4\' y=\'4\' width=\'16\' height=\'16\' fill=\'none\' stroke=\'#B5451B\' stroke-width=\'0.8\'/></pattern><rect width=\'800\' height=\'300\' fill=\'url(#ap4)\' opacity=\'0.4\'/></svg><div class=\'article-img-placeholder-lbl\'>Schematic section — citadel to newer city</div></div>'"/>
-  <div class="article-img-caption">Schematic section from the citadel to the newer part of the city, depicting the scale and placement of civic buildings in the city fabric.</div>
-</div>
-
-<h2 class="article-h2">What Could Have Been</h2>
-
-<p>However, today one can only imagine what the city of Junagadh could have been, had these places of historical and public importance been maintained and restored to their previous glorious selves.</p>
-
-<p>As infrastructure and the real estate market have taken over as the key determinants of our urban-scapes in the present times, it is but difficult to come across an intent to build public architecture. In spite of this, efforts must be laid to formulate an evolved typology of civic architecture that satisfies the real estate market while simultaneously sufficing the need of a city to gain an identity of its own through its public architecture.</p>
-
-<div class="article-pullquote">
-  <p>Policies must be formulated by governing authorities to enrich urban pockets with a well-placed network of civic spaces and buildings — before the last frozen fractals of our heritage cities thaw away entirely.</p>
-</div>
-
-<p>Policies must be formulated by governing authorities to enrich urban pockets with a well-placed network of civic spaces and buildings.</p>
-```
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-footer-tags">
-      <span class="article-footer-tag">Junagadh</span>
-      <span class="article-footer-tag">Heritage</span>
-      <span class="article-footer-tag">Public Space</span>
-      <span class="article-footer-tag">Gujarat</span>
-      <span class="article-footer-tag">Civic Architecture</span>
-      <span class="article-footer-tag">Urban History</span>
+  <div class="abody">
+    <p>History is the only means by which one can travel to the past. Built heritage holds enormous value in terms of encompassing facets of an entire era within itself. Older parts of our cities are frozen fractals. Each city from the pre-World War era emerged as one that was dominated by its public architecture.</p>
+    <p>The city of Junagadh pre-dates written historical records as an ancient Greek regnum. Following which a streak of Hindu kings laid their regime over it till the 18th century, when the Muslim Nawabs ruled for a couple of decades and — under the influence of the British Raj — up to 1947. Magnificent edifices were constructed during this phase including the Aina Mahal, Rang Mahal, Circle Chowk, and the Lord Ray Gate.</p>
+    <div class="aimg">
+      <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2015/11/a-part-of-the-rang-mahal-e1520851901135.jpg" alt="Rang Mahal, Junagadh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="aph med" style="display:none;background:#8B4513;"><svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="300" fill="#C1714A" opacity="0.3"/></svg><div class="aph-l">Rang Mahal, Junagadh</div></div>
+      <div class="acap">The Rang Mahal — one of the final surviving excerpts of public architecture from the Nawabi era.</div>
     </div>
-    <div class="article-share">Originally published November 30, 2015 on The Walk of Life Blog</div>
-    <button class="article-nav-btn" onclick="showPage('home')">← Back to all essays</button>
+    <div class="apq"><p>The Public Realm is out-rightly seconded in priority to the profit-oriented real estate market. Classical notions of city planning have long been replaced by modern and now post-modern ideas of designing our cities.</p></div>
+    <p>These are but the final few excerpts of public architecture that can be found in the city. The city boasts of a very strong architectural backdrop — dominated by its public spaces and civic buildings. Whereas modern developments build an image of faceless buildings and unusable public spaces, if any at all.</p>
+    <p>This is a fundamental issue with our modern planning techniques. The Public Realm is outright seconded in priority to the profit-oriented real estate market. During the transition, the focus on providing spaces for the burgeoning class has shifted drastically — which, if it continues, shall render our cities faceless and without an identity of their own.</p>
+    <div class="aimg">
+      <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2015/11/dsc_0096.jpg" alt="Divan Chowk, Junagadh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="aph wide" style="display:none;background:#430302;"><svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="420" fill="#C1714A" opacity="0.2"/></svg><div class="aph-l">Divan Chowk, Junagadh</div></div>
+      <div class="acap">Divan Chowk today — dirty pavements, haphazardly parked automobiles, and nobody who could guess this was once adjacent to a grand palace.</div>
+    </div>
+    <div class="ah2">The Organic Fort City</div>
+    <p>The fort city has developed organically, with each urban fragment responding to its topography, climate, and community settlement patterns. All public structures were placed on topographic high-points and laid a strong axis that cut through the city — wherein all major city crossroads consisted of a hierarchy of scaled urban public spaces, or <em>chowks</em>.</p>
+    <div class="aimg">
+      <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2015/11/kings-road-e1520853641389.png" alt="The King's Road, Junagadh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="aph wide" style="display:none;background:#1A3A6A;"><svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="420" fill="#2A9D8F" opacity="0.15"/></svg><div class="aph-l">The King's Road, Junagadh</div></div>
+      <div class="acap">The King's Road — the ceremonial spine of the city, consisting of all major public structures and civic architecture built during the Nawabi era.</div>
+    </div>
+    <div class="ah2">What Could Have Been</div>
+    <p>Today one can only imagine what the city of Junagadh could have been, had these places of historical and public importance been maintained and restored to their previous glorious selves.</p>
+    <p>As infrastructure and the real estate market have taken over as the key determinants of our urban-scapes, it is but difficult to come across an intent to build public architecture. Efforts must be laid to formulate an evolved typology of civic architecture that satisfies the real estate market while simultaneously sufficing the need of a city to gain an identity of its own.</p>
+    <div class="apq"><p>Policies must be formulated by governing authorities to enrich urban pockets with a well-placed network of civic spaces and buildings — before the last frozen fractals of our heritage cities thaw away entirely.</p></div>
   </div>
-
-  <div class="kathi-border thin"></div>
-  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · neerjadave.com</div></footer>
+  <div class="aft">
+    <div class="aft-tags"><span class="aft-tag">Junagadh</span><span class="aft-tag">Heritage</span><span class="aft-tag">Public Space</span><span class="aft-tag">Gujarat</span><span class="aft-tag">Civic Architecture</span></div>
+    <div class="aft-src">Originally published November 30, 2015 · The Walk of Life Blog</div>
+    <button class="abtn" onclick="showPage('home')">← Back to all essays</button>
+  </div>
+  <div class="stripe sm"></div>
+  <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
 </div>
 
-<!-- ═══════ ARTICLE: RACE COURSE RAJKOT ═══════ -->
+<!-- ═══ ARTICLE 2: RACE COURSE ═══ -->
 
 <div class="page" id="page-article-racecourse">
-  <div class="kathi-border"></div>
-  <div class="article-hero">
-    <div class="article-hero-in">
-      <button class="article-back" onclick="showPage('home')">← Back to Essays</button>
-      <span class="article-cat">Public Space · Rajkot · Urban Edge</span>
-      <h1 class="article-title">Urban Edge as a<br><em>Binding Element</em></h1>
-      <p style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(245,236,215,0.6);font-size:1.1rem;margin-top:1rem;margin-bottom:1.5rem;">A Case Study Analysis of Race Course, Rajkot</p>
-      <div class="article-meta">
-        <span class="article-author">By <strong>Neerja Dave</strong></span>
-        <span class="article-date">January 17, 2020</span>
-        <span class="article-tag">Rajkot</span>
-        <span class="article-tag">Public Space</span>
-        <span class="article-tag">Urban Edge</span>
-        <span class="article-tag">Kathiawad</span>
+  <div class="stripe"></div>
+  <div class="ahd">
+    <div class="ahd-in">
+      <button class="abk" onclick="showPage('home')">← Back to Essays</button>
+      <span class="acat">Public Space · Rajkot · Urban Edge</span>
+      <h1 class="atit">Urban Edge as a <em>Binding Element</em></h1>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(250,246,240,0.55);font-size:1.05rem;margin-top:0.8rem;margin-bottom:1.3rem;">A Case Study Analysis of Race Course, Rajkot</p>
+      <div class="ameta">
+        <span class="ameta-au">By <strong>Neerja Dave</strong></span>
+        <span class="ameta-dt">January 17, 2020</span>
+        <span class="atag">Rajkot</span><span class="atag">Public Space</span><span class="atag">Urban Edge</span>
       </div>
     </div>
   </div>
-
-  <div class="kathi-border thin"></div>
-
-  <div class="article-body">
-
-```
-<p>Rajkot city is located in the central part of the Saurashtra Peninsula in the western part of India. And at its heart — binding the medieval town with its post-industrial growth — sits Race Course: a 100-acre public park that has become one of the most quietly successful urban spaces in the country.</p>
-
-<h2 class="article-h2">Importance in Urban Setting</h2>
-
-<p>Race Course binds the entire city together due to its placement at the junction of the medieval part of the town and the post-industrial developments. It sits in very close proximity to all three transport stations of the city — the airport, the railway station, and the City Bus Stand — a location that puts this public space in a uniquely democratic position.</p>
-
-<p>In terms of road networks, Race Course finds itself placed strategically at the crossings of all five major highways of the city, making it inevitable to pass by this public landmark on a daily travel route. This makes Race Course a very distinguished landmark in the memory of the city — not just a destination, but an unavoidable presence.</p>
-
-<div class="article-pullquote">
-  <p>In its beginning phase, Race Course was set up by the British Raj as a horse racing facility. Post Indian Independence, the 100-acre area was converted into a city park — a transformation that tells you everything about what a city chooses to do with inherited colonial space.</p>
-</div>
-
-<p>The park now houses sports amenities, gardens, a children's park, an art gallery, an amusement park, a planetarium, a library, and <em>maidaans</em> — free open spaces — to hold festive gatherings, commercial expo events, and an informal children's recreation zone.</p>
-
-<h2 class="article-h2">Composition of Urban Space</h2>
-
-<p>Race Course — Ring Road, as it is popularly referred to in the city — is a mix-bag of land uses. A vital part of the Indian economy is its informal sector, and Race Course, with its 100-acre potential, provides all necessary urban equipment and enables hawkers and street vendors to sell their services and goods in a very dignified manner.</p>
-
-<p>Trees are a major element. One of the intangible reasons why people are drawn towards this place is the microclimate. Rajkot, being situated in a semi-arid, hot-dry climate where temperatures rise to 40–43 degrees Celsius, benefits enormously from the significant tree cover across the entire patch of Race Course. It is measurably cooler during the daytime, and evenings are very pleasant. The trees provide shade — a fundamental urban amenity that is scandalously undervalued in contemporary Indian planning.</p>
-
-<p>The sports offer international standards of amenities at affordable prices: an international-level cricket stadium, football ground, tennis ground, hockey ground, indoor sports stadium, athletics ground, and an Olympic-size swimming pool. It is, by any measure, an extraordinary provision of public infrastructure for a mid-sized Indian city.</p>
-
-<h2 class="article-h2">The Compound Wall — A Design Lesson</h2>
-
-<div class="article-img">
-  <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2018/10/rcrjt.jpg" alt="Race Course, Rajkot" onerror="this.parentElement.innerHTML='<div class=\'article-img-placeholder wide\'><svg viewBox=\'0 0 800 420\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'800\' height=\'420\' fill=\'#4A6741\'/><pattern id=\'rp1\' x=\'0\' y=\'0\' width=\'40\' height=\'40\' patternUnits=\'userSpaceOnUse\'><line x1=\'0\' y1=\'0\' x2=\'40\' y2=\'40\' stroke=\'#3A5231\' stroke-width=\'0.5\'/><line x1=\'40\' y1=\'0\' x2=\'0\' y2=\'40\' stroke=\'#3A5231\' stroke-width=\'0.5\'/><circle cx=\'20\' cy=\'20\' r=\'6\' fill=\'none\' stroke=\'#3A5231\' stroke-width=\'0.7\'/></pattern><rect width=\'800\' height=\'420\' fill=\'url(#rp1)\' opacity=\'0.3\'/></svg><div class=\'article-img-placeholder-lbl\'>Race Course, Rajkot</div><div class=\'article-img-placeholder-sub\'>The compound wall and perimeter</div></div>'"/>
-  <div class="article-img-caption">Race Course, Rajkot — the 100-acre city park whose compound wall has become one of the most democratic urban edges in the Saurashtra region.</div>
-</div>
-
-<p>Race Course has been composed as a congregation of related and supporting land-use parcels along its 4 kilometres of perimeter. One string of adjacent land parcels is dedicated to colonial garden-front civic buildings and housing for the mayor and other local political figures. Another string includes mixed-use setups where the ground floors of majority of residential buildings are leased out to cafes, eateries, and restaurants — which turn out to be hotspots for health-conscious morning walkers, for youngsters in the evenings, and for families late into the night.</p>
-
-<p>The compound wall design was conceived specifically for users to sit in comfortable, clean, shade-providing space. Trees were planted along the perimeter of the 100 acres. This critical design decision brought the entire city — across all age groups, social divisions, and economic classes — to one solid ground of usability and recreation.</p>
-
-<div class="article-pullquote">
-  <p>The compound wall acts as a binding element for communities and economic classes alike. It is where almost the entire city crowds up on weekends and festivals — a democratic edge, designed by an architect who understood that affordability and dignity are not in opposition.</p>
-</div>
-
-<h2 class="article-h2">The Architect Behind the Edge</h2>
-
-<p>Originally, there wasn't a defined boundary to the Race Course, but as it was developed from a racing ground into a formal city park, a decision was taken by the city council to formalise its urban edge. Back in the early 1960s, Rajkot was a small but growing town with very little funding for public infrastructure.</p>
-
-<p>The architect commissioned to design the urban edge was <strong>Mr. Indubhai Parekh</strong> — a very revered figure in the architectural history of the Saurashtra peninsula. He had the task of minimising the building cost while providing maximum usability through the edge. He specialised in affordable building practices, and hence the design translated in the compound wall of Race Course was one that held vernacular spatial traits while fitting well within financial constraints.</p>
-
-<p>This is probably one of the reasons why the space has been such a huge success, even 50 years after its inception. Morning walkers throng the space starting from 4am up to 7am, on all days. Hawkers do not miss a chance — if you walk down the Race Course Road in early morning hours, it would not be a surprise to find people selling healthy soups and snacks. At noon, the edge — the compound wall space — is used by commuters to nap or rest in the shade, getting some relief from the scorching sun. Many employees from surrounding administration and civic office buildings use it as a lunching spot. But evenings are when the space truly comes to life, with the entire city and people of all age groups flocking to the city park.</p>
-
-<p>Indubhai Parekh designed something that textbooks rarely teach: a public edge that costs almost nothing to maintain, generates its own informal economy, and serves every demographic simultaneously. That is not luck. That is profound urban design intelligence.</p>
-```
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-footer-tags">
-      <span class="article-footer-tag">Rajkot</span>
-      <span class="article-footer-tag">Race Course</span>
-      <span class="article-footer-tag">Urban Edge</span>
-      <span class="article-footer-tag">Public Space</span>
-      <span class="article-footer-tag">Kathiawad</span>
-      <span class="article-footer-tag">Indubhai Parekh</span>
-      <span class="article-footer-tag">Informal Economy</span>
+  <div class="abody">
+    <p>Rajkot city is located in the central part of the Saurashtra Peninsula in the western part of India. And at its heart — binding the medieval town with its post-industrial growth — sits Race Course: a 100-acre public park that has become one of the most quietly successful urban spaces in the country.</p>
+    <div class="ah2">Importance in Urban Setting</div>
+    <p>Race Course binds the entire city together due to its placement at the junction of the medieval part of the town and the post-industrial developments. It sits in very close proximity to all three transport stations of the city — the airport, the railway station, and the City Bus Stand — a location that puts this public space in a uniquely democratic position.</p>
+    <div class="apq"><p>In its beginning phase, Race Course was set up by the British Raj as a horse racing facility. Post Indian Independence, the 100-acre area was converted into a city park — a transformation that tells you everything about what a city chooses to do with inherited colonial space.</p></div>
+    <p>The park now houses sports amenities, gardens, a children's park, an art gallery, an amusement park, a planetarium, a library, and <em>maidaans</em> — free open spaces — to hold festive gatherings, commercial expo events, and an informal children's recreation zone.</p>
+    <div class="ah2">Composition of Urban Space</div>
+    <p>Race Course — Ring Road, as it is popularly referred to — is a mix-bag of land uses. A vital part of the Indian economy is its informal sector, and Race Course, with its 100-acre potential, provides all necessary urban equipment and enables hawkers and street vendors to sell their services and goods in a very dignified manner.</p>
+    <p>Trees are a major element. One of the intangible reasons why people are drawn towards this place is the microclimate. Rajkot, being situated in a semi-arid, hot-dry climate where temperatures rise to 40–43 degrees Celsius, benefits enormously from the significant tree cover. It is measurably cooler during the daytime, and evenings are very pleasant.</p>
+    <div class="aimg">
+      <img src="https://thewalkoflifeblog.wordpress.com/wp-content/uploads/2018/10/rcrjt.jpg" alt="Race Course, Rajkot" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="aph wide" style="display:none;background:#2A5A3A;"><svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="420" fill="#2A9D8F" opacity="0.2"/></svg><div class="aph-l">Race Course, Rajkot</div></div>
+      <div class="acap">Race Course — the 100-acre city park whose compound wall has become one of the most democratic urban edges in the Saurashtra region.</div>
     </div>
-    <div class="article-share">Originally published January 17, 2020 on The Walk of Life Blog</div>
-    <button class="article-nav-btn" onclick="showPage('article-urbane')">← Previous: Ur-bane</button>
+    <div class="ah2">The Compound Wall — A Design Lesson</div>
+    <p>Race Course has been composed as a congregation of related and supporting land-use parcels along its 4 kilometres of perimeter. The compound wall design was conceived specifically for users to sit in comfortable, clean, shade-providing space. This critical design decision brought the entire city — across all age groups, social divisions, and economic classes — to one solid ground of usability and recreation.</p>
+    <div class="apq"><p>The compound wall acts as a binding element for communities and economic classes alike — a democratic edge, designed by an architect who understood that affordability and dignity are not in opposition.</p></div>
+    <div class="ah2">The Architect Behind the Edge</div>
+    <p>The architect commissioned to design the urban edge was <strong>Mr. Indubhai Parekh</strong> — a very revered figure in the architectural history of the Saurashtra peninsula. He had the task of minimising the building cost while providing maximum usability through the edge. He specialised in affordable building practices, and hence the design translated in the compound wall of Race Course was one that held vernacular spatial traits while fitting well within financial constraints.</p>
+    <p>Morning walkers throng the space starting from 4am up to 7am. Hawkers sell healthy soups and snacks. At noon, the edge is used by commuters to nap in the shade. Many employees from surrounding offices use it as a lunching spot. But evenings are when the space truly comes to life, with the entire city and people of all age groups flocking to the park.</p>
+    <p>Indubhai Parekh designed something that textbooks rarely teach: a public edge that costs almost nothing to maintain, generates its own informal economy, and serves every demographic simultaneously. That is not luck. That is profound urban design intelligence.</p>
   </div>
-
-  <div class="kathi-border thin"></div>
-  <footer><div class="fbrand">URBANISM<span style="color:var(--saffron)">.</span></div><div class="fcopy">© 2025 · neerjadave.com</div></footer>
+  <div class="aft">
+    <div class="aft-tags"><span class="aft-tag">Rajkot</span><span class="aft-tag">Race Course</span><span class="aft-tag">Urban Edge</span><span class="aft-tag">Public Space</span><span class="aft-tag">Indubhai Parekh</span></div>
+    <div class="aft-src">Originally published January 17, 2020 · The Walk of Life Blog</div>
+    <button class="abtn" onclick="showPage('article-urbane')">← Previous: Ur-bane</button>
+  </div>
+  <div class="stripe sm"></div>
+  <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
 </div>
 
 <script>
-// ARTICLE LINKS
-document.querySelectorAll('.plink').forEach((l,i)=>{
-  if(i===0) l.onclick=function(e){e.preventDefault();showPage('article-urbane');};
-  if(i===1) l.onclick=function(e){e.preventDefault();showPage('article-racecourse');};
-});
-
-// PAGE ROUTING
-function showPage(name){
+function showPage(n){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
-  document.getElementById('page-'+name).classList.add('active');
-  document.getElementById('nav-'+name).classList.add('active');
+  document.querySelectorAll('.nlinks a').forEach(a=>a.classList.remove('act'));
+  document.getElementById('page-'+n).classList.add('active');
+  const nav=document.getElementById('nav-'+n);
+  if(nav) nav.classList.add('act');
   window.scrollTo({top:0,behavior:'smooth'});
 }
-
-// POST FILTER
 function filterPosts(btn,cat){
-  document.querySelectorAll('.topics-band .pill').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
+  document.querySelectorAll('.pband .pill').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
   let n=0;
-  document.querySelectorAll('#posts .card').forEach(c=>{
+  document.querySelectorAll('#posts .pc').forEach(c=>{
     const cc=c.dataset.cat||'';
     if(cat==='all'||cc.includes(cat)){c.style.display='';n++;}
     else c.style.display='none';
   });
   document.getElementById('pcnt').textContent=n+' article'+(n!==1?'s':'');
 }
-
-// PHOTO FILTER
 function filterPhotos(btn,cat){
-  document.querySelectorAll('.photo-fbar .pill').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('#photo-grid .photo-item').forEach(i=>{
+  document.querySelectorAll('.pfbar .pill').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('#photo-grid .pi').forEach(i=>{
     const c=i.dataset.cat||'';
     i.style.display=(cat==='all'||c.includes(cat))?'':'none';
   });
 }
-
-// MAP TOOLTIP
-const cityData={
-  'Rajkot':{country:'India',score:95},
-  'Jamnagar':{country:'India',score:88},
-  'Ahmedabad':{country:'India',score:90},
-  'Mumbai':{country:'India',score:80},
-  'Delhi':{country:'India',score:72},
-  'Bologna':{country:'Italy',score:70},
-  'Lisbon':{country:'Portugal',score:65},
-  'Porto':{country:'Portugal',score:60},
-  'London':{country:'UK',score:60},
-  'Amsterdam':{country:'Netherlands',score:58},
-  'Kyoto':{country:'Japan',score:70},
-  'Osaka':{country:'Japan',score:65},
-  'Hanoi':{country:'Vietnam',score:55},
-  'Marrakech':{country:'Morocco',score:65},
-  'Fès':{country:'Morocco',score:60}
-};
-
-const wrap=document.getElementById('map-wrap');
-const tt=document.getElementById('mtt');
-
-// attach hover to SVG text labels and circles
-document.querySelectorAll('#map-wrap svg circle[fill]').forEach((c,i)=>{
-  // find nearest text
+document.querySelectorAll('#posts .plnk').forEach((l,i)=>{
+  if(i===0) l.onclick=e=>{e.preventDefault();showPage('article-urbane');};
+  if(i===1) l.onclick=e=>{e.preventDefault();showPage('article-racecourse');};
 });
-
-// Use text elements as triggers too
-document.querySelectorAll('#map-wrap svg text').forEach(t=>{
-  const city=t.textContent.trim();
-  if(!cityData[city]) return;
-  t.style.cursor='pointer';
-  t.addEventListener('mouseenter',e=>showTT(e,city));
-  t.addEventListener('mousemove',e=>moveTT(e));
-  t.addEventListener('mouseleave',()=>tt.style.display='none');
-});
-
-document.querySelectorAll('#map-wrap svg circle').forEach(c=>{
-  // Match by proximity to text
-  const cx=parseFloat(c.getAttribute('cx'));
-  const cy=parseFloat(c.getAttribute('cy'));
-  // find matching city by nearest text
-  let closest=null,minD=999;
-  document.querySelectorAll('#map-wrap svg text').forEach(t=>{
-    const tx=parseFloat(t.getAttribute('x'));
-    const ty=parseFloat(t.getAttribute('y'));
-    const d=Math.hypot(cx-tx,cy-ty);
-    if(d<minD&&cityData[t.textContent.trim()]){minD=d;closest=t.textContent.trim();}
-  });
-  if(closest&&minD<30){
-    c.style.cursor='pointer';
-    c.addEventListener('mouseenter',e=>showTT(e,closest));
-    c.addEventListener('mousemove',e=>moveTT(e));
-    c.addEventListener('mouseleave',()=>tt.style.display='none');
-  }
-});
-
-function showTT(e,city){
-  const d=cityData[city];
-  if(!d) return;
-  document.getElementById('mtt-city').textContent=city;
-  document.getElementById('mtt-country').textContent=d.country;
-  document.getElementById('mtt-bar').style.width=d.score+'%';
-  document.getElementById('mtt-score').textContent='Urban focus score: '+d.score+'%';
-  tt.style.display='block';
-  moveTT(e);
-}
-function moveTT(e){
-  const wr=wrap.getBoundingClientRect();
-  let x=e.clientX-wr.left+14,y=e.clientY-wr.top-14;
-  if(x+170>wr.width) x-=190;
-  tt.style.left=x+'px';
-  tt.style.top=y+'px';
-}
 </script>
 
 </body>
