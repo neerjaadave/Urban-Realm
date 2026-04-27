@@ -443,10 +443,14 @@ tr:hover td{background:rgba(42,157,143,0.04);}
     <a onclick="showPage('bio')" id="nav-bio">About Me</a>
     <a onclick="showPage('photography')" id="nav-photography">Photography</a>
     <a onclick="showPage('map')" id="nav-map">Public Spaces Repository</a>
-    <a onclick="showPage('volunteer')" id="nav-volunteer">Volunteer</a>
+    <a onclick="showPage('volunteer')" id="nav-volunteer">Volunteer Engagements</a>
     <a onclick="showPage('works')" id="nav-works">Selected Works</a>
     <a onclick="showPage('contact')" id="nav-contact">Contact</a>
   </div>
+  <!-- hidden nav anchors for project pages -->
+  <a id="nav-project-microsoft" style="display:none"></a>
+  <a id="nav-project-floodplain" style="display:none"></a>
+  <a id="nav-project-thesis" style="display:none"></a>
 </nav>
 
 <!-- ═══ HOME ═══ -->
@@ -905,26 +909,6 @@ tr:hover td{background:rgba(42,157,143,0.04);}
     <div class="ml"><div class="ml-dot" style="background:var(--gold);"></div><span class="ml-l">East / SE Asia</span></div>
     <div class="ml"><div class="ml-dot" style="background:var(--pink);"></div><span class="ml-l">Africa / Middle East</span></div>
   </div>
-  <div class="cdata">
-    <h2>Cities — Urban Observations Index</h2>
-    <table>
-      <thead><tr><th>City</th><th>Country</th><th>Region</th><th>Urban Focus</th><th>Score</th><th>Key Insight</th></tr></thead>
-      <tbody>
-        <tr><td><span class="cf">🪬</span><span class="cn">Rajkot</span></td><td>India</td><td><span class="rb ri">India</span></td><td><div class="fb2"><div class="ff" style="width:95%"></div></div></td><td style="font-weight:700;color:var(--adobe);">95%</td><td style="font-size:13px;color:var(--muted);">Home city — Kathiawadi urban grain</td></tr>
-        <tr><td><span class="cf">🏛️</span><span class="cn">Ahmedabad</span></td><td>India</td><td><span class="rb ri">India</span></td><td><div class="fb2"><div class="ff" style="width:90%"></div></div></td><td style="font-weight:700;color:var(--adobe);">90%</td><td style="font-size:13px;color:var(--muted);">UNESCO Heritage, pol network, BRTS</td></tr>
-        <tr><td><span class="cf">🌊</span><span class="cn">Jamnagar</span></td><td>India</td><td><span class="rb ri">India</span></td><td><div class="fb2"><div class="ff" style="width:88%"></div></div></td><td style="font-weight:700;color:var(--adobe);">88%</td><td style="font-size:13px;color:var(--muted);">Circular plan, Lakhota Lake integration</td></tr>
-        <tr><td><span class="cf">🏗️</span><span class="cn">Mumbai</span></td><td>India</td><td><span class="rb ri">India</span></td><td><div class="fb2"><div class="ff" style="width:80%"></div></div></td><td style="font-weight:700;color:var(--adobe);">80%</td><td style="font-size:13px;color:var(--muted);">Dharavi, density, Victorian Gothic</td></tr>
-        <tr><td><span class="cf">🌁</span><span class="cn">San Francisco</span></td><td>USA</td><td><span class="rb rs">USA</span></td><td><div class="fb2"><div class="ff" style="width:85%"></div></div></td><td style="font-weight:700;color:var(--mid);">85%</td><td style="font-size:13px;color:var(--muted);">Housing crisis, Victorian fabric, waterfront</td></tr>
-        <tr><td><span class="cf">🗽</span><span class="cn">New York City</span></td><td>USA</td><td><span class="rb rs">USA</span></td><td><div class="fb2"><div class="ff" style="width:80%"></div></div></td><td style="font-weight:700;color:var(--mid);">80%</td><td style="font-size:13px;color:var(--muted);">Grid, density, Central Park, High Line</td></tr>
-        <tr><td><span class="cf">🏜️</span><span class="cn">Santa Fe</span></td><td>USA</td><td><span class="rb rs">USA</span></td><td><div class="fb2"><div class="ff" style="width:72%"></div></div></td><td style="font-weight:700;color:var(--mid);">72%</td><td style="font-size:13px;color:var(--muted);">Pueblo Revival adobe heritage policy</td></tr>
-        <tr><td><span class="cf">🎷</span><span class="cn">New Orleans</span></td><td>USA</td><td><span class="rb rs">USA</span></td><td><div class="fb2"><div class="ff" style="width:70%"></div></div></td><td style="font-weight:700;color:var(--mid);">70%</td><td style="font-size:13px;color:var(--muted);">French Quarter, resilience, cultural urbanism</td></tr>
-        <tr><td><span class="cf">🚲</span><span class="cn">Amsterdam</span></td><td>Netherlands</td><td><span class="rb re">Europe</span></td><td><div class="fb2"><div class="ff" style="width:82%"></div></div></td><td style="font-weight:700;color:var(--teal);">82%</td><td style="font-size:13px;color:var(--muted);">Canal heritage, cycling supremacy, polycentric</td></tr>
-        <tr><td><span class="cf">🏫</span><span class="cn">Dessau</span></td><td>Germany</td><td><span class="rb re">Europe</span></td><td><div class="fb2"><div class="ff" style="width:75%"></div></div></td><td style="font-weight:700;color:var(--teal);">75%</td><td style="font-size:13px;color:var(--muted);">Bauhaus school, modernist design heritage</td></tr>
-        <tr><td><span class="cf">🗼</span><span class="cn">Paris</span></td><td>France</td><td><span class="rb re">Europe</span></td><td><div class="fb2"><div class="ff" style="width:78%"></div></div></td><td style="font-weight:700;color:var(--teal);">78%</td><td style="font-size:13px;color:var(--muted);">Haussmann boulevards, street transformation</td></tr>
-        <tr><td><span class="cf">🫖</span><span class="cn">London Central</span></td><td>UK</td><td><span class="rb re">Europe</span></td><td><div class="fb2"><div class="ff" style="width:68%"></div></div></td><td style="font-weight:700;color:var(--teal);">68%</td><td style="font-size:13px;color:var(--muted);">Borough diversity, Thames as public spine</td></tr>
-      </tbody>
-    </table>
-  </div>
   <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
 </div>
 
@@ -935,7 +919,7 @@ tr:hover td{background:rgba(42,157,143,0.04);}
   <div class="vhd">
     <div class="vhd-in">
       <div class="ey" style="color:rgba(250,246,240,0.4);">Beyond the brief</div>
-      <h1>Volunteer <em>Work</em></h1>
+      <h1>Volunteer <em>Engagements</em></h1>
       <p>Cities are only as good as the people willing to show up for them — without a brief, without billing, and often before sunrise.</p>
     </div>
   </div>
@@ -1241,13 +1225,11 @@ function initSlideshow(id){
   go(0);
 }
 function openProject(id){
-  document.querySelectorAll('.wpd').forEach(p=>p.classList.remove('active'));
-  document.getElementById('wpd-'+id).classList.add('active');
-  initSlideshow('ss-'+id);
-  window.scrollTo({top:0,behavior:'smooth'});
+  showPage('project-'+id);
+  setTimeout(()=>initSlideshow('ss-'+id), 100);
 }
 function closeProject(){
-  document.querySelectorAll('.wpd').forEach(p=>p.classList.remove('active'));
+  showPage('works');
 }
 
 </script>
@@ -1276,9 +1258,6 @@ function closeProject(){
     <button class="pill" onclick="filterWorks(this,'mp')">Master Planning</button>
     <button class="pill" onclick="filterWorks(this,'ec')">Ecology</button>
     <button class="pill" onclick="filterWorks(this,'ar')">Architecture</button>
-    <button class="pill" onclick="filterWorks(this,'ud')">Urban Design</button>
-    <button class="pill" onclick="filterWorks(this,'mp')">Master Planning</button>
-    <button class="pill" onclick="filterWorks(this,'ec')">Ecology</button>
   </div>
 
   <!-- Project index grid -->
@@ -1368,13 +1347,47 @@ function closeProject(){
 
   </div><!-- /works-grid -->
 
+  <!-- URBAN SPACES OBSERVATIONS INDEX -->
+
+  <div style="background:var(--brown-dk);padding:1.5rem 2rem 0.8rem;border-top:3px solid var(--teal);border-bottom:1px solid rgba(228,166,61,0.2);">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1rem;">
+      <div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div>
+      <svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg>
+      <span style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;font-weight:700;color:var(--gold);">Urban Spaces Observations Index</span>
+      <div style="height:1px;background:var(--deco);flex:1;"></div>
+    </div>
+  </div>
+  <div class="cdata">
+    <table>
+      <thead><tr><th>City</th><th>Country</th><th>Region</th><th>Urban Focus</th><th>Score</th><th>Key Insight</th></tr></thead>
+      <tbody>
+        <tr><td><span class="cf">🪬</span><span class="cn">Rajkot</span></td><td>India</td><td><span class="rb ri">India</span></td><td><div class="fb2"><div class="ff" style="width:95%"></div></div></td><td style="font-weight:700;color:var(--adobe);">95%</td><td style="font-size:13px;color:var(--muted);">Home city — Kathiawadi urban grain</td></tr>
+        <tr><td><span class="cf">🏛️</span><span class="cn">Ahmedabad</span></td><td>India</td><td><span class="rb ri">India</span></td><td><div class="fb2"><div class="ff" style="width:90%"></div></div></td><td style="font-weight:700;color:var(--adobe);">90%</td><td style="font-size:13px;color:var(--muted);">UNESCO Heritage, pol network, BRTS</td></tr>
+        <tr><td><span class="cf">🌊</span><span class="cn">Jamnagar</span></td><td>India</td><td><span class="rb ri">India</span></td><td><div class="fb2"><div class="ff" style="width:88%"></div></div></td><td style="font-weight:700;color:var(--adobe);">88%</td><td style="font-size:13px;color:var(--muted);">Circular plan, Lakhota Lake integration</td></tr>
+        <tr><td><span class="cf">🏗️</span><span class="cn">Mumbai</span></td><td>India</td><td><span class="rb ri">India</span></td><td><div class="fb2"><div class="ff" style="width:80%"></div></div></td><td style="font-weight:700;color:var(--adobe);">80%</td><td style="font-size:13px;color:var(--muted);">Dharavi, density, Victorian Gothic</td></tr>
+        <tr><td><span class="cf">🌁</span><span class="cn">San Francisco</span></td><td>USA</td><td><span class="rb rs">USA</span></td><td><div class="fb2"><div class="ff" style="width:85%"></div></div></td><td style="font-weight:700;color:var(--mid);">85%</td><td style="font-size:13px;color:var(--muted);">Housing crisis, Victorian fabric, waterfront</td></tr>
+        <tr><td><span class="cf">🗽</span><span class="cn">New York City</span></td><td>USA</td><td><span class="rb rs">USA</span></td><td><div class="fb2"><div class="ff" style="width:80%"></div></div></td><td style="font-weight:700;color:var(--mid);">80%</td><td style="font-size:13px;color:var(--muted);">Grid, density, Central Park, High Line</td></tr>
+        <tr><td><span class="cf">🏜️</span><span class="cn">Santa Fe</span></td><td>USA</td><td><span class="rb rs">USA</span></td><td><div class="fb2"><div class="ff" style="width:72%"></div></div></td><td style="font-weight:700;color:var(--mid);">72%</td><td style="font-size:13px;color:var(--muted);">Pueblo Revival adobe heritage policy</td></tr>
+        <tr><td><span class="cf">🎷</span><span class="cn">New Orleans</span></td><td>USA</td><td><span class="rb rs">USA</span></td><td><div class="fb2"><div class="ff" style="width:70%"></div></div></td><td style="font-weight:700;color:var(--mid);">70%</td><td style="font-size:13px;color:var(--muted);">French Quarter, resilience, cultural urbanism</td></tr>
+        <tr><td><span class="cf">🚲</span><span class="cn">Amsterdam</span></td><td>Netherlands</td><td><span class="rb re">Europe</span></td><td><div class="fb2"><div class="ff" style="width:82%"></div></div></td><td style="font-weight:700;color:var(--teal);">82%</td><td style="font-size:13px;color:var(--muted);">Canal heritage, cycling supremacy, polycentric</td></tr>
+        <tr><td><span class="cf">🏫</span><span class="cn">Dessau</span></td><td>Germany</td><td><span class="rb re">Europe</span></td><td><div class="fb2"><div class="ff" style="width:75%"></div></div></td><td style="font-weight:700;color:var(--teal);">75%</td><td style="font-size:13px;color:var(--muted);">Bauhaus school, modernist design heritage</td></tr>
+        <tr><td><span class="cf">🗼</span><span class="cn">Paris</span></td><td>France</td><td><span class="rb re">Europe</span></td><td><div class="fb2"><div class="ff" style="width:78%"></div></div></td><td style="font-weight:700;color:var(--teal);">78%</td><td style="font-size:13px;color:var(--muted);">Haussmann boulevards, street transformation</td></tr>
+        <tr><td><span class="cf">🫖</span><span class="cn">London Central</span></td><td>UK</td><td><span class="rb re">Europe</span></td><td><div class="fb2"><div class="ff" style="width:68%"></div></div></td><td style="font-weight:700;color:var(--teal);">68%</td><td style="font-size:13px;color:var(--muted);">Borough diversity, Thames as public spine</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <div style="text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--sand);background:var(--parchment);">
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;">More projects will be added. &nbsp;·&nbsp; Some projects are under NDA and cannot be disclosed.</p>
   </div>
 
   <!-- ── PROJECT DETAIL: MICROSOFT ── -->
 
-  <div class="wpd" id="wpd-microsoft">
+</div><!-- /page-works -->
+
+<!-- ═══ PROJECT: MICROSOFT ═══ -->
+
+<div class="page" id="page-project-microsoft">
     <div class="wphd">
       <div class="wphd-in">
         <button class="wpbk" onclick="closeProject()">← All Works</button>
@@ -1466,11 +1479,13 @@ function closeProject(){
 <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
 ```
 
-  </div><!-- /wpd-microsoft -->
+</div><!-- /page-project-microsoft -->
 
   <!-- ── PROJECT DETAIL: ECOLOGICAL FLOODPLAIN ── -->
 
-  <div class="wpd" id="wpd-floodplain">
+<!-- ═══ PROJECT: FLOODPLAIN ═══ -->
+
+<div class="page" id="page-project-floodplain">
     <div class="wphd">
       <div class="wphd-in">
         <button class="wpbk" onclick="closeProject()">← All Works</button>
@@ -1600,15 +1615,11 @@ function closeProject(){
 <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
 ```
 
-  </div><!-- /wpd-floodplain -->
+</div><!-- /page-project-floodplain -->
 
-  <div class="stripe sm"></div>
-  <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
-</div><!-- /page-works -->
+<!-- ═══ PROJECT: THESIS ═══ -->
 
-<!-- ═══ PROJECT DETAIL: THESIS ═══ -->
-
-<div class="wpd" id="wpd-thesis">
+<div class="page" id="page-project-thesis">
   <div class="wphd">
     <div class="wphd-in">
       <button class="wpbk" onclick="closeProject()">← All Works</button>
@@ -1859,7 +1870,7 @@ function closeProject(){
   </div>
   <div class="stripe sm"></div>
   <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
-</div><!-- /wpd-thesis -->
+</div><!-- /page-project-thesis -->
 
 </body>
 </html>
