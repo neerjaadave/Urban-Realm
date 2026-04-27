@@ -314,8 +314,94 @@ tr:hover td{background:rgba(42,157,143,0.04);}
 .cq p{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:1.3rem;color:rgba(250,246,240,0.7);line-height:1.7;max-width:540px;margin:0 auto;}
 .cq span{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,246,240,0.28);display:block;margin-top:0.7rem;}
 
-/* ANIMATIONS */
-@keyframes up{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+/* ── SELECTED WORKS ── */
+.whd{background:var(–brown-dk);padding:4rem 2rem 3rem;border-bottom:3px solid var(–gold);position:relative;overflow:hidden;}
+.whd::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0,transparent 24px,rgba(228,166,61,0.03) 24px,rgba(228,166,61,0.03) 25px);}
+.whd-in{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.whd h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(3rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:0.7rem;}
+.whd h1 em{color:var(–gold);font-style:italic;}
+.whd p{font-style:italic;color:rgba(244,234,216,0.5);font-size:1.1rem;max-width:560px;}
+
+/* TYPE FILTER BAR */
+.wfbar{background:var(–pink-bg);padding:0.9rem 2rem;border-bottom:1px solid var(–sand);display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;}
+
+/* PROJECT INDEX GRID */
+.windex{display:grid;grid-template-columns:repeat(2,1fr);}
+.wcard{border-right:1px solid var(–sand);border-bottom:1px solid var(–sand);cursor:pointer;overflow:hidden;transition:transform 0.2s;background:var(–ivory);}
+.wcard:nth-child(2n){border-right:none;}
+.wcard:hover{transform:translateY(-3px);}
+.wcard:hover .wcard-img-inner{transform:scale(1.03);}
+.wcard-img{height:260px;overflow:hidden;position:relative;}
+.wcard-img-inner{width:100%;height:100%;transition:transform 0.4s;display:flex;align-items:center;justify-content:center;}
+.wcard-img-inner img{width:100%;height:100%;object-fit:cover;}
+.wcard-type-badge{position:absolute;top:1rem;left:1rem;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;padding:0.25rem 0.7rem;z-index:2;}
+.wbadge-ud{background:rgba(42,157,143,0.9);color:var(–ivory);}
+.wbadge-ar{background:rgba(193,113,74,0.9);color:var(–ivory);}
+.wbadge-mp{background:rgba(122,74,42,0.9);color:var(–ivory);}
+.wcard-body{padding:1.6rem 1.8rem;}
+.wcard-year{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(–muted);margin-bottom:0.3rem;}
+.wcard-title{font-family:‘Cormorant Garamond’,serif;font-size:1.5rem;font-weight:600;color:var(–text);line-height:1.2;margin-bottom:0.4rem;}
+.wcard-sub{font-size:14px;font-style:italic;color:var(–muted);margin-bottom:0.8rem;line-height:1.5;}
+.wcard-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.wcard-foot{display:flex;justify-content:flex-end;padding:0.8rem 1.8rem;border-top:1px solid var(–sand);background:var(–parchment);}
+.wcard-lnk{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:var(–adobe);}
+.wcard-lnk::after{content:’ →’;}
+
+/* PROJECT DETAIL PAGE */
+.wpd{display:none;min-height:100vh;position:relative;z-index:1;}
+.wpd.active{display:block;}
+.wphd{background:var(–brown-dk);padding:4rem 2rem 3.5rem;border-bottom:3px solid var(–teal);position:relative;overflow:hidden;}
+.wphd-in{max-width:1000px;margin:0 auto;position:relative;z-index:1;}
+.wpbk{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(244,234,216,0.4);cursor:pointer;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;background:none;border:none;}
+.wpbk:hover{color:var(–teal-lt);}
+.wptype{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(–teal-lt);font-weight:600;margin-bottom:0.6rem;display:block;}
+.wptit{font-family:‘Cormorant Garamond’,serif;font-size:clamp(2rem,5vw,4rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:0.4rem;}
+.wptit em{color:var(–gold);font-style:italic;}
+.wpsub{font-family:‘Cormorant Garamond’,serif;font-style:italic;color:rgba(244,234,216,0.55);font-size:1.1rem;margin-bottom:1.2rem;}
+.wpmeta-row{display:flex;gap:2rem;flex-wrap:wrap;border-top:1px solid rgba(228,166,61,0.18);padding-top:1rem;}
+.wpmeta-item{display:flex;flex-direction:column;gap:0.15rem;}
+.wpmeta-lbl{font-family:‘Josefin Sans’,sans-serif;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,234,216,0.35);}
+.wpmeta-val{font-family:‘Cormorant Garamond’,serif;font-size:1rem;color:rgba(244,234,216,0.8);font-weight:600;}
+
+/* SPECS TABLE */
+.wpbody{max-width:1000px;margin:0 auto;padding:3rem 2rem;}
+.wp-section-lbl{font-family:‘Josefin Sans’,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(–adobe);margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;}
+.wp-section-lbl::after{content:’’;flex:1;height:1px;background:var(–sand);}
+.specs-table{width:100%;border-collapse:collapse;margin-bottom:2.5rem;}
+.specs-table tr{border-bottom:1px solid var(–sand);}
+.specs-table tr:last-child{border-bottom:none;}
+.specs-table td{padding:0.7rem 1rem;font-size:14px;vertical-align:top;}
+.specs-table td:first-child{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(–muted);font-weight:600;width:160px;padding-top:0.9rem;}
+.specs-table td:last-child{color:var(–text);}
+.specs-table tr:nth-child(odd) td{background:var(–pink-bg);}
+.specs-table tr:nth-child(even) td{background:var(–ivory);}
+
+/* PROJECT DESCRIPTION */
+.wp-desc{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:1.15rem;line-height:1.9;color:var(–text);margin-bottom:2.5rem;padding:1.5rem 2rem;background:var(–pink-bg);border-left:3px solid var(–teal);}
+
+/* SLIDESHOW */
+.slideshow{position:relative;overflow:hidden;background:var(–brown-dk);margin-bottom:2.5rem;}
+.slides-track{display:flex;transition:transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);}
+.slide{flex:0 0 100%;height:520px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.slide img{width:100%;height:100%;object-fit:cover;}
+.slide-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;position:relative;}
+.slide-ph svg{position:absolute;inset:0;width:100%;height:100%;}
+.slide-ph-lbl{position:relative;z-index:1;font-family:‘Cormorant Garamond’,serif;font-size:1.1rem;font-weight:600;color:rgba(244,234,216,0.7);text-align:center;padding:0 3rem;}
+.slide-ph-sub{position:relative;z-index:1;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(244,234,216,0.35);}
+.slide-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(92,51,24,0.9),transparent);padding:1.5rem 2rem 1rem;}
+.slide-caption-txt{font-family:‘Josefin Sans’,sans-serif;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,234,216,0.7);}
+.ss-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(244,234,216,0.12);border:1px solid rgba(244,234,216,0.2);color:rgba(244,234,216,0.7);width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.2rem;transition:all 0.2s;z-index:10;backdrop-filter:blur(2px);}
+.ss-btn:hover{background:rgba(193,113,74,0.4);color:var(–ivory);}
+.ss-prev{left:1rem;}
+.ss-next{right:1rem;}
+.ss-dots{display:flex;justify-content:center;gap:0.5rem;padding:1rem 0;background:var(–brown-dk);}
+.ss-dot{width:8px;height:8px;border-radius:50%;background:rgba(244,234,216,0.25);cursor:pointer;transition:all 0.2s;border:none;}
+.ss-dot.on{background:var(–gold);transform:scale(1.2);}
+.ss-counter{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(244,234,216,0.4);text-align:center;padding-bottom:0.8rem;background:var(–brown-dk);}
+
+@media(max-width:900px){.windex{grid-template-columns:1fr;}.wcard:nth-child(2n){border-right:none;}.wphd-in,.wpbody{max-width:100%;}.slide{height:300px;}}
+@media(max-width:600px){.windex{grid-template-columns:1fr;}.slide{height:220px;}}
+{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fd{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 @keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
@@ -359,6 +445,7 @@ tr:hover td{background:rgba(42,157,143,0.04);}
     <a onclick="showPage('travel')" id="nav-travel">Travel</a>
     <a onclick="showPage('map')" id="nav-map">World Map</a>
     <a onclick="showPage('volunteer')" id="nav-volunteer">Volunteer</a>
+    <a onclick="showPage('works')" id="nav-works">Selected Works</a>
     <a onclick="showPage('contact')" id="nav-contact">Contact</a>
   </div>
 </nav>
@@ -982,11 +1069,370 @@ function filterPhotos(btn,cat){
     i.style.display=(cat==='all'||c.includes(cat))?'':'none';
   });
 }
+function filterWorks(btn,cat){
+  document.querySelectorAll('.wfbar .pill').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('#works-grid .wcard').forEach(c=>{
+    const cc=c.dataset.wcat||'';
+    c.style.display=(cat==='all'||cc.includes(cat))?'':'none';
+  });
+}
+// WORKS NAV
 document.querySelectorAll('#posts .plnk').forEach((l,i)=>{
   if(i===0) l.onclick=e=>{e.preventDefault();showPage('article-urbane');};
   if(i===1) l.onclick=e=>{e.preventDefault();showPage('article-racecourse');};
 });
+
+// SLIDESHOW
+function initSlideshow(id){
+  const wrap=document.getElementById(id);
+  if(!wrap)return;
+  const track=wrap.querySelector('.slides-track');
+  const slides=wrap.querySelectorAll('.slide');
+  const dots=wrap.querySelectorAll('.ss-dot');
+  const counter=wrap.querySelector('.ss-counter');
+  let cur=0;
+  const total=slides.length;
+  function go(n){
+    cur=(n+total)%total;
+    track.style.transform=`translateX(-${cur*100}%)`;
+    dots.forEach((d,i)=>d.classList.toggle('on',i===cur));
+    if(counter)counter.textContent=(cur+1)+' / '+total;
+  }
+  wrap.querySelector('.ss-prev').onclick=()=>go(cur-1);
+  wrap.querySelector('.ss-next').onclick=()=>go(cur+1);
+  dots.forEach((d,i)=>d.onclick=()=>go(i));
+  go(0);
+}
+function openProject(id){
+  document.querySelectorAll('.wpd').forEach(p=>p.classList.remove('active'));
+  document.getElementById('wpd-'+id).classList.add('active');
+  initSlideshow('ss-'+id);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function closeProject(){
+  document.querySelectorAll('.wpd').forEach(p=>p.classList.remove('active'));
+}
+
 </script>
+
+<!-- ═══ SELECTED WORKS ═══ -->
+
+<div class="page" id="page-works">
+  <div class="stripe"></div>
+
+  <!-- Page header -->
+
+  <div class="whd">
+    <div class="whd-in">
+      <div class="ey" style="color:rgba(244,234,216,0.4);">Urban Design · Architecture · Planning</div>
+      <h1>Selected <em>Works</em></h1>
+      <p>A curated record of projects across urban design, master planning, landscape, and architectural design — from campus master plans to ecological infrastructure.</p>
+    </div>
+  </div>
+
+  <!-- Filter bar -->
+
+  <div class="wfbar">
+    <span class="plbl" style="margin-right:0.4rem;">Filter ·</span>
+    <button class="pill on" onclick="filterWorks(this,'all')">All</button>
+    <button class="pill" onclick="filterWorks(this,'ud')">Urban Design</button>
+    <button class="pill" onclick="filterWorks(this,'mp')">Master Planning</button>
+    <button class="pill" onclick="filterWorks(this,'ec')">Ecology</button>
+    <button class="pill" onclick="filterWorks(this,'ar')">Architecture</button>
+  </div>
+
+  <!-- Project index grid -->
+
+  <div class="windex" id="works-grid">
+
+```
+<!-- PROJECT 1: MICROSOFT CAMPUS -->
+<div class="wcard" data-wcat="ud mp" onclick="openProject('microsoft')">
+  <div class="wcard-img">
+    <div class="wcard-img-inner" style="background:linear-gradient(135deg,#F0EAD6,#D8CCAA);">
+      <svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;opacity:0.6">
+        <pattern id="wp1" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M0 30 Q15 0 30 30 Q45 60 60 30" fill="none" stroke="#9A8060" stroke-width="0.6"/><line x1="0" y1="0" x2="60" y2="60" stroke="#9A8060" stroke-width="0.3"/></pattern>
+        <rect width="600" height="260" fill="url(#wp1)" opacity="0.5"/>
+        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Georgia" font-size="72" fill="rgba(80,60,30,0.08)" font-weight="bold">MS</text>
+      </svg>
+    </div>
+    <span class="wcard-type-badge wbadge-ud">Urban Design</span>
+  </div>
+  <div class="wcard-body">
+    <div class="wcard-year">2020 – 2021 &nbsp;·&nbsp; Atlanta, Georgia, USA</div>
+    <h2 class="wcard-title">Microsoft Campus, Atlanta</h2>
+    <p class="wcard-sub">Bringing MS to Quarry Yards — Pre-acquisition survey, contextual analysis & community engagement for a 70-acre corporate campus</p>
+    <div class="wcard-tags">
+      <span class="tt">Master Planning</span><span class="tt">Corporate Campus</span><span class="tt">Community Engagement</span><span class="tt">Urban Design</span>
+    </div>
+  </div>
+  <div class="wcard-foot"><span class="wcard-lnk">View Project</span></div>
+</div>
+
+<!-- PROJECT 2: ECOLOGICAL FLOODPLAIN -->
+<div class="wcard" data-wcat="ud mp ec" onclick="openProject('floodplain')">
+  <div class="wcard-img">
+    <div class="wcard-img-inner" style="background:linear-gradient(135deg,#E8F0E8,#C8DCC8);">
+      <svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;opacity:0.7">
+        <pattern id="wp2" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M0 20 Q10 5 20 20 Q30 35 40 20" fill="none" stroke="#4A7A4A" stroke-width="0.6"/><circle cx="20" cy="20" r="3" fill="#4A7A4A" opacity="0.15"/></pattern>
+        <rect width="600" height="260" fill="url(#wp2)" opacity="0.5"/>
+        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Georgia" font-size="56" fill="rgba(40,80,40,0.07)" font-weight="bold">ECO</text>
+      </svg>
+    </div>
+    <span class="wcard-type-badge wbadge-mp">Master Planning</span>
+  </div>
+  <div class="wcard-body">
+    <div class="wcard-year">2019 &nbsp;·&nbsp; Atlanta, Georgia, USA</div>
+    <h2 class="wcard-title">Ecological Floodplain Development</h2>
+    <p class="wcard-sub">Re-thinking the Atlanta Industrial Park with a passive, sustainable approach — ecological flooding park & industrial urbanism</p>
+    <div class="wcard-tags">
+      <span class="tt">Ecology</span><span class="tt">Floodplain</span><span class="tt">Landscape Analysis</span><span class="tt">Concept Design</span>
+    </div>
+  </div>
+  <div class="wcard-foot"><span class="wcard-lnk">View Project</span></div>
+</div>
+```
+
+  </div><!-- /works-grid -->
+
+  <div style="text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--sand);background:var(--parchment);">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;">More projects will be added. &nbsp;·&nbsp; Some projects are under NDA and cannot be disclosed.</p>
+  </div>
+
+  <!-- ── PROJECT DETAIL: MICROSOFT ── -->
+
+  <div class="wpd" id="wpd-microsoft">
+    <div class="wphd">
+      <div class="wphd-in">
+        <button class="wpbk" onclick="closeProject()">← All Works</button>
+        <span class="wptype">Urban Design · Master Planning · Community Engagement</span>
+        <h1 class="wptit">Microsoft Campus,<br><em>Atlanta</em></h1>
+        <p class="wpsub">Bringing MS to Quarry Yards — Pre-Acquisition Survey, Site Study, Contextual Analysis & Community Engagement</p>
+        <div class="wpmeta-row">
+          <div class="wpmeta-item"><span class="wpmeta-lbl">Year</span><span class="wpmeta-val">2020 – 2021</span></div>
+          <div class="wpmeta-item"><span class="wpmeta-lbl">Location</span><span class="wpmeta-val">Atlanta, Georgia, USA</span></div>
+          <div class="wpmeta-item"><span class="wpmeta-lbl">Site Area</span><span class="wpmeta-val">70 acres (Quarry Yards)</span></div>
+          <div class="wpmeta-item"><span class="wpmeta-lbl">Client</span><span class="wpmeta-val">Microsoft (via Studio H / SHAPE)</span></div>
+          <div class="wpmeta-item"><span class="wpmeta-lbl">Role</span><span class="wpmeta-val">Urban Design Lead, Team Lead</span></div>
+          <div class="wpmeta-item"><span class="wpmeta-lbl">Type</span><span class="wpmeta-val">Corporate Campus Planning</span></div>
+        </div>
+      </div>
+    </div>
+
+```
+<div class="wpbody">
+  <!-- Specs table -->
+  <div class="wp-section-lbl">Project Specifics</div>
+  <table class="specs-table">
+    <tr><td>Year</td><td>2020 – 2021</td></tr>
+    <tr><td>Location</td><td>Quarry Yards, Bankhead, Atlanta, Georgia, USA</td></tr>
+    <tr><td>Site Area</td><td>70 acres (Quarry Yards) + 10 acres (Fulton County parcel)</td></tr>
+    <tr><td>Client</td><td>Microsoft Corporation (information withheld)</td></tr>
+    <tr><td>Firm</td><td>Studio H Architecture Planning Environments (SHAPE), Atlanta</td></tr>
+    <tr><td>Neerja's Role</td><td>Urban Design Lead, Masterplanning, Team Lead, Community Engagement</td></tr>
+    <tr><td>Project Type</td><td>Corporate Campus Pre-Acquisition Survey, Urban Master Planning</td></tr>
+    <tr><td>Context</td><td>Bankhead MARTA corridor, adjacent to Westside Reservoir Park, Grove Park &amp; Knight Park neighbourhoods</td></tr>
+    <tr><td>Key Themes</td><td>Transit-oriented development, community integration, walkability, density distribution, green infrastructure</td></tr>
+    <tr><td>Status</td><td>Pre-acquisition / Planning phase (information withheld)</td></tr>
+  </table>
+
+  <!-- Description -->
+  <div class="wp-section-lbl">About the Project</div>
+  <div class="wp-desc">
+    The Microsoft Campus project involved a comprehensive pre-acquisition study for bringing Microsoft's Atlanta campus to the Quarry Yards site in the Bankhead neighbourhood — a strategically located 70-acre parcel at the convergence of the Beltline trail, Bankhead MARTA station, Proctor Creek, and the historic rail corridor. The work centred on integrating a large corporate campus into the existing urban fabric of Atlanta without displacing or overwhelming the adjacent communities of Grove Park and Knight Park.
+    <br><br>
+    As Urban Design Lead, the work encompassed detailed site analysis, contextual mapping of the surrounding urban fabric, a density distribution strategy balancing high-density office uses with mid-density mix-use at the perimeter, walkability analysis using 2.5 / 5 / 10 minute walk radii, public transit and green space integration, parking strategy, and the decoding of topographic constraints on the site. Community engagement and sensitivity to the historically underserved neighbourhoods surrounding the site were central design drivers — the master plan was conceived not as a corporate enclave but as a catalyst for neighbourhood investment, integrating Microsoft's footprint with the Beltline, Kudzu Trail, and Proctor Creek greenway.
+  </div>
+
+  <!-- Slideshow -->
+  <div class="wp-section-lbl">Project Images</div>
+  <div class="slideshow" id="ss-microsoft">
+    <div class="slides-track">
+      <!-- Slide 1 -->
+      <div class="slide">
+        <div class="slide-ph" style="background:linear-gradient(135deg,#F0EAD6,#D0C4A0);">
+          <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5"><pattern id="sp1" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M0 30 Q15 5 30 30 Q45 55 60 30" fill="none" stroke="#9A8060" stroke-width="0.7"/></pattern><rect width="800" height="520" fill="url(#sp1)"/></svg>
+          <div class="slide-ph-lbl">Site Location & Urban Context</div>
+          <div class="slide-ph-sub">Quarry Yards · Bankhead · Atlanta</div>
+        </div>
+        <div class="slide-caption"><div class="slide-caption-txt">Urban Context — Integrating Microsoft with the Atlantan Urban Fabric · 10 min drive from Midtown</div></div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide">
+        <div class="slide-ph" style="background:linear-gradient(135deg,#E8E0D0,#C8BCA0);">
+          <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.4"><pattern id="sp2" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><line x1="0" y1="20" x2="40" y2="20" stroke="#8A7050" stroke-width="0.5"/><line x1="20" y1="0" x2="20" y2="40" stroke="#8A7050" stroke-width="0.5"/><circle cx="20" cy="20" r="8" fill="none" stroke="#8A7050" stroke-width="0.4"/></pattern><rect width="800" height="520" fill="url(#sp2)"/></svg>
+          <div class="slide-ph-lbl">Site Analysis — 70 Acres, Quarry Yards</div>
+          <div class="slide-ph-sub">Understanding Site, Context & Expansion Opportunities</div>
+        </div>
+        <div class="slide-caption"><div class="slide-caption-txt">Site boundary mapping — Quarry Yards 70 acres + Fulton County parcel 10 acres, Bankhead MARTA integration</div></div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide">
+        <div class="slide-ph" style="background:linear-gradient(135deg,#F4ECD8,#DDD0B8);">
+          <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.4"><pattern id="sp3" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><rect x="5" y="5" width="40" height="40" fill="none" stroke="#9A8060" stroke-width="0.5"/><rect x="15" y="15" width="20" height="20" fill="none" stroke="#9A8060" stroke-width="0.4"/></pattern><rect width="800" height="520" fill="url(#sp3)"/></svg>
+          <div class="slide-ph-lbl">Design Strategies — 6-Panel Analysis</div>
+          <div class="slide-ph-sub">Buildable Area · Density · Walkability · Transit · Parking · Building Use</div>
+        </div>
+        <div class="slide-caption"><div class="slide-caption-txt">Multi-layer analysis — density distribution strategy, walkability radii (2.5 / 5 / 10 min), parking strategy, topography decoding</div></div>
+      </div>
+    </div>
+    <button class="ss-btn ss-prev">‹</button>
+    <button class="ss-btn ss-next">›</button>
+    <div class="ss-dots">
+      <button class="ss-dot"></button>
+      <button class="ss-dot"></button>
+      <button class="ss-dot"></button>
+    </div>
+    <div class="ss-counter"></div>
+  </div>
+  <p style="font-size:13px;font-style:italic;color:var(--muted);text-align:center;margin-top:-1rem;margin-bottom:2rem;">Add your project images by replacing each <code style="background:var(--sand);padding:0.1rem 0.3rem;font-size:11px;">.slide-ph</code> div with an <code style="background:var(--sand);padding:0.1rem 0.3rem;font-size:11px;">&lt;img&gt;</code> tag.</p>
+
+  <button class="abtn" onclick="closeProject()">← Back to Selected Works</button>
+</div>
+<div class="stripe sm"></div>
+<footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
+```
+
+  </div><!-- /wpd-microsoft -->
+
+  <!-- ── PROJECT DETAIL: ECOLOGICAL FLOODPLAIN ── -->
+
+  <div class="wpd" id="wpd-floodplain">
+    <div class="wphd">
+      <div class="wphd-in">
+        <button class="wpbk" onclick="closeProject()">← All Works</button>
+        <span class="wptype">Urban Design · Ecology · Master Planning · Landscape</span>
+        <h1 class="wptit">Ecological Floodplain<br><em>Development</em></h1>
+        <p class="wpsub">Re-thinking the Atlanta Industrial Park with a passive, sustainable approach — Ecological Flooding Park & Industrial Urbanism</p>
+        <div class="wpmeta-row">
+          <div class="wpmeta-item"><span class="wpmeta-lbl">Year</span><span class="wpmeta-val">December 2019</span></div>
+          <div class="wpmeta-item"><span class="wpmeta-lbl">Location</span><span class="wpmeta-val">Atlanta Industrial Park, Atlanta, GA</span></div>
+          <div class="wpmeta-item"><span class="wpmeta-lbl">River</span><span class="wpmeta-val">Chattahoochee River / Proctor Creek</span></div>
+          <div class="wpmeta-item"><span class="wpmeta-lbl">Institution</span><span class="wpmeta-val">Georgia Institute of Technology</span></div>
+          <div class="wpmeta-item"><span class="wpmeta-lbl">Type</span><span class="wpmeta-val">Master Planning · Landscape · Concept Design</span></div>
+        </div>
+      </div>
+    </div>
+
+```
+<div class="wpbody">
+  <!-- Specs table -->
+  <div class="wp-section-lbl">Project Specifics</div>
+  <table class="specs-table">
+    <tr><td>Year</td><td>December 2019</td></tr>
+    <tr><td>Location</td><td>Atlanta Industrial Park, Bankhead / Bolton, Atlanta, Georgia, USA</td></tr>
+    <tr><td>Waterway</td><td>Chattahoochee River + Proctor Creek confluence zone</td></tr>
+    <tr><td>Institution</td><td>Georgia Institute of Technology, MS Urban Design thesis project</td></tr>
+    <tr><td>Neerja's Role</td><td>Principal Designer — Master Planning, Landscape Analysis, Concept Design</td></tr>
+    <tr><td>Project Type</td><td>Urban Master Planning, Ecological Landscape Design, Industrial Urbanism</td></tr>
+    <tr><td>Area</td><td>Atlanta Industrial Park — Bankhead to Bolton corridor, Chattahoochee riverfront</td></tr>
+    <tr><td>Key Strategies</td><td>Ecological Floodplain Park, iMix Green Mixed-Use District, Enhanced Transit (streetcar), stormwater management</td></tr>
+    <tr><td>Design Elements</td><td>Constructed wetlands, meander water channels, water filter terraces, submergible paths, eco boulevard, rain gardens</td></tr>
+    <tr><td>Status</td><td>Academic / Research Project</td></tr>
+  </table>
+
+  <!-- Description -->
+  <div class="wp-section-lbl">About the Project</div>
+  <div class="wp-desc">
+    This project proposes a radical re-imagining of the Atlanta Industrial Park along the Chattahoochee River — transforming an underperforming, ecologically damaged industrial zone into a three-part integrated urban system: an Ecological Floodplain Park, a Green Mixed-Use (iMix) District, and an Enhanced Transit network.
+    <br><br>
+    The Atlanta Industrial Park suffers from compounding urban and ecological failures: impervious parking lots causing water quality degradation and sedimentation in the Chattahoochee, low population density, car dependency, food desert conditions, and underutilised stormwater infrastructure. The design proposes to address all three simultaneously through a water-cleaning machine — a constructed floodplain park that conveys, filters, and cleans stormwater before it reaches the river, while simultaneously becoming a publicly accessible landscape and ecological corridor.
+    <br><br>
+    The iMix Neighbourhood strategy proposes an incremental development approach across four parcels, integrating residential, mixed-use commercial, industrial adaptive reuse, and an eco boulevard that channels a daylit stream through the neighbourhood. The Shared Street and Atlanta River Trail reconnect the neighbourhood to the Chattahoochee waterfront. River overlooks, water terraces, constructed wetlands, meanders, and submergible paths provide a graduated landscape experience that makes the ecology of the site legible and inhabitable. The project was developed as part of the MS Urban Design programme at Georgia Tech.
+  </div>
+
+  <!-- Slideshow -->
+  <div class="wp-section-lbl">Project Images</div>
+  <div class="slideshow" id="ss-floodplain">
+    <div class="slides-track">
+      <div class="slide">
+        <div class="slide-ph" style="background:linear-gradient(135deg,#F0F8F0,#D0E8D0);">
+          <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5"><pattern id="fp1" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M0 20 Q10 5 20 20 Q30 35 40 20" fill="none" stroke="#4A7A4A" stroke-width="0.7"/></pattern><rect width="800" height="520" fill="url(#fp1)"/></svg>
+          <div class="slide-ph-lbl">Design Framework Diagram</div>
+          <div class="slide-ph-sub">Ecological Floodplain Park · iMix District · Enhanced Transit</div>
+        </div>
+        <div class="slide-caption"><div class="slide-caption-txt">Three-part design system — water issues + urban issues resolved through ecological park, mix-use district, and enhanced transit</div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-ph" style="background:linear-gradient(135deg,#EAF4EA,#C8DCC8);">
+          <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5"><pattern id="fp2" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="20" fill="none" stroke="#4A7A4A" stroke-width="0.5"/><circle cx="25" cy="25" r="10" fill="none" stroke="#4A7A4A" stroke-width="0.4"/></pattern><rect width="800" height="520" fill="url(#fp2)"/></svg>
+          <div class="slide-ph-lbl">Site Master Plan</div>
+          <div class="slide-ph-sub">Chattahoochee River · Wetlands · Mixed-Use Parcels</div>
+        </div>
+        <div class="slide-caption"><div class="slide-caption-txt">Master plan — floodplain park, constructed wetlands, meanders, riverbank revetment, submergible paths, water filter terraces, mixed-use district</div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-ph" style="background:linear-gradient(135deg,#F0F8F0,#D8ECD8);">
+          <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5"><pattern id="fp3" x="0" y="0" width="44" height="44" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="40" height="40" fill="none" stroke="#4A7A4A" stroke-width="0.5"/><line x1="2" y1="22" x2="42" y2="22" stroke="#4A7A4A" stroke-width="0.3"/><line x1="22" y1="2" x2="22" y2="42" stroke="#4A7A4A" stroke-width="0.3"/></pattern><rect width="800" height="520" fill="url(#fp3)"/></svg>
+          <div class="slide-ph-lbl">iMix Green Mixed-Use District — Incremental Development</div>
+          <div class="slide-ph-sub">Parcels A, B, C, D · Eco Boulevard · Shared Street</div>
+        </div>
+        <div class="slide-caption"><div class="slide-caption-txt">iMix Proposal — residential, mix-use commercial, industrial adaptive reuse, eco boulevard, streetcar on existing rail, Atlanta River Trail</div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-ph" style="background:linear-gradient(135deg,#EAF4EA,#C0D8C0);">
+          <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5"><pattern id="fp4" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M18 0 L36 18 L18 36 L0 18 Z" fill="none" stroke="#4A7A4A" stroke-width="0.5"/></pattern><rect width="800" height="520" fill="url(#fp4)"/></svg>
+          <div class="slide-ph-lbl">3D Massing — Phase Development</div>
+          <div class="slide-ph-sub">Retrofitted Warehouse · Small-block Development · Stepped Landscape</div>
+        </div>
+        <div class="slide-caption"><div class="slide-caption-txt">Phased massing — stepped landscape for sheet-flow of water to eco boulevard, retrofitted warehouse, new development parcels A–D</div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-ph" style="background:linear-gradient(135deg,#F0F8F0,#D0E8D0);">
+          <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5"><pattern id="fp5" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M0 20 Q10 5 20 20 Q30 35 40 20" fill="none" stroke="#4A7A4A" stroke-width="0.6"/><circle cx="20" cy="20" r="4" fill="#4A7A4A" opacity="0.15"/></pattern><rect width="800" height="520" fill="url(#fp5)"/></svg>
+          <div class="slide-ph-lbl">River Overlooks & Water Terraces</div>
+          <div class="slide-ph-sub">High Slope Terrains Made Accessible</div>
+        </div>
+        <div class="slide-caption"><div class="slide-caption-txt">River overlooks — ecologically driven intervention to reduce runoff velocity, iMix overlooking terraces, people terraces, water terraces, 16–30% slopes made accessible</div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-ph" style="background:linear-gradient(135deg,#EAF4EA,#C8DCC8);">
+          <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5"><pattern id="fp6" x="0" y="0" width="60" height="30" patternUnits="userSpaceOnUse"><path d="M0 15 Q15 0 30 15 Q45 30 60 15" fill="none" stroke="#4A7A4A" stroke-width="0.6"/></pattern><rect width="800" height="520" fill="url(#fp6)"/></svg>
+          <div class="slide-ph-lbl">Strategic Stormwater Planning</div>
+          <div class="slide-ph-sub">Conveying & Cleaning Water — Terraces · RainGardens · Daylit Stream · Wetlands · Chattahoochee River</div>
+        </div>
+        <div class="slide-caption"><div class="slide-caption-txt">Macro & micro stormwater strategy — conveying water to floodplain, cleaning before river entry via wetland meanders and constructed swamp</div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-ph" style="background:linear-gradient(135deg,#F0F8F0,#D8ECD8);">
+          <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5"><pattern id="fp7" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="40" y2="40" stroke="#4A7A4A" stroke-width="0.4"/><line x1="40" y1="0" x2="0" y2="40" stroke="#4A7A4A" stroke-width="0.4"/><circle cx="20" cy="20" r="7" fill="none" stroke="#4A7A4A" stroke-width="0.5"/></pattern><rect width="800" height="520" fill="url(#fp7)"/></svg>
+          <div class="slide-ph-lbl">Integrated Site Section</div>
+          <div class="slide-ph-sub">Landscaped Terrace · Eco Street · Multipurpose Trail · Floodplain Park · Chattahoochee</div>
+        </div>
+        <div class="slide-caption"><div class="slide-caption-txt">Site section — from central parcel landscaped terrace through pedestrian eco boulevard to multipurpose trail, ecological floodplain park and river</div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-ph" style="background:linear-gradient(135deg,#EAF4EA,#C0D8C0);">
+          <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5"><pattern id="fp8" x="0" y="0" width="44" height="44" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="40" height="40" fill="none" stroke="#4A7A4A" stroke-width="0.5"/><rect x="12" y="12" width="20" height="20" fill="none" stroke="#4A7A4A" stroke-width="0.4"/><rect x="20" y="20" width="4" height="4" fill="#4A7A4A" opacity="0.2"/></pattern><rect width="800" height="520" fill="url(#fp8)"/></svg>
+          <div class="slide-ph-lbl">Green Mixed-Use District — Bird's Eye View</div>
+          <div class="slide-ph-sub">Eco Boulevard · Daylit Stream · Curb Rain-Gardens · Natural Water Spring · Shared Street</div>
+        </div>
+        <div class="slide-caption"><div class="slide-caption-txt">iMix district aerial — eco boulevard, playspaces, permeable paving, curb rain-gardens, natural water spring, eco boardwalk in the floodplain, native vegetation</div></div>
+      </div>
+    </div>
+    <button class="ss-btn ss-prev">‹</button>
+    <button class="ss-btn ss-next">›</button>
+    <div class="ss-dots">
+      <button class="ss-dot"></button><button class="ss-dot"></button><button class="ss-dot"></button>
+      <button class="ss-dot"></button><button class="ss-dot"></button><button class="ss-dot"></button>
+      <button class="ss-dot"></button><button class="ss-dot"></button>
+    </div>
+    <div class="ss-counter"></div>
+  </div>
+  <p style="font-size:13px;font-style:italic;color:var(--muted);text-align:center;margin-top:-1rem;margin-bottom:2rem;">Replace placeholder slides with your actual project images using <code style="background:var(--sand);padding:0.1rem 0.3rem;font-size:11px;">&lt;img&gt;</code> tags inside each <code style="background:var(--sand);padding:0.1rem 0.3rem;font-size:11px;">.slide</code> div.</p>
+
+  <button class="abtn" onclick="closeProject()">← Back to Selected Works</button>
+</div>
+<div class="stripe sm"></div>
+<footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
+```
+
+  </div><!-- /wpd-floodplain -->
+
+  <div class="stripe sm"></div>
+  <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
+</div><!-- /page-works -->
 
 </body>
 </html>
