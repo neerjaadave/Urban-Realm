@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>URBAN REALM — Neerja Dave</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Josefin+Sans:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -31,17 +31,17 @@
   --dline:rgba(200,168,74,0.25);
 }
 html{scroll-behavior:smooth;}
-body{background:var(--ivory);color:var(--text);font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.75;overflow-x:hidden;}
+body{background:var(--ivory);color:var(--text);font-family:'Lora',Georgia,serif;font-size:18px;line-height:1.75;overflow-x:hidden;}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(193,113,74,0.06)' stroke-width='0.5'%3E%3Crect x='5' y='5' width='70' height='70'/%3E%3Crect x='20' y='20' width='40' height='40'/%3E%3Crect x='33' y='33' width='14' height='14'/%3E%3Cline x1='5' y1='5' x2='75' y2='75'/%3E%3Cline x1='75' y1='5' x2='5' y2='75'/%3E%3C/g%3E%3C/svg%3E");background-size:80px 80px;pointer-events:none;z-index:0;}
 .page{display:none;min-height:100vh;position:relative;z-index:1;}
 .page.active{display:block;}
 
 /* NAV */
 nav{position:sticky;top:0;z-index:200;background:var(–parchment);border-bottom:2px solid var(–adobe);box-shadow:0 2px 4px rgba(122,74,42,0.12);display:flex;align-items:stretch;justify-content:space-between;padding:0 1.5rem;}
-.nbrand{font-family:‘Josefin Sans’,Arial,sans-serif;font-size:0.95rem;font-weight:700;color:var(–brown-dk);padding:1rem 0;display:flex;align-items:center;gap:0.6rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;}
+.nbrand{font-family:‘Nunito’,Arial,sans-serif;font-size:0.95rem;font-weight:700;color:var(–brown-dk);padding:1rem 0;display:flex;align-items:center;gap:0.6rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;}
 .nbrand .dot{width:7px;height:7px;background:var(–teal);border-radius:50%;box-shadow:0 0 6px var(–teal-lt);}
 .nlinks{display:flex;align-items:center;}
-.nlinks a{font-family:Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:#000 !important;padding:1rem 0.85rem;border-left:1px solid var(–dline);transition:background 0.2s;cursor:pointer;text-decoration:none;-webkit-text-fill-color:#000;}
+.nlinks a{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:#000 !important;padding:1rem 0.85rem;border-left:1px solid var(–dline);transition:background 0.2s;cursor:pointer;text-decoration:none;-webkit-text-fill-color:#000;}
 .nlinks a:hover,.nlinks a.act{color:#000 !important;-webkit-text-fill-color:#000;background:rgba(42,157,143,0.12);border-bottom:2px solid var(–teal);}
 
 /* STRIPE */
@@ -49,7 +49,7 @@ nav{position:sticky;top:0;z-index:200;background:var(–parchment);border-bottom
 .stripe.sm{height:4px;}
 
 /* EYEBROW */
-.ey{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(–teal);display:flex;align-items:center;gap:0.4rem;margin-bottom:0.6rem;}
+.ey{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(–teal);display:flex;align-items:center;gap:0.4rem;margin-bottom:0.6rem;}
 .ey::before{content:‘◆’;font-size:6px;color:var(–gold);}
 
 /* DECO DIAMOND RULE */
@@ -61,64 +61,64 @@ nav{position:sticky;top:0;z-index:200;background:var(–parchment);border-bottom
 
 /* FOOTER */
 footer{background:var(–brown-dk);border-top:1px solid var(–deco);padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;}
-.fb{font-family:‘Josefin Sans’,sans-serif;font-size:0.85rem;color:var(–gold);font-weight:700;letter-spacing:0.2em;}
-.fc{font-family:‘Josefin Sans’,sans-serif;font-size:9px;color:rgba(250,246,240,0.3);letter-spacing:0.1em;text-transform:uppercase;}
+.fb{font-family:‘Nunito’,Arial,sans-serif;font-size:0.85rem;color:var(–gold);font-weight:700;letter-spacing:0.2em;}
+.fc{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;color:rgba(250,246,240,0.3);letter-spacing:0.1em;text-transform:uppercase;}
 
 /* ── HOME ── */
 .hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;border-bottom:2px solid var(–sand);}
 .hl{background:#ffffff;padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
 .hl::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0,transparent 18px,rgba(193,113,74,0.06) 18px,rgba(193,113,74,0.06) 19px);}
 .hl::after{content:’’;position:absolute;bottom:-60px;right:-60px;width:260px;height:260px;background:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 200 200’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cg opacity=‘0.07’ fill=‘none’ stroke=’%23E4A63D’ stroke-width=‘0.8’%3E%3Ccircle cx=‘100’ cy=‘100’ r=‘90’/%3E%3Ccircle cx=‘100’ cy=‘100’ r=‘70’/%3E%3Ccircle cx=‘100’ cy=‘100’ r=‘50’/%3E%3Ccircle cx=‘100’ cy=‘100’ r=‘30’/%3E%3Cline x1=‘100’ y1=‘10’ x2=‘100’ y2=‘190’/%3E%3Cline x1=‘10’ y1=‘100’ x2=‘190’ y2=‘100’/%3E%3Cline x1=‘27’ y1=‘27’ x2=‘173’ y2=‘173’/%3E%3Cline x1=‘173’ y1=‘27’ x2=‘27’ y2=‘173’/%3E%3C/g%3E%3C/svg%3E”) no-repeat center;background-size:contain;pointer-events:none;z-index:0;}
-.hvol{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(–muted);}
-.htitle{font-family:‘Cormorant Garamond’,serif;font-size:clamp(4rem,7vw,8rem);font-weight:300;line-height:0.88;color:var(–brown-dk);position:relative;z-index:1;animation:up 0.9s cubic-bezier(0.16,1,0.3,1) both;letter-spacing:0.01em;}
+.hvol{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(–muted);}
+.htitle{font-family:‘Lora’,Georgia,serif;font-size:clamp(3.5rem,6.5vw,7.5rem);font-weight:400;line-height:0.92;color:var(–brown-dk);position:relative;z-index:1;animation:up 0.9s cubic-bezier(0.16,1,0.3,1) both;letter-spacing:0.01em;}
 .htitle em{font-style:italic;color:var(–gold);display:block;}
-.htag{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:1.1rem;color:var(–muted);max-width:320px;line-height:1.65;position:relative;z-index:1;}
+.htag{font-family:‘Lora’,Georgia,serif;font-style:italic;font-size:1.1rem;color:var(–muted);max-width:320px;line-height:1.65;position:relative;z-index:1;}
 .hr{background:var(–parchment);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;}
 .hcity{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .hfeat{position:relative;z-index:2;background:rgba(67,3,2,0.88);backdrop-filter:blur(2px);padding:1.2rem 1.6rem;border-left:4px solid var(–teal);}
-.hfeat .ftag{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(–teal-lt);display:block;margin-bottom:0.4rem;}
-.hfeat h2{font-family:‘Cormorant Garamond’,serif;font-size:1.35rem;line-height:1.25;color:var(–ivory);font-weight:400;}
+.hfeat .ftag{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(–teal-lt);display:block;margin-bottom:0.4rem;}
+.hfeat h2{font-family:‘Lora’,Georgia,serif;font-size:1.35rem;line-height:1.25;color:var(–ivory);font-weight:400;}
 
 /* TICKER */
 .tick-w{background:var(–adobe);overflow:hidden;padding:0.45rem 0;border-bottom:2px solid var(–brown);}
 .tick{display:inline-block;animation:tick 32s linear infinite;white-space:nowrap;}
-.tick span{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(–ivory);margin:0 1.5rem;font-weight:600;}
+.tick span{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(–ivory);margin:0 1.5rem;font-weight:600;}
 .tick span::before{content:‘◆’;margin-right:1.5rem;opacity:0.4;font-size:7px;}
 
 /* PILLS */
 .pband{padding:0.9rem 2rem;display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem;border-bottom:1px solid var(–sand);background:var(–pink-bg);}
-.plbl{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(–muted);}
-.pill{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;padding:0.28rem 0.8rem;border:1.5px solid var(–pink-mid);background:transparent;color:var(–brown);cursor:pointer;transition:all 0.15s;}
+.plbl{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(–muted);}
+.pill{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;padding:0.28rem 0.8rem;border:1.5px solid var(–pink-mid);background:transparent;color:var(–brown);cursor:pointer;transition:all 0.15s;}
 .pill:hover,.pill.on{background:var(–teal);border-color:var(–teal);color:var(–ivory);}
 
 /* POSTS */
 .sbar{padding:0.9rem 2rem;border-bottom:1px solid var(–sand);display:flex;align-items:baseline;gap:1rem;background:var(–ivory);}
-.sbar h3{font-family:‘Josefin Sans’,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;}
-.sbar span{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(–muted);}
+.sbar h3{font-family:‘Nunito’,Arial,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;}
+.sbar span{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(–muted);}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);}
 .pc{border-right:1px solid var(–sand);border-bottom:1px solid var(–sand);padding:1.8rem;transition:background 0.2s;cursor:pointer;display:flex;flex-direction:column;animation:fd 0.5s ease both;}
 .pc:nth-child(3n){border-right:none;}
 .pc:hover{background:rgba(42,157,143,0.04);}
 .pc.wide{grid-column:span 2;display:grid;grid-template-columns:auto 1fr;gap:1.8rem;border-right:1px solid var(–sand);}
-.pn{font-family:‘Cormorant Garamond’,serif;font-size:3.5rem;line-height:1;color:var(–sand);font-weight:300;}
-.pcat{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(–teal);font-weight:600;margin-bottom:0.5rem;}
-.ptit{font-family:‘Cormorant Garamond’,serif;font-size:1.2rem;line-height:1.25;margin-bottom:0.6rem;color:var(–text);font-weight:600;}
+.pn{font-family:‘Lora’,Georgia,serif;font-size:3.5rem;line-height:1;color:var(–sand);font-weight:300;}
+.pcat{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(–teal);font-weight:600;margin-bottom:0.5rem;}
+.ptit{font-family:‘Lora’,Georgia,serif;font-size:1.2rem;line-height:1.25;margin-bottom:0.6rem;color:var(–text);font-weight:600;}
 .pc.wide .ptit{font-size:1.7rem;font-weight:400;}
 .pex{font-size:15px;color:var(–muted);line-height:1.75;margin-bottom:0.9rem;flex:1;}
 .pft{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(–sand);padding-top:0.7rem;margin-top:auto;}
-.pdt{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(–muted);}
-.plnk{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(–adobe);text-decoration:none;}
+.pdt{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(–muted);}
+.plnk{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(–adobe);text-decoration:none;}
 .plnk::after{content:’ →’;}
 
 /* NEWSLETTER */
 .nl{background:var(–brown);color:var(–ivory);padding:4.5rem 2rem;text-align:center;position:relative;overflow:hidden;border-top:3px solid var(–teal);}
 .nl::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0,transparent 20px,rgba(228,166,61,0.025) 20px,rgba(228,166,61,0.025) 21px);}
-.nl h2{font-family:‘Cormorant Garamond’,serif;font-size:2.6rem;font-weight:300;margin-bottom:0.5rem;color:var(–ivory);position:relative;letter-spacing:0.03em;}
+.nl h2{font-family:‘Lora’,Georgia,serif;font-size:2.6rem;font-weight:300;margin-bottom:0.5rem;color:var(–ivory);position:relative;letter-spacing:0.03em;}
 .nl p{color:rgba(250,246,240,0.45);font-style:italic;margin-bottom:1.8rem;position:relative;}
 .nf{display:flex;justify-content:center;gap:0;max-width:400px;margin:0 auto;position:relative;}
-.nf input{flex:1;padding:0.8rem 1.1rem;background:rgba(250,246,240,0.06);border:1px solid rgba(228,166,61,0.25);border-right:none;color:var(–ivory);font-family:‘Cormorant Garamond’,serif;font-size:16px;outline:none;}
+.nf input{flex:1;padding:0.8rem 1.1rem;background:rgba(250,246,240,0.06);border:1px solid rgba(228,166,61,0.25);border-right:none;color:var(–ivory);font-family:‘Lora’,Georgia,serif;font-size:16px;outline:none;}
 .nf input::placeholder{color:rgba(250,246,240,0.25);}
-.nf button{padding:0.8rem 1.3rem;background:var(–teal);color:var(–ivory);border:none;font-family:‘Josefin Sans’,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.nf button{padding:0.8rem 1.3rem;background:var(–teal);color:var(–ivory);border:none;font-family:‘Nunito’,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
 .nf button:hover{background:var(–teal-lt);}
 
 /* ── BIO ── */
@@ -127,20 +127,20 @@ footer{background:var(–brown-dk);border-top:1px solid var(–deco);padding:1.1
 .btin{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:260px 1fr;gap:4rem;align-items:end;position:relative;z-index:1;}
 .bport{width:240px;height:310px;background:var(–parchment);border:2px solid var(–deco);position:relative;box-shadow:8px 8px 0 var(–teal);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.8rem;}
 .bport-ico{font-size:4rem;opacity:0.2;}
-.bport-hint{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(–muted);}
-.bname{font-family:‘Cormorant Garamond’,serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:1rem;padding-bottom:3.5rem;}
+.bport-hint{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(–muted);}
+.bname{font-family:‘Lora’,Georgia,serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:1rem;padding-bottom:3.5rem;}
 .bname em{color:var(–gold);font-style:italic;}
 .btags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.1rem;}
-.btag{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;padding:0.22rem 0.7rem;border:1px solid rgba(228,166,61,0.3);color:rgba(250,246,240,0.6);}
+.btag{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;padding:0.22rem 0.7rem;border:1px solid rgba(228,166,61,0.3);color:rgba(250,246,240,0.6);}
 .bintro{font-size:1.1rem;font-style:italic;color:rgba(250,246,240,0.6);line-height:1.65;max-width:500px;}
 .bbody{max-width:1100px;margin:0 auto;padding:3.5rem 2rem;display:grid;grid-template-columns:2fr 1fr;gap:4rem;}
-.bbody h3{font-family:‘Josefin Sans’,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(–adobe);margin:2.2rem 0 0.8rem;border-bottom:1px solid var(–sand);padding-bottom:0.4rem;}
+.bbody h3{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(–adobe);margin:2.2rem 0 0.8rem;border-bottom:1px solid var(–sand);padding-bottom:0.4rem;}
 .bbody h3:first-child{margin-top:0;}
 .bbody p{color:var(–text);font-size:1.05rem;margin-bottom:1.1rem;line-height:1.85;}
 .bbody strong{color:var(–brown-dk);}
 .sc{background:var(–parchment);border:1px solid var(–sand);padding:1.4rem;margin-bottom:1.3rem;position:relative;}
 .sc::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(–adobe),var(–gold),var(–teal));}
-.sc h4{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(–text);margin-bottom:0.9rem;font-weight:700;}
+.sc h4{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(–text);margin-bottom:0.9rem;font-weight:700;}
 .sr{display:flex;justify-content:space-between;padding:0.38rem 0;border-bottom:1px dotted var(–sand);}
 .sr:last-child{border-bottom:none;}
 .srl{font-size:13px;color:var(–muted);}
@@ -154,7 +154,7 @@ footer{background:var(–brown-dk);border-top:1px solid var(–deco);padding:1.1
 .phd{background:var(–brown-dk);padding:4rem 2rem 3rem;border-bottom:3px solid var(–teal);position:relative;overflow:hidden;}
 .phd::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent 40px,rgba(228,166,61,0.025) 40px,rgba(228,166,61,0.025) 41px);}
 .phd-in{max-width:900px;margin:0 auto;position:relative;z-index:1;}
-.phd h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(3rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:0.7rem;}
+.phd h1{font-family:‘Lora’,Georgia,serif;font-size:clamp(3rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:0.7rem;}
 .phd h1 em{color:var(–gold);font-style:italic;}
 .phd p{font-style:italic;color:rgba(250,246,240,0.5);font-size:1.1rem;max-width:480px;}
 .pfbar{padding:0.9rem 2rem;background:var(–pink-bg);display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;border-bottom:1px solid var(–sand);}
@@ -166,34 +166,34 @@ footer{background:var(–brown-dk);border-top:1px solid var(–deco);padding:1.1
 .ph.med{height:260px;}
 .ph.short{height:200px;}
 .ph svg{position:absolute;inset:0;width:100%;height:100%;}
-.ph-l{position:relative;z-index:1;font-family:‘Cormorant Garamond’,serif;font-size:1rem;font-weight:600;color:var(–ivory);text-align:center;padding:0 1rem;}
-.ph-s{position:relative;z-index:1;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,246,240,0.6);}
+.ph-l{position:relative;z-index:1;font-family:‘Lora’,Georgia,serif;font-size:1rem;font-weight:600;color:var(–ivory);text-align:center;padding:0 1rem;}
+.ph-s{position:relative;z-index:1;font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,246,240,0.6);}
 .pov{position:absolute;inset:0;background:linear-gradient(to top,rgba(67,3,2,0.92) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem;}
-.ov-t{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(–teal-lt);margin-bottom:0.2rem;}
-.ov-c{font-family:‘Cormorant Garamond’,serif;font-size:1.1rem;font-weight:600;color:var(–ivory);}
+.ov-t{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(–teal-lt);margin-bottom:0.2rem;}
+.ov-c{font-family:‘Lora’,Georgia,serif;font-size:1.1rem;font-weight:600;color:var(–ivory);}
 
 /* ── TRAVEL ── */
 .thd{background:linear-gradient(135deg,var(–brown-dk) 0%,#200A08 100%);padding:4rem 2rem 3rem;border-bottom:3px solid var(–gold);position:relative;overflow:hidden;}
 .thd-in{max-width:1000px;margin:0 auto;position:relative;z-index:1;}
-.thd h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(3rem,6vw,6.5rem);font-weight:300;line-height:0.92;color:var(–ivory);margin-bottom:0.7rem;}
+.thd h1{font-family:‘Lora’,Georgia,serif;font-size:clamp(3rem,6vw,6.5rem);font-weight:300;line-height:0.92;color:var(–ivory);margin-bottom:0.7rem;}
 .thd h1 span{color:var(–gold);}
 .thd p{font-style:italic;color:rgba(250,246,240,0.5);font-size:1.1rem;}
 .tst{background:var(–brown-dk);border-bottom:1px solid rgba(228,166,61,0.15);display:grid;grid-template-columns:repeat(4,1fr);}
 .tsn{padding:1.8rem;border-right:1px solid rgba(228,166,61,0.12);text-align:center;}
 .tsn:last-child{border-right:none;}
-.tsn-n{font-family:‘Cormorant Garamond’,serif;font-size:3rem;font-weight:300;color:var(–gold);line-height:1;margin-bottom:0.2rem;}
-.tsn-l{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(250,246,240,0.4);}
+.tsn-n{font-family:‘Lora’,Georgia,serif;font-size:3rem;font-weight:300;color:var(–gold);line-height:1;margin-bottom:0.2rem;}
+.tsn-l{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(250,246,240,0.4);}
 .tgrid{display:grid;grid-template-columns:repeat(2,1fr);border-bottom:1px solid var(–sand);}
 .tc{border-right:1px solid var(–sand);border-bottom:1px solid var(–sand);overflow:hidden;cursor:pointer;transition:transform 0.2s;}
 .tc:nth-child(2n){border-right:none;}
 .tc:hover{transform:translateY(-2px);}
 .tc-img{height:220px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 .tc-body{padding:1.4rem;}
-.tc-ctry{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(–adobe);font-weight:700;margin-bottom:0.35rem;}
-.tc-city{font-family:‘Cormorant Garamond’,serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem;color:var(–text);}
+.tc-ctry{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(–adobe);font-weight:700;margin-bottom:0.35rem;}
+.tc-city{font-family:‘Lora’,Georgia,serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem;color:var(–text);}
 .tc-desc{font-size:14px;color:var(–muted);line-height:1.7;margin-bottom:0.9rem;}
 .tc-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
-.tt{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:0.18rem 0.55rem;background:var(–pink-bg);color:var(–muted);border:1px solid var(–sand);}
+.tt{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:0.18rem 0.55rem;background:var(–pink-bg);color:var(–muted);border:1px solid var(–sand);}
 .tc.feat{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;border-right:none;}
 .tc.feat .tc-img{height:100%;min-height:280px;}
 .tc.feat .tc-city{font-size:1.9rem;}
@@ -201,24 +201,24 @@ footer{background:var(–brown-dk);border-top:1px solid var(–deco);padding:1.1
 /* ── WORLD MAP ── */
 .mhd{background:var(–brown-dk);padding:3rem 2rem;border-bottom:3px solid var(–gold);}
 .mhd-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;}
-.mhd h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:300;line-height:0.95;color:var(–ivory);}
+.mhd h1{font-family:‘Lora’,Georgia,serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:300;line-height:0.95;color:var(–ivory);}
 .mhd h1 em{color:var(–gold);font-style:italic;}
 .mhd-sub{font-style:italic;color:rgba(250,246,240,0.4);font-size:1rem;max-width:280px;text-align:right;}
 .mleg{background:var(–brown-dk);border-top:1px solid rgba(228,166,61,0.15);padding:1rem 2rem;display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
 .ml{display:flex;align-items:center;gap:0.4rem;}
 .ml-dot{width:8px;height:8px;border-radius:50%;border:1.5px solid var(–ivory);}
-.ml-l{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,246,240,0.5);}
+.ml-l{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,246,240,0.5);}
 .cdata{max-width:1100px;margin:0 auto;padding:2.5rem 2rem;}
-.cdata h2{font-family:‘Josefin Sans’,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(–text);margin-bottom:1.5rem;border-bottom:1px solid var(–sand);padding-bottom:0.7rem;}
+.cdata h2{font-family:‘Nunito’,Arial,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(–text);margin-bottom:1.5rem;border-bottom:1px solid var(–sand);padding-bottom:0.7rem;}
 table{width:100%;border-collapse:collapse;}
-th{background:var(–brown-dk);color:var(–gold);font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;padding:0.8rem 1.1rem;text-align:left;font-weight:600;}
+th{background:var(–brown-dk);color:var(–gold);font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:0.8rem 1.1rem;text-align:left;font-weight:600;}
 td{padding:0.8rem 1.1rem;border-bottom:1px solid var(–sand);font-size:14px;vertical-align:middle;}
 tr:hover td{background:rgba(42,157,143,0.04);}
 .cf{font-size:1.1rem;margin-right:0.3rem;}
-.cn{font-family:‘Cormorant Garamond’,serif;font-size:0.95rem;font-weight:600;}
+.cn{font-family:‘Lora’,Georgia,serif;font-size:0.95rem;font-weight:600;}
 .fb2{height:5px;background:var(–pink-bg);border-radius:2px;overflow:hidden;width:110px;}
 .ff{height:100%;background:linear-gradient(90deg,var(–adobe),var(–gold));border-radius:2px;}
-.rb{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:0.18rem 0.55rem;font-weight:700;}
+.rb{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:0.18rem 0.55rem;font-weight:700;}
 .ri{background:rgba(193,113,74,0.12);color:var(–adobe);}
 .re{background:rgba(42,157,143,0.12);color:var(–teal);}
 .rs{background:rgba(67,3,2,0.07);color:var(–mid);}
@@ -227,43 +227,43 @@ tr:hover td{background:rgba(42,157,143,0.04);}
 /* ── ARTICLE ── */
 .ahd{background:var(–brown-dk);padding:5rem 2rem 4rem;position:relative;overflow:hidden;border-bottom:3px solid var(–teal);}
 .ahd-in{max-width:780px;margin:0 auto;position:relative;z-index:1;}
-.abk{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(250,246,240,0.4);cursor:pointer;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.8rem;background:none;border:none;}
+.abk{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(250,246,240,0.4);cursor:pointer;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.8rem;background:none;border:none;}
 .abk:hover{color:var(–teal-lt);}
-.acat{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(–teal-lt);font-weight:600;margin-bottom:0.9rem;display:block;}
-.atit{font-family:‘Cormorant Garamond’,serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:1.4rem;}
+.acat{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.10em;text-transform:uppercase;color:var(–teal-lt);font-weight:600;margin-bottom:0.9rem;display:block;}
+.atit{font-family:‘Lora’,Georgia,serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:1.4rem;}
 .atit em{color:var(–gold);font-style:italic;}
 .ameta{display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap;border-top:1px solid rgba(228,166,61,0.18);padding-top:1.1rem;}
 .ameta-au{font-size:14px;color:rgba(250,246,240,0.6);}
 .ameta-au strong{color:var(–gold);}
-.ameta-dt{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,246,240,0.3);}
-.atag{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:0.18rem 0.6rem;border:1px solid rgba(228,166,61,0.2);color:rgba(250,246,240,0.35);}
+.ameta-dt{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,246,240,0.3);}
+.atag{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:0.18rem 0.6rem;border:1px solid rgba(228,166,61,0.2);color:rgba(250,246,240,0.35);}
 .abody{max-width:780px;margin:0 auto;padding:3.5rem 2rem;}
 .abody p{font-size:1.08rem;line-height:1.95;color:var(–text);margin-bottom:1.5rem;}
-.abody p:first-child::first-letter{font-family:‘Cormorant Garamond’,serif;font-size:4.5rem;font-weight:700;color:var(–adobe);float:left;line-height:0.75;margin:0.1rem 0.15rem 0 0;}
+.abody p:first-child::first-letter{font-family:‘Lora’,Georgia,serif;font-size:4.5rem;font-weight:700;color:var(–adobe);float:left;line-height:0.75;margin:0.1rem 0.15rem 0 0;}
 .apq{border-left:3px solid var(–teal);padding:1.1rem 1.8rem;margin:2.2rem 0;background:var(–pink-bg);}
-.apq p{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:1.25rem;color:var(–brown-dk);margin:0;line-height:1.55;}
+.apq p{font-family:‘Lora’,Georgia,serif;font-style:italic;font-size:1.25rem;color:var(–brown-dk);margin:0;line-height:1.55;}
 .apq p::first-letter{font-size:1.25rem;float:none;}
 .aimg{margin:2.2rem -1rem;position:relative;}
 .aimg img{width:100%;height:auto;display:block;}
-.acap{font-family:‘Josefin Sans’,sans-serif;font-size:10px;color:var(–muted);letter-spacing:0.06em;padding:0.55rem 1rem;background:var(–pink-bg);border-bottom:2px solid var(–sand);line-height:1.5;}
+.acap{font-family:‘Nunito’,Arial,sans-serif;font-size:12px;color:var(–muted);letter-spacing:0.06em;padding:0.55rem 1rem;background:var(–pink-bg);border-bottom:2px solid var(–sand);line-height:1.5;}
 .aph{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.4rem;position:relative;overflow:hidden;}
 .aph.wide{height:400px;}
 .aph.med{height:280px;}
 .aph svg{position:absolute;inset:0;width:100%;height:100%;}
-.aph-l{position:relative;z-index:1;font-family:‘Cormorant Garamond’,serif;font-size:1rem;font-weight:600;color:var(–ivory);text-align:center;padding:0 2rem;}
-.aph-s{position:relative;z-index:1;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,246,240,0.55);}
-.ah2{font-family:‘Josefin Sans’,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(–adobe);margin:2.8rem 0 0.9rem;border-bottom:1px solid var(–sand);padding-bottom:0.4rem;}
+.aph-l{position:relative;z-index:1;font-family:‘Lora’,Georgia,serif;font-size:1rem;font-weight:600;color:var(–ivory);text-align:center;padding:0 2rem;}
+.aph-s{position:relative;z-index:1;font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,246,240,0.55);}
+.ah2{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(–adobe);margin:2.8rem 0 0.9rem;border-bottom:1px solid var(–sand);padding-bottom:0.4rem;}
 .aft{max-width:780px;margin:0 auto;padding:1.8rem 2rem 3.5rem;border-top:2px solid var(–sand);}
 .aft-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.3rem;}
-.aft-tag{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.7rem;background:var(–pink-bg);color:var(–muted);border:1px solid var(–sand);}
-.aft-src{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(–muted);}
-.abtn{display:inline-flex;align-items:center;gap:0.4rem;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:var(–adobe);cursor:pointer;background:none;border:none;margin-top:1.3rem;}
+.aft-tag{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.7rem;background:var(–pink-bg);color:var(–muted);border:1px solid var(–sand);}
+.aft-src{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(–muted);}
+.abtn{display:inline-flex;align-items:center;gap:0.4rem;font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;color:var(–adobe);cursor:pointer;background:none;border:none;margin-top:1.3rem;}
 .abtn:hover{color:var(–teal);}
 
 /* ── VOLUNTEER ── */
 .vhd{background:var(–brown-dk);padding:4rem 2rem 3rem;position:relative;overflow:hidden;border-bottom:3px solid var(–adobe);}
 .vhd-in{max-width:900px;margin:0 auto;position:relative;z-index:1;}
-.vhd h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(3rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:0.7rem;}
+.vhd h1{font-family:‘Lora’,Georgia,serif;font-size:clamp(3rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:0.7rem;}
 .vhd h1 em{color:var(–gold);font-style:italic;}
 .vhd p{font-style:italic;color:rgba(250,246,240,0.5);font-size:1.1rem;max-width:540px;}
 .vgrid{display:grid;grid-template-columns:repeat(2,1fr);}
@@ -272,19 +272,19 @@ tr:hover td{background:rgba(42,157,143,0.04);}
 .vc-img{width:100%;height:190px;margin-bottom:1.3rem;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.4rem;background:var(–pink-bg);}
 .vc-img svg{position:absolute;inset:0;width:100%;height:100%;}
 .vc-ico{position:relative;z-index:1;font-size:2.2rem;}
-.vc-hint{position:relative;z-index:1;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(–muted);}
+.vc-hint{position:relative;z-index:1;font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(–muted);}
 .vc-hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem;}
-.vc-cat{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(–adobe);font-weight:700;}
-.vc-yr{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;color:var(–muted);text-transform:uppercase;}
-.vc-name{font-family:‘Cormorant Garamond’,serif;font-size:1.35rem;font-weight:600;color:var(–text);margin-bottom:0.3rem;}
-.vc-role{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(–teal);font-weight:600;margin-bottom:0.7rem;}
+.vc-cat{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(–adobe);font-weight:700;}
+.vc-yr{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.1em;color:var(–muted);text-transform:uppercase;}
+.vc-name{font-family:‘Lora’,Georgia,serif;font-size:1.35rem;font-weight:600;color:var(–text);margin-bottom:0.3rem;}
+.vc-role{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(–teal);font-weight:600;margin-bottom:0.7rem;}
 .vc-desc{font-size:14px;color:var(–muted);line-height:1.75;margin-bottom:0.9rem;}
 .vc-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
 
 /* ── CONTACT ── */
 .chd{background:var(–brown-dk);padding:5rem 2rem 4rem;position:relative;overflow:hidden;border-bottom:3px solid var(–teal);}
 .chd-in{max-width:700px;margin:0 auto;position:relative;z-index:1;text-align:center;}
-.chd h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;color:var(–ivory);line-height:0.95;margin-bottom:0.8rem;}
+.chd h1{font-family:‘Lora’,Georgia,serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;color:var(–ivory);line-height:0.95;margin-bottom:0.8rem;}
 .chd h1 em{color:var(–gold);font-style:italic;}
 .chd p{font-style:italic;color:rgba(250,246,240,0.5);font-size:1.1rem;}
 .cbox{display:grid;grid-template-columns:1fr 1fr;min-height:55vh;}
@@ -294,13 +294,13 @@ tr:hover td{background:rgba(42,157,143,0.04);}
 .csec.teal-b{border-left:4px solid var(–teal);}
 .csec.adobe-b{border-left:4px solid var(–adobe);}
 .csec.gold-b{border-left:4px solid var(–gold);}
-.csec-lbl{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.4rem;}
+.csec-lbl{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:0.4rem;}
 .csec-lbl.tc{color:var(–teal);}
 .csec-lbl.ac{color:var(–adobe);}
 .csec-lbl.gc{color:var(–mid);}
-.csec a{font-family:‘Cormorant Garamond’,serif;font-size:1.2rem;color:var(–brown-dk);text-decoration:none;font-weight:600;display:block;}
-.cbt{display:inline-flex;align-items:center;gap:0.4rem;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(–ivory);background:var(–teal);padding:0.45rem 0.9rem;text-decoration:none;margin-top:0.5rem;}
-.csub{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.1em;color:var(–muted);text-transform:uppercase;margin-top:0.3rem;}
+.csec a{font-family:‘Lora’,Georgia,serif;font-size:1.2rem;color:var(–brown-dk);text-decoration:none;font-weight:600;display:block;}
+.cbt{display:inline-flex;align-items:center;gap:0.4rem;font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(–ivory);background:var(–teal);padding:0.45rem 0.9rem;text-decoration:none;margin-top:0.5rem;}
+.csub{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.1em;color:var(–muted);text-transform:uppercase;margin-top:0.3rem;}
 .copen{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid var(–sand);}
 .copen:last-child{border-bottom:none;}
 .copen-ico{width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.95rem;}
@@ -308,17 +308,17 @@ tr:hover td{background:rgba(42,157,143,0.04);}
 .copen-ico.a{background:var(–adobe);}
 .copen-ico.g{background:var(–gold);}
 .copen-ico.s{background:var(–brown-dk);border:1px solid var(–sand);}
-.copen-ttl{font-family:‘Josefin Sans’,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(–brown-dk);margin-bottom:0.15rem;}
+.copen-ttl{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(–brown-dk);margin-bottom:0.15rem;}
 .copen-txt{font-size:13px;color:var(–muted);line-height:1.6;}
 .cq{background:var(–brown);padding:3rem 2rem;text-align:center;border-top:2px solid var(–teal);position:relative;overflow:hidden;}
-.cq p{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:1.3rem;color:rgba(250,246,240,0.7);line-height:1.7;max-width:540px;margin:0 auto;}
-.cq span{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,246,240,0.28);display:block;margin-top:0.7rem;}
+.cq p{font-family:‘Lora’,Georgia,serif;font-style:italic;font-size:1.3rem;color:rgba(250,246,240,0.7);line-height:1.7;max-width:540px;margin:0 auto;}
+.cq span{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,246,240,0.28);display:block;margin-top:0.7rem;}
 
 /* ── SELECTED WORKS ── */
 .whd{background:var(–brown-dk);padding:4rem 2rem 3rem;border-bottom:3px solid var(–gold);position:relative;overflow:hidden;}
 .whd::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0,transparent 24px,rgba(228,166,61,0.03) 24px,rgba(228,166,61,0.03) 25px);}
 .whd-in{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
-.whd h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(3rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:0.7rem;}
+.whd h1{font-family:‘Lora’,Georgia,serif;font-size:clamp(3rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:0.7rem;}
 .whd h1 em{color:var(–gold);font-style:italic;}
 .whd p{font-style:italic;color:rgba(244,234,216,0.5);font-size:1.1rem;max-width:560px;}
 
@@ -334,17 +334,17 @@ tr:hover td{background:rgba(42,157,143,0.04);}
 .wcard-img{height:260px;overflow:hidden;position:relative;}
 .wcard-img-inner{width:100%;height:100%;transition:transform 0.4s;display:flex;align-items:center;justify-content:center;}
 .wcard-img-inner img{width:100%;height:100%;object-fit:cover;}
-.wcard-type-badge{position:absolute;top:1rem;left:1rem;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;padding:0.25rem 0.7rem;z-index:2;}
+.wcard-type-badge{position:absolute;top:1rem;left:1rem;font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;padding:0.25rem 0.7rem;z-index:2;}
 .wbadge-ud{background:rgba(42,157,143,0.9);color:var(–ivory);}
 .wbadge-ar{background:rgba(193,113,74,0.9);color:var(–ivory);}
 .wbadge-mp{background:rgba(122,74,42,0.9);color:var(–ivory);}
 .wcard-body{padding:1.6rem 1.8rem;}
-.wcard-year{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(–muted);margin-bottom:0.3rem;}
-.wcard-title{font-family:‘Cormorant Garamond’,serif;font-size:1.5rem;font-weight:600;color:var(–text);line-height:1.2;margin-bottom:0.4rem;}
+.wcard-year{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(–muted);margin-bottom:0.3rem;}
+.wcard-title{font-family:‘Lora’,Georgia,serif;font-size:1.5rem;font-weight:600;color:var(–text);line-height:1.2;margin-bottom:0.4rem;}
 .wcard-sub{font-size:14px;font-style:italic;color:var(–muted);margin-bottom:0.8rem;line-height:1.5;}
 .wcard-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
 .wcard-foot{display:flex;justify-content:flex-end;padding:0.8rem 1.8rem;border-top:1px solid var(–sand);background:var(–parchment);}
-.wcard-lnk{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:var(–adobe);}
+.wcard-lnk{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;color:var(–adobe);}
 .wcard-lnk::after{content:’ →’;}
 
 /* PROJECT DETAIL PAGE */
@@ -352,32 +352,32 @@ tr:hover td{background:rgba(42,157,143,0.04);}
 .wpd.active{display:block;}
 .wphd{background:var(–brown-dk);padding:4rem 2rem 3.5rem;border-bottom:3px solid var(–teal);position:relative;overflow:hidden;}
 .wphd-in{max-width:1000px;margin:0 auto;position:relative;z-index:1;}
-.wpbk{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(244,234,216,0.4);cursor:pointer;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;background:none;border:none;}
+.wpbk{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(244,234,216,0.4);cursor:pointer;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;background:none;border:none;}
 .wpbk:hover{color:var(–teal-lt);}
-.wptype{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(–teal-lt);font-weight:600;margin-bottom:0.6rem;display:block;}
-.wptit{font-family:‘Cormorant Garamond’,serif;font-size:clamp(2rem,5vw,4rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:0.4rem;}
+.wptype{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.10em;text-transform:uppercase;color:var(–teal-lt);font-weight:600;margin-bottom:0.6rem;display:block;}
+.wptit{font-family:‘Lora’,Georgia,serif;font-size:clamp(2rem,5vw,4rem);font-weight:300;line-height:0.95;color:var(–ivory);margin-bottom:0.4rem;}
 .wptit em{color:var(–gold);font-style:italic;}
-.wpsub{font-family:‘Cormorant Garamond’,serif;font-style:italic;color:rgba(244,234,216,0.55);font-size:1.1rem;margin-bottom:1.2rem;}
+.wpsub{font-family:‘Lora’,Georgia,serif;font-style:italic;color:rgba(244,234,216,0.55);font-size:1.1rem;margin-bottom:1.2rem;}
 .wpmeta-row{display:flex;gap:2rem;flex-wrap:wrap;border-top:1px solid rgba(228,166,61,0.18);padding-top:1rem;}
 .wpmeta-item{display:flex;flex-direction:column;gap:0.15rem;}
-.wpmeta-lbl{font-family:‘Josefin Sans’,sans-serif;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,234,216,0.35);}
-.wpmeta-val{font-family:‘Cormorant Garamond’,serif;font-size:1rem;color:rgba(244,234,216,0.8);font-weight:600;}
+.wpmeta-lbl{font-family:‘Nunito’,Arial,sans-serif;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,234,216,0.35);}
+.wpmeta-val{font-family:‘Lora’,Georgia,serif;font-size:1rem;color:rgba(244,234,216,0.8);font-weight:600;}
 
 /* SPECS TABLE */
 .wpbody{max-width:1000px;margin:0 auto;padding:3rem 2rem;}
-.wp-section-lbl{font-family:‘Josefin Sans’,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(–adobe);margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;}
+.wp-section-lbl{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(–adobe);margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;}
 .wp-section-lbl::after{content:’’;flex:1;height:1px;background:var(–sand);}
 .specs-table{width:100%;border-collapse:collapse;margin-bottom:2.5rem;}
 .specs-table tr{border-bottom:1px solid var(–sand);}
 .specs-table tr:last-child{border-bottom:none;}
 .specs-table td{padding:0.7rem 1rem;font-size:14px;vertical-align:top;}
-.specs-table td:first-child{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(–muted);font-weight:600;width:160px;padding-top:0.9rem;}
+.specs-table td:first-child{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(–muted);font-weight:600;width:160px;padding-top:0.9rem;}
 .specs-table td:last-child{color:var(–text);}
 .specs-table tr:nth-child(odd) td{background:var(–pink-bg);}
 .specs-table tr:nth-child(even) td{background:var(–ivory);}
 
 /* PROJECT DESCRIPTION */
-.wp-desc{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-size:1.15rem;line-height:1.9;color:var(–text);margin-bottom:2.5rem;padding:1.5rem 2rem;background:var(–pink-bg);border-left:3px solid var(–teal);}
+.wp-desc{font-family:‘Lora’,Georgia,serif;font-style:italic;font-size:1.15rem;line-height:1.9;color:var(–text);margin-bottom:2.5rem;padding:1.5rem 2rem;background:var(–pink-bg);border-left:3px solid var(–teal);}
 
 /* SLIDESHOW */
 .slideshow{position:relative;overflow:hidden;background:var(–brown-dk);margin-bottom:2.5rem;}
@@ -386,10 +386,10 @@ tr:hover td{background:rgba(42,157,143,0.04);}
 .slide img{width:100%;height:100%;object-fit:cover;}
 .slide-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;position:relative;}
 .slide-ph svg{position:absolute;inset:0;width:100%;height:100%;}
-.slide-ph-lbl{position:relative;z-index:1;font-family:‘Cormorant Garamond’,serif;font-size:1.1rem;font-weight:600;color:rgba(244,234,216,0.7);text-align:center;padding:0 3rem;}
-.slide-ph-sub{position:relative;z-index:1;font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(244,234,216,0.35);}
+.slide-ph-lbl{position:relative;z-index:1;font-family:‘Lora’,Georgia,serif;font-size:1.1rem;font-weight:600;color:rgba(244,234,216,0.7);text-align:center;padding:0 3rem;}
+.slide-ph-sub{position:relative;z-index:1;font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(244,234,216,0.35);}
 .slide-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(92,51,24,0.9),transparent);padding:1.5rem 2rem 1rem;}
-.slide-caption-txt{font-family:‘Josefin Sans’,sans-serif;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,234,216,0.7);}
+.slide-caption-txt{font-family:‘Nunito’,Arial,sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,234,216,0.7);}
 .ss-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(244,234,216,0.12);border:1px solid rgba(244,234,216,0.2);color:rgba(244,234,216,0.7);width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.2rem;transition:all 0.2s;z-index:10;backdrop-filter:blur(2px);}
 .ss-btn:hover{background:rgba(193,113,74,0.4);color:var(–ivory);}
 .ss-prev{left:1rem;}
@@ -397,7 +397,7 @@ tr:hover td{background:rgba(42,157,143,0.04);}
 .ss-dots{display:flex;justify-content:center;gap:0.5rem;padding:1rem 0;background:var(–brown-dk);}
 .ss-dot{width:8px;height:8px;border-radius:50%;background:rgba(244,234,216,0.25);cursor:pointer;transition:all 0.2s;border:none;}
 .ss-dot.on{background:var(–gold);transform:scale(1.2);}
-.ss-counter{font-family:‘Josefin Sans’,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(244,234,216,0.4);text-align:center;padding-bottom:0.8rem;background:var(–brown-dk);}
+.ss-counter{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(244,234,216,0.4);text-align:center;padding-bottom:0.8rem;background:var(–brown-dk);}
 
 @media(max-width:900px){.windex{grid-template-columns:1fr;}.wcard:nth-child(2n){border-right:none;}.wphd-in,.wpbody{max-width:100%;}.slide{height:300px;}}
 @media(max-width:600px){.windex{grid-template-columns:1fr;}.slide{height:220px;}}
@@ -441,7 +441,6 @@ tr:hover td{background:rgba(42,157,143,0.04);}
   <div class="nlinks">
     <a onclick="showPage('home')" class="act" id="nav-home">Essays</a>
     <a onclick="showPage('bio')" id="nav-bio">About Me</a>
-    <a onclick="showPage('photography')" id="nav-photography">Photography</a>
     <a onclick="showPage('map')" id="nav-map">Public Spaces Repository</a>
     <a onclick="showPage('volunteer')" id="nav-volunteer">Volunteer Engagements</a>
     <a onclick="showPage('works')" id="nav-works">Selected Works</a>
@@ -715,86 +714,12 @@ tr:hover td{background:rgba(42,157,143,0.04);}
       <div class="sc">
         <h4>Get in Touch</h4>
         <p style="font-size:13px;color:var(--muted);margin-bottom:0.8rem;">For collaborations, writing, or to talk about cities:</p>
-        <a href="mailto:daveneerja@gmail.com" style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);font-weight:700;text-decoration:none;display:block;margin-bottom:0.4rem;">daveneerja@gmail.com →</a>
-        <a href="https://www.linkedin.com/in/neerjadave/" target="_blank" style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--adobe);font-weight:700;text-decoration:none;">LinkedIn Profile →</a>
+        <a href="mailto:daveneerja@gmail.com" style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);font-weight:700;text-decoration:none;display:block;margin-bottom:0.4rem;">daveneerja@gmail.com →</a>
+        <a href="https://www.linkedin.com/in/neerjadave/" target="_blank" style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--adobe);font-weight:700;text-decoration:none;">LinkedIn Profile →</a>
       </div>
     </div>
   </div>
   <div class="stripe sm"></div>
-  <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
-</div>
-
-<!-- ═══ PHOTOGRAPHY ═══ -->
-
-<div class="page" id="page-photography">
-  <div class="stripe"></div>
-  <div class="phd">
-    <div class="phd-in">
-      <div class="ey" style="color:rgba(250,246,240,0.4);">Seeing the city</div>
-      <h1>Urban<br><em>Frames</em></h1>
-      <p>Cities photographed at street level — the textures, shadows, and human details that reveal how a place really works.</p>
-    </div>
-  </div>
-  <div class="pfbar">
-    <span class="plbl" style="margin-right:0.4rem;">Filter ·</span>
-    <button class="pill on" onclick="filterPhotos(this,'all')">All</button>
-    <button class="pill" onclick="filterPhotos(this,'india')">India</button>
-    <button class="pill" onclick="filterPhotos(this,'europe')">Europe</button>
-    <button class="pill" onclick="filterPhotos(this,'asia')">Asia</button>
-    <button class="pill" onclick="filterPhotos(this,'street')">Street</button>
-    <button class="pill" onclick="filterPhotos(this,'architecture')">Architecture</button>
-    <button class="pill" onclick="filterPhotos(this,'pattern')">Pattern</button>
-  </div>
-  <div class="mason" id="photo-grid">
-    <div class="pi" data-cat="india architecture"><div class="ph tall" style="background:#8B4513;">
-      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#C1714A" opacity="0.4"/><pattern id="p1" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="none" stroke="#8B4513" stroke-width="0.5"/><circle cx="20" cy="20" r="8" fill="none" stroke="#8B4513" stroke-width="1"/><circle cx="20" cy="20" r="3" fill="#430302" opacity="0.4"/><line x1="0" y1="20" x2="12" y2="20" stroke="#8B4513" stroke-width="0.5"/><line x1="28" y1="20" x2="40" y2="20" stroke="#8B4513" stroke-width="0.5"/><line x1="20" y1="0" x2="20" y2="12" stroke="#8B4513" stroke-width="0.5"/><line x1="20" y1="28" x2="20" y2="40" stroke="#8B4513" stroke-width="0.5"/></pattern><rect width="300" height="380" fill="url(#p1)" opacity="0.5"/></svg>
-      <div class="ph-l">Jamnagar Pol</div><div class="ph-s">Gujarat · 2024</div></div>
-      <div class="pov"><div class="ov-t">India · Architecture</div><div class="ov-c">Jamnagar, Gujarat</div></div>
-    </div>
-    <div class="pi" data-cat="europe street"><div class="ph med" style="background:#2A6B5A;">
-      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#2A9D8F" opacity="0.3"/><pattern id="p2" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="none" stroke="#1A6B5A" stroke-width="0.5"/><polygon points="15,3 27,27 3,27" fill="none" stroke="#1A6B5A" stroke-width="0.8"/></pattern><rect width="300" height="260" fill="url(#p2)" opacity="0.4"/></svg>
-      <div class="ph-l">Bologna Arcades</div><div class="ph-s">Italy · 2023</div></div>
-      <div class="pov"><div class="ov-t">Europe · Street</div><div class="ov-c">Bologna, Italy</div></div>
-    </div>
-    <div class="pi" data-cat="india pattern"><div class="ph short" style="background:#C8821A;">
-      <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#E4A63D" opacity="0.3"/><pattern id="p3" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="none"/><rect x="4" y="4" width="16" height="16" fill="none" stroke="#8B5A00" stroke-width="0.8"/><circle cx="12" cy="12" r="4" fill="#430302" opacity="0.3"/></pattern><rect width="300" height="200" fill="url(#p3)" opacity="0.5"/></svg>
-      <div class="ph-l">Rajkot Stepwell</div><div class="ph-s">Gujarat · 2024</div></div>
-      <div class="pov"><div class="ov-t">India · Pattern</div><div class="ov-c">Rajkot, Gujarat</div></div>
-    </div>
-    <div class="pi" data-cat="asia street"><div class="ph med" style="background:#1A3A6A;">
-      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#1A3A6A" opacity="0.4"/><pattern id="p4" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="none" stroke="#2A5A9A" stroke-width="0.5"/><path d="M18 4 L32 32 L4 32 Z" fill="none" stroke="#C1714A" stroke-width="0.6"/></pattern><rect width="300" height="260" fill="url(#p4)" opacity="0.4"/></svg>
-      <div class="ph-l">Hanoi Old Quarter</div><div class="ph-s">Vietnam · 2023</div></div>
-      <div class="pov"><div class="ov-t">Asia · Street</div><div class="ov-c">Hanoi, Vietnam</div></div>
-    </div>
-    <div class="pi" data-cat="india architecture pattern"><div class="ph tall" style="background:#8B2010;">
-      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#430302" opacity="0.5"/><pattern id="p5" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse"><circle cx="24" cy="24" r="20" fill="none" stroke="#C1714A" stroke-width="1"/><circle cx="24" cy="24" r="10" fill="none" stroke="#C1714A" stroke-width="0.7"/><line x1="4" y1="24" x2="44" y2="24" stroke="#C1714A" stroke-width="0.5"/><line x1="24" y1="4" x2="24" y2="44" stroke="#C1714A" stroke-width="0.5"/><line x1="9" y1="9" x2="39" y2="39" stroke="#C1714A" stroke-width="0.3"/><line x1="39" y1="9" x2="9" y2="39" stroke="#C1714A" stroke-width="0.3"/></pattern><rect width="300" height="380" fill="url(#p5)" opacity="0.4"/></svg>
-      <div class="ph-l">Ahmedabad Heritage District</div><div class="ph-s">Gujarat · 2024</div></div>
-      <div class="pov"><div class="ov-t">India · Architecture</div><div class="ov-c">Ahmedabad, Gujarat</div></div>
-    </div>
-    <div class="pi" data-cat="europe architecture"><div class="ph short" style="background:#5A3A2A;">
-      <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#8B5A3A" opacity="0.4"/><pattern id="p6" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="none" stroke="#5A3A2A" stroke-width="0.5"/><rect x="5" y="5" width="10" height="10" fill="#5A3A2A" opacity="0.2"/></pattern><rect width="300" height="200" fill="url(#p6)" opacity="0.4"/></svg>
-      <div class="ph-l">Porto Tilework</div><div class="ph-s">Portugal · 2022</div></div>
-      <div class="pov"><div class="ov-t">Europe · Pattern</div><div class="ov-c">Porto, Portugal</div></div>
-    </div>
-    <div class="pi" data-cat="india street"><div class="ph med" style="background:#B06820;">
-      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#E4A63D" opacity="0.25"/><pattern id="p7" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M16 0 L32 16 L16 32 L0 16 Z" fill="none" stroke="#8B5A00" stroke-width="0.8"/><circle cx="16" cy="16" r="5" fill="#430302" opacity="0.2"/></pattern><rect width="300" height="260" fill="url(#p7)" opacity="0.4"/></svg>
-      <div class="ph-l">Bhavnagar Old City</div><div class="ph-s">Gujarat · 2024</div></div>
-      <div class="pov"><div class="ov-t">India · Street</div><div class="ov-c">Bhavnagar, Gujarat</div></div>
-    </div>
-    <div class="pi" data-cat="asia architecture"><div class="ph tall" style="background:#2A5A3A;">
-      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#2A6B4A" opacity="0.4"/><pattern id="p8" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="40" y2="40" stroke="#1A4A2A" stroke-width="0.5"/><line x1="40" y1="0" x2="0" y2="40" stroke="#1A4A2A" stroke-width="0.5"/><circle cx="20" cy="20" r="6" fill="none" stroke="#2A9D8F" stroke-width="0.7"/></pattern><rect width="300" height="380" fill="url(#p8)" opacity="0.4"/></svg>
-      <div class="ph-l">Kyoto Back Streets</div><div class="ph-s">Japan · 2022</div></div>
-      <div class="pov"><div class="ov-t">Asia · Architecture</div><div class="ov-c">Kyoto, Japan</div></div>
-    </div>
-    <div class="pi" data-cat="europe street"><div class="ph med" style="background:#7A5020;">
-      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#C1714A" opacity="0.3"/><pattern id="p9" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse"><rect width="28" height="28" fill="none" stroke="#7A4A1A" stroke-width="0.5"/><path d="M0 14 Q7 7 14 14 Q21 21 28 14" fill="none" stroke="#7A4A1A" stroke-width="0.8"/></pattern><rect width="300" height="260" fill="url(#p9)" opacity="0.4"/></svg>
-      <div class="ph-l">Lisbon Miradouro</div><div class="ph-s">Portugal · 2022</div></div>
-      <div class="pov"><div class="ov-t">Europe · Street</div><div class="ov-c">Lisbon, Portugal</div></div>
-    </div>
-  </div>
-  <div style="text-align:center;padding:2rem;border-top:1px solid var(--sand);background:var(--pink-bg);">
-    <p style="font-style:italic;color:var(--muted);font-size:1rem;">Replace placeholders with your photos using an <code style="background:var(--sand);padding:0.1rem 0.4rem;font-size:12px;">&lt;img&gt;</code> tag inside each <code style="background:var(--sand);padding:0.1rem 0.4rem;font-size:12px;">.ph</code> div.</p>
-  </div>
   <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
 </div>
 
@@ -825,31 +750,62 @@ tr:hover td{background:rgba(42,157,143,0.04);}
   <div style="padding:1.5rem 2rem;background:var(--parchment);border-bottom:1px solid var(--sand);display:flex;align-items:center;gap:1rem;">
     <div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div>
     <svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg>
-    <span style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;color:var(--brown-dk);">Urban Notes by Region</span>
+    <span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.10em;text-transform:uppercase;font-weight:700;color:var(--brown-dk);">Urban Notes by Region</span>
     <div style="height:1px;background:var(--deco);flex:1;"></div>
-    <span style="font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);">Scroll ↓ for interactive map</span>
+    <span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);">Scroll ↓ for interactive map</span>
   </div>
 
   <!-- INDIA -->
 
-  <div style="padding:1.5rem 2rem 0;background:var(--ivory);"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;"><div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div><svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg><span style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;color:var(--brown-dk);">India</span><div style="height:1px;background:var(--deco);flex:1;"></div></div></div>
+  <div style="padding:1.5rem 2rem 0;background:var(--ivory);"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;"><div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div><svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg><span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.10em;text-transform:uppercase;font-weight:700;color:var(--brown-dk);">India</span><div style="height:1px;background:var(--deco);flex:1;"></div></div></div>
   <div class="tgrid" style="border-top:none;">
-    <div class="tc feat"><div class="tc-img" style="background:linear-gradient(135deg,var(--brown-dk),#3A1A08);"><svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;opacity:0.4"><pattern id="fp" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="20" fill="none" stroke="#C1714A" stroke-width="0.5"/><path d="M5 25 L45 25 M25 5 L25 45" stroke="#E4A63D" stroke-width="0.3"/></pattern><rect width="500" height="300" fill="url(#fp)"/></svg><div style="position:relative;z-index:2;font-size:4rem;">🪬</div></div><div class="tc-body"><div class="tc-ctry">India · Gujarat · Saurashtra</div><h2 class="tc-city">The Kathiawad Circuit</h2><p class="tc-desc">A slow traverse through Saurashtra — Rajkot, Jamnagar, Bhavnagar, Palitana — tracing a distinct regional urbanism that survived centuries of trade, colonial rule, and post-independence planning. The <em>pol</em> system, the <em>khancha</em> lanes, the stepwells: a complete urban vocabulary modern planning has largely ignored.</p><div class="tc-tags"><span class="tt">Heritage</span><span class="tt">Vernacular Architecture</span><span class="tt">Public Space</span><span class="tt">Walking Tour</span></div></div></div>
-    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,var(--adobe),#7A3010);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏗️</div></div><div class="tc-body"><div class="tc-ctry">India · Maharashtra</div><h2 class="tc-city">Mumbai</h2><p class="tc-desc">The most extreme urban density outside Hong Kong. Dharavi as misunderstood city-within-a-city; the Gothic Revival station as monument to colonial ambition; the mill district transformation.</p><div class="tc-tags"><span class="tt">Density</span><span class="tt">Informal Urbanism</span><span class="tt">Colonial Heritage</span></div></div></div>
+    <div class="tc feat">
+      <div class="tc-img" style="background:#3A1A08;position:relative;overflow:hidden;">
+        <!-- Mini slideshow for Kathiawad Circuit -->
+        <div id="kath-slides" style="display:flex;width:300%;transition:transform 0.5s ease;height:100%;">
+          <img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_4259.jpeg" style="width:33.33%;height:100%;object-fit:cover;flex-shrink:0;"/>
+          <img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_4255.jpeg" style="width:33.33%;height:100%;object-fit:cover;flex-shrink:0;"/>
+          <img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_2861.jpeg" style="width:33.33%;height:100%;object-fit:cover;flex-shrink:0;"/>
+        </div>
+        <button onclick="kathSlide(-1)" style="position:absolute;left:0.6rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.6);border:none;color:#FAF6F0;width:32px;height:32px;font-size:1.1rem;cursor:pointer;z-index:5;">‹</button>
+        <button onclick="kathSlide(1)" style="position:absolute;right:0.6rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.6);border:none;color:#FAF6F0;width:32px;height:32px;font-size:1.1rem;cursor:pointer;z-index:5;">›</button>
+        <div style="position:absolute;bottom:0.5rem;left:50%;transform:translateX(-50%);display:flex;gap:0.3rem;z-index:5;">
+          <span id="kd0" style="width:6px;height:6px;border-radius:50%;background:#E4A63D;"></span>
+          <span id="kd1" style="width:6px;height:6px;border-radius:50%;background:rgba(250,246,240,0.4);"></span>
+          <span id="kd2" style="width:6px;height:6px;border-radius:50%;background:rgba(250,246,240,0.4);"></span>
+        </div>
+      </div>
+      <div class="tc-body"><div class="tc-ctry">India · Gujarat · Saurashtra</div><h2 class="tc-city">The Kathiawad Circuit</h2><p class="tc-desc">A slow traverse through Saurashtra — Rajkot, Jamnagar, Bhavnagar, Palitana — tracing a distinct regional urbanism that survived centuries of trade, colonial rule, and post-independence planning. The <em>pol</em> system, the <em>khancha</em> lanes, the stepwells: a complete urban vocabulary modern planning has largely ignored.</p><div class="tc-tags"><span class="tt">Heritage</span><span class="tt">Vernacular Architecture</span><span class="tt">Public Space</span><span class="tt">Walking Tour</span></div></div>
+    </div>
+    <div class="tc">
+      <div class="tc-img" style="background:#7A3010;position:relative;overflow:hidden;">
+        <div id="mum-slides" style="display:flex;width:200%;transition:transform 0.5s ease;height:100%;">
+          <img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_3311.jpeg" style="width:50%;height:100%;object-fit:cover;flex-shrink:0;"/>
+          <img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_3313.jpeg" style="width:50%;height:100%;object-fit:cover;flex-shrink:0;"/>
+        </div>
+        <button onclick="mumSlide(-1)" style="position:absolute;left:0.6rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.6);border:none;color:#FAF6F0;width:32px;height:32px;font-size:1.1rem;cursor:pointer;z-index:5;">‹</button>
+        <button onclick="mumSlide(1)" style="position:absolute;right:0.6rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.6);border:none;color:#FAF6F0;width:32px;height:32px;font-size:1.1rem;cursor:pointer;z-index:5;">›</button>
+        <div style="position:absolute;bottom:0.5rem;left:50%;transform:translateX(-50%);display:flex;gap:0.3rem;z-index:5;">
+          <span id="md0" style="width:6px;height:6px;border-radius:50%;background:#E4A63D;"></span>
+          <span id="md1" style="width:6px;height:6px;border-radius:50%;background:rgba(250,246,240,0.4);"></span>
+        </div>
+      </div>
+      <div class="tc-body"><div class="tc-ctry">India · Maharashtra</div><h2 class="tc-city">Mumbai</h2><p class="tc-desc">The most extreme urban density outside Hong Kong. Dharavi as misunderstood city-within-a-city; the Gothic Revival station as monument to colonial ambition; the mill district transformation.</p><div class="tc-tags"><span class="tt">Density</span><span class="tt">Informal Urbanism</span><span class="tt">Colonial Heritage</span></div></div>
+    </div>
   </div>
 
   <!-- USA -->
 
-  <div style="padding:1.5rem 2rem 0;background:var(--ivory);"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;"><div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div><svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg><span style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;color:var(--brown-dk);">United States of America</span><div style="height:1px;background:var(--deco);flex:1;"></div></div></div>
-  <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🌴 California</span></div>
+  <div style="padding:1.5rem 2rem 0;background:var(--ivory);"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;"><div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div><svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg><span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.10em;text-transform:uppercase;font-weight:700;color:var(--brown-dk);">United States of America</span><div style="height:1px;background:var(--deco);flex:1;"></div></div></div>
+  <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🌴 California</span></div>
   <div class="tgrid" style="border-top:none;">
-    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#1A3A5A,#0A2A4A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🌁</div></div><div class="tc-body"><div class="tc-ctry">California · Bay Area</div><h2 class="tc-city">San Francisco</h2><p class="tc-desc">A city of radical density and radical inequality — Victorian row houses, the Tenderloin, the Ferry Building, and the ongoing battle over housing and public space on 49 square miles.</p><div class="tc-tags"><span class="tt">Housing</span><span class="tt">Public Space</span><span class="tt">Density</span></div></div></div>
+    <div class="tc"><div class="tc-img" style="background:#1A3A5A;position:relative;overflow:hidden;"><img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_5851.jpeg" style="width:100%;height:100%;object-fit:cover;"/></div><div class="tc-body"><div class="tc-ctry">California · Bay Area</div><h2 class="tc-city">San Francisco</h2><p class="tc-desc">A city of radical density and radical inequality — Victorian row houses, the Tenderloin, the Ferry Building, and the ongoing battle over housing and public space on 49 square miles.</p><div class="tc-tags"><span class="tt">Housing</span><span class="tt">Public Space</span><span class="tt">Density</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#2A4A2A,#1A3A1A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🎓</div></div><div class="tc-body"><div class="tc-ctry">California · East Bay</div><h2 class="tc-city">Berkeley · Fremont</h2><p class="tc-desc">Berkeley's university-driven urban identity and Fremont's sprawling suburban grid — two Bay Area cities at opposite ends of the walkability spectrum.</p><div class="tc-tags"><span class="tt">University Town</span><span class="tt">Suburbia</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#5A3A1A,#3A2010);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">⛏️</div></div><div class="tc-body"><div class="tc-ctry">California · Gold Country</div><h2 class="tc-city">Coulterville · Groveland</h2><p class="tc-desc">Gold Rush-era small towns in the Sierra Nevada foothills — a study in how boom-and-bust economics leaves its mark on the built environment centuries later.</p><div class="tc-tags"><span class="tt">Heritage</span><span class="tt">Small Town</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#4A3A1A,#3A2A10);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏛️</div></div><div class="tc-body"><div class="tc-ctry">California · Central Valley</div><h2 class="tc-city">Sacramento</h2><p class="tc-desc">California's capital city — a grid plan laid in 1848 that still governs the city, with the Sacramento River waterfront and K Street Mall as its contested public spine.</p><div class="tc-tags"><span class="tt">Grid City</span><span class="tt">Waterfront</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#1A3A5A,#0A2040);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🌊</div></div><div class="tc-body"><div class="tc-ctry">California · Southern Coast</div><h2 class="tc-city">San Diego · Santa Barbara · Santa Monica</h2><p class="tc-desc">Three California coastal cities — San Diego's Balboa Park, Santa Barbara's Spanish Colonial Revival streetscape, and Santa Monica's car-free Third Street Promenade.</p><div class="tc-tags"><span class="tt">Coastal Urbanism</span><span class="tt">Public Realm</span><span class="tt">Heritage</span></div></div></div>
   </div>
-  <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🗽 East Coast &amp; South</span></div>
+  <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🗽 East Coast &amp; South</span></div>
   <div class="tgrid" style="border-top:none;">
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#2A2A3A,#1A1A2A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🗽</div></div><div class="tc-body"><div class="tc-ctry">New York</div><h2 class="tc-city">New York City</h2><p class="tc-desc">The ultimate grid city — where the 1811 Commissioners' Plan meets Central Park meets the High Line meets the ongoing crisis of housing affordability.</p><div class="tc-tags"><span class="tt">Grid</span><span class="tt">Density</span><span class="tt">Public Space</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#3A2A1A,#2A1A0A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🎷</div></div><div class="tc-body"><div class="tc-ctry">Louisiana</div><h2 class="tc-city">New Orleans</h2><p class="tc-desc">The French Quarter as one of the most intact historic urban fabrics in America — and the Lower Ninth Ward as a reminder of what happens when infrastructure fails the most vulnerable first.</p><div class="tc-tags"><span class="tt">Heritage</span><span class="tt">Resilience</span><span class="tt">Culture</span></div></div></div>
@@ -858,7 +814,7 @@ tr:hover td{background:rgba(42,157,143,0.04);}
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#2A3A2A,#1A2A1A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏔️</div></div><div class="tc-body"><div class="tc-ctry">North Carolina</div><h2 class="tc-city">Asheville</h2><p class="tc-desc">A mountain city with an exceptional Art Deco and Beaux-Arts downtown, navigating the tension between its creative economy and the housing affordability crisis that creative economies generate.</p><div class="tc-tags"><span class="tt">Art Deco</span><span class="tt">Small City</span><span class="tt">Heritage</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#3A2A1A,#2A1A0A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏙️</div></div><div class="tc-body"><div class="tc-ctry">Texas · Georgia</div><h2 class="tc-city">Dallas · Atlanta</h2><p class="tc-desc">Two Sunbelt cities defined by the highway and the parking lot — now trying to retrofit themselves for humans. Atlanta's Beltline and Dallas's urban infill are the experiments to watch.</p><div class="tc-tags"><span class="tt">Sunbelt</span><span class="tt">Beltline</span><span class="tt">Retrofit Urbanism</span></div></div></div>
   </div>
-  <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🏔️ Southwest, Mountain &amp; Pacific Northwest</span></div>
+  <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🏔️ Southwest, Mountain &amp; Pacific Northwest</span></div>
   <div class="tgrid" style="border-top:none;">
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#5A3A1A,#3A2010);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏜️</div></div><div class="tc-body"><div class="tc-ctry">New Mexico</div><h2 class="tc-city">Santa Fe · Albuquerque</h2><p class="tc-desc">Santa Fe's Pueblo Revival adobe streetscape alongside Albuquerque's Route 66 strip — one of the most deliberate historic preservation policies in the USA vs. a city reinventing its downtown.</p><div class="tc-tags"><span class="tt">Adobe Urbanism</span><span class="tt">Heritage Policy</span><span class="tt">Southwest</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#1A3A2A,#0A2A1A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🌲</div></div><div class="tc-body"><div class="tc-ctry">Georgia · Mountains</div><h2 class="tc-city">Helen, Georgia</h2><p class="tc-desc">A former mill town reinvented as a Bavarian alpine village in 1969 — an extreme case study in theme-driven placemaking and what makes a place "authentic."</p><div class="tc-tags"><span class="tt">Themed Urbanism</span><span class="tt">Small Town</span><span class="tt">Tourism</span></div></div></div>
@@ -868,23 +824,59 @@ tr:hover td{background:rgba(42,157,143,0.04);}
 
   <!-- EUROPE -->
 
-  <div style="padding:1.5rem 2rem 0;background:var(--ivory);"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;"><div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div><svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg><span style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;color:var(--brown-dk);">Europe</span><div style="height:1px;background:var(--deco);flex:1;"></div></div></div>
-  <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🇳🇱 Netherlands</span></div>
+  <div style="padding:1.5rem 2rem 0;background:var(--ivory);"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;"><div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div><svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg><span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.10em;text-transform:uppercase;font-weight:700;color:var(--brown-dk);">Europe</span><div style="height:1px;background:var(--deco);flex:1;"></div></div></div>
+  <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🇳🇱 Netherlands</span></div>
   <div class="tgrid" style="border-top:none;">
     <div class="tc feat"><div class="tc-img" style="background:linear-gradient(135deg,#1A3A5A,#0A2040);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🚲</div></div><div class="tc-body"><div class="tc-ctry">Netherlands · Randstad</div><h2 class="tc-city">Amsterdam · Rotterdam · Delft · The Hague</h2><p class="tc-desc">Four cities within 60km representing four entirely different approaches to urbanism: Amsterdam's canal-ring heritage and cycling supremacy; Rotterdam's post-war modernist reconstruction; Delft's medieval centre and TU campus; The Hague's institutional grandeur. The world's most instructive lesson in polycentric urban planning.</p><div class="tc-tags"><span class="tt">Cycling</span><span class="tt">Heritage</span><span class="tt">Modernist Reconstruction</span><span class="tt">Polycentric</span></div></div></div>
   </div>
-  <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🇩🇪 Germany</span></div>
+  <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🇩🇪 Germany</span></div>
   <div class="tgrid" style="border-top:none;">
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#2A2A3A,#1A1A2A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏙️</div></div><div class="tc-body"><div class="tc-ctry">Germany · Brandenburg</div><h2 class="tc-city">Berlin</h2><p class="tc-desc">The city that reinvented itself after division and reunification — a living laboratory for urban transformation, vacancy, creative reuse, and the politics of memory in the built environment.</p><div class="tc-tags"><span class="tt">Urban Transformation</span><span class="tt">Adaptive Reuse</span><span class="tt">Memory &amp; Place</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#3A2A1A,#2A1A0A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏫</div></div><div class="tc-body"><div class="tc-ctry">Germany · Saxony-Anhalt</div><h2 class="tc-city">Dessau</h2><p class="tc-desc">Home of the Bauhaus — the school that reshaped how the 20th century thought about design, craft, and the relationship between art and industry.</p><div class="tc-tags"><span class="tt">Bauhaus</span><span class="tt">Modernism</span><span class="tt">Design History</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#2A3A4A,#1A2A3A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🎭</div></div><div class="tc-body"><div class="tc-ctry">Germany · Saxony</div><h2 class="tc-city">Dresden</h2><p class="tc-desc">The city bombed to rubble in 1945 and painstakingly reconstructed — raising complex questions about reconstruction, authenticity, and what it means to rebuild from memory.</p><div class="tc-tags"><span class="tt">Post-war Reconstruction</span><span class="tt">Heritage</span><span class="tt">Baroque</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#1A3A3A,#0A2A2A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">⚓</div></div><div class="tc-body"><div class="tc-ctry">Germany</div><h2 class="tc-city">Hamburg · Frankfurt</h2><p class="tc-desc">Hamburg's HafenCity — Europe's largest inner-city regeneration project — alongside Frankfurt's Museumsufer: a kilometre of museums along the Main riverbank.</p><div class="tc-tags"><span class="tt">Port Regeneration</span><span class="tt">Waterfront</span><span class="tt">Mixed-Use</span></div></div></div>
   </div>
-  <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🇫🇷 France &nbsp;·&nbsp; 🇧🇪 Belgium &nbsp;·&nbsp; 🇬🇧 United Kingdom</span></div>
+  <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🇫🇷 France &nbsp;·&nbsp; 🇧🇪 Belgium &nbsp;·&nbsp; 🇬🇧 United Kingdom</span></div>
   <div class="tgrid" style="border-top:none;border-bottom:1px solid var(--sand);">
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#3A2A3A,#2A1A2A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🗼</div></div><div class="tc-body"><div class="tc-ctry">France · Île-de-France</div><h2 class="tc-city">Paris</h2><p class="tc-desc">Haussmann's grand boulevards and Paris's remarkable recent transformation of its streets for people over cars — one of history's most celebrated and most contested urban redesigns.</p><div class="tc-tags"><span class="tt">Grand Boulevard</span><span class="tt">Heritage</span><span class="tt">Street Transformation</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#1A2A3A,#0A1A2A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🇪🇺</div></div><div class="tc-body"><div class="tc-ctry">Belgium · Brussels</div><h2 class="tc-city">Brussels</h2><p class="tc-desc">The capital of Europe — defined by the tension between its institutional ambitions and its intimate neighbourhood fabric. The Grand Place, the Marolles, and Art Nouveau as a vernacular.</p><div class="tc-tags"><span class="tt">Institutional City</span><span class="tt">Art Nouveau</span><span class="tt">Heritage</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#2A2A3A,#1A1A28);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🫖</div></div><div class="tc-body"><div class="tc-ctry">United Kingdom · England</div><h2 class="tc-city">London Central</h2><p class="tc-desc">The City, the Borough, the West End — London's central boroughs as an object lesson in how a city accumulates urban fabric across two millennia. The Thames as public spine.</p><div class="tc-tags"><span class="tt">Mixed Housing</span><span class="tt">TOD</span><span class="tt">Borough Diversity</span><span class="tt">Waterfront</span></div></div></div>
+  </div>
+
+  <!-- PHOTOGRAPHY SECTION -->
+
+  <div style="background:var(--brown-dk);padding:1.5rem 2rem 0.8rem;border-top:3px solid var(--adobe);">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1rem;">
+      <div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div>
+      <svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg>
+      <span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--gold);">Urban Frames — Field Photography</span>
+      <div style="height:1px;background:var(--deco);flex:1;"></div>
+    </div>
+    <p style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:rgba(244,234,216,0.55);max-width:600px;margin:0.8rem 0 0 0;">Cities photographed at street level — the textures, shadows, and human details that reveal how a place really works.</p>
+  </div>
+  <div style="background:var(--parchment);padding:0.8rem 2rem;border-bottom:1px solid var(--sand);display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">
+    <span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-right:0.4rem;">Filter ·</span>
+    <button class="pill on" onclick="filterPhotos(this,'all')">All</button>
+    <button class="pill" onclick="filterPhotos(this,'india')">India</button>
+    <button class="pill" onclick="filterPhotos(this,'europe')">Europe</button>
+    <button class="pill" onclick="filterPhotos(this,'asia')">Asia</button>
+    <button class="pill" onclick="filterPhotos(this,'street')">Street</button>
+    <button class="pill" onclick="filterPhotos(this,'architecture')">Architecture</button>
+    <button class="pill" onclick="filterPhotos(this,'pattern')">Pattern</button>
+  </div>
+  <div class="mason" id="photo-grid">
+    <div class="pi" data-cat="india architecture"><div class="ph tall" style="background:#8B4513;"><svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#C1714A" opacity="0.4"/><pattern id="p1" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="none" stroke="#8B4513" stroke-width="0.5"/><circle cx="20" cy="20" r="8" fill="none" stroke="#8B4513" stroke-width="1"/><circle cx="20" cy="20" r="3" fill="#430302" opacity="0.4"/><line x1="0" y1="20" x2="12" y2="20" stroke="#8B4513" stroke-width="0.5"/><line x1="28" y1="20" x2="40" y2="20" stroke="#8B4513" stroke-width="0.5"/><line x1="20" y1="0" x2="20" y2="12" stroke="#8B4513" stroke-width="0.5"/><line x1="20" y1="28" x2="20" y2="40" stroke="#8B4513" stroke-width="0.5"/></pattern><rect width="300" height="380" fill="url(#p1)" opacity="0.5"/></svg><div class="ph-l">Jamnagar Pol</div><div class="ph-s">Gujarat · 2024</div></div><div class="pov"><div class="ov-t">India · Architecture</div><div class="ov-c">Jamnagar, Gujarat</div></div></div>
+    <div class="pi" data-cat="europe street"><div class="ph med" style="background:#2A6B5A;"><svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#2A9D8F" opacity="0.3"/><pattern id="p2" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="none" stroke="#1A6B5A" stroke-width="0.5"/><polygon points="15,3 27,27 3,27" fill="none" stroke="#1A6B5A" stroke-width="0.8"/></pattern><rect width="300" height="260" fill="url(#p2)" opacity="0.4"/></svg><div class="ph-l">Bologna Arcades</div><div class="ph-s">Italy · 2023</div></div><div class="pov"><div class="ov-t">Europe · Street</div><div class="ov-c">Bologna, Italy</div></div></div>
+    <div class="pi" data-cat="india pattern"><div class="ph short" style="background:#C8821A;"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#E4A63D" opacity="0.3"/><pattern id="p3" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="none"/><rect x="4" y="4" width="16" height="16" fill="none" stroke="#8B5A00" stroke-width="0.8"/><circle cx="12" cy="12" r="4" fill="#430302" opacity="0.3"/></pattern><rect width="300" height="200" fill="url(#p3)" opacity="0.5"/></svg><div class="ph-l">Rajkot Stepwell</div><div class="ph-s">Gujarat · 2024</div></div><div class="pov"><div class="ov-t">India · Pattern</div><div class="ov-c">Rajkot, Gujarat</div></div></div>
+    <div class="pi" data-cat="asia street"><div class="ph med" style="background:#1A3A6A;"><svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#1A3A6A" opacity="0.4"/><pattern id="p4" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="none" stroke="#2A5A9A" stroke-width="0.5"/><path d="M18 4 L32 32 L4 32 Z" fill="none" stroke="#C1714A" stroke-width="0.6"/></pattern><rect width="300" height="260" fill="url(#p4)" opacity="0.4"/></svg><div class="ph-l">Hanoi Old Quarter</div><div class="ph-s">Vietnam · 2023</div></div><div class="pov"><div class="ov-t">Asia · Street</div><div class="ov-c">Hanoi, Vietnam</div></div></div>
+    <div class="pi" data-cat="india architecture pattern"><div class="ph tall" style="background:#8B2010;"><svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#430302" opacity="0.5"/><pattern id="p5" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse"><circle cx="24" cy="24" r="20" fill="none" stroke="#C1714A" stroke-width="1"/><circle cx="24" cy="24" r="10" fill="none" stroke="#C1714A" stroke-width="0.7"/><line x1="4" y1="24" x2="44" y2="24" stroke="#C1714A" stroke-width="0.5"/><line x1="24" y1="4" x2="24" y2="44" stroke="#C1714A" stroke-width="0.5"/><line x1="9" y1="9" x2="39" y2="39" stroke="#C1714A" stroke-width="0.3"/><line x1="39" y1="9" x2="9" y2="39" stroke="#C1714A" stroke-width="0.3"/></pattern><rect width="300" height="380" fill="url(#p5)" opacity="0.4"/></svg><div class="ph-l">Ahmedabad Heritage District</div><div class="ph-s">Gujarat · 2024</div></div><div class="pov"><div class="ov-t">India · Architecture</div><div class="ov-c">Ahmedabad, Gujarat</div></div></div>
+    <div class="pi" data-cat="europe architecture"><div class="ph short" style="background:#5A3A2A;"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#8B5A3A" opacity="0.4"/><pattern id="p6" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="none" stroke="#5A3A2A" stroke-width="0.5"/><rect x="5" y="5" width="10" height="10" fill="#5A3A2A" opacity="0.2"/></pattern><rect width="300" height="200" fill="url(#p6)" opacity="0.4"/></svg><div class="ph-l">Porto Tilework</div><div class="ph-s">Portugal · 2022</div></div><div class="pov"><div class="ov-t">Europe · Pattern</div><div class="ov-c">Porto, Portugal</div></div></div>
+    <div class="pi" data-cat="india street"><div class="ph med" style="background:#B06820;"><svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#E4A63D" opacity="0.25"/><pattern id="p7" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M16 0 L32 16 L16 32 L0 16 Z" fill="none" stroke="#8B5A00" stroke-width="0.8"/><circle cx="16" cy="16" r="5" fill="#430302" opacity="0.2"/></pattern><rect width="300" height="260" fill="url(#p7)" opacity="0.4"/></svg><div class="ph-l">Bhavnagar Old City</div><div class="ph-s">Gujarat · 2024</div></div><div class="pov"><div class="ov-t">India · Street</div><div class="ov-c">Bhavnagar, Gujarat</div></div></div>
+    <div class="pi" data-cat="asia architecture"><div class="ph tall" style="background:#2A5A3A;"><svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#2A6B4A" opacity="0.4"/><pattern id="p8" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="40" y2="40" stroke="#1A4A2A" stroke-width="0.5"/><line x1="40" y1="0" x2="0" y2="40" stroke="#1A4A2A" stroke-width="0.5"/><circle cx="20" cy="20" r="6" fill="none" stroke="#2A9D8F" stroke-width="0.7"/></pattern><rect width="300" height="380" fill="url(#p8)" opacity="0.4"/></svg><div class="ph-l">Kyoto Back Streets</div><div class="ph-s">Japan · 2022</div></div><div class="pov"><div class="ov-t">Asia · Architecture</div><div class="ov-c">Kyoto, Japan</div></div></div>
+    <div class="pi" data-cat="europe street"><div class="ph med" style="background:#7A5020;"><svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#C1714A" opacity="0.3"/><pattern id="p9" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse"><rect width="28" height="28" fill="none" stroke="#7A4A1A" stroke-width="0.5"/><path d="M0 14 Q7 7 14 14 Q21 21 28 14" fill="none" stroke="#7A4A1A" stroke-width="0.8"/></pattern><rect width="300" height="260" fill="url(#p9)" opacity="0.4"/></svg><div class="ph-l">Lisbon Miradouro</div><div class="ph-s">Portugal · 2022</div></div><div class="pov"><div class="ov-t">Europe · Street</div><div class="ov-c">Lisbon, Portugal</div></div></div>
+  </div>
+  <div style="text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--sand);background:var(--pink-bg);margin-bottom:0;">
+    <p style="font-style:italic;color:var(--muted);font-size:0.95rem;">Replace placeholders with your photos using an <code style="background:var(--sand);padding:0.1rem 0.4rem;font-size:12px;">&lt;img&gt;</code> tag inside each <code style="background:var(--sand);padding:0.1rem 0.4rem;font-size:12px;">.ph</code> div.</p>
   </div>
 
   <!-- DIVIDER before map -->
@@ -892,9 +884,9 @@ tr:hover td{background:rgba(42,157,143,0.04);}
   <div style="padding:2rem 2rem 0.5rem;background:var(--brown-dk);display:flex;align-items:center;gap:1rem;">
     <div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div>
     <svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg>
-    <span style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;color:var(--gold);">Interactive Map — Cities Travelled</span>
+    <span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.10em;text-transform:uppercase;font-weight:700;color:var(--gold);">Interactive Map — Cities Travelled</span>
     <div style="height:1px;background:var(--deco);flex:1;"></div>
-    <span style="font-family:Arial,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,234,216,0.4);">Powered by ArcGIS · Click pins for details</span>
+    <span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,234,216,0.4);">Powered by ArcGIS · Click pins for details</span>
   </div>
 
   <div style="background:#0D1A18;padding:0;min-height:620px;">
@@ -903,7 +895,7 @@ tr:hover td{background:rgba(42,157,143,0.04);}
     <iframe src="https://arcg.is/PHGXP3" width="100%" height="650" frameborder="0" allowfullscreen style="display:block;border:none;" title="Cities Travelled — Neerja Dave"></iframe>
   </div>
   <div class="mleg">
-    <span style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(250,246,240,0.3);margin-right:0.5rem;">Legend ·</span>
+    <span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(250,246,240,0.3);margin-right:0.5rem;">Legend ·</span>
     <div class="ml"><div class="ml-dot" style="background:var(--adobe);"></div><span class="ml-l">India</span></div>
     <div class="ml"><div class="ml-dot" style="background:var(--teal);"></div><span class="ml-l">Europe</span></div>
     <div class="ml"><div class="ml-dot" style="background:var(--gold);"></div><span class="ml-l">East / SE Asia</span></div>
@@ -924,7 +916,7 @@ tr:hover td{background:rgba(42,157,143,0.04);}
     </div>
   </div>
   <div style="background:var(--pink-bg);padding:1.5rem 2rem;border-bottom:1px solid var(--sand);">
-    <p style="max-width:700px;margin:0 auto;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--brown-dk);line-height:1.6;border-left:3px solid var(--teal);padding-left:1.2rem;">Urban design is not a profession you can practise only from behind a desk. The city is a living system, and understanding it requires being present in it — not just as an observer, but as a participant.</p>
+    <p style="max-width:700px;margin:0 auto;font-family:'Lora',Georgia,serif;font-style:italic;font-size:1.2rem;color:var(--brown-dk);line-height:1.6;border-left:3px solid var(--teal);padding-left:1.2rem;">Urban design is not a profession you can practise only from behind a desk. The city is a living system, and understanding it requires being present in it — not just as an observer, but as a participant.</p>
   </div>
   <div class="vgrid">
     <!-- 1 Art Forum SF -->
@@ -985,12 +977,12 @@ tr:hover td{background:rgba(42,157,143,0.04);}
     <!-- 6 placeholder -->
     <div class="vc" style="background:var(--pink-bg);border:2px dashed var(--sand);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;">
       <svg width="48" height="48" viewBox="0 0 48 48" style="margin-bottom:0.8rem;opacity:0.2;"><g fill="none" stroke="var(--mid)" stroke-width="1"><rect x="4" y="4" width="40" height="40"/><rect x="12" y="12" width="24" height="24"/><rect x="20" y="20" width="8" height="8"/><line x1="4" y1="4" x2="44" y2="44"/><line x1="44" y1="4" x2="4" y2="44"/></g></svg>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--muted);text-align:center;">More stories to come.</p>
+      <p style="font-family:'Lora',Georgia,serif;font-size:1rem;font-style:italic;color:var(--muted);text-align:center;">More stories to come.</p>
     </div>
   </div>
   <div style="background:var(--brown);padding:3rem 2rem;text-align:center;border-top:2px solid var(--adobe);position:relative;overflow:hidden;">
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:rgba(250,246,240,0.7);line-height:1.7;max-width:520px;margin:0 auto;">"A city is not made by its buildings. It is made by the people who choose to show up for it — day after day, without applause."</p>
-    <p style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,246,240,0.28);margin-top:0.7rem;">— Neerja Dave</p>
+    <p style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1.3rem;color:rgba(250,246,240,0.7);line-height:1.7;max-width:520px;margin:0 auto;">"A city is not made by its buildings. It is made by the people who choose to show up for it — day after day, without applause."</p>
+    <p style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,246,240,0.28);margin-top:0.7rem;">— Neerja Dave</p>
   </div>
   <div class="stripe sm"></div>
   <footer><div class="fb">Urban Realm<span style="color:var(--teal)"> ·</span></div><div class="fc">© 2025 · neerjadave.com</div></footer>
@@ -1013,12 +1005,12 @@ tr:hover td{background:rgba(42,157,143,0.04);}
       <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem;">
         <div style="height:1px;background:var(--deco);flex:1;"></div>
         <svg width="9" height="9" viewBox="0 0 9 9"><rect x="0.5" y="0.5" width="8" height="8" fill="var(--deco)" transform="rotate(45 4.5 4.5)"/></svg>
-        <span style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--deco);">Write to me</span>
+        <span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.10em;text-transform:uppercase;color:var(--deco);">Write to me</span>
         <svg width="9" height="9" viewBox="0 0 9 9"><rect x="0.5" y="0.5" width="8" height="8" fill="var(--deco)" transform="rotate(45 4.5 4.5)"/></svg>
         <div style="height:1px;background:var(--deco);flex:1;"></div>
       </div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--brown-dk);margin-bottom:0.3rem;">Neerja Dave</h2>
-      <p style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--adobe);margin-bottom:1.8rem;">Project Manager · Urban Designer · Writer</p>
+      <h2 style="font-family:'Lora',Georgia,serif;font-size:2rem;font-weight:300;color:var(--brown-dk);margin-bottom:0.3rem;">Neerja Dave</h2>
+      <p style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--adobe);margin-bottom:1.8rem;">Project Manager · Urban Designer · Writer</p>
       <div class="csec teal-b">
         <div class="csec-lbl tc">Personal Email</div>
         <a href="mailto:daveneerja@gmail.com">daveneerja@gmail.com</a>
@@ -1039,7 +1031,7 @@ tr:hover td{background:rgba(42,157,143,0.04);}
       <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem;position:relative;z-index:1;">
         <div style="height:1px;background:var(--deco);flex:1;"></div>
         <svg width="9" height="9" viewBox="0 0 9 9"><rect x="0.5" y="0.5" width="8" height="8" fill="var(--deco)" transform="rotate(45 4.5 4.5)"/></svg>
-        <span style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--deco);">I'm open to</span>
+        <span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.10em;text-transform:uppercase;color:var(--deco);">I'm open to</span>
         <svg width="9" height="9" viewBox="0 0 9 9"><rect x="0.5" y="0.5" width="8" height="8" fill="var(--deco)" transform="rotate(45 4.5 4.5)"/></svg>
         <div style="height:1px;background:var(--deco);flex:1;"></div>
       </div>
@@ -1122,7 +1114,7 @@ tr:hover td{background:rgba(42,157,143,0.04);}
       <button class="abk" onclick="showPage('home')">← Back to Essays</button>
       <span class="acat">Public Space · Rajkot · Urban Edge</span>
       <h1 class="atit">Urban Edge as a <em>Binding Element</em></h1>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(250,246,240,0.55);font-size:1.05rem;margin-top:0.8rem;margin-bottom:1.3rem;">A Case Study Analysis of Race Course, Rajkot</p>
+      <p style="font-family:'Lora',Georgia,serif;font-style:italic;color:rgba(250,246,240,0.55);font-size:1.05rem;margin-top:0.8rem;margin-bottom:1.3rem;">A Case Study Analysis of Race Course, Rajkot</p>
       <div class="ameta">
         <span class="ameta-au">By <strong>Neerja Dave</strong></span>
         <span class="ameta-dt">January 17, 2020</span>
@@ -1162,6 +1154,23 @@ tr:hover td{background:rgba(42,157,143,0.04);}
 </div>
 
 <script>
+// Kathiawad mini slideshow
+let kathIdx=0,kathTotal=3;
+function kathSlide(dir){
+  kathIdx=(kathIdx+dir+kathTotal)%kathTotal;
+  document.getElementById('kath-slides').style.transform=`translateX(-${kathIdx*(100/kathTotal)}%)`;
+  for(let i=0;i<kathTotal;i++){
+    const d=document.getElementById('kd'+i);
+    if(d) d.style.background=i===kathIdx?'#E4A63D':'rgba(250,246,240,0.4)';
+  }
+}
+let mumIdx=0;
+function mumSlide(dir){
+  mumIdx=(mumIdx+dir+2)%2;
+  document.getElementById('mum-slides').style.transform=`translateX(-${mumIdx*50}%)`;
+  document.getElementById('md0').style.background=mumIdx===0?'#E4A63D':'rgba(250,246,240,0.4)';
+  document.getElementById('md1').style.background=mumIdx===1?'#E4A63D':'rgba(250,246,240,0.4)';
+}
 function showPage(n){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nlinks a').forEach(a=>a.classList.remove('act'));
@@ -1353,7 +1362,7 @@ function closeProject(){
     <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1rem;">
       <div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div>
       <svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg>
-      <span style="font-family:Arial,sans-serif;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;font-weight:700;color:var(--gold);">Urban Spaces Observations Index</span>
+      <span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.10em;text-transform:uppercase;font-weight:700;color:var(--gold);">Urban Spaces Observations Index</span>
       <div style="height:1px;background:var(--deco);flex:1;"></div>
     </div>
   </div>
@@ -1378,7 +1387,7 @@ function closeProject(){
   </div>
 
   <div style="text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--sand);background:var(--parchment);">
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem;">More projects will be added. &nbsp;·&nbsp; Some projects are under NDA and cannot be disclosed.</p>
+    <p style="font-family:'Lora',Georgia,serif;font-style:italic;color:var(--muted);font-size:1rem;">More projects will be added. &nbsp;·&nbsp; Some projects are under NDA and cannot be disclosed.</p>
   </div>
 
   <!-- ── PROJECT DETAIL: MICROSOFT ── -->
@@ -1668,18 +1677,18 @@ function closeProject(){
 <div class="wp-section-lbl">Key Research Themes</div>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:2rem;border:1px solid var(--sand);">
   <div style="padding:1.5rem;border-right:1px solid var(--sand);background:var(--pink-bg);">
-    <div style="font-family:'Josefin Sans',Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:0.6rem;">Theme 01</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">System of Spaces</div>
+    <div style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:0.6rem;">Theme 01</div>
+    <div style="font-family:'Lora',Georgia,serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">System of Spaces</div>
     <p style="font-size:13px;color:var(--muted);line-height:1.6;">Mapping the spectrum from intimate space (bedroom) through semi-private (house) to the fully public realm — streets, parks, universities, town halls — and the civic buildings that anchor the transition.</p>
   </div>
   <div style="padding:1.5rem;border-right:1px solid var(--sand);background:var(--ivory);">
-    <div style="font-family:'Josefin Sans',Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:0.6rem;">Theme 02</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Historical Transition</div>
+    <div style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:0.6rem;">Theme 02</div>
+    <div style="font-family:'Lora',Georgia,serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Historical Transition</div>
     <p style="font-size:13px;color:var(--muted);line-height:1.6;">From Sumer's public structures on topographic high points, through Florence's Cathedral dome as permanent city image, to the contemporary displacement of civic buildings by transport infrastructure and commercial imperatives.</p>
   </div>
   <div style="padding:1.5rem;background:var(--pink-bg);">
-    <div style="font-family:'Josefin Sans',Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:0.6rem;">Theme 03</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Contemporary Relevance</div>
+    <div style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:0.6rem;">Theme 03</div>
+    <div style="font-family:'Lora',Georgia,serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Contemporary Relevance</div>
     <p style="font-size:13px;color:var(--muted);line-height:1.6;">How does the public realm help structure cities today — or does it not? Comparing transport-corridor-first planning against civic-building-centred urban form, and asking what is lost when economic gain replaces civic identity as the primary organising principle.</p>
   </div>
 </div>
@@ -1706,7 +1715,7 @@ function closeProject(){
           <line x1="427" y1="133" x2="357" y2="203" stroke="#8B5E3C" stroke-width="0.4" opacity="0.2"/>
         </svg>
         <div class="slide-ph-lbl" style="font-size:1.4rem;color:var(--brown-dk);">Public Realm</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--muted);position:relative;z-index:1;text-align:center;padding:0 4rem;">Public Buildings, Public Spaces &amp; their Role in the Structure of City</div>
+        <div style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:var(--muted);position:relative;z-index:1;text-align:center;padding:0 4rem;">Public Buildings, Public Spaces &amp; their Role in the Structure of City</div>
       </div>
       <div class="slide-caption"><div class="slide-caption-txt">Title Slide — Radial diagram showing the relationship between public and private space systems in urban form</div></div>
     </div>
@@ -1726,7 +1735,7 @@ function closeProject(){
           <text x="620" y="430" font-family="Georgia" font-size="13" fill="#888">Commercial</text>
         </svg>
         <div class="slide-ph-lbl" style="color:var(--brown-dk);">System of Spaces</div>
-        <div style="font-family:'Josefin Sans',Arial,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);position:relative;z-index:1;">Intimate → Semi-Private → Public → Work → Commercial</div>
+        <div style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);position:relative;z-index:1;">Intimate → Semi-Private → Public → Work → Commercial</div>
       </div>
       <div class="slide-caption"><div class="slide-caption-txt">The spectrum of spatial types in urban life — from the bedroom to the street, park, university, and town hall</div></div>
     </div>
@@ -1741,7 +1750,7 @@ function closeProject(){
           <line x1="400" y1="260" x2="400" y2="400" stroke="#C1714A" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
         </svg>
         <div class="slide-ph-lbl" style="color:var(--brown-dk);">What is Public Realm?</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;color:var(--mid);position:relative;z-index:1;text-align:center;padding:0 5rem;line-height:1.7;">"Publicly owned streets, pathways, rights of way, parks, publicly accessible open spaces, and any public and civic building and facility."</div>
+        <div style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;color:var(--mid);position:relative;z-index:1;text-align:center;padding:0 5rem;line-height:1.7;">"Publicly owned streets, pathways, rights of way, parks, publicly accessible open spaces, and any public and civic building and facility."</div>
       </div>
       <div class="slide-caption"><div class="slide-caption-txt">Definition — Public Realm encompasses Public Buildings + Public Spaces, all concerning or open to the public or involved in public affairs</div></div>
     </div>
@@ -1754,8 +1763,8 @@ function closeProject(){
           <rect x="40" y="180" width="340" height="200" fill="none" stroke="#8B5E3C" stroke-width="0.6" opacity="0.2"/>
         </svg>
         <div class="slide-ph-lbl" style="color:var(--brown-dk);font-size:1.2rem;">Aim &amp; Objectives</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--adobe);position:relative;z-index:1;text-align:center;padding:0 4rem;line-height:1.7;">Public Buildings and Spaces act as structuring devices for the spatial organisation of cities. How?</div>
-        <div style="font-family:'Josefin Sans',Arial,sans-serif;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);position:relative;z-index:1;text-align:center;margin-top:0.5rem;">1. Determining factors of city structure &nbsp;·&nbsp; 2. Historical transition of public realm &nbsp;·&nbsp; 3. Role in structuring the city</div>
+        <div style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:var(--adobe);position:relative;z-index:1;text-align:center;padding:0 4rem;line-height:1.7;">Public Buildings and Spaces act as structuring devices for the spatial organisation of cities. How?</div>
+        <div style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);position:relative;z-index:1;text-align:center;margin-top:0.5rem;">1. Determining factors of city structure &nbsp;·&nbsp; 2. Historical transition of public realm &nbsp;·&nbsp; 3. Role in structuring the city</div>
       </div>
       <div class="slide-caption"><div class="slide-caption-txt">Research aim and three objectives — the central question driving the thesis</div></div>
     </div>
@@ -1776,7 +1785,7 @@ function closeProject(){
           <path d="M650 50 Q700 150 680 280 Q660 380 700 460" fill="none" stroke="#9AC4D8" stroke-width="6" opacity="0.4"/>
         </svg>
         <div class="slide-ph-lbl" style="color:var(--brown-dk);">Case Study — Sumer</div>
-        <div style="font-family:'Josefin Sans',Arial,sans-serif;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);position:relative;z-index:1;">Ancient city plan · Public structures at topographic high points · Civic axis through settlement</div>
+        <div style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);position:relative;z-index:1;">Ancient city plan · Public structures at topographic high points · Civic axis through settlement</div>
       </div>
       <div class="slide-caption"><div class="slide-caption-txt">Sumer — one of the earliest urban settlements, with public/temple structures placed at high points to structure the civic axis of the city</div></div>
     </div>
@@ -1801,7 +1810,7 @@ function closeProject(){
           <ellipse cx="600" cy="205" rx="100" ry="100" fill="none" stroke="#8B5E3C" stroke-width="0.5" opacity="0.2"/>
         </svg>
         <div class="slide-ph-lbl" style="color:var(--brown-dk);">Comparative Analysis</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.9rem;color:var(--mid);position:relative;z-index:1;text-align:center;padding:0 4rem;">Transport-corridor planning vs. civic-centred traditional urbanism</div>
+        <div style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.9rem;color:var(--mid);position:relative;z-index:1;text-align:center;padding:0 4rem;">Transport-corridor planning vs. civic-centred traditional urbanism</div>
       </div>
       <div class="slide-caption"><div class="slide-caption-txt">Comparative Images — current planning conditions focused on transport corridors vs. traditional planning with public structures as city centres</div></div>
     </div>
@@ -1826,7 +1835,7 @@ function closeProject(){
           <rect x="700" y="80" width="20" height="360" fill="#C8A880" opacity="0.3"/>
         </svg>
         <div class="slide-ph-lbl" style="color:var(--brown-dk);">Public Realm as City Image</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;color:var(--mid);position:relative;z-index:1;text-align:center;padding:0 5rem;">Florence Cathedral — permanent image of the city &nbsp;·&nbsp; Central Park NYC — organising void in the densest urban grid</div>
+        <div style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:0.95rem;color:var(--mid);position:relative;z-index:1;text-align:center;padding:0 5rem;">Florence Cathedral — permanent image of the city &nbsp;·&nbsp; Central Park NYC — organising void in the densest urban grid</div>
       </div>
       <div class="slide-caption"><div class="slide-caption-txt">Two iconic examples of public realm as city-structuring device — the Cathedral dome that has dominated Florence's skyline for centuries, and Central Park as NYC's defining civic space</div></div>
     </div>
@@ -1842,7 +1851,7 @@ function closeProject(){
           <circle cx="400" cy="330" r="6" fill="#8B5E3C" opacity="0.25"/>
         </svg>
         <div class="slide-ph-lbl" style="color:var(--brown-dk);font-size:1.3rem;">How does it help us today?</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--muted);position:relative;z-index:1;text-align:center;padding:0 5rem;">Or does it not? The central provocation of the research — examining whether the structuring role of civic architecture survives in contemporary planning practice.</div>
+        <div style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:var(--muted);position:relative;z-index:1;text-align:center;padding:0 5rem;">Or does it not? The central provocation of the research — examining whether the structuring role of civic architecture survives in contemporary planning practice.</div>
       </div>
       <div class="slide-caption"><div class="slide-caption-txt">The thesis's central provocation — asking whether the public realm still structures cities today, or whether it has been displaced by economic and transport imperatives</div></div>
     </div>
@@ -1861,7 +1870,7 @@ function closeProject(){
 
 <!-- Closing note -->
 <div style="background:var(--pink-bg);border-left:3px solid var(--adobe);padding:1.2rem 1.8rem;margin-bottom:2rem;">
-  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--mid);line-height:1.7;margin:0;"><strong style="font-style:normal;color:var(--brown-dk);">Note:</strong> This is a draft thesis presentation from the B.Arch programme at IPSA, Rajkot. The research was formative in establishing the urban design perspective that has since informed professional work across public realm design, master planning, and community-centred urban projects in India and the USA.</p>
+  <p style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:var(--mid);line-height:1.7;margin:0;"><strong style="font-style:normal;color:var(--brown-dk);">Note:</strong> This is a draft thesis presentation from the B.Arch programme at IPSA, Rajkot. The research was formative in establishing the urban design perspective that has since informed professional work across public realm design, master planning, and community-centred urban projects in India and the USA.</p>
 </div>
 
 <button class="abtn" onclick="closeProject()">← Back to Selected Works</button>
