@@ -12,8 +12,8 @@
 :root{
   --adobe:#C1714A;          /* warm terracotta - main accent */
   --adobe-lt:#D4906E;       /* lighter adobe for hovers */
-  --brown:#7A4A2A;          /* light brownish adobe - replaces old chile/red */
-  --brown-dk:#5C3318;       /* deeper brown for nav/footers */
+  --brown:#5A5854;          /* warm mid-slate for secondary backgrounds */
+  --brown-dk:#3A3632;       /* warm slate — elegant dark neutral */
   --gold:#E4A63D;           /* fiery gold */
   --teal:#2A9D8F;           /* transformative teal */
   --teal-lt:#3DBFB0;        /* lighter teal */
@@ -38,7 +38,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 /* NAV */
 nav{position:sticky;top:0;z-index:200;background:var(–parchment);border-bottom:2px solid var(–adobe);box-shadow:0 2px 4px rgba(122,74,42,0.12);display:flex;align-items:stretch;justify-content:space-between;padding:0 1.5rem;}
-.nbrand{font-family:‘Nunito’,Arial,sans-serif;font-size:0.95rem;font-weight:700;color:var(–brown-dk);padding:1rem 0;display:flex;align-items:center;gap:0.6rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;}
+.nbrand{font-family:‘Nunito’,Arial,sans-serif;font-size:0.95rem;font-weight:700;color:var(–text);padding:1rem 0;display:flex;align-items:center;gap:0.6rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;}
 .nbrand .dot{width:7px;height:7px;background:var(–teal);border-radius:50%;box-shadow:0 0 6px var(–teal-lt);}
 .nlinks{display:flex;align-items:center;}
 .nlinks a{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:#000 !important;padding:1rem 0.85rem;border-left:1px solid var(–dline);transition:background 0.2s;cursor:pointer;text-decoration:none;-webkit-text-fill-color:#000;}
@@ -439,8 +439,8 @@ tr:hover td{background:rgba(42,157,143,0.04);}
 <nav>
   <div class="nbrand" onclick="showPage('home')"><span class="dot"></span>URBAN REALM</div>
   <div class="nlinks">
-    <a onclick="showPage('home')" class="act" id="nav-home">Essays</a>
     <a onclick="showPage('bio')" id="nav-bio">About Me</a>
+    <a onclick="showPage('home')" class="act" id="nav-home">Essays</a>
     <a onclick="showPage('map')" id="nav-map">Public Spaces Repository</a>
     <a onclick="showPage('volunteer')" id="nav-volunteer">Volunteer Engagements</a>
     <a onclick="showPage('works')" id="nav-works">Selected Works</a>
@@ -459,12 +459,13 @@ tr:hover td{background:rgba(42,157,143,0.04);}
   <section class="hero">
     <div class="hl">
       <div class="hvol" style="color:rgba(42,26,14,0.45);">Vol. I · Est. 2025 · Kathiawad to the World</div>
-      <h1 class="htitle">THE<br><em>CITY</em><br>SPEAK</h1>
+      <h1 class="htitle">THE<br><em>PUBLIC</em><br>REALM</h1>
       <p class="htag">Deep dives into the forces that shape our cities — architecture, policy, culture, and the invisible grids beneath our feet.</p>
     </div>
     <div class="hr">
-      <!-- Nolli-style linework map — Junagadh/Kathiawadi city fabric -->
-      <svg class="hcity" viewBox="0 0 700 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <img class="hcity" src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/nolli_rajkot.jpg" alt="Nolli map — Rajkot urban fabric" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" onerror="this.style.display='none'"/>
+      <div class="hfeat"><span class="ftag">★ Featured Essay</span><h2>Ur-bane: Junagadh and the Loss of the Public Realm</h2></div>
+    </div>
         <rect width="700" height="600" fill="#F4EAD8"/>
         <!-- City blocks - solid filled (public buildings / major structures) -->
         <!-- Central chowk area -->
@@ -758,40 +759,52 @@ tr:hover td{background:rgba(42,157,143,0.04);}
   <!-- INDIA -->
 
   <div style="padding:1.5rem 2rem 0;background:var(--ivory);"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;"><div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div><svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg><span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.10em;text-transform:uppercase;font-weight:700;color:var(--brown-dk);">India</span><div style="height:1px;background:var(--deco);flex:1;"></div></div></div>
-  <div class="tgrid" style="border-top:none;">
-    <div class="tc feat">
-      <div class="tc-img" style="background:#3A1A08;position:relative;overflow:hidden;">
-        <!-- Mini slideshow for Kathiawad Circuit -->
-        <div id="kath-slides" style="display:flex;width:300%;transition:transform 0.5s ease;height:100%;">
+  <!-- Kathiawad Circuit — full width featured row -->
+  <div style="border-bottom:3px solid var(--sand);">
+    <div class="tc feat" style="border-right:none;border-bottom:none;">
+      <div class="tc-img" style="background:#2E2C2A;position:relative;overflow:hidden;height:340px;">
+        <div id="kath-slides" style="position:absolute;top:0;left:0;width:300%;height:100%;display:flex;transition:transform 0.5s ease;">
           <img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_4259.jpeg" style="width:33.33%;height:100%;object-fit:cover;flex-shrink:0;"/>
           <img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_4255.jpeg" style="width:33.33%;height:100%;object-fit:cover;flex-shrink:0;"/>
           <img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_2861.jpeg" style="width:33.33%;height:100%;object-fit:cover;flex-shrink:0;"/>
         </div>
-        <button onclick="kathSlide(-1)" style="position:absolute;left:0.6rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.6);border:none;color:#FAF6F0;width:32px;height:32px;font-size:1.1rem;cursor:pointer;z-index:5;">‹</button>
-        <button onclick="kathSlide(1)" style="position:absolute;right:0.6rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.6);border:none;color:#FAF6F0;width:32px;height:32px;font-size:1.1rem;cursor:pointer;z-index:5;">›</button>
-        <div style="position:absolute;bottom:0.5rem;left:50%;transform:translateX(-50%);display:flex;gap:0.3rem;z-index:5;">
-          <span id="kd0" style="width:6px;height:6px;border-radius:50%;background:#E4A63D;"></span>
-          <span id="kd1" style="width:6px;height:6px;border-radius:50%;background:rgba(250,246,240,0.4);"></span>
-          <span id="kd2" style="width:6px;height:6px;border-radius:50%;background:rgba(250,246,240,0.4);"></span>
+        <button onclick="kathSlide(-1)" style="position:absolute;left:0.8rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.75);border:1px solid rgba(255,255,255,0.25);color:#FAF6F0;width:36px;height:36px;font-size:1.3rem;cursor:pointer;z-index:10;border-radius:2px;">‹</button>
+        <button onclick="kathSlide(1)" style="position:absolute;right:0.8rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.75);border:1px solid rgba(255,255,255,0.25);color:#FAF6F0;width:36px;height:36px;font-size:1.3rem;cursor:pointer;z-index:10;border-radius:2px;">›</button>
+        <div style="position:absolute;bottom:0.8rem;left:50%;transform:translateX(-50%);display:flex;gap:0.5rem;z-index:10;">
+          <span id="kd0" style="width:8px;height:8px;border-radius:50%;background:#E4A63D;display:block;"></span>
+          <span id="kd1" style="width:8px;height:8px;border-radius:50%;background:rgba(250,246,240,0.35);display:block;"></span>
+          <span id="kd2" style="width:8px;height:8px;border-radius:50%;background:rgba(250,246,240,0.35);display:block;"></span>
         </div>
       </div>
-      <div class="tc-body"><div class="tc-ctry">India · Gujarat · Saurashtra</div><h2 class="tc-city">The Kathiawad Circuit</h2><p class="tc-desc">A slow traverse through Saurashtra — Rajkot, Jamnagar, Bhavnagar, Palitana — tracing a distinct regional urbanism that survived centuries of trade, colonial rule, and post-independence planning. The <em>pol</em> system, the <em>khancha</em> lanes, the stepwells: a complete urban vocabulary modern planning has largely ignored.</p><div class="tc-tags"><span class="tt">Heritage</span><span class="tt">Vernacular Architecture</span><span class="tt">Public Space</span><span class="tt">Walking Tour</span></div></div>
+      <div class="tc-body" style="padding:2rem 2.2rem;">
+        <div class="tc-ctry">India · Gujarat · Saurashtra</div>
+        <h2 class="tc-city">The Kathiawad Circuit</h2>
+        <p class="tc-desc">A slow traverse through Saurashtra — Rajkot, Jamnagar, Bhavnagar, Palitana — tracing a distinct regional urbanism that survived centuries of trade, colonial rule, and post-independence planning. The <em>pol</em> system, the <em>khancha</em> lanes, the stepwells: a complete urban vocabulary modern planning has largely ignored.</p>
+        <div class="tc-tags"><span class="tt">Heritage</span><span class="tt">Vernacular Architecture</span><span class="tt">Public Space</span><span class="tt">Walking Tour</span></div>
+      </div>
     </div>
+  </div>
+
+  <!-- Mumbai — separate row with top margin breathing room -->
+
+  <div style="padding-top:2.5rem;background:var(--ivory);"></div>
+  <div class="tgrid" style="border-top:none;">
     <div class="tc">
       <div class="tc-img" style="background:#7A3010;position:relative;overflow:hidden;">
         <div id="mum-slides" style="position:absolute;top:0;left:0;width:200%;height:100%;display:flex;transition:transform 0.5s ease;">
           <img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_3311.jpeg" style="width:50%;height:100%;object-fit:cover;flex-shrink:0;"/>
           <img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_3313.jpeg" style="width:50%;height:100%;object-fit:cover;flex-shrink:0;"/>
         </div>
-        <button onclick="mumSlide(-1)" style="position:absolute;left:0.6rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.7);border:1px solid rgba(255,255,255,0.2);color:#FAF6F0;width:34px;height:34px;font-size:1.2rem;cursor:pointer;z-index:10;border-radius:2px;">‹</button>
-        <button onclick="mumSlide(1)" style="position:absolute;right:0.6rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.7);border:1px solid rgba(255,255,255,0.2);color:#FAF6F0;width:34px;height:34px;font-size:1.2rem;cursor:pointer;z-index:10;border-radius:2px;">›</button>
-        <div style="position:absolute;bottom:0.6rem;left:50%;transform:translateX(-50%);display:flex;gap:0.4rem;z-index:10;">
-          <span id="md0" style="width:7px;height:7px;border-radius:50%;background:#E4A63D;display:block;"></span>
-          <span id="md1" style="width:7px;height:7px;border-radius:50%;background:rgba(250,246,240,0.35);display:block;"></span>
+        <button onclick="mumSlide(-1)" style="position:absolute;left:0.8rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.75);border:1px solid rgba(255,255,255,0.25);color:#FAF6F0;width:36px;height:36px;font-size:1.3rem;cursor:pointer;z-index:10;border-radius:2px;">‹</button>
+        <button onclick="mumSlide(1)" style="position:absolute;right:0.8rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.75);border:1px solid rgba(255,255,255,0.25);color:#FAF6F0;width:36px;height:36px;font-size:1.3rem;cursor:pointer;z-index:10;border-radius:2px;">›</button>
+        <div style="position:absolute;bottom:0.8rem;left:50%;transform:translateX(-50%);display:flex;gap:0.5rem;z-index:10;">
+          <span id="md0" style="width:8px;height:8px;border-radius:50%;background:#E4A63D;display:block;"></span>
+          <span id="md1" style="width:8px;height:8px;border-radius:50%;background:rgba(250,246,240,0.35);display:block;"></span>
         </div>
       </div>
       <div class="tc-body"><div class="tc-ctry">India · Maharashtra</div><h2 class="tc-city">Mumbai</h2><p class="tc-desc">The most extreme urban density outside Hong Kong. Dharavi as misunderstood city-within-a-city; the Gothic Revival station as monument to colonial ambition; the mill district transformation.</p><div class="tc-tags"><span class="tt">Density</span><span class="tt">Informal Urbanism</span><span class="tt">Colonial Heritage</span></div></div>
     </div>
+    <div class="tc" style="background:var(--ivory);"></div>
   </div>
 
   <!-- USA -->
@@ -808,11 +821,11 @@ tr:hover td{background:rgba(42,157,143,0.04);}
   <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🗽 East Coast &amp; South</span></div>
   <div class="tgrid" style="border-top:none;">
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#2A2A3A,#1A1A2A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🗽</div></div><div class="tc-body"><div class="tc-ctry">New York</div><h2 class="tc-city">New York City</h2><p class="tc-desc">The ultimate grid city — where the 1811 Commissioners' Plan meets Central Park meets the High Line meets the ongoing crisis of housing affordability.</p><div class="tc-tags"><span class="tt">Grid</span><span class="tt">Density</span><span class="tt">Public Space</span></div></div></div>
-    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#3A2A1A,#2A1A0A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🎷</div></div><div class="tc-body"><div class="tc-ctry">Louisiana</div><h2 class="tc-city">New Orleans</h2><p class="tc-desc">The French Quarter as one of the most intact historic urban fabrics in America — and the Lower Ninth Ward as a reminder of what happens when infrastructure fails the most vulnerable first.</p><div class="tc-tags"><span class="tt">Heritage</span><span class="tt">Resilience</span><span class="tt">Culture</span></div></div></div>
+    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#3A2A1A,#2A2826);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🎷</div></div><div class="tc-body"><div class="tc-ctry">Louisiana</div><h2 class="tc-city">New Orleans</h2><p class="tc-desc">The French Quarter as one of the most intact historic urban fabrics in America — and the Lower Ninth Ward as a reminder of what happens when infrastructure fails the most vulnerable first.</p><div class="tc-tags"><span class="tt">Heritage</span><span class="tt">Resilience</span><span class="tt">Culture</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#3A1A2A,#2A0A1A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏭</div></div><div class="tc-body"><div class="tc-ctry">Florida · Tampa</div><h2 class="tc-city">Ybor City</h2><p class="tc-desc">Tampa's historic Latin Quarter — a cigar-factory district that became one of Florida's most concentrated examples of immigrant urban culture and adaptive reuse.</p><div class="tc-tags"><span class="tt">Heritage</span><span class="tt">Adaptive Reuse</span><span class="tt">Culture</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#1A3A4A,#0A2A3A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🌴</div></div><div class="tc-body"><div class="tc-ctry">Florida</div><h2 class="tc-city">Miami · Key West</h2><p class="tc-desc">Miami's Art Deco South Beach and the climate crisis playing out in real time — alongside Key West's improbable walkable historic core at the edge of the continent.</p><div class="tc-tags"><span class="tt">Art Deco</span><span class="tt">Climate Resilience</span><span class="tt">Walkability</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#2A3A2A,#1A2A1A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏔️</div></div><div class="tc-body"><div class="tc-ctry">North Carolina</div><h2 class="tc-city">Asheville</h2><p class="tc-desc">A mountain city with an exceptional Art Deco and Beaux-Arts downtown, navigating the tension between its creative economy and the housing affordability crisis that creative economies generate.</p><div class="tc-tags"><span class="tt">Art Deco</span><span class="tt">Small City</span><span class="tt">Heritage</span></div></div></div>
-    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#3A2A1A,#2A1A0A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏙️</div></div><div class="tc-body"><div class="tc-ctry">Texas · Georgia</div><h2 class="tc-city">Dallas · Atlanta</h2><p class="tc-desc">Two Sunbelt cities defined by the highway and the parking lot — now trying to retrofit themselves for humans. Atlanta's Beltline and Dallas's urban infill are the experiments to watch.</p><div class="tc-tags"><span class="tt">Sunbelt</span><span class="tt">Beltline</span><span class="tt">Retrofit Urbanism</span></div></div></div>
+    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#3A2A1A,#2A2826);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏙️</div></div><div class="tc-body"><div class="tc-ctry">Texas · Georgia</div><h2 class="tc-city">Dallas · Atlanta</h2><p class="tc-desc">Two Sunbelt cities defined by the highway and the parking lot — now trying to retrofit themselves for humans. Atlanta's Beltline and Dallas's urban infill are the experiments to watch.</p><div class="tc-tags"><span class="tt">Sunbelt</span><span class="tt">Beltline</span><span class="tt">Retrofit Urbanism</span></div></div></div>
   </div>
   <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🏔️ Southwest, Mountain &amp; Pacific Northwest</span></div>
   <div class="tgrid" style="border-top:none;">
@@ -832,7 +845,7 @@ tr:hover td{background:rgba(42,157,143,0.04);}
   <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🇩🇪 Germany</span></div>
   <div class="tgrid" style="border-top:none;">
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#2A2A3A,#1A1A2A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏙️</div></div><div class="tc-body"><div class="tc-ctry">Germany · Brandenburg</div><h2 class="tc-city">Berlin</h2><p class="tc-desc">The city that reinvented itself after division and reunification — a living laboratory for urban transformation, vacancy, creative reuse, and the politics of memory in the built environment.</p><div class="tc-tags"><span class="tt">Urban Transformation</span><span class="tt">Adaptive Reuse</span><span class="tt">Memory &amp; Place</span></div></div></div>
-    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#3A2A1A,#2A1A0A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏫</div></div><div class="tc-body"><div class="tc-ctry">Germany · Saxony-Anhalt</div><h2 class="tc-city">Dessau</h2><p class="tc-desc">Home of the Bauhaus — the school that reshaped how the 20th century thought about design, craft, and the relationship between art and industry.</p><div class="tc-tags"><span class="tt">Bauhaus</span><span class="tt">Modernism</span><span class="tt">Design History</span></div></div></div>
+    <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#3A2A1A,#2A2826);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏫</div></div><div class="tc-body"><div class="tc-ctry">Germany · Saxony-Anhalt</div><h2 class="tc-city">Dessau</h2><p class="tc-desc">Home of the Bauhaus — the school that reshaped how the 20th century thought about design, craft, and the relationship between art and industry.</p><div class="tc-tags"><span class="tt">Bauhaus</span><span class="tt">Modernism</span><span class="tt">Design History</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#2A3A4A,#1A2A3A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🎭</div></div><div class="tc-body"><div class="tc-ctry">Germany · Saxony</div><h2 class="tc-city">Dresden</h2><p class="tc-desc">The city bombed to rubble in 1945 and painstakingly reconstructed — raising complex questions about reconstruction, authenticity, and what it means to rebuild from memory.</p><div class="tc-tags"><span class="tt">Post-war Reconstruction</span><span class="tt">Heritage</span><span class="tt">Baroque</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#1A3A3A,#0A2A2A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">⚓</div></div><div class="tc-body"><div class="tc-ctry">Germany</div><h2 class="tc-city">Hamburg · Frankfurt</h2><p class="tc-desc">Hamburg's HafenCity — Europe's largest inner-city regeneration project — alongside Frankfurt's Museumsufer: a kilometre of museums along the Main riverbank.</p><div class="tc-tags"><span class="tt">Port Regeneration</span><span class="tt">Waterfront</span><span class="tt">Mixed-Use</span></div></div></div>
   </div>
