@@ -187,7 +187,7 @@ footer{background:var(–brown-dk);border-top:1px solid var(–deco);padding:1.1
 .tc{border-right:1px solid var(–sand);border-bottom:1px solid var(–sand);overflow:hidden;cursor:pointer;transition:transform 0.2s;}
 .tc:nth-child(2n){border-right:none;}
 .tc:hover{transform:translateY(-2px);}
-.tc-img{height:220px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.tc-img{height:220px;position:relative;overflow:hidden;}
 .tc-body{padding:1.4rem;}
 .tc-ctry{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(–adobe);font-weight:700;margin-bottom:0.35rem;}
 .tc-city{font-family:‘Lora’,Georgia,serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem;color:var(–text);}
@@ -195,7 +195,7 @@ footer{background:var(–brown-dk);border-top:1px solid var(–deco);padding:1.1
 .tc-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
 .tt{font-family:‘Nunito’,Arial,sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:0.18rem 0.55rem;background:var(–pink-bg);color:var(–muted);border:1px solid var(–sand);}
 .tc.feat{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;border-right:none;}
-.tc.feat .tc-img{height:100%;min-height:280px;}
+.tc.feat .tc-img{height:280px;}
 .tc.feat .tc-city{font-size:1.9rem;}
 
 /* ── WORLD MAP ── */
@@ -779,15 +779,15 @@ tr:hover td{background:rgba(42,157,143,0.04);}
     </div>
     <div class="tc">
       <div class="tc-img" style="background:#7A3010;position:relative;overflow:hidden;">
-        <div id="mum-slides" style="display:flex;width:200%;transition:transform 0.5s ease;height:100%;">
+        <div id="mum-slides" style="position:absolute;top:0;left:0;width:200%;height:100%;display:flex;transition:transform 0.5s ease;">
           <img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_3311.jpeg" style="width:50%;height:100%;object-fit:cover;flex-shrink:0;"/>
           <img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_3313.jpeg" style="width:50%;height:100%;object-fit:cover;flex-shrink:0;"/>
         </div>
-        <button onclick="mumSlide(-1)" style="position:absolute;left:0.6rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.6);border:none;color:#FAF6F0;width:32px;height:32px;font-size:1.1rem;cursor:pointer;z-index:5;">‹</button>
-        <button onclick="mumSlide(1)" style="position:absolute;right:0.6rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.6);border:none;color:#FAF6F0;width:32px;height:32px;font-size:1.1rem;cursor:pointer;z-index:5;">›</button>
-        <div style="position:absolute;bottom:0.5rem;left:50%;transform:translateX(-50%);display:flex;gap:0.3rem;z-index:5;">
-          <span id="md0" style="width:6px;height:6px;border-radius:50%;background:#E4A63D;"></span>
-          <span id="md1" style="width:6px;height:6px;border-radius:50%;background:rgba(250,246,240,0.4);"></span>
+        <button onclick="mumSlide(-1)" style="position:absolute;left:0.6rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.7);border:1px solid rgba(255,255,255,0.2);color:#FAF6F0;width:34px;height:34px;font-size:1.2rem;cursor:pointer;z-index:10;border-radius:2px;">‹</button>
+        <button onclick="mumSlide(1)" style="position:absolute;right:0.6rem;top:50%;transform:translateY(-50%);background:rgba(67,3,2,0.7);border:1px solid rgba(255,255,255,0.2);color:#FAF6F0;width:34px;height:34px;font-size:1.2rem;cursor:pointer;z-index:10;border-radius:2px;">›</button>
+        <div style="position:absolute;bottom:0.6rem;left:50%;transform:translateX(-50%);display:flex;gap:0.4rem;z-index:10;">
+          <span id="md0" style="width:7px;height:7px;border-radius:50%;background:#E4A63D;display:block;"></span>
+          <span id="md1" style="width:7px;height:7px;border-radius:50%;background:rgba(250,246,240,0.35);display:block;"></span>
         </div>
       </div>
       <div class="tc-body"><div class="tc-ctry">India · Maharashtra</div><h2 class="tc-city">Mumbai</h2><p class="tc-desc">The most extreme urban density outside Hong Kong. Dharavi as misunderstood city-within-a-city; the Gothic Revival station as monument to colonial ambition; the mill district transformation.</p><div class="tc-tags"><span class="tt">Density</span><span class="tt">Informal Urbanism</span><span class="tt">Colonial Heritage</span></div></div>
@@ -799,7 +799,7 @@ tr:hover td{background:rgba(42,157,143,0.04);}
   <div style="padding:1.5rem 2rem 0;background:var(--ivory);"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;"><div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div><svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg><span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.10em;text-transform:uppercase;font-weight:700;color:var(--brown-dk);">United States of America</span><div style="height:1px;background:var(--deco);flex:1;"></div></div></div>
   <div style="background:var(--parchment);padding:0.8rem 2rem;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);"><span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--teal);">🌴 California</span></div>
   <div class="tgrid" style="border-top:none;">
-    <div class="tc"><div class="tc-img" style="background:#1A3A5A;position:relative;overflow:hidden;"><img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_5851.jpeg" style="width:100%;height:100%;object-fit:cover;"/></div><div class="tc-body"><div class="tc-ctry">California · Bay Area</div><h2 class="tc-city">San Francisco</h2><p class="tc-desc">A city of radical density and radical inequality — Victorian row houses, the Tenderloin, the Ferry Building, and the ongoing battle over housing and public space on 49 square miles.</p><div class="tc-tags"><span class="tt">Housing</span><span class="tt">Public Space</span><span class="tt">Density</span></div></div></div>
+    <div class="tc"><div class="tc-img" style="background:#1A3A5A;position:relative;overflow:hidden;"><img src="https://raw.githubusercontent.com/neerjaadave/Urban-Realm/main/IMG_5851.jpeg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"/></div><div class="tc-body"><div class="tc-ctry">California · Bay Area</div><h2 class="tc-city">San Francisco</h2><p class="tc-desc">A city of radical density and radical inequality — Victorian row houses, the Tenderloin, the Ferry Building, and the ongoing battle over housing and public space on 49 square miles.</p><div class="tc-tags"><span class="tt">Housing</span><span class="tt">Public Space</span><span class="tt">Density</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#2A4A2A,#1A3A1A);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🎓</div></div><div class="tc-body"><div class="tc-ctry">California · East Bay</div><h2 class="tc-city">Berkeley · Fremont</h2><p class="tc-desc">Berkeley's university-driven urban identity and Fremont's sprawling suburban grid — two Bay Area cities at opposite ends of the walkability spectrum.</p><div class="tc-tags"><span class="tt">University Town</span><span class="tt">Suburbia</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#5A3A1A,#3A2010);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">⛏️</div></div><div class="tc-body"><div class="tc-ctry">California · Gold Country</div><h2 class="tc-city">Coulterville · Groveland</h2><p class="tc-desc">Gold Rush-era small towns in the Sierra Nevada foothills — a study in how boom-and-bust economics leaves its mark on the built environment centuries later.</p><div class="tc-tags"><span class="tt">Heritage</span><span class="tt">Small Town</span></div></div></div>
     <div class="tc"><div class="tc-img" style="background:linear-gradient(135deg,#4A3A1A,#3A2A10);"><div style="position:absolute;bottom:1rem;left:1rem;font-size:2rem;">🏛️</div></div><div class="tc-body"><div class="tc-ctry">California · Central Valley</div><h2 class="tc-city">Sacramento</h2><p class="tc-desc">California's capital city — a grid plan laid in 1848 that still governs the city, with the Sacramento River waterfront and K Street Mall as its contested public spine.</p><div class="tc-tags"><span class="tt">Grid City</span><span class="tt">Waterfront</span></div></div></div>
@@ -849,10 +849,10 @@ tr:hover td{background:rgba(42,157,143,0.04);}
     <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1rem;">
       <div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div>
       <svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg>
-      <span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--gold);">Urban Frames — Field Photography</span>
+      <span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--gold);">Urban Frames — Public Spaces Photography</span>
       <div style="height:1px;background:var(--deco);flex:1;"></div>
     </div>
-    <p style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:rgba(244,234,216,0.55);max-width:600px;margin:0.8rem 0 0 0;">Cities photographed at street level — the textures, shadows, and human details that reveal how a place really works.</p>
+    <p style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:1rem;color:rgba(244,234,216,0.55);max-width:600px;margin:0.8rem 0 0 0;">Public spaces photographed at street level — documented alongside the city cards above and pinned to the ArcGIS map below. The camera as urban design research tool.</p>
   </div>
   <div style="background:var(--parchment);padding:0.8rem 2rem;border-bottom:1px solid var(--sand);display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">
     <span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-right:0.4rem;">Filter ·</span>
