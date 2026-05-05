@@ -611,14 +611,14 @@ tr:hover td{background:rgba(42,157,143,0.04);}
         <div class="pcat">Heritage · Public Space · Gujarat</div>
         <h2 class="ptit">Ur-bane: Junagadh and the Loss of the Public Realm</h2>
         <p class="pex">The Rang Mahal, the King's Road, the Divan Chowk — Junagadh's frozen fractals of civic architecture tell the story of what our cities were, and what modern planning has chosen to forget.</p>
-        <div class="pft"><span class="pdt">Nov 30, 2015</span><a href="#" class="plnk">Read</a></div>
+        <div class="pft"><span class="pdt">Nov 30, 2015</span><a href="#" class="plnk" onclick="event.preventDefault();showPage('article-urbane')">Read</a></div>
       </div>
     </div>
     <div class="pc" data-cat="heritage design culture">
       <div class="pn">02</div><div class="pcat">Public Space · Rajkot</div>
       <h2 class="ptit">Urban Edge as a Binding Element: Race Course, Rajkot</h2>
       <p class="pex">A 100-acre colonial-era racetrack turned city park, and the compound wall that made it one of the most democratic public spaces in Kathiawad.</p>
-      <div class="pft"><span class="pdt">Jan 17, 2020</span><a href="#" class="plnk">Read</a></div>
+      <div class="pft"><span class="pdt">Jan 17, 2020</span><a href="#" class="plnk" onclick="event.preventDefault();showPage('article-racecourse')">Read</a></div>
     </div>
     <div class="pc" data-cat="infrastructure">
       <div class="pn">03</div><div class="pcat">Infrastructure</div>
@@ -745,6 +745,19 @@ tr:hover td{background:rgba(42,157,143,0.04);}
     <div class="tsn"><div class="tsn-n">∞</div><div class="tsn-l">Hours Walking</div></div>
   </div>
   <div class="stripe sm"></div>
+
+  <!-- ArcGIS MAP — single embed, top of page -->
+
+  <div style="background:var(--brown-dk);padding:1rem 2rem 0.7rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+    <div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div>
+    <svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg>
+    <span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.10em;text-transform:uppercase;font-weight:700;color:var(--gold);">Urban Spaces Map — Cities Travelled &amp; Documented</span>
+    <div style="height:1px;background:var(--deco);flex:1;"></div>
+    <span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,234,216,0.4);">ArcGIS StoryMap · Each pin links to public spaces photographs</span>
+  </div>
+  <div style="background:#0D1A18;padding:0;min-height:650px;">
+    <iframe src="https://arcg.is/PHGXP3" width="100%" height="650" frameborder="0" allowfullscreen style="display:block;border:none;" title="Public Spaces — Neerja Dave"></iframe>
+  </div>
 
   <!-- CITY NOTES SECTION — before map -->
 
@@ -890,22 +903,6 @@ tr:hover td{background:rgba(42,157,143,0.04);}
   </div>
   <div style="text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--sand);background:var(--pink-bg);margin-bottom:0;">
     <p style="font-style:italic;color:var(--muted);font-size:0.95rem;">Replace placeholders with your photos using an <code style="background:var(--sand);padding:0.1rem 0.4rem;font-size:12px;">&lt;img&gt;</code> tag inside each <code style="background:var(--sand);padding:0.1rem 0.4rem;font-size:12px;">.ph</code> div.</p>
-  </div>
-
-  <!-- DIVIDER before map -->
-
-  <div style="padding:2rem 2rem 0.5rem;background:var(--brown-dk);display:flex;align-items:center;gap:1rem;">
-    <div style="height:1px;background:var(--deco);flex:0 0 1.5rem;"></div>
-    <svg width="8" height="8" viewBox="0 0 8 8"><rect x="0.5" y="0.5" width="7" height="7" fill="var(--deco)" transform="rotate(45 4 4)"/></svg>
-    <span style="font-family:'Nunito',Arial,sans-serif;font-size:12px;letter-spacing:0.10em;text-transform:uppercase;font-weight:700;color:var(--gold);">Interactive Map — Cities Travelled</span>
-    <div style="height:1px;background:var(--deco);flex:1;"></div>
-    <span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,234,216,0.4);">Powered by ArcGIS · Click pins for details</span>
-  </div>
-
-  <div style="background:#0D1A18;padding:0;min-height:620px;">
-    <iframe src="https://arcg.is/PHGXP3" width="100%" height="650" frameborder="0" allowfullscreen style="display:block;border:none;" title="Cities Travelled — Neerja Dave"></iframe>
-  </div>
-    <iframe src="https://arcg.is/PHGXP3" width="100%" height="650" frameborder="0" allowfullscreen style="display:block;border:none;" title="Cities Travelled — Neerja Dave"></iframe>
   </div>
   <div class="mleg">
     <span style="font-family:'Nunito',Arial,sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(250,246,240,0.3);margin-right:0.5rem;">Legend ·</span>
@@ -1220,10 +1217,7 @@ function filterWorks(btn,cat){
   });
 }
 // WORKS NAV
-document.querySelectorAll('#posts .plnk').forEach((l,i)=>{
-  if(i===0) l.onclick=e=>{e.preventDefault();showPage('article-urbane');};
-  if(i===1) l.onclick=e=>{e.preventDefault();showPage('article-racecourse');};
-});
+// Essay links wired inline
 
 // SLIDESHOW
 function initSlideshow(id){
